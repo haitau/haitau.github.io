@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Do Than Imagine</title>
+  
+  <subtitle>志不强者智不达</subtitle>
+  <link href="https://blog.shawnlife.xyz/atom.xml" rel="self"/>
+  
+  <link href="https://blog.shawnlife.xyz/"/>
+  <updated>2021-01-18T12:06:37.985Z</updated>
+  <id>https://blog.shawnlife.xyz/</id>
+  
+  <author>
+    <name>Shawn Starry</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://blog.shawnlife.xyz/2021/01/18/hello-world/"/>
+    <id>https://blog.shawnlife.xyz/2021/01/18/hello-world/</id>
+    <published>2021-01-18T12:06:37.000Z</published>
+    <updated>2021-01-18T12:06:37.985Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>
