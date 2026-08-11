@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 650" width="100%" height="100%" style="background-color:#F8FAFC;">
+  <style>
+    .diagram-title { font-family: system-ui, -apple-system, sans-serif; font-size: 20px; font-weight: 800; fill: #0F172A; text-anchor: middle; }
+    .box-title { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; font-weight: 700; }
+    .node-title { font-family: system-ui, -apple-system, sans-serif; font-size: 11px; font-weight: 700; fill: #FFFFFF; }
+    .node-sub { font-family: system-ui, -apple-system, sans-serif; font-size: 10px; font-weight: 400; fill: #E2E8F0; }
+    .badge-blue { font-family: system-ui, -apple-system, sans-serif; font-size: 11px; font-weight: 700; fill: #0369A1; }
+    .badge-purple { font-family: system-ui, -apple-system, sans-serif; font-size: 11px; font-weight: 700; fill: #6B21A8; }
+    .badge-green { font-family: system-ui, -apple-system, sans-serif; font-size: 11px; font-weight: 700; fill: #14532D; }
+    .edge-text { font-family: system-ui, -apple-system, sans-serif; font-size: 10px; font-weight: 700; text-anchor: middle; }
+  </style>
+
+  <text x="600" y="35" class="diagram-title">图 4.1：双向闭环 —— 零克隆远程回流架构与 IDE 全周期 Telemetry 可观测体系</text>
+
+  <!-- 1. Dev Workspace -->
+  <rect x="50" y="60" width="340" height="560" rx="10" fill="#F0F9FF" stroke="#38BDF8" stroke-width="2"/>
+  <text x="70" y="82" class="box-title" fill="#0369A1">1. 开发者业务工作区 (Developer Workspace)</text>
+
+  <g transform="translate(70, 95)">
+    <rect width="300" height="90" rx="6" fill="#0284C7"/>
+    <text x="15" y="22" class="node-title">npx scaffold contribute (轻量回流)</text>
+    <text x="15" y="42" class="node-sub">• 扫描本地 .ide/ 规则与技能变更</text>
+    <text x="15" y="60" class="node-sub">• 结合远端基线计算三级差异 (Diff)</text>
+    <text x="15" y="78" class="node-sub">• 客户端敏感凭据占位符预脱敏</text>
+
+    <rect y="105" width="300" height="90" rx="6" fill="#0284C7"/>
+    <text x="15" y="127" class="node-title">IDE Lifecycle Hooks (hooks.json)</text>
+    <text x="15" y="147" class="node-sub">• PostToolUse: 挂钩 Skill/MCP 执行</text>
+    <text x="15" y="165" class="node-sub">• UserPromptSubmit: 触发频次统计</text>
+    <text x="15" y="183" class="node-sub">• SessionStart: 活跃会话监测</text>
+
+    <rect y="210" width="300" height="90" rx="6" fill="#0369A1"/>
+    <text x="15" y="232" class="node-title">本地轻量脱敏缓冲池 (.usage/)</text>
+    <text x="15" y="252" class="node-sub">• 仅记录工具名、耗时、状态码</text>
+    <text x="15" y="270" class="node-sub">• 绝不记录 Prompt 原文与业务代码</text>
+    <text x="15" y="288" class="node-sub">• Git Push 伴随异步静默上报</text>
+
+    <rect y="315" width="300" height="65" rx="6" fill="#BAE6FD" stroke="#38BDF8"/>
+    <text x="15" y="337" class="badge-blue">零环境污染保障 (Zero-Pollution)</text>
+    <text x="15" y="355" class="node-sub" fill="#0369A1">• 业务仓库零克隆脚手架代码</text>
+    <text x="15" y="370" class="node-sub" fill="#0369A1">• 零多余 npm 依赖与构建中间件</text>
+  </g>
+
+  <!-- 2. Gateway & Telemetry Server -->
+  <rect x="430" y="60" width="340" height="560" rx="10" fill="#FAF5FF" stroke="#C084FC" stroke-width="2"/>
+  <text x="450" y="82" class="box-title" fill="#581C87">2. 回流网关与数据治理中心 (Gateway &amp; BI Hub)</text>
+
+  <g transform="translate(450, 95)">
+    <rect width="300" height="90" rx="6" fill="#7E22CE"/>
+    <text x="15" y="22" class="node-title">回流接收网关 (Contribute Gateway)</text>
+    <text x="15" y="42" class="node-sub">• 接收开发者提交的变更 Payload</text>
+    <text x="15" y="60" class="node-sub">• 执行服务端规则合规与格式校验</text>
+    <text x="15" y="78" class="node-sub">• 服务端二次安全审计与硬编码清洗</text>
+
+    <rect y="105" width="300" height="90" rx="6" fill="#7E22CE"/>
+    <text x="15" y="127" class="node-title">Git Open API 自动化编排器</text>
+    <text x="15" y="147" class="node-sub">• 动态创建回流分支: contrib/&lt;user&gt;</text>
+    <text x="15" y="165" class="node-sub">• 逐文件 Commit 并保留规范日志</text>
+    <text x="15" y="183" class="node-sub">• 自动创建 Pull Request 并返回链接</text>
+
+    <rect y="210" width="300" height="90" rx="6" fill="#6B21A8"/>
+    <text x="15" y="232" class="node-title">Telemetry 指标清洗与聚合引擎</text>
+    <text x="15" y="252" class="node-sub">• 技能热度追踪 (Invocation Rate)</text>
+    <text x="15" y="270" class="node-sub">• 异常与报错热点聚类 (Error Cluster)</text>
+    <text x="15" y="288" class="node-sub">• 各岗位 AI 编程采纳率分析</text>
+
+    <rect y="315" width="300" height="65" rx="6" fill="#F3E8FF" stroke="#C084FC"/>
+    <text x="15" y="337" class="badge-purple">数据安全屏障 (Security Firewall)</text>
+    <text x="15" y="355" class="node-sub" fill="#581C87">• 严格隐私边界审计，拦截外发泄漏</text>
+    <text x="15" y="370" class="node-sub" fill="#581C87">• 身份令牌签名验证与权限鉴权</text>
+  </g>
+
+  <!-- 3. Central Repo & BI -->
+  <rect x="810" y="60" width="340" height="560" rx="10" fill="#F0FDF4" stroke="#4ADE80" stroke-width="2"/>
+  <text x="830" y="82" class="box-title" fill="#166534">3. 脚手架核心基准库与效能看板 (Central Repo &amp; BI)</text>
+
+  <g transform="translate(830, 95)">
+    <rect width="300" height="90" rx="6" fill="#15803D"/>
+    <text x="15" y="22" class="node-title">架构师审查与合流 (Architect Review)</text>
+    <text x="15" y="42" class="node-sub">• 在线审查由网关自动发起的 PR/MR</text>
+    <text x="15" y="60" class="node-sub">• 判定新增技能的通用性与复用边界</text>
+    <text x="15" y="78" class="node-sub">• 合流至 1-common 或 2-domains</text>
+
+    <rect y="105" width="300" height="90" rx="6" fill="#15803D"/>
+    <text x="15" y="127" class="node-title">CI/CD 自动化全角色装配测试</text>
+    <text x="15" y="147" class="node-sub">• 批量模拟 16+ 角色编译合并矩阵</text>
+    <text x="15" y="165" class="node-sub">• Markdown AST / Heading 冲突回归</text>
+    <text x="15" y="183" class="node-sub">• 生成不可变配置 Tarball 制品包</text>
+
+    <rect y="210" width="300" height="90" rx="6" fill="#166534"/>
+    <text x="15" y="232" class="node-title">AI 研发效能数据看板 (Telemetry BI)</text>
+    <text x="15" y="252" class="node-sub">• 淘汰 0 调用冗余技能，持续瘦身</text>
+    <text x="15" y="270" class="node-sub">• 优化高频报错 Prompt，修复幻觉</text>
+    <text x="15" y="288" class="node-sub">• 形成数据驱动的工程文化演进闭环</text>
+
+    <rect y="315" width="300" height="65" rx="6" fill="#DCFCE7" stroke="#4ADE80"/>
+    <text x="15" y="337" class="badge-green">正向装配分发 (init / update)</text>
+    <text x="15" y="355" class="node-sub" fill="#14532D">• 全员一键拉取最新优化成果</text>
+    <text x="15" y="370" class="node-sub" fill="#14532D">• 形成自增强的集体智慧飞轮</text>
+  </g>
+
+  <!-- Connectors -->
+  <path d="M 390 140 L 430 140" stroke="#0284C7" stroke-width="2.5" fill="none" marker-end="url(#a-blue)"/>
+  <text x="410" y="130" class="edge-text" fill="#0369A1">① POST</text>
+
+  <path d="M 770 140 L 810 140" stroke="#7E22CE" stroke-width="2.5" fill="none" marker-end="url(#a-purple)"/>
+  <text x="790" y="130" class="edge-text" fill="#581C87">② 自动提 PR</text>
+
+  <path d="M 390 350 L 430 350" stroke="#0369A1" stroke-width="2.5" fill="none" marker-end="url(#a-darkblue)"/>
+  <text x="410" y="340" class="edge-text" fill="#0C4A6E">③ 指标上报</text>
+
+  <path d="M 770 350 L 810 350" stroke="#6B21A8" stroke-width="2.5" fill="none" marker-end="url(#a-darkpurple)"/>
+  <text x="790" y="340" class="edge-text" fill="#581C87">④ 看板驱动</text>
+
+  <defs>
+    <marker id="a-blue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#0284C7"/></marker>
+    <marker id="a-purple" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#7E22CE"/></marker>
+    <marker id="a-darkblue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#0369A1"/></marker>
+    <marker id="a-darkpurple" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#6B21A8"/></marker>
+  </defs>
+</svg>

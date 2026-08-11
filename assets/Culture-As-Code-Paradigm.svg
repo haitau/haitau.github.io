@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 650" width="100%" height="100%" style="background-color:#F8FAFC;">
+  <style>
+    .diagram-title { font-family: system-ui, -apple-system, sans-serif; font-size: 20px; font-weight: 800; fill: #0F172A; text-anchor: middle; }
+    .box-title { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; font-weight: 700; }
+    .node-title { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 700; fill: #FFFFFF; }
+    .node-sub { font-family: system-ui, -apple-system, sans-serif; font-size: 10px; font-weight: 400; fill: #E2E8F0; }
+    .list-item-bad { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 500; fill: #881337; }
+    .list-item-good { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 600; fill: #14532D; }
+    .contract-text { font-family: system-ui, -apple-system, sans-serif; font-size: 11px; font-weight: 700; fill: #78350F; text-anchor: middle; }
+  </style>
+
+  <!-- Title -->
+  <text x="600" y="35" class="diagram-title">图 1.1：规范即代码 (Culture as Code) 范式演进与主客观双层咬合体系</text>
+
+  <!-- Left: Legacy Box -->
+  <rect x="50" y="60" width="520" height="225" rx="10" fill="#FFF1F2" stroke="#FDA4AF" stroke-width="2"/>
+  <text x="70" y="82" class="box-title" fill="#9F1239">传统自由对话接入模式 (自由度高 · 确定性差 · 风险不可控)</text>
+  
+  <g transform="translate(70, 95)">
+    <rect width="480" height="34" rx="6" fill="#FFE4E6" stroke="#F43F5E"/>
+    <text x="15" y="21" class="list-item-bad">❌ 人人各自写 Prompt，团队架构与业务规范无法穿透</text>
+
+    <rect y="44" width="480" height="34" rx="6" fill="#FFE4E6" stroke="#F43F5E"/>
+    <text x="15" y="65" class="list-item-bad">❌ 上下文无序堆砌，引发严重的注意力分散与模型幻觉</text>
+
+    <rect y="88" width="480" height="34" rx="6" fill="#FFE4E6" stroke="#F43F5E"/>
+    <text x="15" y="109" class="list-item-bad">❌ 纯靠口头约束，AI 误推主干、强推代码破坏远程历史</text>
+
+    <rect y="132" width="480" height="34" rx="6" fill="#FFE4E6" stroke="#F43F5E"/>
+    <text x="15" y="153" class="list-item-bad">❌ 个人沉淀随电脑更换丢失，团队缺乏沉淀与回流机制</text>
+  </g>
+
+  <!-- Right: Modern Scaffold Box -->
+  <rect x="630" y="60" width="520" height="225" rx="10" fill="#F0FDF4" stroke="#86EFAC" stroke-width="2"/>
+  <text x="650" y="82" class="box-title" fill="#166534">企业级 AI 脚手架范式 (Culture as Code · 确定性工程化基座)</text>
+
+  <g transform="translate(650, 95)">
+    <rect width="480" height="34" rx="6" fill="#DCFCE7" stroke="#22C55E"/>
+    <text x="15" y="21" class="list-item-good">✅ 规范即代码：文化、规约、SOP 编译装配为 IDE 代码化基座</text>
+
+    <rect y="44" width="480" height="34" rx="6" fill="#DCFCE7" stroke="#22C55E"/>
+    <text x="15" y="65" class="list-item-good">✅ 三层领域驱动隔离：按需装配，消除上下文污染与冲突</text>
+
+    <rect y="88" width="480" height="34" rx="6" fill="#DCFCE7" stroke="#22C55E"/>
+    <text x="15" y="109" class="list-item-good">✅ 主客观双层咬合：上层软规引导意图 + 下层硬护栏兜底</text>
+
+    <rect y="132" width="480" height="34" rx="6" fill="#DCFCE7" stroke="#22C55E"/>
+    <text x="15" y="153" class="list-item-good">✅ 零克隆远程回流 + Telemetry 全周期可观测数据驱动闭环</text>
+  </g>
+
+  <!-- Bottom: Interlocking Box -->
+  <rect x="50" y="305" width="1100" height="320" rx="10" fill="#EEF2FF" stroke="#818CF8" stroke-width="2"/>
+  <text x="70" y="328" class="box-title" fill="#1E1B4B">主客观双层咬合机制 (Subjective-Objective Interlocking Architecture)</text>
+
+  <!-- Upper Layer: Soft Prompts -->
+  <g transform="translate(70, 340)">
+    <rect width="1060" height="70" rx="8" fill="#312E81" stroke="#4338CA"/>
+    <text x="20" y="40" class="node-title" font-size="13">上层：主观软规范 (Rules 面向 AI 上下文)</text>
+
+    <g transform="translate(320, 10)">
+      <rect width="220" height="50" rx="6" fill="#4338CA" stroke="#6366F1"/>
+      <text x="110" y="22" class="node-title" text-anchor="middle">👁️ 前置探针 (Read-First)</text>
+      <text x="110" y="38" class="node-sub" text-anchor="middle">落笔前通读关联接口与设计</text>
+    </g>
+
+    <g transform="translate(560, 10)">
+      <rect width="230" height="50" rx="6" fill="#4338CA" stroke="#6366F1"/>
+      <text x="115" y="22" class="node-title" text-anchor="middle">🔄 提交闭环 (Commit Flow)</text>
+      <text x="115" y="38" class="node-sub" text-anchor="middle">规范 Conventional / 工单前缀</text>
+    </g>
+
+    <g transform="translate(810, 10)">
+      <rect width="230" height="50" rx="6" fill="#4338CA" stroke="#6366F1"/>
+      <text x="115" y="22" class="node-title" text-anchor="middle">🚨 分支路由决策 (Routing)</text>
+      <text x="115" y="38" class="node-sub" text-anchor="middle">严格遵循特性分支/主干协同</text>
+    </g>
+  </g>
+
+  <!-- Contract Bar -->
+  <rect x="70" y="422" width="1060" height="30" rx="6" fill="#FDE68A" stroke="#D97706" stroke-width="1.5"/>
+  <text x="600" y="442" class="contract-text">⚙️ 声明式配置开关契约 (.githooks.yml) —— 两层同源，同一套配置参数同时约束软规范声明与硬拦截开关</text>
+
+  <!-- Lower Layer: Hard Guardrails -->
+  <g transform="translate(70, 465)">
+    <rect width="1060" height="140" rx="8" fill="#064E3B" stroke="#059669"/>
+    <text x="20" y="75" class="node-title" font-size="13">下层：客观硬护栏 (Git Hooks 本地执行层)</text>
+
+    <!-- Hook 1 -->
+    <g transform="translate(300, 12)">
+      <rect width="170" height="115" rx="6" fill="#065F46" stroke="#10B981"/>
+      <text x="15" y="25" class="node-title" font-size="11">commit-msg Hook</text>
+      <text x="15" y="48" class="node-sub">• 校验 Header 长度≤100</text>
+      <text x="15" y="68" class="node-sub">• 强制规范格式 / 工单号</text>
+      <text x="15" y="88" class="node-sub">• 敏感资产变更 [资产] 标记</text>
+    </g>
+
+    <!-- Hook 2 -->
+    <g transform="translate(490, 12)">
+      <rect width="170" height="115" rx="6" fill="#065F46" stroke="#10B981"/>
+      <text x="15" y="25" class="node-title" font-size="11">pre-commit Hook</text>
+      <text x="15" y="48" class="node-sub">• 拦截主干直接提交</text>
+      <text x="15" y="68" class="node-sub">• 扫描硬编码 Secret/Token</text>
+      <text x="15" y="88" class="node-sub">• 敏感路径权限拦截</text>
+    </g>
+
+    <!-- Hook 3 -->
+    <g transform="translate(680, 12)">
+      <rect width="170" height="115" rx="6" fill="#065F46" stroke="#10B981"/>
+      <text x="15" y="25" class="node-title" font-size="11">pre-push Hook</text>
+      <text x="15" y="48" class="node-sub">• 拦截直推保护主干</text>
+      <text x="15" y="68" class="node-sub">• 绝对拦截 force-push</text>
+      <text x="15" y="88" class="node-sub">• 基线落后与差异预检</text>
+    </g>
+
+    <!-- Hook 4 -->
+    <g transform="translate(870, 12)">
+      <rect width="170" height="115" rx="6" fill="#065F46" stroke="#10B981"/>
+      <text x="15" y="25" class="node-title" font-size="11">pre-rebase Hook</text>
+      <text x="15" y="48" class="node-sub">• 拦截已推送历史 rebase</text>
+      <text x="15" y="68" class="node-sub">• 防止团队协作历史断层</text>
+      <text x="15" y="88" class="node-sub">• 个人特性分支安全放行</text>
+    </g>
+  </g>
+</svg>

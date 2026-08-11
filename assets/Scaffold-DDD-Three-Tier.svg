@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" width="100%" height="100%" style="background-color:#F8FAFC;">
+  <style>
+    .diagram-title { font-family: system-ui, -apple-system, sans-serif; font-size: 20px; font-weight: 800; fill: #0F172A; text-anchor: middle; }
+    .box-title { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; font-weight: 700; }
+    .node-title { font-family: system-ui, -apple-system, sans-serif; font-size: 11px; font-weight: 700; fill: #FFFFFF; }
+    .node-sub { font-family: system-ui, -apple-system, sans-serif; font-size: 10px; font-weight: 400; fill: #E2E8F0; }
+    .edge-label { font-family: system-ui, -apple-system, sans-serif; font-size: 11px; font-weight: 700; fill: #6B21A8; }
+  </style>
+
+  <text x="600" y="35" class="diagram-title">图 2.1：DDD 三层领域隔离拓扑与多策略装配编译引擎</text>
+
+  <!-- Left: Source Assets Box -->
+  <rect x="50" y="60" width="530" height="610" rx="10" fill="#F8FAFC" stroke="#94A3B8" stroke-width="2"/>
+  <text x="70" y="82" class="box-title" fill="#334155">配置中心源资产库 (Scaffold Asset Source)</text>
+
+  <!-- Layer 1: Common -->
+  <g transform="translate(70, 95)">
+    <rect width="490" height="110" rx="8" fill="#EEF2FF" stroke="#818CF8" stroke-width="1.5"/>
+    <text x="15" y="22" class="box-title" fill="#1E1B4B">1. 通用底线层 (1-common · 全公司统一基座)</text>
+
+    <g transform="translate(15, 32)">
+      <rect width="220" height="30" rx="4" fill="#312E81"/><text x="110" y="19" class="node-title" text-anchor="middle">全员 Git 协同底线 (git-workflow.md)</text>
+      <rect x="235" width="225" height="30" rx="4" fill="#312E81"/><text x="347" y="19" class="node-title" text-anchor="middle">Git Hooks 核心执行脚本 (确定性)</text>
+      <rect y="38" width="220" height="30" rx="4" fill="#4338CA"/><text x="110" y="57" class="node-title" text-anchor="middle">基座 MCP 服务 (Filesystem/Search)</text>
+      <rect x="235" y="38" width="225" height="30" rx="4" fill="#4338CA"/><text x="347" y="57" class="node-title" text-anchor="middle">通用 Gitignore / Gitattributes</text>
+    </g>
+  </g>
+
+  <!-- Layer 2: Domain -->
+  <g transform="translate(70, 220)">
+    <rect width="490" height="120" rx="8" fill="#FEF3C7" stroke="#FBBF24" stroke-width="1.5"/>
+    <text x="15" y="22" class="box-title" fill="#78350F">2. 业务域/技术栈层 (2-domains · 域规范与技术栈)</text>
+
+    <g transform="translate(15, 32)">
+      <rect width="220" height="30" rx="4" fill="#B45309"/><text x="110" y="19" class="node-title" text-anchor="middle">技术栈 Ignore 规则 (Node/Java/Py)</text>
+      <rect x="235" width="225" height="30" rx="4" fill="#B45309"/><text x="347" y="19" class="node-title" text-anchor="middle">业务域共享技能 (Jira/TAPD/审查)</text>
+      <rect y="38" width="220" height="38" rx="4" fill="#D97706"/>
+      <text x="110" y="54" class="node-title" text-anchor="middle">域专属 MCP 服务</text>
+      <text x="110" y="68" class="node-sub" text-anchor="middle">(MLflow / 内部数据库)</text>
+      
+      <rect x="235" y="38" width="225" height="38" rx="4" fill="#92400E"/>
+      <text x="347" y="54" class="node-title" text-anchor="middle">准入注册表 registry.yaml</text>
+      <text x="347" y="68" class="node-sub" text-anchor="middle">(only_for / exclude 声明式过滤)</text>
+    </g>
+  </g>
+
+  <!-- Layer 3: Role -->
+  <g transform="translate(70, 355)">
+    <rect width="490" height="295" rx="8" fill="#DCFCE7" stroke="#4ADE80" stroke-width="1.5"/>
+    <text x="15" y="22" class="box-title" fill="#14532D">3. 岗位特化层 (roles/&lt;role&gt; · 16+ 个性化岗位画像)</text>
+
+    <g transform="translate(15, 30)">
+      <rect width="460" height="45" rx="6" fill="#15803D"/>
+      <text x="15" y="20" class="node-title">后端开发岗 (Backend-Java/Go)</text>
+      <text x="15" y="36" class="node-sub">• SQL 迁移审计 • 契约用例生成 • 数据库 MCP</text>
+
+      <rect y="52" width="460" height="45" rx="6" fill="#15803D"/>
+      <text x="15" y="72" class="node-title">前端开发岗 (Frontend-Vue/React)</text>
+      <text x="15" y="88" class="node-sub">• 组件设计约束 • UI 交互规范 • Vue 常量模块化</text>
+
+      <rect y="104" width="460" height="45" rx="6" fill="#15803D"/>
+      <text x="15" y="124" class="node-title">算法研究岗 (AI-Algo / Vision / MLOps)</text>
+      <text x="15" y="140" class="node-sub">• 模型评测 SOP • 数据集版本约束 • 算力追踪 MCP</text>
+
+      <rect y="156" width="460" height="45" rx="6" fill="#15803D"/>
+      <text x="15" y="176" class="node-title">产品管理岗 (Product-Mgr / Director)</text>
+      <text x="15" y="192" class="node-sub">• PRD 编写规范 • 需求分级三层梳理 • 单人主干直推</text>
+
+      <rect y="208" width="460" height="45" rx="6" fill="#15803D"/>
+      <text x="15" y="228" class="node-title">测试工程岗 (QA-Engineer)</text>
+      <text x="15" y="244" class="node-sub">• 测试用例生成 • 全流程联调验证 • 自动化测试</text>
+    </g>
+  </g>
+
+  <!-- Right Top: Engine Box -->
+  <rect x="620" y="60" width="530" height="280" rx="10" fill="#FAF5FF" stroke="#C084FC" stroke-width="2"/>
+  <text x="640" y="82" class="box-title" fill="#581C87">多策略装配编译引擎 (CLI Engine · 差异化合并)</text>
+
+  <g transform="translate(640, 95)">
+    <rect width="490" height="50" rx="6" fill="#7E22CE"/>
+    <text x="15" y="20" class="node-title">Markdown AST 标题级语义覆盖 (Heading-level Smart Merge)</text>
+    <text x="15" y="38" class="node-sub">• 继承通用结构 • 逐字匹配覆盖同名章节 • 追加角色独有章节</text>
+
+    <rect y="56" width="490" height="50" rx="6" fill="#7E22CE"/>
+    <text x="15" y="76" class="node-title">JSON MCP 服务级深度合并 (Service Deep Merge)</text>
+    <text x="15" y="94" class="node-sub">• 深度遍历 mcpServers • 参数按字段重写 • 密钥占位符隔离</text>
+
+    <rect y="112" width="490" height="50" rx="6" fill="#7E22CE"/>
+    <text x="15" y="132" class="node-title">Git Ignore / Attr 智能清洗与三层堆叠 (Line-level Merge)</text>
+    <text x="15" y="150" class="node-sub">• 统一 OS/IDE 底线 • 注入技术栈规则 • 保留本地自定义</text>
+
+    <rect y="168" width="490" height="50" rx="6" fill="#581C87"/>
+    <text x="15" y="188" class="node-title">准入注册表物理裁剪 (Selective Ingestion)</text>
+    <text x="15" y="206" class="node-sub">• 执行 only_for/exclude 规则 • 物理裁剪无关技能 • 避免上下文爆炸</text>
+  </g>
+
+  <!-- Right Bottom: Target Workspace Box -->
+  <rect x="620" y="360" width="530" height="310" rx="10" fill="#F0F9FF" stroke="#38BDF8" stroke-width="2"/>
+  <text x="640" y="382" class="box-title" fill="#0369A1">目标业务工作区 (Target Workspace · 生成产物)</text>
+
+  <g transform="translate(640, 395)">
+    <g>
+      <rect width="235" height="50" rx="6" fill="#0284C7"/>
+      <text x="15" y="20" class="node-title">.ide/rules/</text>
+      <text x="15" y="36" class="node-sub">语义合并后的生效规则</text>
+
+      <rect x="255" width="235" height="50" rx="6" fill="#0284C7"/>
+      <text x="270" y="20" class="node-title">.ide/skills/</text>
+      <text x="270" y="36" class="node-sub">物理裁剪后的角色技能包</text>
+    </g>
+
+    <g transform="translate(0, 58)">
+      <rect width="235" height="50" rx="6" fill="#0284C7"/>
+      <text x="15" y="20" class="node-title">.ide/mcp.json</text>
+      <text x="15" y="36" class="node-sub">深度合并后的工具连接配置</text>
+
+      <rect x="255" width="235" height="50" rx="6" fill="#0284C7"/>
+      <text x="270" y="20" class="node-title">.githooks.yml</text>
+      <text x="270" y="36" class="node-sub">按角色模板分流的护栏开关</text>
+    </g>
+
+    <g transform="translate(0, 116)">
+      <rect width="490" height="48" rx="6" fill="#0369A1"/>
+      <text x="15" y="20" class="node-title">.ide/hooks.json + telemetry/</text>
+      <text x="15" y="36" class="node-sub">IDE 事件监听挂钩 (PostToolUse / SessionStart) 监测闭环</text>
+    </g>
+
+    <g transform="translate(0, 172)">
+      <rect width="490" height="35" rx="6" fill="#0C4A6E"/>
+      <text x="245" y="22" class="node-title" text-anchor="middle">CONFIG_SUMMARY.md (装配元数据清单与回滚快照索引)</text>
+    </g>
+  </g>
+
+  <!-- Flow Lines -->
+  <path d="M 580 200 L 620 200" stroke="#7E22CE" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 885 340 L 885 360" stroke="#0284C7" stroke-width="3" fill="none" marker-end="url(#arrow-blue)"/>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#7E22CE"/>
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#0284C7"/>
+    </marker>
+  </defs>
+</svg>
