@@ -83,10 +83,12 @@
       </g>
 
       <!-- Footer Callout -->
-      <rect y="300" width="484" height="42" rx="6" fill="#4338CA"/>
-      <text x="242" y="25" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">
-        零门槛回流：从"个人私藏 Prompt"跃迁为"全员共享工程资产"
-      </text>
+      <g transform="translate(0, 300)">
+        <rect width="484" height="42" rx="6" fill="#4338CA"/>
+        <text x="242" y="26" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">
+          零门槛回流：从"个人私藏 Prompt"跃迁为"全员共享工程资产"
+        </text>
+      </g>
     </g>
   </g>
 
@@ -132,10 +134,12 @@
       </g>
 
       <!-- Footer Callout -->
-      <rect y="300" width="484" height="42" rx="6" fill="#065F46"/>
-      <text x="242" y="25" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">
-        全景度量：以客观真实数据驱动规则资产持续优胜劣汰
-      </text>
+      <g transform="translate(0, 300)">
+        <rect width="484" height="42" rx="6" fill="#065F46"/>
+        <text x="242" y="26" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">
+          全景度量：以客观真实数据驱动规则资产持续优胜劣汰
+        </text>
+      </g>
     </g>
   </g>
 </svg>

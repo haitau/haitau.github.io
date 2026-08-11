@@ -1,12 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" width="100%" height="100%">
   <defs>
-    <filter id="soft-shadow" x="-8%" y="-8%" width="116%" height="116%">
+    <!-- Shadows & Glows -->
+    <filter id="soft-shadow" x="-5%" y="-5%" width="110%" height="110%">
       <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#0F172A" flood-opacity="0.06"/>
     </filter>
-    <filter id="card-shadow" x="-5%" y="-5%" width="110%" height="110%">
-      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.04"/>
+    <filter id="card-shadow" x="-4%" y="-4%" width="108%" height="108%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.05"/>
     </filter>
 
+    <!-- Gradients -->
     <linearGradient id="bg-grad" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" stop-color="#F8FAFC"/>
       <stop offset="100%" stop-color="#F1F5F9"/>
@@ -29,9 +31,10 @@
     </linearGradient>
     <linearGradient id="target-grad" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#0284C7"/>
-      <stop offset="100%" stop-color="#0EA5E9"/>
+      <stop offset="100%" stop-color="#38BDF8"/>
     </linearGradient>
 
+    <!-- Markers -->
     <marker id="m-purple" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto">
       <path d="M 0 1 L 8 5 L 0 9 z" fill="#7C3AED"/>
     </marker>
@@ -40,24 +43,26 @@
     </marker>
   </defs>
 
+  <!-- Background -->
   <rect width="100%" height="100%" fill="url(#bg-grad)"/>
-  <rect x="25" y="25" width="1150" height="670" rx="16" fill="#FFFFFF" fill-opacity="0.7" stroke="#E2E8F0" stroke-width="1.5" filter="url(#soft-shadow)"/>
+  <rect x="25" y="25" width="1150" height="650" rx="16" fill="#FFFFFF" fill-opacity="0.75" stroke="#E2E8F0" stroke-width="1.5" filter="url(#soft-shadow)"/>
 
-  <!-- Diagram Title -->
+  <!-- Title Banner -->
   <g transform="translate(60, 48)">
-    <rect x="0" y="0" width="6" height="26" rx="3" fill="#7C3AED"/>
+    <rect x="0" y="0" width="6" height="26" rx="3" fill="#4F46E5"/>
     <text x="18" y="20" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="18" font-weight="800" fill="#0F172A" letter-spacing="-0.5px">
-      Figure 2.1: DDD Three-Tier Domain Isolation Topology &amp; Multi-Strategy Assembly Engine
+      Figure 2.1: DDD Three-Tier Assembly Model &amp; Compilation Pipeline
     </text>
-    <rect x="910" y="2" width="170" height="22" rx="11" fill="#FAF5FF" stroke="#E9D5FF"/>
-    <text x="995" y="16" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#6B21A8" text-anchor="middle">Three-Tier Architecture</text>
+    <rect x="910" y="2" width="170" height="22" rx="11" fill="#EEF2FF" stroke="#C7D2FE"/>
+    <text x="995" y="16" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#4338CA" text-anchor="middle">DDD 3-Tier Assembly</text>
   </g>
 
-  <!-- Left Column: Source Assets Container -->
+  <!-- Left Column: 3-Tier Source Structure -->
   <g transform="translate(60, 90)" filter="url(#card-shadow)">
-    <rect width="520" height="580" rx="12" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+    <!-- Container -->
+    <rect width="520" height="580" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
     <rect x="0" y="0" width="520" height="36" rx="12" fill="#F8FAFC"/>
-    <text x="18" y="23" font-family="sans-serif" font-size="12.5" font-weight="800" fill="#1E293B">📦 Scaffold Asset Source Repository</text>
+    <text x="18" y="23" font-family="sans-serif" font-size="12.5" font-weight="800" fill="#1E293B">📦 Scaffold Asset Source Repository Layout</text>
 
     <!-- Layer 1: Common -->
     <g transform="translate(16, 48)">
@@ -66,17 +71,23 @@
       <text x="12" y="16" font-family="sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">1. Common Baseline Layer (1-common · Enterprise Baseline)</text>
 
       <g transform="translate(10, 32)">
-        <rect x="0" y="0" width="228" height="30" rx="5" fill="#FFFFFF" stroke="#C7D2FE"/>
-        <text x="10" y="19" font-family="sans-serif" font-size="10" font-weight="700" fill="#312E81">Git Workflow Baseline (git-workflow.md)</text>
+        <!-- Row 1 -->
+        <g transform="translate(0, 0)">
+          <rect x="0" width="228" height="30" rx="5" fill="#FFFFFF" stroke="#C7D2FE"/>
+          <text x="10" y="19" font-family="sans-serif" font-size="10" font-weight="700" fill="#312E81">Git Workflow Baseline (git-workflow.md)</text>
 
-        <rect x="238" y="0" width="230" height="30" rx="5" fill="#FFFFFF" stroke="#C7D2FE"/>
-        <text x="248" y="19" font-family="sans-serif" font-size="10" font-weight="700" fill="#312E81">Git Hooks Core Read-Only Scripts</text>
+          <rect x="238" width="230" height="30" rx="5" fill="#FFFFFF" stroke="#C7D2FE"/>
+          <text x="248" y="19" font-family="sans-serif" font-size="10" font-weight="700" fill="#312E81">Git Hooks Core Read-Only Scripts</text>
+        </g>
 
-        <rect x="0" y="36" width="228" height="30" rx="5" fill="#FFFFFF" stroke="#C7D2FE"/>
-        <text x="10" y="19" font-family="sans-serif" font-size="10" font-weight="700" fill="#312E81">Base MCP Servers (Filesystem/Code)</text>
+        <!-- Row 2 -->
+        <g transform="translate(0, 36)">
+          <rect x="0" width="228" height="30" rx="5" fill="#FFFFFF" stroke="#C7D2FE"/>
+          <text x="10" y="19" font-family="sans-serif" font-size="10" font-weight="700" fill="#312E81">Base MCP Servers (Filesystem/Code)</text>
 
-        <rect x="238" y="36" width="230" height="30" rx="5" fill="#FFFFFF" stroke="#C7D2FE"/>
-        <text x="248" y="19" font-family="sans-serif" font-size="10" font-weight="700" fill="#312E81">Universal Gitignore / Gitattributes</text>
+          <rect x="238" width="230" height="30" rx="5" fill="#FFFFFF" stroke="#C7D2FE"/>
+          <text x="248" y="19" font-family="sans-serif" font-size="10" font-weight="700" fill="#312E81">Universal Gitignore / Gitattributes</text>
+        </g>
       </g>
     </g>
 
@@ -87,19 +98,25 @@
       <text x="12" y="16" font-family="sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">2. Business Domain Layer (2-domains · Domain &amp; Tech Stack)</text>
 
       <g transform="translate(10, 32)">
-        <rect x="0" y="0" width="228" height="32" rx="5" fill="#FFFFFF" stroke="#FCD34D"/>
-        <text x="10" y="20" font-family="sans-serif" font-size="10" font-weight="700" fill="#92400E">Tech-Stack Ignores (Node/Java/Py)</text>
+        <!-- Row 1 -->
+        <g transform="translate(0, 0)">
+          <rect x="0" width="228" height="32" rx="5" fill="#FFFFFF" stroke="#FCD34D"/>
+          <text x="10" y="20" font-family="sans-serif" font-size="10" font-weight="700" fill="#92400E">Tech-Stack Ignores (Node/Java/Py)</text>
 
-        <rect x="238" y="0" width="230" height="32" rx="5" fill="#FFFFFF" stroke="#FCD34D"/>
-        <text x="248" y="20" font-family="sans-serif" font-size="10" font-weight="700" fill="#92400E">Domain Shared Skills (Jira/Review)</text>
+          <rect x="238" width="230" height="32" rx="5" fill="#FFFFFF" stroke="#FCD34D"/>
+          <text x="248" y="20" font-family="sans-serif" font-size="10" font-weight="700" fill="#92400E">Domain Shared Skills (Jira/Review)</text>
+        </g>
 
-        <rect x="0" y="38" width="228" height="36" rx="5" fill="#FFFFFF" stroke="#FCD34D"/>
-        <text x="10" y="18" font-family="sans-serif" font-size="9.5" font-weight="700" fill="#92400E">Domain-Specific MCPs</text>
-        <text x="10" y="30" font-family="sans-serif" font-size="9" font-weight="500" fill="#B45309">(MLflow / Internal APIs)</text>
+        <!-- Row 2 -->
+        <g transform="translate(0, 38)">
+          <rect x="0" width="228" height="36" rx="5" fill="#FFFFFF" stroke="#FCD34D"/>
+          <text x="10" y="18" font-family="sans-serif" font-size="9.5" font-weight="700" fill="#92400E">Domain-Specific MCPs</text>
+          <text x="10" y="30" font-family="sans-serif" font-size="9" font-weight="500" fill="#B45309">(MLflow / Internal APIs)</text>
 
-        <rect x="238" y="38" width="230" height="36" rx="5" fill="#FFFFFF" stroke="#FCD34D"/>
-        <text x="248" y="18" font-family="sans-serif" font-size="9.5" font-weight="700" fill="#B45309">Registry Config registry.yaml</text>
-        <text x="248" y="30" font-family="sans-serif" font-size="9" font-weight="500" fill="#92400E">(only_for / exclude ACLs)</text>
+          <rect x="238" width="230" height="36" rx="5" fill="#FFFFFF" stroke="#FCD34D"/>
+          <text x="248" y="18" font-family="sans-serif" font-size="9.5" font-weight="700" fill="#B45309">Registry Config registry.yaml</text>
+          <text x="248" y="30" font-family="sans-serif" font-size="9" font-weight="500" fill="#92400E">(only_for / exclude ACLs)</text>
+        </g>
       </g>
     </g>
 
@@ -111,29 +128,39 @@
 
       <g transform="translate(10, 30)">
         <!-- Role 1 -->
-        <rect x="0" y="0" width="468" height="42" rx="5" fill="#FFFFFF" stroke="#86EFAC"/>
-        <text x="10" y="18" font-family="sans-serif" font-size="10" font-weight="700" fill="#065F46">Backend Engineer (Java / Go / PHP)</text>
-        <text x="10" y="32" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• SQL migration audits • API contract generation • DB MCP</text>
+        <g transform="translate(0, 0)">
+          <rect width="468" height="42" rx="5" fill="#FFFFFF" stroke="#86EFAC"/>
+          <text x="10" y="18" font-family="sans-serif" font-size="10" font-weight="700" fill="#065F46">Backend Engineer (Java / Go / PHP)</text>
+          <text x="10" y="32" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• SQL migration audits • API contract generation • DB MCP</text>
+        </g>
 
         <!-- Role 2 -->
-        <rect x="0" y="48" width="468" height="42" rx="5" fill="#FFFFFF" stroke="#86EFAC"/>
-        <text x="10" y="18" font-family="sans-serif" font-size="10" font-weight="700" fill="#065F46">Frontend Engineer (Vue3 / React / TypeScript)</text>
-        <text x="10" y="32" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• Component atomicity • UI design system • Constant modularity</text>
+        <g transform="translate(0, 48)">
+          <rect width="468" height="42" rx="5" fill="#FFFFFF" stroke="#86EFAC"/>
+          <text x="10" y="18" font-family="sans-serif" font-size="10" font-weight="700" fill="#065F46">Frontend Engineer (Vue3 / React / TypeScript)</text>
+          <text x="10" y="32" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• Component atomicity • UI design system • Constant modularity</text>
+        </g>
 
         <!-- Role 3 -->
-        <rect x="0" y="96" width="468" height="42" rx="5" fill="#FFFFFF" stroke="#86EFAC"/>
-        <text x="10" y="18" font-family="sans-serif" font-size="10" font-weight="700" fill="#065F46">Algorithm Researcher (AI / Vision / MLOps)</text>
-        <text x="10" y="32" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• Model evaluation SOP • Dataset version gating • MLflow MCP</text>
+        <g transform="translate(0, 96)">
+          <rect width="468" height="42" rx="5" fill="#FFFFFF" stroke="#86EFAC"/>
+          <text x="10" y="18" font-family="sans-serif" font-size="10" font-weight="700" fill="#065F46">Algorithm Researcher (AI / Vision / MLOps)</text>
+          <text x="10" y="32" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• Model evaluation SOP • Dataset version gating • MLflow MCP</text>
+        </g>
 
         <!-- Role 4 -->
-        <rect x="0" y="144" width="468" height="42" rx="5" fill="#FFFFFF" stroke="#86EFAC"/>
-        <text x="10" y="18" font-family="sans-serif" font-size="10" font-weight="700" fill="#065F46">Product Manager (Product-Mgr / Director)</text>
-        <text x="10" y="32" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• PRD formatting • Requirement triage • Trunk direct push</text>
+        <g transform="translate(0, 144)">
+          <rect width="468" height="42" rx="5" fill="#FFFFFF" stroke="#86EFAC"/>
+          <text x="10" y="18" font-family="sans-serif" font-size="10" font-weight="700" fill="#065F46">Product Manager (Product-Mgr / Director)</text>
+          <text x="10" y="32" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• PRD formatting • Requirement triage • Trunk direct push</text>
+        </g>
 
         <!-- Role 5 -->
-        <rect x="0" y="192" width="468" height="38" rx="5" fill="#FFFFFF" stroke="#86EFAC"/>
-        <text x="10" y="16" font-family="sans-serif" font-size="10" font-weight="700" fill="#065F46">QA Engineer (QA-Automation)</text>
-        <text x="10" y="30" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• End-to-end test generation • CI pipeline automated linkages</text>
+        <g transform="translate(0, 192)">
+          <rect width="468" height="38" rx="5" fill="#FFFFFF" stroke="#86EFAC"/>
+          <text x="10" y="16" font-family="sans-serif" font-size="10" font-weight="700" fill="#065F46">QA Engineer (QA-Automation)</text>
+          <text x="10" y="30" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• End-to-end test generation • CI pipeline automated linkages</text>
+        </g>
       </g>
     </g>
   </g>
@@ -146,24 +173,32 @@
 
     <g transform="translate(16, 44)">
       <!-- E1 -->
-      <rect y="0" width="488" height="48" rx="6" fill="#F5F3FF" stroke="#C4B5FD"/>
-      <text x="12" y="18" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#581C87">Markdown AST Heading-Level Smart Merge</text>
-      <text x="12" y="34" font-family="sans-serif" font-size="9" font-weight="500" fill="#6B21A8">• Inherits common layout • Overrides matching headings • Appends unique sections</text>
+      <g transform="translate(0, 0)">
+        <rect width="488" height="48" rx="6" fill="#F5F3FF" stroke="#C4B5FD"/>
+        <text x="12" y="18" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#581C87">Markdown AST Heading-Level Smart Merge</text>
+        <text x="12" y="34" font-family="sans-serif" font-size="9" font-weight="500" fill="#6B21A8">• Inherits common layout • Overrides matching headings • Appends unique sections</text>
+      </g>
 
       <!-- E2 -->
-      <rect y="54" width="488" height="48" rx="6" fill="#F5F3FF" stroke="#C4B5FD"/>
-      <text x="12" y="18" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#581C87">JSON MCP Service-Level Deep Merge</text>
-      <text x="12" y="34" font-family="sans-serif" font-size="9" font-weight="500" fill="#6B21A8">• Deep traverses mcpServers • Merges granular args • Protects local tokens</text>
+      <g transform="translate(0, 54)">
+        <rect width="488" height="48" rx="6" fill="#F5F3FF" stroke="#C4B5FD"/>
+        <text x="12" y="18" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#581C87">JSON MCP Service-Level Deep Merge</text>
+        <text x="12" y="34" font-family="sans-serif" font-size="9" font-weight="500" fill="#6B21A8">• Deep traverses mcpServers • Merges granular args • Protects local tokens</text>
+      </g>
 
       <!-- E3 -->
-      <rect y="108" width="488" height="48" rx="6" fill="#F5F3FF" stroke="#C4B5FD"/>
-      <text x="12" y="18" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#581C87">Git Ignore / Attr Line-Level Stacking</text>
-      <text x="12" y="34" font-family="sans-serif" font-size="9" font-weight="500" fill="#6B21A8">• Unifies OS/IDE baselines • Injects stack rules • Preserves local customs</text>
+      <g transform="translate(0, 108)">
+        <rect width="488" height="48" rx="6" fill="#F5F3FF" stroke="#C4B5FD"/>
+        <text x="12" y="18" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#581C87">Git Ignore / Attr Line-Level Stacking</text>
+        <text x="12" y="34" font-family="sans-serif" font-size="9" font-weight="500" fill="#6B21A8">• Unifies OS/IDE baselines • Injects stack rules • Preserves local customs</text>
+      </g>
 
       <!-- E4 -->
-      <rect y="162" width="488" height="48" rx="6" fill="#FAF5FF" stroke="#A855F7" stroke-dasharray="4,2"/>
-      <text x="12" y="18" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#6B21A8">Registry Ingestion Pruning</text>
-      <text x="12" y="34" font-family="sans-serif" font-size="9" font-weight="500" fill="#7E22CE">• Evaluates only_for/exclude • Physically prunes irrelevant skills</text>
+      <g transform="translate(0, 162)">
+        <rect width="488" height="48" rx="6" fill="#FAF5FF" stroke="#A855F7" stroke-dasharray="4,2"/>
+        <text x="12" y="18" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#6B21A8">Registry Ingestion Pruning</text>
+        <text x="12" y="34" font-family="sans-serif" font-size="9" font-weight="500" fill="#7E22CE">• Evaluates only_for/exclude • Physically prunes irrelevant skills</text>
+      </g>
     </g>
   </g>
 
@@ -175,7 +210,7 @@
 
     <g transform="translate(16, 44)">
       <!-- Row 1 -->
-      <g>
+      <g transform="translate(0, 0)">
         <rect width="238" height="52" rx="6" fill="#F0F9FF" stroke="#7DD3FC"/>
         <text x="12" y="20" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#0369A1">.ide/rules/ (Active Rules)</text>
         <text x="12" y="36" font-family="sans-serif" font-size="9" font-weight="500" fill="#0284C7">AST merged full rulesets</text>
@@ -200,12 +235,14 @@
       <g transform="translate(0, 120)">
         <rect width="488" height="48" rx="6" fill="#F0F9FF" stroke="#7DD3FC"/>
         <text x="12" y="20" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#0369A1">.ide/hooks.json + telemetry/ (Event Hooks)</text>
-        <text x="12" y="36" font-family="sans-serif" font-size="9" font-weight="500" fill="#0284C7">IDE event listeners (PostToolUse/SessionStart) logging metrics</text>
+        <text x="12" y="36" font-family="sans-serif" font-size="9" font-weight="500" fill="#0284C7">IDE event listeners (PostToolUse / SessionStart) for closed-loop telemetry</text>
       </g>
 
       <!-- Summary Pill -->
-      <rect y="176" width="488" height="34" rx="6" fill="#0C4A6E"/>
-      <text x="244" y="21" font-family="sans-serif" font-size="10" font-weight="700" fill="#FFFFFF" text-anchor="middle">CONFIG_SUMMARY.md (Assembly Manifest &amp; Snapshot Index)</text>
+      <g transform="translate(0, 176)">
+        <rect width="488" height="34" rx="6" fill="#0C4A6E"/>
+        <text x="244" y="21" font-family="sans-serif" font-size="10" font-weight="700" fill="#FFFFFF" text-anchor="middle">CONFIG_SUMMARY.md (Assembly Manifest &amp; Snapshot Index)</text>
+      </g>
     </g>
   </g>
 

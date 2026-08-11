@@ -75,10 +75,12 @@
         </g>
 
         <!-- Footer -->
-        <rect y="304" width="484" height="38" rx="6" fill="#4338CA"/>
-        <text x="242" y="23" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">
-          Architectural Goal: Context Scoping &amp; Pure Single-Stack Focus
-        </text>
+        <g transform="translate(0, 304)">
+          <rect width="484" height="38" rx="6" fill="#4338CA"/>
+          <text x="242" y="23" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">
+            Architectural Goal: Context Scoping &amp; Pure Single-Stack Focus
+          </text>
+        </g>
       </g>
     </g>
 
@@ -121,10 +123,12 @@
         </g>
 
         <!-- Footer -->
-        <rect y="304" width="484" height="38" rx="6" fill="#065F46"/>
-        <text x="242" y="23" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">
-          Architectural Goal: High Concurrency Delivery &amp; Sandbox Safety
-        </text>
+        <g transform="translate(0, 304)">
+          <rect width="484" height="38" rx="6" fill="#065F46"/>
+          <text x="242" y="23" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">
+            Architectural Goal: High Concurrency Delivery &amp; Sandbox Safety
+          </text>
+        </g>
       </g>
     </g>
 

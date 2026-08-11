@@ -94,10 +94,12 @@
         </g>
 
         <!-- Summary -->
-        <rect y="352" width="317" height="36" rx="6" fill="#581C87"/>
-        <text x="158" y="22" font-family="sans-serif" font-size="10" font-weight="700" fill="#FFFFFF" text-anchor="middle">
-          单一事实源 (SSOT) · 彻底杜绝配置两张皮
-        </text>
+        <g transform="translate(0, 352)">
+          <rect width="317" height="36" rx="6" fill="#581C87"/>
+          <text x="158" y="22" font-family="sans-serif" font-size="10" font-weight="700" fill="#FFFFFF" text-anchor="middle">
+            单一事实源 (SSOT) · 彻底杜绝配置两张皮
+          </text>
+        </g>
       </g>
     </g>
 
@@ -143,16 +145,21 @@
           <text x="12" y="38" font-family="sans-serif" font-size="9" font-weight="500" fill="#BAE6FD">保留 Trae 原生源文件，根目录软链供 CLI Agent 读</text>
         </g>
 
-        <!-- Summary -->
-        <rect y="310" width="317" height="36" rx="6" fill="#0369A1"/>
-        <text x="158" y="22" font-family="sans-serif" font-size="10" font-weight="700" fill="#FFFFFF" text-anchor="middle">
-          ⚙️ .githooks.yml + .git/hooks/ (Git 确定性护栏)
-        </text>
+        <!-- Summary 1 -->
+        <g transform="translate(0, 310)">
+          <rect width="317" height="36" rx="6" fill="#0369A1"/>
+          <text x="158" y="22" font-family="sans-serif" font-size="10" font-weight="700" fill="#FFFFFF" text-anchor="middle">
+            ⚙️ .githooks.yml + .git/hooks/ (Git 确定性护栏)
+          </text>
+        </g>
 
-        <rect y="352" width="317" height="36" rx="6" fill="#0C4A6E"/>
-        <text x="158" y="22" font-family="sans-serif" font-size="10" font-weight="700" fill="#FFFFFF" text-anchor="middle">
-          落盘净增成本：仅 1 个薄指针 + 2 个软链接
-        </text>
+        <!-- Summary 2 -->
+        <g transform="translate(0, 352)">
+          <rect width="317" height="36" rx="6" fill="#0C4A6E"/>
+          <text x="158" y="22" font-family="sans-serif" font-size="10" font-weight="700" fill="#FFFFFF" text-anchor="middle">
+            落盘净增成本：仅 1 个薄指针 + 2 个软链接
+          </text>
+        </g>
       </g>
     </g>
 
@@ -199,10 +206,12 @@
         </g>
 
         <!-- Summary -->
-        <rect y="352" width="322" height="36" rx="6" fill="#065F46"/>
-        <text x="161" y="22" font-family="sans-serif" font-size="10" font-weight="700" fill="#FFFFFF" text-anchor="middle">
-          一次装配，全 Agent 矩阵统一生效
-        </text>
+        <g transform="translate(0, 352)">
+          <rect width="322" height="36" rx="6" fill="#065F46"/>
+          <text x="161" y="22" font-family="sans-serif" font-size="10" font-weight="700" fill="#FFFFFF" text-anchor="middle">
+            一次装配，全 Agent 矩阵统一生效
+          </text>
+        </g>
       </g>
     </g>
 

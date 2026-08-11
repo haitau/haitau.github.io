@@ -76,10 +76,12 @@
       </g>
 
       <!-- Footer Callout -->
-      <rect y="300" width="484" height="42" rx="6" fill="#4338CA"/>
-      <text x="242" y="25" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">
-        Zero-Friction Feedback: From "Personal Private Prompts" to "Shared Enterprise Assets"
-      </text>
+      <g transform="translate(0, 300)">
+        <rect width="484" height="42" rx="6" fill="#4338CA"/>
+        <text x="242" y="26" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">
+          Zero-Friction Feedback: From "Personal Private Prompts" to "Shared Enterprise Assets"
+        </text>
+      </g>
     </g>
   </g>
 
@@ -125,10 +127,12 @@
       </g>
 
       <!-- Footer Callout -->
-      <rect y="300" width="484" height="42" rx="6" fill="#065F46"/>
-      <text x="242" y="25" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">
-        Panoramic Observability: Data-Driven Evolution &amp; Pruning of Engineering Rules
-      </text>
+      <g transform="translate(0, 300)">
+        <rect width="484" height="42" rx="6" fill="#065F46"/>
+        <text x="242" y="26" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">
+          Panoramic Observability: Data-Driven Evolution &amp; Pruning of Engineering Rules
+        </text>
+      </g>
     </g>
   </g>
 </svg>

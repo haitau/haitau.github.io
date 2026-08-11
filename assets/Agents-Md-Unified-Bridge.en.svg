@@ -23,6 +23,13 @@
       <stop offset="0%" stop-color="#059669"/>
       <stop offset="100%" stop-color="#10B981"/>
     </linearGradient>
+
+    <marker id="m-c1" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#7C3AED"/>
+    </marker>
+    <marker id="m-c2" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#0284C7"/>
+    </marker>
   </defs>
 
   <rect width="100%" height="100%" fill="url(#bg-grad)"/>
@@ -32,7 +39,7 @@
   <g transform="translate(60, 48)">
     <rect x="0" y="0" width="6" height="26" rx="3" fill="#7C3AED"/>
     <text x="18" y="20" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="18" font-weight="800" fill="#0F172A" letter-spacing="-0.5px">
-      Figure 3.1: AGENTS.md Single Source of Truth &amp; Cross-Agent Bridge Architecture
+      Figure 3.1: AGENTS.md Standard-Driven Cross-Agent Bridge Architecture
     </text>
     <rect x="910" y="2" width="170" height="22" rx="11" fill="#FAF5FF" stroke="#E9D5FF"/>
     <text x="995" y="16" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#6B21A8" text-anchor="middle">AGENTS.md SSOT Bridge</text>
@@ -45,7 +52,7 @@
       <rect width="345" height="540" rx="12" fill="#FFFFFF" stroke="#E9D5FF" stroke-width="1.5"/>
       <path d="M 0 12 Q 0 0 12 0 L 333 0 Q 345 0 345 12 L 345 36 L 0 36 Z" fill="url(#h-c1)"/>
       <text x="16" y="23" font-family="sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">
-        ⚙️ Scaffold Compilation Engine
+        ⚙️ Central Scaffold Compilation Engine
       </text>
 
       <g transform="translate(14, 46)">
@@ -57,40 +64,42 @@
         <!-- Step 1 -->
         <g transform="translate(0, 48)">
           <rect width="317" height="68" rx="6" fill="#FAF5FF" stroke="#E9D5FF"/>
-          <text x="12" y="20" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#6B21A8">1. Project Rules Compile</text>
-          <text x="12" y="38" font-family="sans-serif" font-size="9" font-weight="500" fill="#7E22CE">AST heading-level smart merge directly</text>
-          <text x="12" y="52" font-family="sans-serif" font-size="9" font-weight="500" fill="#7E22CE">emits root AGENTS.md open standard SSOT.</text>
+          <text x="12" y="20" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#6B21A8">1. Rules Compiler (AST Merge)</text>
+          <text x="12" y="38" font-family="sans-serif" font-size="9" font-weight="500" fill="#7E22CE">AST heading-level smart merge outputs</text>
+          <text x="12" y="52" font-family="sans-serif" font-size="9" font-weight="500" fill="#7E22CE">universal open-standard AGENTS.md (SSOT).</text>
         </g>
 
         <!-- Step 2 -->
         <g transform="translate(0, 124)">
           <rect width="317" height="68" rx="6" fill="#FAF5FF" stroke="#E9D5FF"/>
           <text x="12" y="20" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#6B21A8">2. Skills Packaging</text>
-          <text x="12" y="38" font-family="sans-serif" font-size="9" font-weight="500" fill="#7E22CE">Filtered &amp; emitted to cross-agent</text>
-          <text x="12" y="52" font-family="sans-serif" font-size="9" font-weight="500" fill="#7E22CE">standard directory .agents/skills/&lt;name&gt;/.</text>
+          <text x="12" y="38" font-family="sans-serif" font-size="9" font-weight="500" fill="#7E22CE">Pruned role skills emitted to open standard</text>
+          <text x="12" y="52" font-family="sans-serif" font-size="9" font-weight="500" fill="#7E22CE">path .agents/skills/&lt;name&gt;/SKILL.md.</text>
         </g>
 
         <!-- Step 3 -->
         <g transform="translate(0, 200)">
           <rect width="317" height="68" rx="6" fill="#FAF5FF" stroke="#E9D5FF"/>
-          <text x="12" y="20" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#6B21A8">3. Tool Protocols (MCP)</text>
-          <text x="12" y="38" font-family="sans-serif" font-size="9" font-weight="500" fill="#7E22CE">Deep merged into .trae/mcp.json source;</text>
-          <text x="12" y="52" font-family="sans-serif" font-size="9" font-weight="500" fill="#7E22CE">bridges root .mcp.json for CLI agents.</text>
+          <text x="12" y="20" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#6B21A8">3. Tool Protocol Integration (MCP)</text>
+          <text x="12" y="38" font-family="sans-serif" font-size="9" font-weight="500" fill="#7E22CE">Deep-merged mcp.json under .trae/, with</text>
+          <text x="12" y="52" font-family="sans-serif" font-size="9" font-weight="500" fill="#7E22CE">root .mcp.json symlink for universal CLI.</text>
         </g>
 
         <!-- Step 4 -->
         <g transform="translate(0, 276)">
           <rect width="317" height="68" rx="6" fill="#FAF5FF" stroke="#E9D5FF"/>
-          <text x="12" y="20" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#6B21A8">4. Declarative Git Guardrails</text>
-          <text x="12" y="38" font-family="sans-serif" font-size="9" font-weight="500" fill="#7E22CE">Emits .githooks.yml declarative switches</text>
-          <text x="12" y="52" font-family="sans-serif" font-size="9" font-weight="500" fill="#7E22CE">and installs read-only shell hook scripts.</text>
+          <text x="12" y="20" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#6B21A8">4. Declarative Guardrails (Hooks)</text>
+          <text x="12" y="38" font-family="sans-serif" font-size="9" font-weight="500" fill="#7E22CE">Generates role-tailored .githooks.yml and</text>
+          <text x="12" y="52" font-family="sans-serif" font-size="9" font-weight="500" fill="#7E22CE">read-only deterministic shell gatekeepers.</text>
         </g>
 
         <!-- Summary -->
-        <rect y="352" width="317" height="36" rx="6" fill="#581C87"/>
-        <text x="158" y="22" font-family="sans-serif" font-size="10" font-weight="700" fill="#FFFFFF" text-anchor="middle">
-          Single Source of Truth (SSOT) · Zero Configuration Drift
-        </text>
+        <g transform="translate(0, 352)">
+          <rect width="317" height="36" rx="6" fill="#581C87"/>
+          <text x="158" y="22" font-family="sans-serif" font-size="10" font-weight="700" fill="#FFFFFF" text-anchor="middle">
+            Single Source of Truth (SSOT) Architecture
+          </text>
+        </g>
       </g>
     </g>
 
@@ -99,33 +108,33 @@
       <rect width="345" height="540" rx="12" fill="#FFFFFF" stroke="#BAE6FD" stroke-width="1.5"/>
       <path d="M 0 12 Q 0 0 12 0 L 333 0 Q 345 0 345 12 L 345 36 L 0 36 Z" fill="url(#h-c2)"/>
       <text x="16" y="23" font-family="sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">
-        📁 Target Git Repository Layout
+        📁 Workspace Output Topology (Repo Layout)
       </text>
 
       <g transform="translate(14, 46)">
         <!-- AGENTS.md -->
         <rect width="317" height="54" rx="6" fill="#0284C7"/>
-        <text x="12" y="22" font-family="sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">📄 AGENTS.md (Project Root)</text>
-        <text x="12" y="38" font-family="sans-serif" font-size="9" font-weight="500" fill="#BAE6FD">[SSOT Core] Architectural standards, SOPs &amp; rules</text>
+        <text x="12" y="22" font-family="sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">📄 AGENTS.md (Root Source File)</text>
+        <text x="12" y="38" font-family="sans-serif" font-size="9" font-weight="500" fill="#BAE6FD">[SSOT Ruleset] Architecture, SOPs &amp; coding norms</text>
 
         <!-- CLAUDE.md -->
         <g transform="translate(0, 62)">
           <rect width="317" height="54" rx="6" fill="#0284C7"/>
-          <text x="12" y="22" font-family="sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">📄 CLAUDE.md (Thin Pointer)</text>
-          <text x="12" y="38" font-family="sans-serif" font-size="9" font-weight="500" fill="#BAE6FD">Content: @AGENTS.md (Auto-ingested by preprocessor)</text>
+          <text x="12" y="22" font-family="sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">📄 CLAUDE.md (Thin Pointer File)</text>
+          <text x="12" y="38" font-family="sans-serif" font-size="9" font-weight="500" fill="#BAE6FD">Content: @AGENTS.md (Preprocessor auto-import)</text>
         </g>
 
         <!-- .agents/skills -->
         <g transform="translate(0, 124)">
           <rect width="317" height="54" rx="6" fill="#0284C7"/>
-          <text x="12" y="22" font-family="sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">📁 .agents/skills/ (Physical Skills Directory)</text>
-          <text x="12" y="38" font-family="sans-serif" font-size="9" font-weight="500" fill="#BAE6FD">Cross-agent standard folder holding SKILL.md packages</text>
+          <text x="12" y="22" font-family="sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">📁 .agents/skills/ (Skill Root Package)</text>
+          <text x="12" y="38" font-family="sans-serif" font-size="9" font-weight="500" fill="#BAE6FD">Universal skill directory holding SKILL.md specs</text>
         </g>
 
         <!-- .claude/skills symlink -->
         <g transform="translate(0, 186)">
           <rect width="317" height="54" rx="6" fill="#E0F2FE" stroke="#38BDF8"/>
-          <text x="12" y="22" font-family="sans-serif" font-size="11" font-weight="700" fill="#0369A1">🔗 .claude/skills/ (Symbolic Link)</text>
+          <text x="12" y="22" font-family="sans-serif" font-size="11" font-weight="700" fill="#0369A1">🔗 .claude/skills/ (Symbolic Symlink)</text>
           <text x="12" y="38" font-family="sans-serif" font-size="9" font-weight="500" fill="#0284C7">Points to: .claude/skills → ../.agents/skills</text>
         </g>
 
@@ -133,19 +142,24 @@
         <g transform="translate(0, 248)">
           <rect width="317" height="54" rx="6" fill="#0284C7"/>
           <text x="12" y="22" font-family="sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">📄 .trae/mcp.json + 🔗 .mcp.json</text>
-          <text x="12" y="38" font-family="sans-serif" font-size="9" font-weight="500" fill="#BAE6FD">Physical config in .trae/, bridged via root symlink</text>
+          <text x="12" y="38" font-family="sans-serif" font-size="9" font-weight="500" fill="#BAE6FD">Trae native config + root symlink for CLI agents</text>
         </g>
 
-        <!-- Summary -->
-        <rect y="310" width="317" height="36" rx="6" fill="#0369A1"/>
-        <text x="158" y="22" font-family="sans-serif" font-size="10" font-weight="700" fill="#FFFFFF" text-anchor="middle">
-          ⚙️ .githooks.yml + .git/hooks/ (Git Guardrails)
-        </text>
+        <!-- Summary 1 -->
+        <g transform="translate(0, 310)">
+          <rect width="317" height="36" rx="6" fill="#0369A1"/>
+          <text x="158" y="22" font-family="sans-serif" font-size="10" font-weight="700" fill="#FFFFFF" text-anchor="middle">
+            ⚙️ .githooks.yml + .git/hooks/ (Git Gatekeeper)
+          </text>
+        </g>
 
-        <rect y="352" width="317" height="36" rx="6" fill="#0C4A6E"/>
-        <text x="158" y="22" font-family="sans-serif" font-size="10" font-weight="700" fill="#FFFFFF" text-anchor="middle">
-          Net Overhead: Exactly 1 Thin Pointer + 2 Symlinks
-        </text>
+        <!-- Summary 2 -->
+        <g transform="translate(0, 352)">
+          <rect width="317" height="36" rx="6" fill="#0C4A6E"/>
+          <text x="158" y="22" font-family="sans-serif" font-size="10" font-weight="700" fill="#FFFFFF" text-anchor="middle">
+            Net Overhead: Exactly 1 thin pointer + 2 symlinks
+          </text>
+        </g>
       </g>
     </g>
 
@@ -154,7 +168,7 @@
       <rect width="350" height="540" rx="12" fill="#FFFFFF" stroke="#A7F3D0" stroke-width="1.5"/>
       <path d="M 0 12 Q 0 0 12 0 L 338 0 Q 350 0 350 12 L 350 36 L 0 36 Z" fill="url(#h-c3)"/>
       <text x="16" y="23" font-family="sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">
-        🤖 Multi-Agent Consumer Adapters
+        🤖 Multi-Agent Ecosystem Adaptation
       </text>
 
       <g transform="translate(14, 46)">
@@ -162,40 +176,42 @@
         <g>
           <rect width="322" height="74" rx="6" fill="#ECFDF5" stroke="#A7F3D0"/>
           <text x="12" y="20" font-family="sans-serif" font-size="11" font-weight="700" fill="#065F46">Trae IDE (ByteDance)</text>
-          <text x="12" y="38" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• Settings center natively imports AGENTS.md as rules</text>
-          <text x="12" y="52" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• Natively discovers .agents/skills/ &amp; .trae/mcp.json</text>
-          <text x="12" y="66" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• Serves as GUI scaffold control center</text>
+          <text x="12" y="38" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• Settings directly loads AGENTS.md project rules</text>
+          <text x="12" y="52" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• Native discovery of .agents/skills &amp; .trae/mcp.json</text>
+          <text x="12" y="66" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• Serves as central IDE management cockpit</text>
         </g>
 
         <!-- Claude Code -->
         <g transform="translate(0, 82)">
           <rect width="322" height="74" rx="6" fill="#ECFDF5" stroke="#A7F3D0"/>
           <text x="12" y="20" font-family="sans-serif" font-size="11" font-weight="700" fill="#065F46">Claude Code CLI (Anthropic)</text>
-          <text x="12" y="38" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• Reads CLAUDE.md, preprocessor ingests @AGENTS.md</text>
-          <text x="12" y="52" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• Auto-discovers skills via symlink; loads project MCP</text>
-          <text x="12" y="66" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• Serves as high-intensity terminal refactoring tool</text>
+          <text x="12" y="38" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• Loads CLAUDE.md, preprocessor imports @AGENTS.md</text>
+          <text x="12" y="52" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• Symlink enables skill auto-discovery &amp; .mcp.json</text>
+          <text x="12" y="66" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• Dedicated to high-focus refactoring &amp; CLI workflows</text>
         </g>
 
         <!-- Cursor -->
         <g transform="translate(0, 164)">
           <rect width="322" height="68" rx="6" fill="#ECFDF5" stroke="#A7F3D0"/>
           <text x="12" y="20" font-family="sans-serif" font-size="11" font-weight="700" fill="#065F46">Cursor / Windsurf</text>
-          <text x="12" y="38" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• Natively reads AGENTS.md open standard</text>
-          <text x="12" y="52" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• Shares local MCP tool definitions &amp; Git guardrails</text>
+          <text x="12" y="38" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• Native AGENTS.md open specification support</text>
+          <text x="12" y="52" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• Shares identical local MCP tooling and Git guardrails</text>
         </g>
 
         <!-- opencode -->
         <g transform="translate(0, 240)">
           <rect width="322" height="58" rx="6" fill="#ECFDF5" stroke="#A7F3D0"/>
           <text x="12" y="20" font-family="sans-serif" font-size="11" font-weight="700" fill="#065F46">opencode / Devin / Aider</text>
-          <text x="12" y="38" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• Universal open standard compatibility with zero friction</text>
+          <text x="12" y="38" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• Full open standard compliance, zero friction setup</text>
         </g>
 
         <!-- Summary -->
-        <rect y="352" width="322" height="36" rx="6" fill="#065F46"/>
-        <text x="161" y="22" font-family="sans-serif" font-size="10" font-weight="700" fill="#FFFFFF" text-anchor="middle">
-          Assemble Once, Enforce Across All Agents
-        </text>
+        <g transform="translate(0, 352)">
+          <rect width="322" height="36" rx="6" fill="#065F46"/>
+          <text x="161" y="22" font-family="sans-serif" font-size="10" font-weight="700" fill="#FFFFFF" text-anchor="middle">
+            Single build, instantly active across entire agent matrix
+          </text>
+        </g>
       </g>
     </g>
 
