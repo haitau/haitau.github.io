@@ -1688,8 +1688,7 @@ thead {
     padding: 3.8rem 1.5rem 0.8rem 1.5rem;
 }
 
-.post-charts,
-.title,
+.post-charts .title,
 .my-projects .title,
 .my-skills .title,
 .my-gallery .title {
