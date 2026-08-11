@@ -123,13 +123,13 @@
 
         <!-- Card S2 -->
         <rect x="345" y="0" width="330" height="42" rx="6" fill="#FFFFFF" stroke="#C4B5FD"/>
-        <text x="12" y="18" font-family="sans-serif" font-size="11" font-weight="700" fill="#4338CA">🔄 Commit Flow Discipline</text>
-        <text x="12" y="32" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#6B7280">Enforce Conventional Commits &amp; issue key associations</text>
+        <text x="357" y="18" font-family="sans-serif" font-size="11" font-weight="700" fill="#4338CA">🔄 Commit Flow Discipline</text>
+        <text x="357" y="32" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#6B7280">Enforce Conventional Commits &amp; issue key associations</text>
 
         <!-- Card S3 -->
         <rect x="695" y="0" width="325" height="42" rx="6" fill="#FFFFFF" stroke="#C4B5FD"/>
-        <text x="12" y="18" font-family="sans-serif" font-size="11" font-weight="700" fill="#4338CA">🚨 Branch Routing Strategy</text>
-        <text x="12" y="32" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#6B7280">Strictly enforce feature branching vs trunk-based flows by role</text>
+        <text x="707" y="18" font-family="sans-serif" font-size="11" font-weight="700" fill="#4338CA">🚨 Branch Routing Strategy</text>
+        <text x="707" y="32" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#6B7280">Strictly enforce feature branching vs trunk-based flows by role</text>
       </g>
     </g>
 
@@ -158,24 +158,24 @@
 
         <!-- Hook 2 -->
         <rect x="255" y="0" width="245" height="90" rx="6" fill="#FFFFFF" stroke="#86EFAC"/>
-        <text x="12" y="20" font-family="sans-serif" font-size="11" font-weight="700" fill="#065F46">pre-commit Hook</text>
-        <text x="12" y="40" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#374151">• Block unauthorized branch commits</text>
-        <text x="12" y="58" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#374151">• Scan staged diffs for Secrets/Keys</text>
-        <text x="12" y="76" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#374151">• Enforce path modification ACLs</text>
+        <text x="267" y="20" font-family="sans-serif" font-size="11" font-weight="700" fill="#065F46">pre-commit Hook</text>
+        <text x="267" y="40" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#374151">• Block unauthorized branch commits</text>
+        <text x="267" y="58" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#374151">• Scan staged diffs for Secrets/Keys</text>
+        <text x="267" y="76" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#374151">• Enforce path modification ACLs</text>
 
         <!-- Hook 3 -->
         <rect x="515" y="0" width="245" height="90" rx="6" fill="#FFFFFF" stroke="#86EFAC"/>
-        <text x="12" y="20" font-family="sans-serif" font-size="11" font-weight="700" fill="#065F46">pre-push Hook</text>
-        <text x="12" y="40" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#374151">• Intercept master push, force MR</text>
-        <text x="12" y="58" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#374151">• Strictly block force-push rewrites</text>
-        <text x="12" y="76" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#374151">• Probe upstream divergence</text>
+        <text x="527" y="20" font-family="sans-serif" font-size="11" font-weight="700" fill="#065F46">pre-push Hook</text>
+        <text x="527" y="40" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#374151">• Intercept master push, force MR</text>
+        <text x="527" y="58" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#374151">• Strictly block force-push rewrites</text>
+        <text x="527" y="76" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#374151">• Probe upstream divergence</text>
 
         <!-- Hook 4 -->
         <rect x="775" y="0" width="245" height="90" rx="6" fill="#FFFFFF" stroke="#86EFAC"/>
-        <text x="12" y="20" font-family="sans-serif" font-size="11" font-weight="700" fill="#065F46">pre-rebase Hook</text>
-        <text x="12" y="40" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#374151">• Block rebasing pushed public history</text>
-        <text x="12" y="58" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#374151">• Prevent branch graph entanglement</text>
-        <text x="12" y="76" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#374151">• Allow safe local feature rebasing</text>
+        <text x="787" y="20" font-family="sans-serif" font-size="11" font-weight="700" fill="#065F46">pre-rebase Hook</text>
+        <text x="787" y="40" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#374151">• Block rebasing pushed public history</text>
+        <text x="787" y="58" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#374151">• Prevent branch graph entanglement</text>
+        <text x="787" y="76" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#374151">• Allow safe local feature rebasing</text>
       </g>
     </g>
   </g>

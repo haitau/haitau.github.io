@@ -70,13 +70,13 @@
         <text x="10" y="19" font-family="sans-serif" font-size="10" font-weight="700" fill="#312E81">Git Workflow Baseline (git-workflow.md)</text>
 
         <rect x="238" y="0" width="230" height="30" rx="5" fill="#FFFFFF" stroke="#C7D2FE"/>
-        <text x="10" y="19" font-family="sans-serif" font-size="10" font-weight="700" fill="#312E81">Git Hooks Core Read-Only Scripts</text>
+        <text x="248" y="19" font-family="sans-serif" font-size="10" font-weight="700" fill="#312E81">Git Hooks Core Read-Only Scripts</text>
 
         <rect x="0" y="36" width="228" height="30" rx="5" fill="#FFFFFF" stroke="#C7D2FE"/>
         <text x="10" y="19" font-family="sans-serif" font-size="10" font-weight="700" fill="#312E81">Base MCP Servers (Filesystem/Code)</text>
 
         <rect x="238" y="36" width="230" height="30" rx="5" fill="#FFFFFF" stroke="#C7D2FE"/>
-        <text x="10" y="19" font-family="sans-serif" font-size="10" font-weight="700" fill="#312E81">Universal Gitignore / Gitattributes</text>
+        <text x="248" y="19" font-family="sans-serif" font-size="10" font-weight="700" fill="#312E81">Universal Gitignore / Gitattributes</text>
       </g>
     </g>
 
@@ -91,15 +91,15 @@
         <text x="10" y="20" font-family="sans-serif" font-size="10" font-weight="700" fill="#92400E">Tech-Stack Ignores (Node/Java/Py)</text>
 
         <rect x="238" y="0" width="230" height="32" rx="5" fill="#FFFFFF" stroke="#FCD34D"/>
-        <text x="10" y="20" font-family="sans-serif" font-size="10" font-weight="700" fill="#92400E">Domain Shared Skills (Jira/Review)</text>
+        <text x="248" y="20" font-family="sans-serif" font-size="10" font-weight="700" fill="#92400E">Domain Shared Skills (Jira/Review)</text>
 
         <rect x="0" y="38" width="228" height="36" rx="5" fill="#FFFFFF" stroke="#FCD34D"/>
         <text x="10" y="18" font-family="sans-serif" font-size="9.5" font-weight="700" fill="#92400E">Domain-Specific MCPs</text>
         <text x="10" y="30" font-family="sans-serif" font-size="9" font-weight="500" fill="#B45309">(MLflow / Internal APIs)</text>
 
         <rect x="238" y="38" width="230" height="36" rx="5" fill="#FFFFFF" stroke="#FCD34D"/>
-        <text x="10" y="18" font-family="sans-serif" font-size="9.5" font-weight="700" fill="#B45309">Registry Config registry.yaml</text>
-        <text x="10" y="30" font-family="sans-serif" font-size="9" font-weight="500" fill="#92400E">(only_for / exclude ACLs)</text>
+        <text x="248" y="18" font-family="sans-serif" font-size="9.5" font-weight="700" fill="#B45309">Registry Config registry.yaml</text>
+        <text x="248" y="30" font-family="sans-serif" font-size="9" font-weight="500" fill="#92400E">(only_for / exclude ACLs)</text>
       </g>
     </g>
 
@@ -181,8 +181,8 @@
         <text x="12" y="36" font-family="sans-serif" font-size="9" font-weight="500" fill="#0284C7">AST merged full rulesets</text>
 
         <rect x="250" width="238" height="52" rx="6" fill="#F0F9FF" stroke="#7DD3FC"/>
-        <text x="12" y="20" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#0369A1">.ide/skills/ (Active Skills)</text>
-        <text x="12" y="36" font-family="sans-serif" font-size="9" font-weight="500" fill="#0284C7">Pruned role-specific skill bundles</text>
+        <text x="262" y="20" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#0369A1">.ide/skills/ (Active Skills)</text>
+        <text x="262" y="36" font-family="sans-serif" font-size="9" font-weight="500" fill="#0284C7">Pruned role-specific skill bundles</text>
       </g>
 
       <!-- Row 2 -->
@@ -192,8 +192,8 @@
         <text x="12" y="36" font-family="sans-serif" font-size="9" font-weight="500" fill="#0284C7">Deep-merged tool registry</text>
 
         <rect x="250" width="238" height="52" rx="6" fill="#F0F9FF" stroke="#7DD3FC"/>
-        <text x="12" y="20" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#0369A1">.githooks.yml (Guardrails)</text>
-        <text x="12" y="36" font-family="sans-serif" font-size="9" font-weight="500" fill="#0284C7">Role-tailored switch toggles</text>
+        <text x="262" y="20" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#0369A1">.githooks.yml (Guardrails)</text>
+        <text x="262" y="36" font-family="sans-serif" font-size="9" font-weight="500" fill="#0284C7">Role-tailored switch toggles</text>
       </g>
 
       <!-- Row 3 -->

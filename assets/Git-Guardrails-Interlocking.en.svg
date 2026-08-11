@@ -54,18 +54,18 @@
 
       <!-- Hook 2 -->
       <rect x="265" y="0" width="250" height="58" rx="6" fill="#F8FAFC" stroke="#E2E8F0"/>
-      <text x="12" y="22" font-family="sans-serif" font-size="11" font-weight="700" fill="#1E293B">pre-commit Hook</text>
-      <text x="12" y="42" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#64748B">Protected branch commit / Secret scanner</text>
+      <text x="277" y="22" font-family="sans-serif" font-size="11" font-weight="700" fill="#1E293B">pre-commit Hook</text>
+      <text x="277" y="42" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#64748B">Protected branch commit / Secret scanner</text>
 
       <!-- Hook 3 -->
       <rect x="530" y="0" width="250" height="58" rx="6" fill="#F8FAFC" stroke="#E2E8F0"/>
-      <text x="12" y="22" font-family="sans-serif" font-size="11" font-weight="700" fill="#1E293B">pre-push Hook</text>
-      <text x="12" y="42" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#64748B">Strictly block force-push / Master direct push</text>
+      <text x="542" y="22" font-family="sans-serif" font-size="11" font-weight="700" fill="#1E293B">pre-push Hook</text>
+      <text x="542" y="42" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#64748B">Strictly block force-push / Master direct push</text>
 
       <!-- Hook 4 -->
       <rect x="795" y="0" width="250" height="58" rx="6" fill="#F8FAFC" stroke="#E2E8F0"/>
-      <text x="12" y="22" font-family="sans-serif" font-size="11" font-weight="700" fill="#1E293B">pre-rebase Hook</text>
-      <text x="12" y="42" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#64748B">Block rebasing pushed public history</text>
+      <text x="807" y="22" font-family="sans-serif" font-size="11" font-weight="700" fill="#1E293B">pre-rebase Hook</text>
+      <text x="807" y="42" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#64748B">Block rebasing pushed public history</text>
     </g>
   </g>
 
@@ -87,17 +87,17 @@
 
       <!-- Template 2 -->
       <rect x="355" y="0" width="335" height="98" rx="8" fill="#FFFBEB" stroke="#FCD34D"/>
-      <text x="14" y="20" font-family="sans-serif" font-size="11" font-weight="700" fill="#92400E">Product Management (pm.yml)</text>
-      <text x="14" y="40" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#78350F">• master_protected: false (Trunk direct push enabled)</text>
-      <text x="14" y="58" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#78350F">• diff_guard: false (Exempt console/keyword checks)</text>
-      <text x="14" y="76" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#78350F">• asset_guard: true (Tag required on protected assets)</text>
+      <text x="369" y="20" font-family="sans-serif" font-size="11" font-weight="700" fill="#92400E">Product Management (pm.yml)</text>
+      <text x="369" y="40" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#78350F">• master_protected: false (Trunk direct push enabled)</text>
+      <text x="369" y="58" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#78350F">• diff_guard: false (Exempt console/keyword checks)</text>
+      <text x="369" y="76" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#78350F">• asset_guard: true (Tag required on protected assets)</text>
 
       <!-- Template 3 -->
       <rect x="710" y="0" width="335" height="98" rx="8" fill="#FFFBEB" stroke="#FCD34D"/>
-      <text x="14" y="20" font-family="sans-serif" font-size="11" font-weight="700" fill="#92400E">Algorithm &amp; MLOps (ai-algo.yml)</text>
-      <text x="14" y="40" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#78350F">• master_protected: true (Model iterations via MR)</text>
-      <text x="14" y="58" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#78350F">• sensitive_patterns: [MLflow_Key, S3_Key, CUDA]</text>
-      <text x="14" y="76" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#78350F">• check_divergence: true (Probe upstream baseline drift)</text>
+      <text x="724" y="20" font-family="sans-serif" font-size="11" font-weight="700" fill="#92400E">Algorithm &amp; MLOps (ai-algo.yml)</text>
+      <text x="724" y="40" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#78350F">• master_protected: true (Model iterations via MR)</text>
+      <text x="724" y="58" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#78350F">• sensitive_patterns: [MLflow_Key, S3_Key, CUDA]</text>
+      <text x="724" y="76" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#78350F">• check_divergence: true (Probe upstream baseline drift)</text>
     </g>
   </g>
 

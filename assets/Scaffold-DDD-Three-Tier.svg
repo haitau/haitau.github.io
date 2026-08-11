@@ -73,13 +73,13 @@
         <text x="10" y="19" font-family="sans-serif" font-size="10" font-weight="700" fill="#312E81">全员 Git 协同底线 (git-workflow.md)</text>
 
         <rect x="238" y="0" width="230" height="30" rx="5" fill="#FFFFFF" stroke="#C7D2FE"/>
-        <text x="10" y="19" font-family="sans-serif" font-size="10" font-weight="700" fill="#312E81">Git Hooks 核心只读执行脚本</text>
+        <text x="248" y="19" font-family="sans-serif" font-size="10" font-weight="700" fill="#312E81">Git Hooks 核心只读执行脚本</text>
 
         <rect x="0" y="36" width="228" height="30" rx="5" fill="#FFFFFF" stroke="#C7D2FE"/>
         <text x="10" y="19" font-family="sans-serif" font-size="10" font-weight="700" fill="#312E81">基座 MCP 服务 (Filesystem / Code)</text>
 
         <rect x="238" y="36" width="230" height="30" rx="5" fill="#FFFFFF" stroke="#C7D2FE"/>
-        <text x="10" y="19" font-family="sans-serif" font-size="10" font-weight="700" fill="#312E81">通用 Gitignore / Gitattributes 底线</text>
+        <text x="248" y="19" font-family="sans-serif" font-size="10" font-weight="700" fill="#312E81">通用 Gitignore / Gitattributes 底线</text>
       </g>
     </g>
 
@@ -94,15 +94,15 @@
         <text x="10" y="20" font-family="sans-serif" font-size="10" font-weight="700" fill="#92400E">技术栈 Ignore 规则 (Node/Java/Py)</text>
 
         <rect x="238" y="0" width="230" height="32" rx="5" fill="#FFFFFF" stroke="#FCD34D"/>
-        <text x="10" y="20" font-family="sans-serif" font-size="10" font-weight="700" fill="#92400E">业务域共享技能 (Jira/TAPD/审查)</text>
+        <text x="248" y="20" font-family="sans-serif" font-size="10" font-weight="700" fill="#92400E">业务域共享技能 (Jira/TAPD/审查)</text>
 
         <rect x="0" y="38" width="228" height="36" rx="5" fill="#FFFFFF" stroke="#FCD34D"/>
         <text x="10" y="18" font-family="sans-serif" font-size="9.5" font-weight="700" fill="#92400E">域专属 MCP 服务</text>
         <text x="10" y="30" font-family="sans-serif" font-size="9" font-weight="500" fill="#B45309">(MLflow / 内部业务数据服务)</text>
 
         <rect x="238" y="38" width="230" height="36" rx="5" fill="#FFFFFF" stroke="#FCD34D"/>
-        <text x="10" y="18" font-family="sans-serif" font-size="9.5" font-weight="700" fill="#B45309">准入注册表 registry.yaml</text>
-        <text x="10" y="30" font-family="sans-serif" font-size="9" font-weight="500" fill="#92400E">(only_for / exclude 声明式准入)</text>
+        <text x="248" y="18" font-family="sans-serif" font-size="9.5" font-weight="700" fill="#B45309">准入注册表 registry.yaml</text>
+        <text x="248" y="30" font-family="sans-serif" font-size="9" font-weight="500" fill="#92400E">(only_for / exclude 声明式准入)</text>
       </g>
     </g>
 
@@ -165,8 +165,8 @@
 
       <!-- E4 -->
       <rect y="162" width="488" height="48" rx="6" fill="#FAF5FF" stroke="#A855F7" stroke-dasharray="4,2"/>
-      <text x="12" y="18" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#6B21A8">准入注册表物理裁剪 (Selective Ingestion Pruning)</text>
-      <text x="12" y="34" font-family="sans-serif" font-size="9" font-weight="500" fill="#7E22CE">• 执行 only_for/exclude 规则 • 物理裁剪无关技能 • 避免上下文爆炸</text>
+      <text x="12" y="18" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#6B21A8">Registry 准入过滤裁剪 (Pruning)</text>
+      <text x="12" y="34" font-family="sans-serif" font-size="9" font-weight="500" fill="#7E22CE">• 读取 only_for/exclude 规则 • 物理隔离非本岗位技能</text>
     </g>
   </g>
 
@@ -174,7 +174,7 @@
   <g transform="translate(620, 380)" filter="url(#card-shadow)">
     <rect width="520" height="290" rx="12" fill="#FFFFFF" stroke="#BAE6FD" stroke-width="1.5"/>
     <path d="M 0 12 Q 0 0 12 0 L 508 0 Q 520 0 520 12 L 520 34 L 0 34 Z" fill="url(#target-grad)"/>
-    <text x="18" y="22" font-family="sans-serif" font-size="12.5" font-weight="700" fill="#FFFFFF">🎯 目标业务工作区产物 (Target Workspace Output .ide/)</text>
+    <text x="18" y="22" font-family="sans-serif" font-size="12.5" font-weight="700" fill="#FFFFFF">🎯 目标工作区最终装配成果 (.ide/)</text>
 
     <g transform="translate(16, 44)">
       <!-- Row 1 -->
@@ -184,8 +184,8 @@
         <text x="12" y="36" font-family="sans-serif" font-size="9" font-weight="500" fill="#0284C7">AST 语义合并后的完整规则文件</text>
 
         <rect x="250" width="238" height="52" rx="6" fill="#F0F9FF" stroke="#7DD3FC"/>
-        <text x="12" y="20" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#0369A1">.ide/skills/ (特化技能)</text>
-        <text x="12" y="36" font-family="sans-serif" font-size="9" font-weight="500" fill="#0284C7">准入裁剪后的角色精准 Skill 包</text>
+        <text x="262" y="20" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#0369A1">.ide/skills/ (特化技能)</text>
+        <text x="262" y="36" font-family="sans-serif" font-size="9" font-weight="500" fill="#0284C7">准入裁剪后的角色精准 Skill 包</text>
       </g>
 
       <!-- Row 2 -->
@@ -195,8 +195,8 @@
         <text x="12" y="36" font-family="sans-serif" font-size="9" font-weight="500" fill="#0284C7">服务级深度合并后的工具集</text>
 
         <rect x="250" width="238" height="52" rx="6" fill="#F0F9FF" stroke="#7DD3FC"/>
-        <text x="12" y="20" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#0369A1">.githooks.yml (护栏开关)</text>
-        <text x="12" y="36" font-family="sans-serif" font-size="9" font-weight="500" fill="#0284C7">按角色画像分流生成的配置</text>
+        <text x="262" y="20" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#0369A1">.githooks.yml (护栏开关)</text>
+        <text x="262" y="36" font-family="sans-serif" font-size="9" font-weight="500" fill="#0284C7">按角色画像分流生成的配置</text>
       </g>
 
       <!-- Row 3 -->

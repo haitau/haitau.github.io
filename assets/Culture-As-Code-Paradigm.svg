@@ -136,13 +136,13 @@
 
         <!-- Card S2 -->
         <rect x="345" y="0" width="330" height="42" rx="6" fill="#FFFFFF" stroke="#C4B5FD"/>
-        <text x="12" y="18" font-family="sans-serif" font-size="11" font-weight="700" fill="#4338CA">🔄 提交闭环规约 (Commit Flow)</text>
-        <text x="12" y="32" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#6B7280">统一 Conventional Commits / 工单前缀绑定</text>
+        <text x="357" y="18" font-family="sans-serif" font-size="11" font-weight="700" fill="#4338CA">🔄 提交闭环规约 (Commit Flow)</text>
+        <text x="357" y="32" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#6B7280">统一 Conventional Commits / 工单前缀绑定</text>
 
         <!-- Card S3 -->
         <rect x="695" y="0" width="325" height="42" rx="6" fill="#FFFFFF" stroke="#C4B5FD"/>
-        <text x="12" y="18" font-family="sans-serif" font-size="11" font-weight="700" fill="#4338CA">🚨 分支路由决策 (Branch Routing)</text>
-        <text x="12" y="32" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#6B7280">严格按角色策略决策特性分支 vs 主干协同</text>
+        <text x="707" y="18" font-family="sans-serif" font-size="11" font-weight="700" fill="#4338CA">🚨 分支路由决策 (Branch Routing)</text>
+        <text x="707" y="32" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#6B7280">严格按角色策略决策特性分支 vs 主干协同</text>
       </g>
     </g>
 
@@ -171,24 +171,24 @@
 
         <!-- Hook 2 -->
         <rect x="255" y="0" width="245" height="90" rx="6" fill="#FFFFFF" stroke="#86EFAC"/>
-        <text x="12" y="20" font-family="sans-serif" font-size="11" font-weight="700" fill="#065F46">pre-commit Hook</text>
-        <text x="12" y="40" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#374151">• 拦截未授权分支直接提交</text>
-        <text x="12" y="58" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#374151">• 扫描暂存区硬编码 Secret/Key</text>
-        <text x="12" y="76" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#374151">• 敏感文件路径修改鉴权</text>
+        <text x="267" y="20" font-family="sans-serif" font-size="11" font-weight="700" fill="#065F46">pre-commit Hook</text>
+        <text x="267" y="40" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#374151">• 拦截未授权分支直接提交</text>
+        <text x="267" y="58" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#374151">• 扫描暂存区硬编码 Secret/Key</text>
+        <text x="267" y="76" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#374151">• 敏感文件路径修改鉴权</text>
 
         <!-- Hook 3 -->
         <rect x="515" y="0" width="245" height="90" rx="6" fill="#FFFFFF" stroke="#86EFAC"/>
-        <text x="12" y="20" font-family="sans-serif" font-size="11" font-weight="700" fill="#065F46">pre-push Hook</text>
-        <text x="12" y="40" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#374151">• 拦截直推主干，强制提 MR</text>
-        <text x="12" y="58" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#374151">• 绝对阻断 force-push 破坏历史</text>
-        <text x="12" y="76" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#374151">• 自动探测本地落后远程基线</text>
+        <text x="527" y="20" font-family="sans-serif" font-size="11" font-weight="700" fill="#065F46">pre-push Hook</text>
+        <text x="527" y="40" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#374151">• 拦截直推主干，强制提 MR</text>
+        <text x="527" y="58" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#374151">• 绝对阻断 force-push 破坏历史</text>
+        <text x="527" y="76" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#374151">• 自动探测本地落后远程基线</text>
 
         <!-- Hook 4 -->
         <rect x="775" y="0" width="245" height="90" rx="6" fill="#FFFFFF" stroke="#86EFAC"/>
-        <text x="12" y="20" font-family="sans-serif" font-size="11" font-weight="700" fill="#065F46">pre-rebase Hook</text>
-        <text x="12" y="40" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#374151">• 阻断已推送公共历史 rebase</text>
-        <text x="12" y="58" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#374151">• 避免多人协作提交线紊乱</text>
-        <text x="12" y="76" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#374151">• 个人特性分支安全放行</text>
+        <text x="787" y="20" font-family="sans-serif" font-size="11" font-weight="700" fill="#065F46">pre-rebase Hook</text>
+        <text x="787" y="40" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#374151">• 阻断已推送公共历史 rebase</text>
+        <text x="787" y="58" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#374151">• 避免多人协作提交线紊乱</text>
+        <text x="787" y="76" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#374151">• 个人特性分支安全放行</text>
       </g>
     </g>
   </g>
