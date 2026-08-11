@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="100%" height="100%">
+  <defs>
+    <filter id="soft-shadow" x="-8%" y="-8%" width="116%" height="116%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#0F172A" flood-opacity="0.06"/>
+    </filter>
+    <filter id="card-shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.04"/>
+    </filter>
+
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#F1F5F9"/>
+    </linearGradient>
+    <linearGradient id="h-t1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4F46E5"/>
+      <stop offset="100%" stop-color="#6366F1"/>
+    </linearGradient>
+    <linearGradient id="h-t2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="100%" height="100%" fill="url(#bg-grad)"/>
+  <rect x="25" y="25" width="1150" height="630" rx="16" fill="#FFFFFF" fill-opacity="0.7" stroke="#E2E8F0" stroke-width="1.5" filter="url(#soft-shadow)"/>
+
+  <!-- Title -->
+  <g transform="translate(60, 48)">
+    <rect x="0" y="0" width="6" height="26" rx="3" fill="#4F46E5"/>
+    <text x="18" y="20" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="18" font-weight="800" fill="#0F172A" letter-spacing="-0.5px">
+      Figure 5.1: Orthogonal Two-Tier Architecture — Multi-Repo Directory Scoping × Worktree Concurrency
+    </text>
+    <rect x="910" y="2" width="170" height="22" rx="11" fill="#EEF2FF" stroke="#C7D2FE"/>
+    <text x="995" y="16" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#4338CA" text-anchor="middle">Two-Tier Architecture</text>
+  </g>
+
+  <g transform="translate(60, 90)" filter="url(#card-shadow)">
+
+    <!-- Left Box: Outer Layer -->
+    <g transform="translate(0, 0)">
+      <rect width="520" height="540" rx="12" fill="#FFFFFF" stroke="#C7D2FE" stroke-width="1.5"/>
+      <path d="M 0 12 Q 0 0 12 0 L 508 0 Q 520 0 520 12 L 520 36 L 0 36 Z" fill="url(#h-t1)"/>
+      <text x="20" y="23" font-family="sans-serif" font-size="12.5" font-weight="700" fill="#FFFFFF">
+        🌐 Macro Outer Tier: Multi-Repo Directory Scoping (Focus)
+      </text>
+
+      <g transform="translate(18, 48)">
+        <!-- Core Object -->
+        <rect width="484" height="60" rx="8" fill="#F5F3FF" stroke="#DDD6FE"/>
+        <text x="14" y="22" font-family="sans-serif" font-size="11" font-weight="700" fill="#4338CA">Primary Isolation Target: Agent Prompt &amp; Context Scope</text>
+        <text x="14" y="42" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#6B7280">Resolves cross-repository context pollution, tech-stack collisions &amp; tool bloat</text>
+
+        <!-- Mechanism 1 -->
+        <g transform="translate(0, 70)">
+          <rect width="484" height="68" rx="8" fill="#F5F3FF" stroke="#DDD6FE"/>
+          <text x="14" y="22" font-family="sans-serif" font-size="11" font-weight="700" fill="#4338CA">1. Directory Launch as Primary Isolation</text>
+          <text x="14" y="40" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#6B7280">• cd /workspace/service-go &amp;&amp; claude</text>
+          <text x="14" y="54" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#6B7280">• Only loads Go backend rules &amp; DB MCP; ignores frontend/MLOps noise</text>
+        </g>
+
+        <!-- Mechanism 2 -->
+        <g transform="translate(0, 148)">
+          <rect width="484" height="68" rx="8" fill="#F5F3FF" stroke="#DDD6FE"/>
+          <text x="14" y="22" font-family="sans-serif" font-size="11" font-weight="700" fill="#4338CA">2. Controlled Cross-Repo Granting</text>
+          <text x="14" y="40" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#6B7280">• Explicitly mounts sibling repos on demand: claude --add-dir ../frontend-ui</text>
+          <text x="14" y="54" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#6B7280">• Enables cross-repo verification without polluting the primary workspace</text>
+        </g>
+
+        <!-- Mechanism 3 -->
+        <g transform="translate(0, 226)">
+          <rect width="484" height="68" rx="8" fill="#F5F3FF" stroke="#DDD6FE"/>
+          <text x="14" y="22" font-family="sans-serif" font-size="11" font-weight="700" fill="#4338CA">3. Top Meta-Repo Orchestration Hub</text>
+          <text x="14" y="40" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#6B7280">• Maintains global architectural routing, contract definitions &amp; SOPs</text>
+          <text x="14" y="54" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#6B7280">• Dispatches isolated subagents to work inside individual sub-repositories</text>
+        </g>
+
+        <!-- Footer -->
+        <rect y="304" width="484" height="38" rx="6" fill="#4338CA"/>
+        <text x="242" y="23" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">
+          Architectural Goal: Context Scoping &amp; Pure Single-Stack Focus
+        </text>
+      </g>
+    </g>
+
+    <!-- Right Box: Inner Layer -->
+    <g transform="translate(620, 0)">
+      <rect width="520" height="540" rx="12" fill="#FFFFFF" stroke="#A7F3D0" stroke-width="1.5"/>
+      <path d="M 0 12 Q 0 0 12 0 L 508 0 Q 520 0 520 12 L 520 36 L 0 36 Z" fill="url(#h-t2)"/>
+      <text x="20" y="23" font-family="sans-serif" font-size="12.5" font-weight="700" fill="#FFFFFF">
+        ⚡ Micro Inner Tier: Single-Repo Worktree Concurrency
+      </text>
+
+      <g transform="translate(18, 48)">
+        <!-- Core Object -->
+        <rect width="484" height="60" rx="8" fill="#ECFDF5" stroke="#A7F3D0"/>
+        <text x="14" y="22" font-family="sans-serif" font-size="11" font-weight="700" fill="#065F46">Primary Isolation Target: Filesystem Sandbox &amp; Branch State</text>
+        <text x="14" y="42" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#047857">Resolves single-threaded human throughput limits within the same codebase</text>
+
+        <!-- Mechanism 1 -->
+        <g transform="translate(0, 70)">
+          <rect width="484" height="68" rx="8" fill="#ECFDF5" stroke="#A7F3D0"/>
+          <text x="14" y="22" font-family="sans-serif" font-size="11" font-weight="700" fill="#065F46">1. Physical Worktree Directory Isolation</text>
+          <text x="14" y="40" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#047857">• git worktree add ../worktree/feat-auth feat-auth</text>
+          <text x="14" y="54" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#047857">• Subagents code simultaneously without colliding on branch checkouts</text>
+        </g>
+
+        <!-- Mechanism 2 -->
+        <g transform="translate(0, 148)">
+          <rect width="484" height="68" rx="8" fill="#ECFDF5" stroke="#A7F3D0"/>
+          <text x="14" y="22" font-family="sans-serif" font-size="11" font-weight="700" fill="#065F46">2. Background Worker Multi-Agent Execution</text>
+          <text x="14" y="40" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#047857">• Subagent 1: Implements OAuth2 login in worktree/feat-auth</text>
+          <text x="14" y="54" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#047857">• Subagent 2: Implements Stripe payments in worktree/feat-pay</text>
+        </g>
+
+        <!-- Mechanism 3 -->
+        <g transform="translate(0, 226)">
+          <rect width="484" height="68" rx="8" fill="#ECFDF5" stroke="#A7F3D0"/>
+          <text x="14" y="22" font-family="sans-serif" font-size="11" font-weight="700" fill="#065F46">3. Centralized Compute &amp; Token Gateway</text>
+          <text x="14" y="40" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#047857">• Central compute proxy throttles token consumption across parallel agents</text>
+          <text x="14" y="54" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#047857">• Prevents concurrent 429 rate limit triggers and API lockups</text>
+        </g>
+
+        <!-- Footer -->
+        <rect y="304" width="484" height="38" rx="6" fill="#065F46"/>
+        <text x="242" y="23" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">
+          Architectural Goal: High Concurrency Delivery &amp; Sandbox Safety
+        </text>
+      </g>
+    </g>
+
+  </g>
+</svg>

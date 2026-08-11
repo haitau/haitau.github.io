@@ -305,16 +305,16 @@ When enterprises roll out AI IDEs (such as Trae, Curs">
                                 <span class="chip bg-color">Agent-Native</span>
                             </a>
                         
-                            <a href="/tags/DevOps/">
-                                <span class="chip bg-color">DevOps</span>
-                            </a>
-                        
                             <a href="/tags/System-Architecture/">
                                 <span class="chip bg-color">System Architecture</span>
                             </a>
                         
                             <a href="/tags/AI-Platform/">
                                 <span class="chip bg-color">AI Platform</span>
+                            </a>
+                        
+                            <a href="/tags/DevOps/">
+                                <span class="chip bg-color">DevOps</span>
                             </a>
                         
                             <a href="/tags/Engineering-Productivity/">
@@ -380,7 +380,7 @@ When enterprises roll out AI IDEs (such as Trae, Curs">
 <hr>
 <h2 id="1-Core-Theory-From-“Free-Chatting”-to-“Deterministic-Engineering-Scaffold”"><a href="#1-Core-Theory-From-“Free-Chatting”-to-“Deterministic-Engineering-Scaffold”" class="headerlink" title="1. Core Theory: From “Free Chatting” to “Deterministic Engineering Scaffold”"></a>1. Core Theory: From “Free Chatting” to “Deterministic Engineering Scaffold”</h2><p>In personal hobbyist projects, AI coding appears as unstructured human-AI dialog. However, in enterprise collaborative environments, unconstrained freedom breeds systemic failure. Transitioning to enterprise AI programming requires crossing three fundamental cognitive divides.</p>
 <p align="center">
-  <img src="/assets/Culture-As-Code-Paradigm.svg" alt="Culture as Code Paradigm Shift and Subjective-Objective Interlocking Architecture" width="100%" />
+  <img src="/assets/Culture-As-Code-Paradigm.en.svg" alt="Culture as Code Paradigm Shift and Subjective-Objective Interlocking Architecture" width="100%" />
 </p>
 
 <h3 id="1-1-Culture-as-Code"><a href="#1-1-Culture-as-Code" class="headerlink" title="1.1 Culture as Code"></a>1.1 Culture as Code</h3><p>Traditional engineering governance relies on architecture wikis (Confluence, Notion) to document principles such as Domain-Driven Design (DDD), Test-Driven Development (TDD), Git workflows, and API contracts. In practice, these static documents suffer from continuous <strong>specification drift</strong>.</p>
@@ -407,7 +407,7 @@ When enterprises roll out AI IDEs (such as Trae, Curs">
 <hr>
 <h2 id="2-System-Architecture-Domain-Driven-Three-Tier-Isolation-Model"><a href="#2-System-Architecture-Domain-Driven-Three-Tier-Isolation-Model" class="headerlink" title="2. System Architecture: Domain-Driven Three-Tier Isolation Model"></a>2. System Architecture: Domain-Driven Three-Tier Isolation Model</h2><p>The scaffolding adopts a Domain-Driven Design (DDD) three-tier isolation topology. Through a <strong>multi-strategy compilation engine</strong> and <strong>declarative access registries</strong>, it delivers high cohesion and loose coupling from enterprise-wide baselines down to specialized job profiles.</p>
 <p align="center">
-  <img src="/assets/Scaffold-DDD-Three-Tier.svg" alt="DDD Three-Tier Domain Isolation Topology and Multi-Strategy Assembly Engine" width="100%" />
+  <img src="/assets/Scaffold-DDD-Three-Tier.en.svg" alt="DDD Three-Tier Domain Isolation Topology and Multi-Strategy Assembly Engine" width="100%" />
 </p>
 
 <h3 id="2-1-Directory-Layout-Model"><a href="#2-1-Directory-Layout-Model" class="headerlink" title="2.1 Directory Layout Model"></a>2.1 Directory Layout Model</h3><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">scaffold-core/</span><br><span class="line">├── 1-common/                  # Universal Baseline Layer (Company-wide baseline)</span><br><span class="line">│   ├── git/                   # Universal Gitignore templates and basic configs</span><br><span class="line">│   ├── git-hooks/             # Unified Git Hooks execution scripts and libraries</span><br><span class="line">│   ├── mcp/                   # Foundational enterprise MCP services</span><br><span class="line">│   ├── rules/                 # Baseline collaborative rules and developer hygiene</span><br><span class="line">│   └── skills/                # Universal core skills</span><br><span class="line">│</span><br><span class="line">├── 2-domains/                 # Business Domain / Tech Stack Layer (Domain-isolated)</span><br><span class="line">│   ├── core-platform/         # Core Platform Domain</span><br><span class="line">│   │   ├── git/               # Stack-specific Ignore definitions</span><br><span class="line">│   │   ├── mcp/               # Domain-specific MCP servers</span><br><span class="line">│   │   ├── skills/            # Shared domain skills (Issue tracker / Code review)</span><br><span class="line">│   │   ├── skills-registry.yaml # Declarative access registry (Whitelist/Blacklist)</span><br><span class="line">│   │   └── roles/             # Granular role specializations</span><br><span class="line">│   │       ├── backend-java/  # Java Backend Role (Role-specific rules/skills/mcp)</span><br><span class="line">│   │       ├── frontend-vue/  # Frontend Role</span><br><span class="line">│   │       ├── product-mgr/   # Product Manager Role</span><br><span class="line">│   │       └── qa-engineer/   # QA Engineer Role</span><br><span class="line">│   │</span><br><span class="line">│   ├── ai-research/           # AI Research Domain (MLflow MCP, dataset verifiers)</span><br><span class="line">│   └── iot-embedded/          # IoT / Embedded Hardware Domain</span><br><span class="line">│</span><br><span class="line">└── engine/                    # Assembly &amp; Compilation Engine (TypeScript CLI Runtime)</span><br></pre></td></tr></table></figure>
@@ -473,7 +473,7 @@ When enterprises roll out AI IDEs (such as Trae, Curs">
 <h2 id="4-Engineering-Practice-Unified-Git-Guardrail-Matrix"><a href="#4-Engineering-Practice-Unified-Git-Guardrail-Matrix" class="headerlink" title="4. Engineering Practice: Unified Git Guardrail Matrix"></a>4. Engineering Practice: Unified Git Guardrail Matrix</h2><p>The core objective safeguard of the scaffolding is the Git Hooks system. Maintaining separate hook scripts for 16+ different roles would incur prohibitive maintenance costs and risk severe security blind spots.</p>
 <p><strong>Design Pattern: One Core Script Engine × Declarative YAML Switch Matrix</strong>.</p>
 <p align="center">
-  <img src="/assets/Git-Guardrails-Interlocking.svg" alt="Git Guardrails Matrix and Subjective-Objective Interlocking" width="100%" />
+  <img src="/assets/Git-Guardrails-Interlocking.en.svg" alt="Git Guardrails Matrix and Subjective-Objective Interlocking" width="100%" />
 </p>
 
 <h3 id="4-1-Declarative-Configuration-Matrix-githooks-yml"><a href="#4-1-Declarative-Configuration-Matrix-githooks-yml" class="headerlink" title="4.1 Declarative Configuration Matrix (.githooks.yml)"></a>4.1 Declarative Configuration Matrix (<code>.githooks.yml</code>)</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Engineering Developer Role Template (base.yml)</span></span><br><span class="line"><span class="attr">version:</span> <span class="number">1</span></span><br><span class="line"><span class="attr">hooks:</span></span><br><span class="line">  <span class="attr">commit_msg:</span></span><br><span class="line">    <span class="attr">max_header_length:</span> <span class="number">100</span></span><br><span class="line">    <span class="attr">require_conventional:</span> <span class="literal">true</span>     <span class="comment"># Enforce Conventional Commits or issue ticket format</span></span><br><span class="line">    <span class="attr">asset_guard:</span> <span class="literal">false</span>             <span class="comment"># Require explicit tags when modifying protected assets</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">pre_commit:</span></span><br><span class="line">    <span class="attr">master_protected:</span> <span class="literal">true</span>        <span class="comment"># Prevent direct commits on master/main</span></span><br><span class="line">    <span class="attr">diff_guard:</span> <span class="literal">true</span>              <span class="comment"># Scan staged diffs for hardcoded API keys/passwords/tokens</span></span><br><span class="line">    <span class="attr">sensitive_patterns:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;AKIA[0-9A-Z]&#123;16&#125;&quot;</span>        <span class="comment"># AWS Keys</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;ghp_[a-zA-Z0-9]&#123;36&#125;&quot;</span>     <span class="comment"># GitHub Tokens</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;PRIVATE KEY-----&quot;</span>        <span class="comment"># Private Key Signatures</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">pre_push:</span></span><br><span class="line">    <span class="attr">master_protected:</span> <span class="literal">true</span>        <span class="comment"># Block direct master pushes; force Merge Requests</span></span><br><span class="line">    <span class="attr">block_force_push:</span> <span class="literal">true</span>        <span class="comment"># Inviolable gate: force-push is unconditionally blocked</span></span><br><span class="line">    <span class="attr">check_divergence:</span> <span class="literal">true</span>        <span class="comment"># Verify local branch divergence against remote baselines</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">pre_rebase:</span></span><br><span class="line">    <span class="attr">block_rebase_pushed:</span> <span class="literal">false</span>    <span class="comment"># Allow rebasing on feature branches; block on shared history</span></span><br></pre></td></tr></table></figure>
@@ -484,7 +484,7 @@ When enterprises roll out AI IDEs (such as Trae, Curs">
 <hr>
 <h2 id="5-Closed-Loop-Architecture-Zero-Clone-Contribution-Full-Cycle-Telemetry"><a href="#5-Closed-Loop-Architecture-Zero-Clone-Contribution-Full-Cycle-Telemetry" class="headerlink" title="5. Closed-Loop Architecture: Zero-Clone Contribution &amp; Full-Cycle Telemetry"></a>5. Closed-Loop Architecture: Zero-Clone Contribution &amp; Full-Cycle Telemetry</h2><p>The long-term vitality of an AI scaffolding depends on friction-free asset contribution and data-driven observability.</p>
 <p align="center">
-  <img src="/assets/Zero-Clone-Contribute-Telemetry.svg" alt="Zero-Clone Remote Contribution Architecture and Full-Cycle Telemetry Loop" width="100%" />
+  <img src="/assets/Zero-Clone-Contribute-Telemetry.en.svg" alt="Zero-Clone Remote Contribution Architecture and Full-Cycle Telemetry Loop" width="100%" />
 </p>
 
 <h3 id="5-1-Zero-Clone-Remote-Contribution-Pipeline"><a href="#5-1-Zero-Clone-Remote-Contribution-Pipeline" class="headerlink" title="5.1 Zero-Clone Remote Contribution Pipeline"></a>5.1 Zero-Clone Remote Contribution Pipeline</h3><p>Traditional configuration contribution requires developers to clone the central scaffolding repository, create branches, manually compare differences, and submit Pull Requests. This friction stifles bottom-up innovation.</p>
@@ -505,7 +505,7 @@ When enterprises roll out AI IDEs (such as Trae, Curs">
 <hr>
 <h2 id="6-Assembly-Pipeline-9-Step-Atomic-Execution"><a href="#6-Assembly-Pipeline-9-Step-Atomic-Execution" class="headerlink" title="6. Assembly Pipeline: 9-Step Atomic Execution"></a>6. Assembly Pipeline: 9-Step Atomic Execution</h2><p>The scaffolding distributes via a modern CLI (<code>npx @company/scaffold-cli init</code>), providing self-healing setups with zero workspace pollution.</p>
 <p align="center">
-  <img src="/assets/Assembly-Pipeline-9-Steps.svg" alt="CLI Engine 9-Step Atomic Assembly Pipeline" width="100%" />
+  <img src="/assets/Assembly-Pipeline-9-Steps.en.svg" alt="CLI Engine 9-Step Atomic Assembly Pipeline" width="100%" />
 </p>
 
 <h3 id="6-1-CLI-Command-Reference"><a href="#6-1-CLI-Command-Reference" class="headerlink" title="6.1 CLI Command Reference"></a>6.1 CLI Command Reference</h3><table>
@@ -641,16 +641,16 @@ When enterprises roll out AI IDEs (such as Trae, Curs">
                                     <span class="chip bg-color">Agent-Native</span>
                                 </a>
                             
-                                <a href="/tags/DevOps/">
-                                    <span class="chip bg-color">DevOps</span>
-                                </a>
-                            
                                 <a href="/tags/System-Architecture/">
                                     <span class="chip bg-color">System Architecture</span>
                                 </a>
                             
                                 <a href="/tags/AI-Platform/">
                                     <span class="chip bg-color">AI Platform</span>
+                                </a>
+                            
+                                <a href="/tags/DevOps/">
+                                    <span class="chip bg-color">DevOps</span>
                                 </a>
                             
                                 <a href="/tags/Engineering-Productivity/">
@@ -704,13 +704,13 @@ When enterprises roll out AI IDEs (such as Trae, Curs">
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2026/08/11/enterprise-ai-scaffold-architecture/">
+                <a href="/2026/08/11/multi-git-fullstack-ai-agent-architecture/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="规范即代码：企业级 AI 编程脚手架的架构演进与落地实践 (Culture as Code)">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="多 Git 项目与全栈工程师：AI 编码智能体多技术栈作用域治理与环境架构">
                         
-                        <span class="card-title">规范即代码：企业级 AI 编程脚手架的架构演进与落地实践 (Culture as Code)</span>
+                        <span class="card-title">多 Git 项目与全栈工程师：AI 编码智能体多技术栈作用域治理与环境架构</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -746,16 +746,16 @@ When enterprises roll out AI IDEs (such as Trae, Curs">
                         <span class="chip bg-color">架构设计</span>
                     </a>
                     
+                    <a href="/tags/%E5%85%A8%E6%A0%88%E5%B7%A5%E7%A8%8B%E5%B8%88/">
+                        <span class="chip bg-color">全栈工程师</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%A4%9AGit%E6%B2%BB%E7%90%86/">
+                        <span class="chip bg-color">多Git治理</span>
+                    </a>
+                    
                     <a href="/tags/AI%E6%95%88%E8%83%BD%E5%9F%BA%E5%BA%A7/">
                         <span class="chip bg-color">AI效能基座</span>
-                    </a>
-                    
-                    <a href="/tags/DevOps/">
-                        <span class="chip bg-color">DevOps</span>
-                    </a>
-                    
-                    <a href="/tags/%E7%A0%94%E5%8F%91%E6%95%88%E8%83%BD/">
-                        <span class="chip bg-color">研发效能</span>
                     </a>
                     
                 </div>
@@ -769,13 +769,13 @@ When enterprises roll out AI IDEs (such as Trae, Curs">
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2026/08/10/post-saas-enterprise-self-healing-hub/">
+                <a href="/2026/08/11/enterprise-ai-scaffold-architecture/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="Post-SaaS 终局：企业自愈中枢">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="规范即代码：企业级 AI 编程脚手架的架构演进与落地实践 (Culture as Code)">
                         
-                        <span class="card-title">Post-SaaS 终局：企业自愈中枢</span>
+                        <span class="card-title">规范即代码：企业级 AI 编程脚手架的架构演进与落地实践 (Culture as Code)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -786,7 +786,7 @@ When enterprises roll out AI IDEs (such as Trae, Curs">
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2026-08-10
+                                <i class="far fa-clock fa-fw icon-date"></i>2026-08-11
                             </span>
                         <span class="publish-author">
                             
@@ -807,12 +807,20 @@ When enterprises roll out AI IDEs (such as Trae, Curs">
                         <span class="chip bg-color">Agent-Native</span>
                     </a>
                     
+                    <a href="/tags/DevOps/">
+                        <span class="chip bg-color">DevOps</span>
+                    </a>
+                    
                     <a href="/tags/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/">
                         <span class="chip bg-color">架构设计</span>
                     </a>
                     
-                    <a href="/tags/Post-SaaS/">
-                        <span class="chip bg-color">Post-SaaS</span>
+                    <a href="/tags/AI%E6%95%88%E8%83%BD%E5%9F%BA%E5%BA%A7/">
+                        <span class="chip bg-color">AI效能基座</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%A0%94%E5%8F%91%E6%95%88%E8%83%BD/">
+                        <span class="chip bg-color">研发效能</span>
                     </a>
                     
                 </div>
