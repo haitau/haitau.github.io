@@ -1,0 +1,22 @@
+<mxfile host="Electron" modified="2026-08-07T10:00:00.000Z" agent="Antigravity" version="21.6.8" type="device">
+  <diagram id="mcp_resolver" name="动态工具寻址">
+    <mxGraphModel dx="1200" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageWidth="1200" pageHeight="600" background="#F8FAFC">
+      <root>
+        <mxCell id="0" /><mxCell id="1" parent="0" />
+        <mxCell id="title" value="图 2.4：专题下钻 C - Dynamic MCP Resolver (向量寻址 × 连接器网关两段式)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=20;fontStyle=1;fontColor=#0F172A;" vertex="1" parent="1"><mxGeometry x="50" y="20" width="1100" height="40" as="geometry" /></mxCell>
+
+        <mxCell id="Task" value="Task 上下文" style="rounded=1;fillColor=#B45309;strokeColor=#92400E;fontColor=#FFFFFF;fontStyle=1;fontSize=13;" vertex="1" parent="1"><mxGeometry x="100" y="270" width="220" height="80" as="geometry" /></mxCell>
+        <mxCell id="TopN" value="Top-N 降维工具集&#10;(按需挂载 · 即用即卸)" style="rounded=1;fillColor=#059669;strokeColor=#047857;fontColor=#FFFFFF;fontStyle=1;fontSize=13;" vertex="1" parent="1"><mxGeometry x="440" y="100" width="320" height="70" as="geometry" /></mxCell>
+        <mxCell id="Resolver" value="Dynamic MCP Resolver&#10;(向量语义寻址层 · 解决&quot;该用哪几个&quot;)" style="rounded=1;fillColor=#065F46;strokeColor=#047857;fontColor=#FFFFFF;fontStyle=1;fontSize=13;" vertex="1" parent="1"><mxGeometry x="440" y="270" width="320" height="80" as="geometry" /></mxCell>
+        <mxCell id="Gateway" value="Connector Gateway 连接器网关&#10;(统一接入层 · OpenConnector 工程实证 · 解决&quot;能不能连&quot;)" style="rounded=1;fillColor=#047857;strokeColor=#065F46;fontColor=#FFFFFF;fontStyle=1;fontSize=13;" vertex="1" parent="1"><mxGeometry x="440" y="440" width="320" height="90" as="geometry" /></mxCell>
+        <mxCell id="Pool" value="SaaS / 业务系统工具池&#10;(1000+ Providers / 10000+ Actions)" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#0F172A;strokeColor=#020617;fontColor=#FFFFFF;fontStyle=1;fontSize=13;" vertex="1" parent="1"><mxGeometry x="880" y="430" width="220" height="110" as="geometry" /></mxCell>
+
+        <mxCell id="e1" value="1. 向量语义查询" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=3;strokeColor=#B45309;fontStyle=1;fontColor=#1E293B;fontSize=11;" edge="1" parent="1" source="Task" target="Resolver"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e2" value="2. 服务目录检索 · 按需暴露" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=3;strokeColor=#065F46;fontStyle=1;fontColor=#1E293B;fontSize=11;" edge="1" parent="1" source="Resolver" target="Gateway"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e3" value="统一接入" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=3;strokeColor=#047857;fontStyle=1;fontColor=#1E293B;fontSize=11;" edge="1" parent="1" source="Gateway" target="Pool"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e4" value="3. Top-N 降维过滤" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=3;strokeColor=#059669;fontStyle=1;fontColor=#1E293B;fontSize=11;" edge="1" parent="1" source="Resolver" target="TopN"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e5" value="4. 动态注入 Context" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=3;strokeColor=#059669;fontStyle=1;fontColor=#1E293B;fontSize=11;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="TopN" target="Task"><mxGeometry relative="1" as="geometry" /></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

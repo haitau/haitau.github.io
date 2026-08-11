@@ -1,0 +1,25 @@
+<mxfile host="Electron" modified="2026-08-07T10:00:00.000Z" agent="Antigravity" version="21.6.8" type="device">
+  <diagram id="scm_cdc" name="供应链自愈调度闭环">
+    <mxGraphModel dx="1200" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageWidth="1200" pageHeight="600" background="#F8FAFC">
+      <root>
+        <mxCell id="0" /><mxCell id="1" parent="0" />
+        <mxCell id="title" value="图 2.2：专题下钻 A - 供应链 SCM &amp; CDC 自愈调度闭环" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=18;fontStyle=1;fontColor=#0F172A;" vertex="1" parent="1"><mxGeometry x="50" y="20" width="1100" height="40" as="geometry" /></mxCell>
+
+        <mxCell id="DB" value="Headless SCM / WMS 数据基底" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#0F172A;strokeColor=#020617;fontColor=#FFFFFF;fontStyle=1;fontSize=13;" vertex="1" parent="1"><mxGeometry x="80" y="250" width="250" height="80" as="geometry" /></mxCell>
+        <mxCell id="CDC" value="Data CDC 变更感知" style="rounded=1;fillColor=#334155;strokeColor=#1E293B;fontColor=#FFFFFF;fontStyle=1;fontSize=13;" vertex="1" parent="1"><mxGeometry x="440" y="250" width="240" height="80" as="geometry" /></mxCell>
+        <mxCell id="Agent" value="Supply Agent 调度内核" style="rounded=1;fillColor=#991B1B;strokeColor=#7F1D1D;fontColor=#FFFFFF;fontStyle=1;fontSize=13;" vertex="1" parent="1"><mxGeometry x="800" y="250" width="250" height="80" as="geometry" /></mxCell>
+        <mxCell id="FSM" value="FSM 预算与合规闸口" style="rounded=1;fillColor=#B45309;strokeColor=#92400E;fontColor=#FFFFFF;fontStyle=1;fontSize=13;" vertex="1" parent="1"><mxGeometry x="800" y="440" width="250" height="80" as="geometry" /></mxCell>
+        <mxCell id="B2B" value="B2B Agent 网关" style="rounded=1;fillColor=#059669;strokeColor=#047857;fontColor=#FFFFFF;fontStyle=1;fontSize=13;" vertex="1" parent="1"><mxGeometry x="440" y="440" width="240" height="80" as="geometry" /></mxCell>
+        <mxCell id="Shell" value="Agent Shell 终端&#10;(双签确认 · 追踪知会)" style="rounded=1;fillColor=#312E81;strokeColor=#4338CA;fontColor=#FFFFFF;fontStyle=1;fontSize=13;" vertex="1" parent="1"><mxGeometry x="800" y="90" width="250" height="80" as="geometry" /></mxCell>
+
+        <mxCell id="e1" value="1. 库存剧降" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=3;strokeColor=#0F172A;fontStyle=1;fontColor=#1E293B;fontSize=11;" edge="1" parent="1" source="DB" target="CDC"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e2" value="2. 事件广播" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=3;strokeColor=#334155;fontStyle=1;fontColor=#1E293B;fontSize=11;" edge="1" parent="1" source="CDC" target="Agent"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e3" value="3. 拟定方案" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=3;strokeColor=#991B1B;fontStyle=1;fontColor=#1E293B;fontSize=11;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="Agent" target="FSM"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e4" value="4. 校验通过 · 推送双签" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=3;strokeColor=#312E81;fontStyle=1;fontColor=#1E293B;fontSize=11;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="FSM" target="Shell"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1090" y="480" /><mxPoint x="1090" y="130" /></Array></mxGeometry></mxCell>
+        <mxCell id="e5" value="5. 双签确认 · 下达电子订单" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=3;strokeColor=#059669;fontStyle=1;fontColor=#1E293B;fontSize=11;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="Shell" target="B2B"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="560" y="130" /></Array></mxGeometry></mxCell>
+        <mxCell id="e6" value="6. 下单下发数据基底" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=3;strokeColor=#059669;fontStyle=1;fontColor=#1E293B;fontSize=11;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="B2B" target="DB"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e7" value="7. 追踪卡片知会" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=3;strokeColor=#312E81;fontStyle=1;fontColor=#1E293B;fontSize=11;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="Agent" target="Shell"><mxGeometry relative="1" as="geometry" /></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,37 @@
+<mxfile host="Electron" modified="2026-08-06T20:40:00.000Z" agent="Antigravity" version="21.6.8" type="device">
+  <diagram id="full_topology" name="附录：Post-SaaS 全要素高清展开拓扑图">
+    <mxGraphModel dx="1400" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageWidth="1200" pageHeight="900" background="#F8FAFC">
+      <root>
+        <mxCell id="0" /><mxCell id="1" parent="0" />
+        <mxCell id="title" value="附录：Post-SaaS 全要素高清展开拓扑图 (全系统/全组件/数据本体完整闭环)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=20;fontStyle=1;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="50" y="20" width="1100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="L1" value="L1. Agentic Communication Shell (端侧交互与语义终端)" style="swimlane;rounded=1;fontStyle=1;strokeColor=#818CF8;fillColor=#EEF2FF;fontColor=#1E1B4B;fontSize=13;startSize=25;" vertex="1" parent="1"><mxGeometry x="50" y="70" width="1100" height="150" as="geometry" /></mxCell>
+        <mxCell id="L1_1" value="Voice / Audio Stream" style="rounded=1;fillColor=#312E81;strokeColor=#4338CA;fontColor=#FFF;" vertex="1" parent="L1"><mxGeometry x="30" y="40" width="180" height="40" as="geometry" /></mxCell>
+        <mxCell id="L1_2" value="Text / Semantic BI Query" style="rounded=1;fillColor=#312E81;strokeColor=#4338CA;fontColor=#FFF;" vertex="1" parent="L1"><mxGeometry x="230" y="40" width="200" height="40" as="geometry" /></mxCell>
+        <mxCell id="L1_3" value="Agent Shell (统一交互终端)" style="rounded=1;fillColor=#4338CA;strokeColor=#3730A3;fontColor=#FFF;fontStyle=1;" vertex="1" parent="L1"><mxGeometry x="450" y="40" width="280" height="40" as="geometry" /></mxCell>
+        <mxCell id="L1_4" value="Semantic Cache &amp; SLM (端侧算力)" style="rounded=1;fillColor=#4F46E5;strokeColor=#4338CA;fontColor=#FFF;" vertex="1" parent="L1"><mxGeometry x="750" y="40" width="320" height="40" as="geometry" /></mxCell>
+        <mxCell id="L1_5" value="Semantic BI &amp; Interaction Projection Renderer (交互投影 · 动态组件/卡片 · 即用即散)" style="rounded=1;fillColor=#6366F1;strokeColor=#4F46E5;fontColor=#FFF;fontStyle=1;" vertex="1" parent="L1"><mxGeometry x="30" y="95" width="1040" height="40" as="geometry" /></mxCell>
+
+        <mxCell id="L2" value="L2. Reactive Agent Kernel &amp; Governance (编排、决策与强状态机闸口)" style="swimlane;rounded=1;fontStyle=1;strokeColor=#FBBF24;fillColor=#FFFBEB;fontColor=#451A03;fontSize=13;startSize=25;" vertex="1" parent="1"><mxGeometry x="50" y="245" width="1100" height="190" as="geometry" /></mxCell>
+        <mxCell id="L2_1" value="Ontology Compiler (数据本体编译器)" style="rounded=1;fillColor=#7C3AED;strokeColor=#6D28D9;fontColor=#FFF;fontStyle=1;" vertex="1" parent="L2"><mxGeometry x="30" y="40" width="260" height="45" as="geometry" /></mxCell>
+        <mxCell id="L2_2" value="Multi-Tier Decision Engine (L1自治/L2协同/L3升格)" style="rounded=1;fillColor=#D97706;strokeColor=#B45309;fontColor=#FFF;fontStyle=1;" vertex="1" parent="L2"><mxGeometry x="310" y="40" width="340" height="45" as="geometry" /></mxCell>
+        <mxCell id="L2_3" value="Strict FSM Gatekeeper (闸口 × 动作模板化 × 双签)" style="rounded=1;fillColor=#991B1B;strokeColor=#7F1D1D;fontColor=#FFF;fontStyle=1;" vertex="1" parent="L2"><mxGeometry x="670" y="40" width="400" height="45" as="geometry" /></mxCell>
+        <mxCell id="L2_4" value="Agent Personas (HR/SCM/PLM/MES/Legal Agents)" style="rounded=1;fillColor=#B45309;strokeColor=#92400E;fontColor=#FFF;" vertex="1" parent="L2"><mxGeometry x="30" y="100" width="360" height="45" as="geometry" /></mxCell>
+        <mxCell id="L2_5" value="Hybrid Task Dispatcher (Human-Agent 混合分发)" style="rounded=1;fillColor=#F59E0B;strokeColor=#D97706;fontColor=#FFF;fontStyle=1;" vertex="1" parent="L2"><mxGeometry x="410" y="100" width="350" height="45" as="geometry" /></mxCell>
+        <mxCell id="L2_6" value="Dynamic Memory Graph (自演化企业记忆)" style="rounded=1;fillColor=#065F46;strokeColor=#047857;fontColor=#FFF;" vertex="1" parent="L2"><mxGeometry x="780" y="100" width="290" height="45" as="geometry" /></mxCell>
+
+        <mxCell id="L3" value="L3. Dual-Mode MCP Protocol Mesh (协议寻址与代理网关)" style="swimlane;rounded=1;fontStyle=1;strokeColor=#34D399;fillColor=#ECFDF5;fontColor=#064E3B;fontSize=13;startSize=25;" vertex="1" parent="1"><mxGeometry x="50" y="460" width="1100" height="150" as="geometry" /></mxCell>
+        <mxCell id="L3_1" value="Resolver × Connector Gateway (统一接入 × 向量寻址)" style="rounded=1;fillColor=#065F46;strokeColor=#047857;fontColor=#FFF;fontStyle=1;" vertex="1" parent="L3"><mxGeometry x="30" y="40" width="300" height="45" as="geometry" /></mxCell>
+        <mxCell id="L3_2" value="Ontology Data Broker (本体大集合代理)" style="rounded=1;fillColor=#059669;strokeColor=#047857;fontColor=#FFF;fontStyle=1;" vertex="1" parent="L3"><mxGeometry x="350" y="40" width="360" height="45" as="geometry" /></mxCell>
+        <mxCell id="L3_3" value="B2B Agent Mesh (跨企业对接)" style="rounded=1;fillColor=#10B981;strokeColor=#059669;fontColor=#FFF;fontStyle=1;" vertex="1" parent="L3"><mxGeometry x="730" y="40" width="340" height="45" as="geometry" /></mxCell>
+        <mxCell id="L3_4" value="Full Value-Chain MCP Servers (SCM / MES / PLM / ERP / Legal MCP Clusters)" style="rounded=1;fillColor=#047857;strokeColor=#065F46;fontColor=#FFF;" vertex="1" parent="L3"><mxGeometry x="30" y="95" width="1040" height="40" as="geometry" /></mxCell>
+
+        <mxCell id="L4" value="L4. Unified Enterprise Data Ontology Fabric (企业数据本体物理大集合)" style="swimlane;rounded=1;fontStyle=1;strokeColor=#6B21A8;fillColor=#FAF5FF;fontColor=#581C87;fontSize=13;startSize=25;" vertex="1" parent="1"><mxGeometry x="50" y="635" width="1100" height="150" as="geometry" /></mxCell>
+        <mxCell id="L4_1" value="Data CDC Stream Monitor (数据变更/沟通流捕获)" style="rounded=1;fillColor=#581C87;strokeColor=#3B0764;fontColor=#FFF;fontStyle=1;" vertex="1" parent="L4"><mxGeometry x="30" y="45" width="300" height="50" as="geometry" /></mxCell>
+        <mxCell id="L4_2" value="Enterprise Data Ontology Fabric (数据本体大集合)&#10;[ 哲学实体映射 + 全量业务数据 + 沟通流 + 历史行为 ]" style="rounded=1;fillColor=#6B21A8;strokeColor=#581C87;fontColor=#FFF;fontStyle=1;" vertex="1" parent="L4"><mxGeometry x="350" y="45" width="460" height="50" as="geometry" /></mxCell>
+        <mxCell id="L4_3" value="Immutable Audit Log (只读不可篡改日志)" style="rounded=1;fillColor=#334155;strokeColor=#1E293B;fontColor=#FFF;" vertex="1" parent="L4"><mxGeometry x="830" y="45" width="240" height="50" as="geometry" /></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
