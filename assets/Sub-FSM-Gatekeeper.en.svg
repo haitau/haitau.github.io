@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="100%" height="100%" style="background-color:#F8FAFC;">
+  <style>
+    .diagram-title { font-family: system-ui, -apple-system, sans-serif; font-size: 20px; font-weight: 800; fill: #0F172A; text-anchor: middle; }
+    .layer-title { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; font-weight: 700; }
+    .node-dark { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 800; fill: #0F172A !important; text-anchor: middle; }
+    .node-light { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 800; fill: #FFFFFF !important; text-anchor: middle; }
+    .node-purple { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 800; fill: #6B21A8 !important; text-anchor: middle; }
+    .node-sub { font-family: system-ui, -apple-system, sans-serif; font-size: 10px; font-weight: 500; fill: #E2E8F0 !important; text-anchor: middle; }
+    .edge-label { font-family: system-ui, -apple-system, sans-serif; font-size: 11px; font-weight: 700; fill: #1E293B !important; text-anchor: middle; }
+  </style>
+
+  <text x="600" y="40" class="diagram-title">Figure 2.3: Deep Dive B — Determinism Assurance (Templated Proposer → FSM Gatekeeper → Multi-Tier Approval)</text>
+
+  <!-- Top: Compliance & RBAC rules -->
+  <g transform="translate(460, 90)">
+    <rect width="280" height="70" rx="8" fill="#F59E0B" stroke="#D97706"/>
+    <text x="140" y="40" class="node-light">Hard Compliance &amp; RBAC Rules</text>
+  </g>
+
+  <!-- Mid: Proposer → FSM → DB -->
+  <g transform="translate(100, 230)">
+    <rect width="240" height="80" rx="8" fill="#B45309" stroke="#92400E"/>
+    <text x="120" y="45" class="node-light">Agent Proposer (Proposals)</text>
+  </g>
+  <g transform="translate(460, 230)">
+    <rect width="280" height="80" rx="8" fill="#991B1B" stroke="#7F1D1D"/>
+    <text x="140" y="45" class="node-light">Strict FSM Gatekeeper</text>
+  </g>
+  <g transform="translate(860, 230)">
+    <rect width="240" height="80" rx="8" fill="#0F172A" stroke="#020617"/>
+    <text x="120" y="45" class="node-light">Headless Data State</text>
+  </g>
+
+  <!-- Bottom Left: Action Template Library -->
+  <g transform="translate(100, 400)">
+    <rect width="240" height="70" rx="8" fill="#D97706" stroke="#B45309"/>
+    <text x="120" y="30" class="node-light">Action Template Library</text>
+    <text x="120" y="50" class="node-sub">(High-value actions strictly templated)</text>
+  </g>
+
+  <!-- Bottom Right: Human Dual-Sign -->
+  <g transform="translate(820, 400)">
+    <rect width="240" height="70" rx="8" fill="#312E81" stroke="#4338CA"/>
+    <text x="120" y="30" class="node-light">Human Dual-Sign Gate</text>
+    <text x="120" y="50" class="node-sub">(L2/L3 · Budget / Contract / HR)</text>
+  </g>
+
+  <!-- Connectors -->
+  <path d="M 220 400 L 220 310" stroke="#D97706" stroke-width="3" fill="none" marker-end="url(#ar2)"/>
+  <text x="220" y="358" class="edge-label">1. Templated Fill (No Free Primitives)</text>
+
+  <path d="M 340 270 L 460 270" stroke="#B45309" stroke-width="3" fill="none" marker-end="url(#ar2)"/>
+  <text x="400" y="258" class="edge-label">2. Typed Payload</text>
+
+  <path d="M 600 160 L 600 230" stroke="#F59E0B" stroke-width="3" fill="none" marker-end="url(#ar2)"/>
+  <text x="655" y="198" class="edge-label">3. Rule Audit</text>
+
+  <path d="M 740 270 L 860 270" stroke="#059669" stroke-width="3" fill="none" marker-end="url(#ar2)"/>
+  <text x="800" y="258" class="edge-label">4a. L1 Auto Pass</text>
+
+  <path d="M 600 310 L 600 435 L 820 435" stroke="#312E81" stroke-width="3" fill="none" marker-end="url(#ar2)"/>
+  <text x="690" y="425" class="edge-label">4b. L2/L3 Push Dual-Sign</text>
+
+  <path d="M 940 400 L 940 310" stroke="#059669" stroke-width="3" fill="none" marker-end="url(#ar2)"/>
+  <text x="982" y="358" class="edge-label">5. Signed &amp; Commit</text>
+
+  <defs><marker id="ar2" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#334155"/></marker></defs>
+</svg>

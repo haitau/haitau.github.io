@@ -1,5 +1,5 @@
-https://blog.191022.xyz/2026/08/10/post-saas-enterprise-self-healing-hub/
 https://blog.191022.xyz/2026/08/10/post-saas-enterprise-self-healing-hub.en/
+https://blog.191022.xyz/2026/08/10/post-saas-enterprise-self-healing-hub/
 https://blog.191022.xyz/2026/08/11/multi-git-fullstack-ai-agent-architecture.en/
 https://blog.191022.xyz/2026/08/11/multi-git-fullstack-ai-agent-architecture/
 https://blog.191022.xyz/2026/08/11/enterprise-ai-scaffold-architecture.en/
