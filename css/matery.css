@@ -106,6 +106,12 @@ pre {
     tab-size: 4;
 }
 
+.highlight td.gutter,
+.gutter {
+    display: none !important;
+}
+
+
 .code-area::after {
     content: " ";
     position: absolute;
