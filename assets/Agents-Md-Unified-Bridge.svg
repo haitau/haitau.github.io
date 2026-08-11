@@ -1,0 +1,210 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="100%" height="100%">
+  <defs>
+    <filter id="soft-shadow" x="-8%" y="-8%" width="116%" height="116%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#0F172A" flood-opacity="0.06"/>
+    </filter>
+    <filter id="card-shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.04"/>
+    </filter>
+
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#F1F5F9"/>
+    </linearGradient>
+    <linearGradient id="h-c1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7C3AED"/>
+      <stop offset="100%" stop-color="#9333EA"/>
+    </linearGradient>
+    <linearGradient id="h-c2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284C7"/>
+      <stop offset="100%" stop-color="#0EA5E9"/>
+    </linearGradient>
+    <linearGradient id="h-c3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+
+    <marker id="m-c1" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#7C3AED"/>
+    </marker>
+    <marker id="m-c2" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#0284C7"/>
+    </marker>
+  </defs>
+
+  <rect width="100%" height="100%" fill="url(#bg-grad)"/>
+  <rect x="25" y="25" width="1150" height="630" rx="16" fill="#FFFFFF" fill-opacity="0.7" stroke="#E2E8F0" stroke-width="1.5" filter="url(#soft-shadow)"/>
+
+  <!-- Title -->
+  <g transform="translate(60, 48)">
+    <rect x="0" y="0" width="6" height="26" rx="3" fill="#7C3AED"/>
+    <text x="18" y="20" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif" font-size="18" font-weight="800" fill="#0F172A" letter-spacing="-0.5px">
+      图 3.1：以 AGENTS.md 开放标准为核心的跨 Agent 单一事实源桥接架构
+    </text>
+    <rect x="910" y="2" width="170" height="22" rx="11" fill="#FAF5FF" stroke="#E9D5FF"/>
+    <text x="995" y="16" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#6B21A8" text-anchor="middle">AGENTS.md SSOT Bridge</text>
+  </g>
+
+  <g transform="translate(60, 90)" filter="url(#card-shadow)">
+
+    <!-- Column 1: Scaffold Compiler -->
+    <g transform="translate(0, 0)">
+      <rect width="345" height="540" rx="12" fill="#FFFFFF" stroke="#E9D5FF" stroke-width="1.5"/>
+      <path d="M 0 12 Q 0 0 12 0 L 333 0 Q 345 0 345 12 L 345 36 L 0 36 Z" fill="url(#h-c1)"/>
+      <text x="16" y="23" font-family="sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">
+        ⚙️ 配置中心编译引擎 (Scaffold Compiler)
+      </text>
+
+      <g transform="translate(14, 46)">
+        <rect width="317" height="38" rx="6" fill="#581C87"/>
+        <text x="158" y="23" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">
+          Common → Domain → Role → Stack
+        </text>
+
+        <!-- Step 1 -->
+        <g transform="translate(0, 48)">
+          <rect width="317" height="68" rx="6" fill="#FAF5FF" stroke="#E9D5FF"/>
+          <text x="12" y="20" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#6B21A8">1. 规则编译 (Project Rules)</text>
+          <text x="12" y="38" font-family="sans-serif" font-size="9" font-weight="500" fill="#7E22CE">AST 标题级语义合并，直接输出为开放</text>
+          <text x="12" y="52" font-family="sans-serif" font-size="9" font-weight="500" fill="#7E22CE">标准 AGENTS.md 单一事实源文件。</text>
+        </g>
+
+        <!-- Step 2 -->
+        <g transform="translate(0, 124)">
+          <rect width="317" height="68" rx="6" fill="#FAF5FF" stroke="#E9D5FF"/>
+          <text x="12" y="20" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#6B21A8">2. 技能分发 (Skills Packaging)</text>
+          <text x="12" y="38" font-family="sans-serif" font-size="9" font-weight="500" fill="#7E22CE">白名单过滤裁剪，下发至跨 Agent 约定</text>
+          <text x="12" y="52" font-family="sans-serif" font-size="9" font-weight="500" fill="#7E22CE">目录 .agents/skills/&lt;name&gt;/SKILL.md。</text>
+        </g>
+
+        <!-- Step 3 -->
+        <g transform="translate(0, 200)">
+          <rect width="317" height="68" rx="6" fill="#FAF5FF" stroke="#E9D5FF"/>
+          <text x="12" y="20" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#6B21A8">3. 工具协议 (MCP Integration)</text>
+          <text x="12" y="38" font-family="sans-serif" font-size="9" font-weight="500" fill="#7E22CE">服务级深度合并产出 .trae/mcp.json，</text>
+          <text x="12" y="52" font-family="sans-serif" font-size="9" font-weight="500" fill="#7E22CE">同步建立根目录 .mcp.json 桥接软链。</text>
+        </g>
+
+        <!-- Step 4 -->
+        <g transform="translate(0, 276)">
+          <rect width="317" height="68" rx="6" fill="#FAF5FF" stroke="#E9D5FF"/>
+          <text x="12" y="20" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#6B21A8">4. 声明式 Git 护栏 (Hooks)</text>
+          <text x="12" y="38" font-family="sans-serif" font-size="9" font-weight="500" fill="#7E22CE">生成统一 .githooks.yml 开关配置文件</text>
+          <text x="12" y="52" font-family="sans-serif" font-size="9" font-weight="500" fill="#7E22CE">与只读确定性 Shell 拦截脚本。</text>
+        </g>
+
+        <!-- Summary -->
+        <rect y="352" width="317" height="36" rx="6" fill="#581C87"/>
+        <text x="158" y="22" font-family="sans-serif" font-size="10" font-weight="700" fill="#FFFFFF" text-anchor="middle">
+          单一事实源 (SSOT) · 彻底杜绝配置两张皮
+        </text>
+      </g>
+    </g>
+
+    <!-- Column 2: Target Git Repo Physical Topology -->
+    <g transform="translate(365, 0)">
+      <rect width="345" height="540" rx="12" fill="#FFFFFF" stroke="#BAE6FD" stroke-width="1.5"/>
+      <path d="M 0 12 Q 0 0 12 0 L 333 0 Q 345 0 345 12 L 345 36 L 0 36 Z" fill="url(#h-c2)"/>
+      <text x="16" y="23" font-family="sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">
+        📁 业务代码库物理落盘结构 (Repo Layout)
+      </text>
+
+      <g transform="translate(14, 46)">
+        <!-- AGENTS.md -->
+        <rect width="317" height="54" rx="6" fill="#0284C7"/>
+        <text x="12" y="22" font-family="sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">📄 AGENTS.md (项目根目录)</text>
+        <text x="12" y="38" font-family="sans-serif" font-size="9" font-weight="500" fill="#BAE6FD">【全量规则单一事实源】架构、SOP与代码规约</text>
+
+        <!-- CLAUDE.md -->
+        <g transform="translate(0, 62)">
+          <rect width="317" height="54" rx="6" fill="#0284C7"/>
+          <text x="12" y="22" font-family="sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">📄 CLAUDE.md (薄指针文件)</text>
+          <text x="12" y="38" font-family="sans-serif" font-size="9" font-weight="500" fill="#BAE6FD">内容仅为: @AGENTS.md (预处理器自动吸入)</text>
+        </g>
+
+        <!-- .agents/skills -->
+        <g transform="translate(0, 124)">
+          <rect width="317" height="54" rx="6" fill="#0284C7"/>
+          <text x="12" y="22" font-family="sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">📁 .agents/skills/ (技能包主体目录)</text>
+          <text x="12" y="38" font-family="sans-serif" font-size="9" font-weight="500" fill="#BAE6FD">跨 Agent 约定标准目录，存放各技能包 SKILL.md</text>
+        </g>
+
+        <!-- .claude/skills symlink -->
+        <g transform="translate(0, 186)">
+          <rect width="317" height="54" rx="6" fill="#E0F2FE" stroke="#38BDF8"/>
+          <text x="12" y="22" font-family="sans-serif" font-size="11" font-weight="700" fill="#0369A1">🔗 .claude/skills/ (符号软链接)</text>
+          <text x="12" y="38" font-family="sans-serif" font-size="9" font-weight="500" fill="#0284C7">指向: .claude/skills → ../.agents/skills</text>
+        </g>
+
+        <!-- .trae/mcp.json -->
+        <g transform="translate(0, 248)">
+          <rect width="317" height="54" rx="6" fill="#0284C7"/>
+          <text x="12" y="22" font-family="sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">📄 .trae/mcp.json + 🔗 .mcp.json</text>
+          <text x="12" y="38" font-family="sans-serif" font-size="9" font-weight="500" fill="#BAE6FD">保留 Trae 原生源文件，根目录软链供 CLI Agent 读</text>
+        </g>
+
+        <!-- Summary -->
+        <rect y="310" width="317" height="36" rx="6" fill="#0369A1"/>
+        <text x="158" y="22" font-family="sans-serif" font-size="10" font-weight="700" fill="#FFFFFF" text-anchor="middle">
+          ⚙️ .githooks.yml + .git/hooks/ (Git 确定性护栏)
+        </text>
+
+        <rect y="352" width="317" height="36" rx="6" fill="#0C4A6E"/>
+        <text x="158" y="22" font-family="sans-serif" font-size="10" font-weight="700" fill="#FFFFFF" text-anchor="middle">
+          落盘净增成本：仅 1 个薄指针 + 2 个软链接
+        </text>
+      </g>
+    </g>
+
+    <!-- Column 3: Multi-Agent Consumer Adapters -->
+    <g transform="translate(730, 0)">
+      <rect width="350" height="540" rx="12" fill="#FFFFFF" stroke="#A7F3D0" stroke-width="1.5"/>
+      <path d="M 0 12 Q 0 0 12 0 L 338 0 Q 350 0 350 12 L 350 36 L 0 36 Z" fill="url(#h-c3)"/>
+      <text x="16" y="23" font-family="sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">
+        🤖 多 Agent 消费端适配 (Zero Redundancy)
+      </text>
+
+      <g transform="translate(14, 46)">
+        <!-- Trae -->
+        <g>
+          <rect width="322" height="74" rx="6" fill="#ECFDF5" stroke="#A7F3D0"/>
+          <text x="12" y="20" font-family="sans-serif" font-size="11" font-weight="700" fill="#065F46">Trae IDE (字节跳动)</text>
+          <text x="12" y="38" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• 设置中心直接导入 AGENTS.md 为项目规则</text>
+          <text x="12" y="52" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• 原生读取 .agents/skills/ 与 .trae/mcp.json</text>
+          <text x="12" y="66" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• 充当脚手架管理与可视化配置中枢</text>
+        </g>
+
+        <!-- Claude Code -->
+        <g transform="translate(0, 82)">
+          <rect width="322" height="74" rx="6" fill="#ECFDF5" stroke="#A7F3D0"/>
+          <text x="12" y="20" font-family="sans-serif" font-size="11" font-weight="700" fill="#065F46">Claude Code CLI (Anthropic)</text>
+          <text x="12" y="38" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• 启动读 CLAUDE.md，预处理器自动吸入 @AGENTS.md</text>
+          <text x="12" y="52" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• 经软链自动发现 skills，按目录加载 .mcp.json</text>
+          <text x="12" y="66" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• 担当单仓高强度聚焦与深度重构利器</text>
+        </g>
+
+        <!-- Cursor -->
+        <g transform="translate(0, 164)">
+          <rect width="322" height="68" rx="6" fill="#ECFDF5" stroke="#A7F3D0"/>
+          <text x="12" y="20" font-family="sans-serif" font-size="11" font-weight="700" fill="#065F46">Cursor / Windsurf</text>
+          <text x="12" y="38" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• 原生支持读取 AGENTS.md 开放规则标准</text>
+          <text x="12" y="52" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• 共享统一的本地 MCP 工具配置与 Git 护栏</text>
+        </g>
+
+        <!-- opencode -->
+        <g transform="translate(0, 240)">
+          <rect width="322" height="58" rx="6" fill="#ECFDF5" stroke="#A7F3D0"/>
+          <text x="12" y="20" font-family="sans-serif" font-size="11" font-weight="700" fill="#065F46">opencode / Devin / Aider</text>
+          <text x="12" y="38" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• 业界开放标准全面兼容，零摩擦即插即用</text>
+        </g>
+
+        <!-- Summary -->
+        <rect y="352" width="322" height="36" rx="6" fill="#065F46"/>
+        <text x="161" y="22" font-family="sans-serif" font-size="10" font-weight="700" fill="#FFFFFF" text-anchor="middle">
+          一次装配，全 Agent 矩阵统一生效
+        </text>
+      </g>
+    </g>
+
+  </g>
+</svg>

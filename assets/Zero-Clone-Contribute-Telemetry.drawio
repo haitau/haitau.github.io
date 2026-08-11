@@ -1,45 +1,32 @@
-<mxfile host="Electron" modified="2026-08-11T17:00:00.000Z" agent="Antigravity" version="21.6.8" type="device">
-  <diagram id="contribute_telemetry" name="零克隆回流与全周期可观测">
-    <mxGraphModel dx="1200" dy="650" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageWidth="1200" pageHeight="650" background="#F8FAFC">
+<mxfile host="Electron" modified="2026-08-11T17:35:00.000Z" agent="Antigravity" version="21.6.8" type="device">
+  <diagram id="zero_clone_telemetry" name="零克隆回流与IDE可观测性闭环">
+    <mxGraphModel dx="1200" dy="700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageWidth="1200" pageHeight="700" background="#F8FAFC">
       <root>
         <mxCell id="0" strokeColor="none"/><mxCell id="1" parent="0" />
 
-        <mxCell id="title" value="图 4.1：双向闭环 —— 零克隆远程回流架构与 IDE 全周期 Telemetry 可观测体系" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=18;fontStyle=1;fontColor=#0F172A;" vertex="1" parent="1">
+        <mxCell id="title" value="图 4.1：双向进化闭环 —— 零克隆远程回流架构与 IDE 全周期 Telemetry 可观测体系" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=18;fontStyle=1;fontColor=#0F172A;" vertex="1" parent="1">
           <mxGeometry x="50" y="15" width="1100" height="35" as="geometry" />
         </mxCell>
 
-        <!-- 左侧：开发者业务工作区 -->
-        <mxCell id="dev_ws" value="1. 开发者业务工作区 (Developer Workspace)" style="swimlane;rounded=1;fontStyle=1;strokeColor=#38BDF8;fillColor=#F0F9FF;fontColor=#0369A1;fontSize=13;startSize=25;" vertex="1" parent="1">
-          <mxGeometry x="50" y="60" width="340" height="560" as="geometry" />
+        <!-- Left: Zero-Clone -->
+        <mxCell id="left_box" value="🚀 零克隆远程回流流水线 (Zero-Clone Contribution Pipeline)" style="swimlane;rounded=1;fontStyle=1;strokeColor=#C7D2FE;fillColor=#FFFFFF;fontColor=#4338CA;fontSize=12.5;startSize=28;" vertex="1" parent="1">
+          <mxGeometry x="50" y="60" width="520" height="600" as="geometry" />
         </mxCell>
-        <mxCell id="dw_1" value="npx scaffold contribute&#10;• 扫描本地 .ide/ 规则与技能变更&#10;• 结合远端基线计算三级差异 (Diff)&#10;• 客户端敏感凭据占位符预脱敏" style="rounded=1;fillColor=#0284C7;strokeColor=#0369A1;fontColor=#FFFFFF;fontSize=11;align=left;spacingLeft=10;" vertex="1" parent="dev_ws"><mxGeometry x="20" y="45" width="300" height="90" as="geometry" /></mxCell>
-        <mxCell id="dw_2" value="IDE Lifecycle Hooks (hooks.json)&#10;• PostToolUse: 拦截 Skill/MCP 执行&#10;• UserPromptSubmit: 触发频次统计&#10;• SessionStart: 活跃会话监测" style="rounded=1;fillColor=#0284C7;strokeColor=#0369A1;fontColor=#FFFFFF;fontSize=11;align=left;spacingLeft=10;" vertex="1" parent="dev_ws"><mxGeometry x="20" y="160" width="300" height="90" as="geometry" /></mxCell>
-        <mxCell id="dw_3" value="本地轻量脱敏缓冲池 (.usage/)&#10;• 仅记录工具名、耗时、状态码&#10;• 绝不记录 Prompt 原文与业务代码&#10;• Git Push 伴随异步静默上报" style="rounded=1;fillColor=#0369A1;strokeColor=#0C4A6E;fontColor=#FFFFFF;fontSize=11;align=left;spacingLeft=10;" vertex="1" parent="dev_ws"><mxGeometry x="20" y="275" width="300" height="90" as="geometry" /></mxCell>
-        <mxCell id="dw_4" value="零环境污染保障 (Zero-Pollution)&#10;• 业务仓库零克隆脚手架代码&#10;• 零多余 npm 依赖与构建中间件" style="rounded=1;fillColor=#BAE6FD;strokeColor=#38BDF8;fontColor=#0369A1;fontSize=11;align=left;spacingLeft=10;fontStyle=1;" vertex="1" parent="dev_ws"><mxGeometry x="20" y="390" width="300" height="65" as="geometry" /></mxCell>
+        <mxCell id="z_1" value="1. 本地差异计算与防篡改鉴权&#10;• 读取 CONFIG_SUMMARY.md 凭证，与远程基线求 Diff&#10;• 严格校验变更范围，阻断非特化目录的越权侵入" style="rounded=1;fillColor=#F5F3FF;strokeColor=#DDD6FE;fontColor=#4338CA;fontSize=10.5;align=left;spacingLeft=10;" vertex="1" parent="left_box"><mxGeometry x="15" y="42" width="490" height="75" as="geometry" /></mxCell>
+        <mxCell id="z_2" value="2. 本地敏感信息多重脱敏过滤&#10;• 扫描并剔除本地绝对路径 (/Users/...)、个人私有 Token&#10;• 自动占位符化敏感环境变量，保证回流资产公共安全" style="rounded=1;fillColor=#F5F3FF;strokeColor=#DDD6FE;fontColor=#4338CA;fontSize=10.5;align=left;spacingLeft=10;" vertex="1" parent="left_box"><mxGeometry x="15" y="130" width="490" height="75" as="geometry" /></mxCell>
+        <mxCell id="z_3" value="3. HTTP 结构化 Payload 远程投递&#10;• 开发者无需 git clone 脚手架主仓库与配置权限&#10;• CLI 发送脱敏 JSON Payload 至配置中心网关" style="rounded=1;fillColor=#F5F3FF;strokeColor=#DDD6FE;fontColor=#4338CA;fontSize=10.5;align=left;spacingLeft=10;" vertex="1" parent="left_box"><mxGeometry x="15" y="218" width="490" height="75" as="geometry" /></mxCell>
+        <mxCell id="z_4" value="4. 云端服务侧 Git Open API 自动建分支提 PR&#10;• 网关鉴权，基于 Git Open API 创建 contrib/&lt;user&gt; 分支&#10;• 自动提交并创建 Pull Request，无缝流转至架构师评审" style="rounded=1;fillColor=#F5F3FF;strokeColor=#DDD6FE;fontColor=#4338CA;fontSize=10.5;align=left;spacingLeft=10;" vertex="1" parent="left_box"><mxGeometry x="15" y="306" width="490" height="75" as="geometry" /></mxCell>
+        <mxCell id="z_tag" value="零门槛回流：从「个人私藏 Prompt」跃迁为「全员共享工程资产」" style="rounded=1;fillColor=#4338CA;strokeColor=#312E81;fontColor=#FFFFFF;fontSize=11;fontStyle=1;align=center;" vertex="1" parent="left_box"><mxGeometry x="15" y="400" width="490" height="48" as="geometry" /></mxCell>
 
-        <!-- 中部：回流网关与数据治理服务 -->
-        <mxCell id="gateway_srv" value="2. 回流网关与数据治理中心 (Gateway &amp; Telemetry Hub)" style="swimlane;rounded=1;fontStyle=1;strokeColor=#C084FC;fillColor=#FAF5FF;fontColor=#581C87;fontSize=13;startSize=25;" vertex="1" parent="1">
-          <mxGeometry x="430" y="60" width="340" height="560" as="geometry" />
+        <!-- Right: Telemetry -->
+        <mxCell id="right_box" value="📊 IDE 全周期 Telemetry 可观测性 (Telemetry Observability)" style="swimlane;rounded=1;fontStyle=1;strokeColor=#A7F3D0;fillColor=#FFFFFF;fontColor=#065F46;fontSize=12.5;startSize=28;" vertex="1" parent="1">
+          <mxGeometry x="630" y="60" width="520" height="600" as="geometry" />
         </mxCell>
-        <mxCell id="gw_1" value="回流接收网关 (Contribute Gateway)&#10;• 接收开发者提交的变更 Payload&#10;• 执行服务端规则合规与格式校验&#10;• 服务端二次安全审计与硬编码清洗" style="rounded=1;fillColor=#7E22CE;strokeColor=#A855F7;fontColor=#FFFFFF;fontSize=11;align=left;spacingLeft=10;" vertex="1" parent="gateway_srv"><mxGeometry x="20" y="45" width="300" height="90" as="geometry" /></mxCell>
-        <mxCell id="gw_2" value="Git Open API 自动化编排器&#10;• 动态创建回流分支: contrib/&lt;user&gt;-&lt;role&gt;&#10;• 逐文件 Commit 并保留规范日志&#10;• 自动创建 Merge Request 并返回链接" style="rounded=1;fillColor=#7E22CE;strokeColor=#A855F7;fontColor=#FFFFFF;fontSize=11;align=left;spacingLeft=10;" vertex="1" parent="gateway_srv"><mxGeometry x="20" y="160" width="300" height="90" as="geometry" /></mxCell>
-        <mxCell id="gw_3" value="Telemetry 指标清洗与聚合引擎&#10;• 技能热度追踪 (Invocation Frequency)&#10;• 异常与报错热点聚类 (Error Clustered)&#10;• 各岗位 AI 编程采纳率分析" style="rounded=1;fillColor=#6B21A8;strokeColor=#581C87;fontColor=#FFFFFF;fontSize=11;align=left;spacingLeft=10;" vertex="1" parent="gateway_srv"><mxGeometry x="20" y="275" width="300" height="90" as="geometry" /></mxCell>
-        <mxCell id="gw_4" value="数据安全屏障 (Security Firewall)&#10;• 严格隐私边界审计，拦截外发泄漏&#10;• 身份令牌签名验证与鉴权" style="rounded=1;fillColor=#F3E8FF;strokeColor=#C084FC;fontColor=#6B21A8;fontSize=11;align=left;spacingLeft=10;fontStyle=1;" vertex="1" parent="gateway_srv"><mxGeometry x="20" y="390" width="300" height="65" as="geometry" /></mxCell>
-
-        <!-- 右侧：脚手架核心库与演进看板 -->
-        <mxCell id="core_repo" value="3. 脚手架核心基准库与效能看板 (Central Repo &amp; BI)" style="swimlane;rounded=1;fontStyle=1;strokeColor=#4ADE80;fillColor=#F0FDF4;fontColor=#166534;fontSize=13;startSize=25;" vertex="1" parent="1">
-          <mxGeometry x="810" y="60" width="340" height="560" as="geometry" />
-        </mxCell>
-        <mxCell id="cr_1" value="架构师审查与合流 (Architect Review)&#10;• 在线审查由网关自动发起的 MR/PR&#10;• 判定新增技能的通用性与复用边界&#10;• 合流至 1-common 或 2-domains" style="rounded=1;fillColor=#15803D;strokeColor=#22C55E;fontColor=#FFFFFF;fontSize=11;align=left;spacingLeft=10;" vertex="1" parent="core_repo"><mxGeometry x="20" y="45" width="300" height="90" as="geometry" /></mxCell>
-        <mxCell id="cr_2" value="CI/CD 自动化全角色装配测试&#10;• 批量模拟 16+ 角色编译合并矩阵&#10;• Markdown AST / Heading 冲突回归&#10;• 生成不可变配置 Tarball 制品包" style="rounded=1;fillColor=#15803D;strokeColor=#22C55E;fontColor=#FFFFFF;fontSize=11;align=left;spacingLeft=10;" vertex="1" parent="core_repo"><mxGeometry x="20" y="160" width="300" height="90" as="geometry" /></mxCell>
-        <mxCell id="cr_3" value="AI 研发效能数据看板 (Telemetry BI)&#10;• 淘汰 0 调用冗余技能，持续瘦身&#10;• 优化高频报错 Prompt，修复幻觉&#10;• 形成数据驱动的工程文化演进闭环" style="rounded=1;fillColor=#166534;strokeColor=#14532D;fontColor=#FFFFFF;fontSize=11;align=left;spacingLeft=10;" vertex="1" parent="core_repo"><mxGeometry x="20" y="275" width="300" height="90" as="geometry" /></mxCell>
-        <mxCell id="cr_4" value="正向装配分发 (init / update)&#10;• 全员一键拉取最新优化成果&#10;• 形成自增强的集体智慧飞轮" style="rounded=1;fillColor=#DCFCE7;strokeColor=#4ADE80;fontColor=#14532D;fontSize=11;align=left;spacingLeft=10;fontStyle=1;" vertex="1" parent="core_repo"><mxGeometry x="20" y="390" width="300" height="65" as="geometry" /></mxCell>
-
-        <!-- 连线 -->
-        <mxCell id="f_contribute" value="① HTTP POST 提交回流 Payload" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2.5;strokeColor=#0284C7;fontStyle=1;fontColor=#0369A1;fontSize=10;" edge="1" parent="1" source="dw_1" target="gw_1"/>
-        <mxCell id="f_mr" value="② 调用 Git API 自动建分支提 MR" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2.5;strokeColor=#7E22CE;fontStyle=1;fontColor=#581C87;fontSize=10;" edge="1" parent="1" source="gw_2" target="cr_1"/>
-        <mxCell id="f_telemetry" value="③ 异步静默上报指标" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2.5;strokeColor=#0369A1;fontStyle=1;fontColor=#0C4A6E;fontSize=10;" edge="1" parent="1" source="dw_3" target="gw_3"/>
-        <mxCell id="f_bi" value="④ 聚合入库驱动看板" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2.5;strokeColor=#6B21A8;fontStyle=1;fontColor=#581C87;fontSize=10;" edge="1" parent="1" source="gw_3" target="cr_3"/>
+        <mxCell id="t_1" value="1. IDE 原生事件多点捕获 (Event Hooks)&#10;• SessionStart: 记录角色、会话场景、加载规则版本&#10;• PostToolUse: 捕获 Skill 触发率、MCP 响应耗时与异常" style="rounded=1;fillColor=#ECFDF5;strokeColor=#A7F3D0;fontColor=#065F46;fontSize=10.5;align=left;spacingLeft=10;" vertex="1" parent="right_box"><mxGeometry x="15" y="42" width="490" height="75" as="geometry" /></mxCell>
+        <mxCell id="t_2" value="2. 本地只追加高性能缓冲日志 (Append-Only Log)&#10;• 毫秒级异步写本地 .telemetry/events.jsonl，零阻塞编码&#10;• 内置 7 天滚动归档机制，防止本地磁盘无限膨胀" style="rounded=1;fillColor=#ECFDF5;strokeColor=#A7F3D0;fontColor=#065F46;fontSize=10.5;align=left;spacingLeft=10;" vertex="1" parent="right_box"><mxGeometry x="15" y="130" width="490" height="75" as="geometry" /></mxCell>
+        <mxCell id="t_3" value="3. 智能批量异步上报 (Batch Flush Pipeline)&#10;• 满足批量阈值 (N条) 或空闲周期自动后台静默上报&#10;• 异常离线自动重试，保证可观测数据完整性" style="rounded=1;fillColor=#ECFDF5;strokeColor=#A7F3D0;fontColor=#065F46;fontSize=10.5;align=left;spacingLeft=10;" vertex="1" parent="right_box"><mxGeometry x="15" y="218" width="490" height="75" as="geometry" /></mxCell>
+        <mxCell id="t_4" value="4. 效能大盘分析与架构反馈 (Metrics &amp; Feedback)&#10;• 统计各规则触发频次、低频僵死规则智能识别&#10;• 量化研发效能 ROI，精准指导下一代脚手架迭代" style="rounded=1;fillColor=#ECFDF5;strokeColor=#A7F3D0;fontColor=#065F46;fontSize=10.5;align=left;spacingLeft=10;" vertex="1" parent="right_box"><mxGeometry x="15" y="306" width="490" height="75" as="geometry" /></mxCell>
+        <mxCell id="t_tag" value="全景度量：以客观真实数据驱动规则资产持续优胜劣汰" style="rounded=1;fillColor=#065F46;strokeColor=#064E3B;fontColor=#FFFFFF;fontSize=11;fontStyle=1;align=center;" vertex="1" parent="right_box"><mxGeometry x="15" y="400" width="490" height="48" as="geometry" /></mxCell>
 
       </root>
     </mxGraphModel>

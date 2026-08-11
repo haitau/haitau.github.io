@@ -1,0 +1,149 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="100%" height="100%">
+  <defs>
+    <filter id="soft-shadow" x="-8%" y="-8%" width="116%" height="116%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#0F172A" flood-opacity="0.06"/>
+    </filter>
+    <filter id="card-shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.04"/>
+    </filter>
+
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#F1F5F9"/>
+    </linearGradient>
+    <linearGradient id="g-top" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7C3AED"/>
+      <stop offset="100%" stop-color="#9333EA"/>
+    </linearGradient>
+    <linearGradient id="g-mid" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284C7"/>
+      <stop offset="100%" stop-color="#0EA5E9"/>
+    </linearGradient>
+    <linearGradient id="g-bot" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="100%" height="100%" fill="url(#bg-grad)"/>
+  <rect x="25" y="25" width="1150" height="630" rx="16" fill="#FFFFFF" fill-opacity="0.7" stroke="#E2E8F0" stroke-width="1.5" filter="url(#soft-shadow)"/>
+
+  <!-- Title -->
+  <g transform="translate(60, 48)">
+    <rect x="0" y="0" width="6" height="26" rx="3" fill="#0284C7"/>
+    <text x="18" y="20" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif" font-size="18" font-weight="800" fill="#0F172A" letter-spacing="-0.5px">
+      图 4.1：正交双层架构 —— 外层多仓目录聚焦 (Scope) × 内层单仓 Worktree 并发 (Concurrency)
+    </text>
+    <rect x="880" y="2" width="200" height="22" rx="11" fill="#E0F2FE" stroke="#BAE6FD"/>
+    <text x="980" y="16" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#0369A1" text-anchor="middle">Orthogonal Two-Tier Architecture</text>
+  </g>
+
+  <!-- Top Container: Meta-Repo -->
+  <g transform="translate(60, 90)" filter="url(#card-shadow)">
+    <rect width="1080" height="95" rx="12" fill="#FFFFFF" stroke="#E9D5FF" stroke-width="1.5"/>
+    <path d="M 0 12 Q 0 0 12 0 L 1068 0 Q 1080 0 1080 12 L 1080 32 L 0 32 Z" fill="url(#g-top)"/>
+    <text x="20" y="21" font-family="sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">
+      🌐 顶层 Meta-Repo 编排层 (跨仓导航 / 接口契约 / 影响分析)
+    </text>
+
+    <g transform="translate(18, 42)">
+      <rect width="1044" height="42" rx="6" fill="#FAF5FF" stroke="#E9D5FF"/>
+      <text x="20" y="26" font-family="sans-serif" font-size="11" font-weight="700" fill="#581C87">
+        全栈架构师 Agent (Meta Session)
+      </text>
+      <text x="230" y="26" font-family="sans-serif" font-size="10" font-weight="500" fill="#7E22CE">
+        • 跨仓任务分发与拓扑依赖分析 • 接口契约 (Proto/OpenAPI) 自动校验 • 端侧工作台联动与全局状态追踪
+      </text>
+    </g>
+  </g>
+
+  <!-- Middle Container: Multi-Repo Scope Focus -->
+  <g transform="translate(60, 198)" filter="url(#card-shadow)">
+    <rect width="1080" height="195" rx="12" fill="#FFFFFF" stroke="#BAE6FD" stroke-width="1.5"/>
+    <path d="M 0 12 Q 0 0 12 0 L 1068 0 Q 1080 0 1080 12 L 1080 32 L 0 32 Z" fill="url(#g-mid)"/>
+    <text x="20" y="21" font-family="sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">
+      📂 外层：多 Git 仓库目录作用域聚焦 (解决「上下文污染与技术栈错配」问题)
+    </text>
+
+    <g transform="translate(18, 42)">
+      <!-- Repo 1 -->
+      <g>
+        <rect width="335" height="85" rx="8" fill="#F0F9FF" stroke="#7DD3FC"/>
+        <text x="14" y="24" font-family="sans-serif" font-size="11" font-weight="700" fill="#0369A1">Git 仓库 1: 后端服务 (Go/Webman)</text>
+        <text x="14" y="44" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#0284C7">• 激活: Go 并发规约、SQL 迁移审计、DB MCP</text>
+        <text x="14" y="62" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#0284C7">• 状态: 物理聚焦当前仓，零前端/算法规则干扰</text>
+      </g>
+
+      <!-- Repo 2 -->
+      <g transform="translate(355, 0)">
+        <rect width="335" height="85" rx="8" fill="#F0F9FF" stroke="#7DD3FC"/>
+        <text x="14" y="24" font-family="sans-serif" font-size="11" font-weight="700" fill="#0369A1">Git 仓库 2: 前端工程 (Vue3/React)</text>
+        <text x="14" y="44" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#0284C7">• 激活: UI 设计规范、组件原子化、Browser MCP</text>
+        <text x="14" y="62" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#0284C7">• 状态: 物理聚焦当前仓，后端与算法规则完全静默</text>
+      </g>
+
+      <!-- Repo 3 -->
+      <g transform="translate(710, 0)">
+        <rect width="334" height="85" rx="8" fill="#F0F9FF" stroke="#7DD3FC"/>
+        <text x="14" y="24" font-family="sans-serif" font-size="11" font-weight="700" fill="#0369A1">Git 仓库 3: 算法模型 (Python/MLOps)</text>
+        <text x="14" y="44" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#0284C7">• 激活: 评测 SOP、数据集版本基线、MLflow MCP</text>
+        <text x="14" y="62" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#0284C7">• 状态: 物理聚焦当前仓，专注算法吞吐与模型调优</text>
+      </g>
+
+      <!-- Sub banner -->
+      <rect y="96" width="1044" height="34" rx="6" fill="#0C4A6E"/>
+      <text x="522" y="21" font-family="sans-serif" font-size="10" font-weight="700" fill="#FFFFFF" text-anchor="middle">
+        机制：进入目录即自动聚焦 (cd repo → start agent)，其余 N-1 个仓库配置完全物理静默
+      </text>
+    </g>
+  </g>
+
+  <!-- Bottom Container: Worktree Concurrency -->
+  <g transform="translate(60, 405)" filter="url(#card-shadow)">
+    <rect width="1080" height="225" rx="12" fill="#FFFFFF" stroke="#A7F3D0" stroke-width="1.5"/>
+    <path d="M 0 12 Q 0 0 12 0 L 1068 0 Q 1080 0 1080 12 L 1080 32 L 0 32 Z" fill="url(#g-bot)"/>
+    <text x="20" y="21" font-family="sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">
+      ⚡ 内层：单仓 Worktree + 多 Agent 并发执行 (解决「单人单线程吞吐瓶颈」问题)
+    </text>
+
+    <g transform="translate(18, 42)">
+      <!-- WT 1 -->
+      <g>
+        <rect width="245" height="85" rx="8" fill="#ECFDF5" stroke="#86EFAC"/>
+        <text x="12" y="22" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#065F46">Worktree 沙箱 A (feat/auth)</text>
+        <text x="12" y="42" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#047857">Agent Worker 1: 异步实现认证</text>
+        <text x="12" y="60" font-family="sans-serif" font-size="9" font-weight="500" fill="#059669">独立文件系统隔离，零分支冲突</text>
+      </g>
+
+      <!-- WT 2 -->
+      <g transform="translate(265, 0)">
+        <rect width="245" height="85" rx="8" fill="#ECFDF5" stroke="#86EFAC"/>
+        <text x="12" y="22" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#065F46">Worktree 沙箱 B (feat/pay)</text>
+        <text x="12" y="42" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#047857">Agent Worker 2: 异步对接支付</text>
+        <text x="12" y="60" font-family="sans-serif" font-size="9" font-weight="500" fill="#059669">独立文件系统隔离，零分支冲突</text>
+      </g>
+
+      <!-- WT 3 -->
+      <g transform="translate(530, 0)">
+        <rect width="245" height="85" rx="8" fill="#ECFDF5" stroke="#86EFAC"/>
+        <text x="12" y="22" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#065F46">Worktree 沙箱 C (test/e2e)</text>
+        <text x="12" y="42" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#047857">Agent Worker 3: 自动化用例</text>
+        <text x="12" y="60" font-family="sans-serif" font-size="9" font-weight="500" fill="#059669">独立文件系统隔离，零分支冲突</text>
+      </g>
+
+      <!-- Gateway -->
+      <g transform="translate(795, 0)">
+        <rect width="249" height="85" rx="8" fill="#065F46"/>
+        <text x="12" y="22" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#FFFFFF">算力网关 (Token Router)</text>
+        <text x="12" y="42" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#A7F3D0">• 429 智能防限流与并发熔断</text>
+        <text x="12" y="60" font-family="sans-serif" font-size="9" font-weight="500" fill="#A7F3D0">• 多 Worker 异步排队调度</text>
+      </g>
+
+      <!-- Final Conclusion -->
+      <rect y="96" width="1044" height="38" rx="6" fill="#DCFCE7" stroke="#86EFAC"/>
+      <text x="522" y="23" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#14532D" text-anchor="middle">
+        💡 架构结论：外层按目录隔离上下文（管聚焦），内层拉 Worktree 分支跑多 Agent（管并发），二者正交叠加，完美闭环！
+      </text>
+    </g>
+  </g>
+</svg>

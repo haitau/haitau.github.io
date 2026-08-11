@@ -1,6 +1,6 @@
-<mxfile host="Electron" modified="2026-08-11T17:00:00.000Z" agent="Antigravity" version="21.6.8" type="device">
-  <diagram id="ddd_three_tier" name="DDD三层隔离与装配编译引擎">
-    <mxGraphModel dx="1200" dy="700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageWidth="1200" pageHeight="700" background="#F8FAFC">
+<mxfile host="Electron" modified="2026-08-11T17:35:00.000Z" agent="Antigravity" version="21.6.8" type="device">
+  <diagram id="scaffold_ddd_3tier" name="DDD三层领域隔离拓扑与多策略装配编译引擎">
+    <mxGraphModel dx="1200" dy="720" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageWidth="1200" pageHeight="720" background="#F8FAFC">
       <root>
         <mxCell id="0" strokeColor="none"/><mxCell id="1" parent="0" />
 
@@ -8,62 +8,62 @@
           <mxGeometry x="50" y="15" width="1100" height="35" as="geometry" />
         </mxCell>
 
-        <!-- 左侧：DDD 三层配置源资产 -->
-        <mxCell id="source_box" value="配置中心源资产库 (Scaffold Asset Source)" style="swimlane;rounded=1;fontStyle=1;strokeColor=#94A3B8;fillColor=#F8FAFC;fontColor=#334155;fontSize=13;startSize=25;" vertex="1" parent="1">
-          <mxGeometry x="50" y="60" width="530" height="580" as="geometry" />
+        <!-- Left: Source Assets -->
+        <mxCell id="src_box" value="📦 配置中心源资产库 (Scaffold Asset Source Repository)" style="swimlane;rounded=1;fontStyle=1;strokeColor=#CBD5E1;fillColor=#FFFFFF;fontColor=#1E293B;fontSize=12.5;startSize=28;" vertex="1" parent="1">
+          <mxGeometry x="50" y="60" width="520" height="630" as="geometry" />
         </mxCell>
 
-        <!-- Layer 1: Common -->
-        <mxCell id="L1_box" value="1. 通用底线层 (1-common · 全公司统一底线)" style="rounded=1;fillColor=#EEF2FF;strokeColor=#818CF8;fontColor=#1E1B4B;fontStyle=1;align=left;spacingLeft=15;" vertex="1" parent="source_box">
-          <mxGeometry x="20" y="40" width="490" height="110" as="geometry" />
+        <!-- Layer 1 -->
+        <mxCell id="l1" value="1. 通用底线层 (1-common · 企业统一工程基准)" style="swimlane;rounded=1;fontStyle=1;strokeColor=#C7D2FE;fillColor=#F5F3FF;fontColor=#312E81;fontSize=11;startSize=24;" vertex="1" parent="src_box">
+          <mxGeometry x="15" y="40" width="490" height="110" as="geometry" />
         </mxCell>
-        <mxCell id="L1_item1" value="全员 Git 协同底线 (git-workflow.md)" style="rounded=1;fillColor=#312E81;strokeColor=#4338CA;fontColor=#FFFFFF;fontSize=10;" vertex="1" parent="L1_box"><mxGeometry x="15" y="30" width="220" height="30" as="geometry" /></mxCell>
-        <mxCell id="L1_item2" value="Git Hooks 核心执行脚本 (硬逻辑)" style="rounded=1;fillColor=#312E81;strokeColor=#4338CA;fontColor=#FFFFFF;fontSize=10;" vertex="1" parent="L1_box"><mxGeometry x="250" y="30" width="225" height="30" as="geometry" /></mxCell>
-        <mxCell id="L1_item3" value="基座 MCP 服务 (Filesystem / CodeGraph)" style="rounded=1;fillColor=#4338CA;strokeColor=#6366F1;fontColor=#FFFFFF;fontSize=10;" vertex="1" parent="L1_box"><mxGeometry x="15" y="68" width="220" height="30" as="geometry" /></mxCell>
-        <mxCell id="L1_item4" value="通用 Gitignore / Gitattributes 底线" style="rounded=1;fillColor=#4338CA;strokeColor=#6366F1;fontColor=#FFFFFF;fontSize=10;" vertex="1" parent="L1_box"><mxGeometry x="250" y="68" width="225" height="30" as="geometry" /></mxCell>
+        <mxCell id="l1_1" value="全员 Git 协同底线 (git-workflow.md)" style="rounded=1;fillColor=#FFFFFF;strokeColor=#C7D2FE;fontColor=#312E81;fontSize=10;fontStyle=1;" vertex="1" parent="l1"><mxGeometry x="10" y="32" width="230" height="32" as="geometry" /></mxCell>
+        <mxCell id="l1_2" value="Git Hooks 核心只读执行脚本" style="rounded=1;fillColor=#FFFFFF;strokeColor=#C7D2FE;fontColor=#312E81;fontSize=10;fontStyle=1;" vertex="1" parent="l1"><mxGeometry x="250" y="32" width="230" height="32" as="geometry" /></mxCell>
+        <mxCell id="l1_3" value="基座 MCP 服务 (Filesystem / Code)" style="rounded=1;fillColor=#FFFFFF;strokeColor=#C7D2FE;fontColor=#312E81;fontSize=10;fontStyle=1;" vertex="1" parent="l1"><mxGeometry x="10" y="70" width="230" height="32" as="geometry" /></mxCell>
+        <mxCell id="l1_4" value="通用 Gitignore / Gitattributes 底线" style="rounded=1;fillColor=#FFFFFF;strokeColor=#C7D2FE;fontColor=#312E81;fontSize=10;fontStyle=1;" vertex="1" parent="l1"><mxGeometry x="250" y="70" width="230" height="32" as="geometry" /></mxCell>
 
-        <!-- Layer 2: Domain -->
-        <mxCell id="L2_box" value="2. 业务域/技术栈层 (2-domains · 业务域与技术栈规范)" style="rounded=1;fillColor=#FEF3C7;strokeColor=#FBBF24;fontColor=#78350F;fontStyle=1;align=left;spacingLeft=15;" vertex="1" parent="source_box">
-          <mxGeometry x="20" y="170" width="490" height="120" as="geometry" />
+        <!-- Layer 2 -->
+        <mxCell id="l2" value="2. 业务域/技术栈层 (2-domains · 领域规范与技术栈)" style="swimlane;rounded=1;fontStyle=1;strokeColor=#FDE68A;fillColor=#FFFBEB;fontColor=#92400E;fontSize=11;startSize=24;" vertex="1" parent="src_box">
+          <mxGeometry x="15" y="160" width="490" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="L2_item1" value="技术栈 Ignore 规则 (Node/Java/Python/C++)" style="rounded=1;fillColor=#B45309;strokeColor=#D97706;fontColor=#FFFFFF;fontSize=10;" vertex="1" parent="L2_box"><mxGeometry x="15" y="30" width="220" height="30" as="geometry" /></mxCell>
-        <mxCell id="L2_item2" value="业务域共享技能 (Jira/TAPD/域代码审查)" style="rounded=1;fillColor=#B45309;strokeColor=#D97706;fontColor=#FFFFFF;fontSize=10;" vertex="1" parent="L2_box"><mxGeometry x="250" y="30" width="225" height="30" as="geometry" /></mxCell>
-        <mxCell id="L2_item3" value="域专属 MCP 服务 (MLflow/内部数据库)" style="rounded=1;fillColor=#D97706;strokeColor=#F59E0B;fontColor=#FFFFFF;fontSize=10;" vertex="1" parent="L2_box"><mxGeometry x="15" y="68" width="220" height="40" as="geometry" /></mxCell>
-        <mxCell id="L2_item4" value="准入注册表 skills-registry.yaml&#10;(only_for / exclude 声明式过滤)" style="rounded=1;fillColor=#92400E;strokeColor=#B45309;fontColor=#FFFFFF;fontSize=10;fontStyle=1;" vertex="1" parent="L2_box"><mxGeometry x="250" y="68" width="225" height="40" as="geometry" /></mxCell>
+        <mxCell id="l2_1" value="技术栈 Ignore 规则 (Node/Java/Py)" style="rounded=1;fillColor=#FFFFFF;strokeColor=#FCD34D;fontColor=#92400E;fontSize=10;fontStyle=1;" vertex="1" parent="l2"><mxGeometry x="10" y="32" width="230" height="34" as="geometry" /></mxCell>
+        <mxCell id="l2_2" value="业务域共享技能 (Jira/TAPD/审查)" style="rounded=1;fillColor=#FFFFFF;strokeColor=#FCD34D;fontColor=#92400E;fontSize=10;fontStyle=1;" vertex="1" parent="l2"><mxGeometry x="250" y="32" width="230" height="34" as="geometry" /></mxCell>
+        <mxCell id="l2_3" value="域专属 MCP 服务 (MLflow/业务服务)" style="rounded=1;fillColor=#FFFFFF;strokeColor=#FCD34D;fontColor=#92400E;fontSize=10;fontStyle=1;" vertex="1" parent="l2"><mxGeometry x="10" y="74" width="230" height="38" as="geometry" /></mxCell>
+        <mxCell id="l2_4" value="准入注册表 registry.yaml (only_for/exclude)" style="rounded=1;fillColor=#FFFFFF;strokeColor=#FCD34D;fontColor=#92400E;fontSize=10;fontStyle=1;" vertex="1" parent="l2"><mxGeometry x="250" y="74" width="230" height="38" as="geometry" /></mxCell>
 
-        <!-- Layer 3: Role -->
-        <mxCell id="L3_box" value="3. 岗位特化层 (roles/&lt;role&gt; · 16+ 个性化岗位画像)" style="rounded=1;fillColor=#DCFCE7;strokeColor=#4ADE80;fontColor=#14532D;fontStyle=1;align=left;spacingLeft=15;" vertex="1" parent="source_box">
-          <mxGeometry x="20" y="310" width="490" height="250" as="geometry" />
+        <!-- Layer 3 -->
+        <mxCell id="l3" value="3. 岗位特化层 (roles/&lt;role&gt; · 16+ 个性化岗位画像)" style="swimlane;rounded=1;fontStyle=1;strokeColor=#A7F3D0;fillColor=#ECFDF5;fontColor=#065F46;fontSize=11;startSize=24;" vertex="1" parent="src_box">
+          <mxGeometry x="15" y="290" width="490" height="325" as="geometry" />
         </mxCell>
-        <mxCell id="L3_r1" value="后端开发岗 (Backend-Java/Go)&#10;• SQL 迁移审计 • 契约用例生成 • 数据库 MCP" style="rounded=1;fillColor=#15803D;strokeColor=#22C55E;fontColor=#FFFFFF;fontSize=10;align=left;spacingLeft=10;" vertex="1" parent="L3_box"><mxGeometry x="15" y="30" width="460" height="40" as="geometry" /></mxCell>
-        <mxCell id="L3_r2" value="前端开发岗 (Frontend-Vue/React)&#10;• 组件设计约束 • UI 交互规范 • Vue 常量模块化" style="rounded=1;fillColor=#15803D;strokeColor=#22C55E;fontColor=#FFFFFF;fontSize=10;align=left;spacingLeft=10;" vertex="1" parent="L3_box"><mxGeometry x="15" y="75" width="460" height="40" as="geometry" /></mxCell>
-        <mxCell id="L3_r3" value="算法研究岗 (AI-Algo / Vision / MLOps)&#10;• 模型评测 SOP • 数据集版本约束 • 算力追踪 MCP" style="rounded=1;fillColor=#15803D;strokeColor=#22C55E;fontColor=#FFFFFF;fontSize=10;align=left;spacingLeft=10;" vertex="1" parent="L3_box"><mxGeometry x="15" y="120" width="460" height="40" as="geometry" /></mxCell>
-        <mxCell id="L3_r4" value="产品管理岗 (Product-Mgr / Director)&#10;• PRD 编写规范 • 需求分级三层梳理 • 单人主干直推" style="rounded=1;fillColor=#15803D;strokeColor=#22C55E;fontColor=#FFFFFF;fontSize=10;align=left;spacingLeft=10;" vertex="1" parent="L3_box"><mxGeometry x="15" y="165" width="460" height="40" as="geometry" /></mxCell>
-        <mxCell id="L3_r5" value="测试工程岗 (QA-Engineer)&#10;• 测试用例生成 • 全流程联调验证 • 自动化测试" style="rounded=1;fillColor=#15803D;strokeColor=#22C55E;fontColor=#FFFFFF;fontSize=10;align=left;spacingLeft=10;" vertex="1" parent="L3_box"><mxGeometry x="15" y="210" width="460" height="35" as="geometry" /></mxCell>
+        <mxCell id="r_1" value="后端开发岗 (Backend-Java/Go/PHP)&#10;• SQL 迁移审计 • 接口契约生成 • 数据库检测 MCP" style="rounded=1;fillColor=#FFFFFF;strokeColor=#86EFAC;fontColor=#065F46;fontSize=10;align=left;spacingLeft=10;" vertex="1" parent="l3"><mxGeometry x="10" y="32" width="470" height="48" as="geometry" /></mxCell>
+        <mxCell id="r_2" value="前端开发岗 (Frontend-Vue/React)&#10;• 组件原子化规范 • UI 设计约束 • 常量模块化治理" style="rounded=1;fillColor=#FFFFFF;strokeColor=#86EFAC;fontColor=#065F46;fontSize=10;align=left;spacingLeft=10;" vertex="1" parent="l3"><mxGeometry x="10" y="88" width="470" height="48" as="geometry" /></mxCell>
+        <mxCell id="r_3" value="算法研究岗 (AI-Algo / Vision / MLOps)&#10;• 模型评测 SOP • 数据集版本约束 • 算力追踪 MCP" style="rounded=1;fillColor=#FFFFFF;strokeColor=#86EFAC;fontColor=#065F46;fontSize=10;align=left;spacingLeft=10;" vertex="1" parent="l3"><mxGeometry x="10" y="144" width="470" height="48" as="geometry" /></mxCell>
+        <mxCell id="r_4" value="产品管理岗 (Product-Mgr / Director)&#10;• PRD 编写规约 • 需求分级梳理 • 单人主干直推策略" style="rounded=1;fillColor=#FFFFFF;strokeColor=#86EFAC;fontColor=#065F46;fontSize=10;align=left;spacingLeft=10;" vertex="1" parent="l3"><mxGeometry x="10" y="200" width="470" height="48" as="geometry" /></mxCell>
+        <mxCell id="r_5" value="测试工程岗 (QA-Engineer)&#10;• 全链路用例生成 • 自动化测试流水线联动" style="rounded=1;fillColor=#FFFFFF;strokeColor=#86EFAC;fontColor=#065F46;fontSize=10;align=left;spacingLeft=10;" vertex="1" parent="l3"><mxGeometry x="10" y="256" width="470" height="48" as="geometry" /></mxCell>
 
-        <!-- 中间：编译装配引擎 -->
-        <mxCell id="engine_box" value="多策略装配编译引擎 (CLI Engine)" style="swimlane;rounded=1;fontStyle=1;strokeColor=#C084FC;fillColor=#FAF5FF;fontColor=#581C87;fontSize=13;startSize=25;" vertex="1" parent="1">
-          <mxGeometry x="610" y="60" width="540" height="270" as="geometry" />
+        <!-- Right Top: Engine -->
+        <mxCell id="eng_box" value="⚙️ 多策略装配编译引擎 (CLI Compilation Engine)" style="swimlane;rounded=1;fontStyle=1;strokeColor=#DDD6FE;fillColor=#FFFFFF;fontColor=#581C87;fontSize=12.5;startSize=28;" vertex="1" parent="1">
+          <mxGeometry x="630" y="60" width="520" height="290" as="geometry" />
         </mxCell>
-        <mxCell id="E1" value="Markdown AST 标题级语义覆盖 (Heading-level)&#10;• 继承通用结构 • 逐字匹配覆盖同名章节 • 追加独有章节" style="rounded=1;fillColor=#7E22CE;strokeColor=#A855F7;fontColor=#FFFFFF;fontSize=10;align=left;spacingLeft=10;" vertex="1" parent="engine_box"><mxGeometry x="20" y="35" width="500" height="45" as="geometry" /></mxCell>
-        <mxCell id="E2" value="JSON MCP 服务级深度合并 (Service Deep Merge)&#10;• 深度遍历 mcpServers • 参数按字段重写 • 密钥占位符隔离" style="rounded=1;fillColor=#7E22CE;strokeColor=#A855F7;fontColor=#FFFFFF;fontSize=10;align=left;spacingLeft=10;" vertex="1" parent="engine_box"><mxGeometry x="20" y="88" width="500" height="45" as="geometry" /></mxCell>
-        <mxCell id="E3" value="Git Ignore / Attr 智能清洗与三层堆叠 (Line-level)&#10;• 统一 OS/IDE 底线 • 注入技术栈规则 • 保留本地定制" style="rounded=1;fillColor=#7E22CE;strokeColor=#A855F7;fontColor=#FFFFFF;fontSize=10;align=left;spacingLeft=10;" vertex="1" parent="engine_box"><mxGeometry x="20" y="141" width="500" height="45" as="geometry" /></mxCell>
-        <mxCell id="E4" value="准入注册表物理裁剪 (Selective Ingestion)&#10;• 执行 only_for/exclude 规则 • 剔除无关技能 • 避免上下文爆炸" style="rounded=1;fillColor=#6B21A8;strokeColor=#9333EA;fontColor=#FFFFFF;fontSize=10;align=left;spacingLeft=10;fontStyle=1;" vertex="1" parent="engine_box"><mxGeometry x="20" y="194" width="500" height="45" as="geometry" /></mxCell>
+        <mxCell id="e_1" value="Markdown AST 标题级语义覆盖 (Heading-Level Smart Merge)&#10;• 继承通用结构 • 逐字匹配覆盖同名章节 • 追加特化独有章节" style="rounded=1;fillColor=#F5F3FF;strokeColor=#C4B5FD;fontColor=#581C87;fontSize=10;align=left;spacingLeft=10;" vertex="1" parent="eng_box"><mxGeometry x="15" y="40" width="490" height="52" as="geometry" /></mxCell>
+        <mxCell id="e_2" value="JSON MCP 服务级深度合并 (Service Deep Merge)&#10;• 深度遍历 mcpServers • 细粒度参数重写 • 敏感 Token 占位隔离" style="rounded=1;fillColor=#F5F3FF;strokeColor=#C4B5FD;fontColor=#581C87;fontSize=10;align=left;spacingLeft=10;" vertex="1" parent="eng_box"><mxGeometry x="15" y="100" width="490" height="52" as="geometry" /></mxCell>
+        <mxCell id="e_3" value="Git Ignore / Attr 智能清洗与三层堆叠 (Line-Level Stacking)&#10;• 统一 OS/IDE 底线 • 注入技术栈规则 • 保护本地自定义项" style="rounded=1;fillColor=#F5F3FF;strokeColor=#C4B5FD;fontColor=#581C87;fontSize=10;align=left;spacingLeft=10;" vertex="1" parent="eng_box"><mxGeometry x="15" y="160" width="490" height="52" as="geometry" /></mxCell>
+        <mxCell id="e_4" value="准入注册表物理裁剪 (Selective Ingestion Pruning)&#10;• 执行 only_for/exclude 规则 • 物理裁剪无关技能 • 避免上下文爆炸" style="rounded=1;fillColor=#FAF5FF;strokeColor=#A855F7;fontColor=#6B21A8;fontSize=10;align=left;spacingLeft=10;dashed=1;" vertex="1" parent="eng_box"><mxGeometry x="15" y="220" width="490" height="52" as="geometry" /></mxCell>
 
-        <!-- 目标业务工作区 -->
-        <mxCell id="target_box" value="目标业务工作区 (Target Workspace)" style="swimlane;rounded=1;fontStyle=1;strokeColor=#38BDF8;fillColor=#F0F9FF;fontColor=#0369A1;fontSize=13;startSize=25;" vertex="1" parent="1">
-          <mxGeometry x="610" y="360" width="540" height="280" as="geometry" />
+        <!-- Right Bottom: Target -->
+        <mxCell id="tgt_box" value="🎯 目标业务工作区产物 (Target Workspace Output .ide/)" style="swimlane;rounded=1;fontStyle=1;strokeColor=#BAE6FD;fillColor=#FFFFFF;fontColor=#0369A1;fontSize=12.5;startSize=28;" vertex="1" parent="1">
+          <mxGeometry x="630" y="370" width="520" height="320" as="geometry" />
         </mxCell>
-        <mxCell id="T1" value=".ide/rules/&#10;• 语义合并后的生效规则 (git-workflow.md 等)" style="rounded=1;fillColor=#0284C7;strokeColor=#38BDF8;fontColor=#FFFFFF;fontSize=10;align=left;spacingLeft=10;" vertex="1" parent="target_box"><mxGeometry x="20" y="35" width="240" height="50" as="geometry" /></mxCell>
-        <mxCell id="T2" value=".ide/skills/&#10;• 物理裁剪过滤后的角色专属技能包" style="rounded=1;fillColor=#0284C7;strokeColor=#38BDF8;fontColor=#FFFFFF;fontSize=10;align=left;spacingLeft=10;" vertex="1" parent="target_box"><mxGeometry x="280" y="35" width="240" height="50" as="geometry" /></mxCell>
-        <mxCell id="T3" value=".ide/mcp.json&#10;• 服务级深度合并后的工具连接配置" style="rounded=1;fillColor=#0284C7;strokeColor=#38BDF8;fontColor=#FFFFFF;fontSize=10;align=left;spacingLeft=10;" vertex="1" parent="target_box"><mxGeometry x="20" y="95" width="240" height="50" as="geometry" /></mxCell>
-        <mxCell id="T4" value=".githooks.yml&#10;• 按角色模板分流生成的 Git 护栏开关" style="rounded=1;fillColor=#0284C7;strokeColor=#38BDF8;fontColor=#FFFFFF;fontSize=10;align=left;spacingLeft=10;" vertex="1" parent="target_box"><mxGeometry x="280" y="95" width="240" height="50" as="geometry" /></mxCell>
-        <mxCell id="T5" value=".ide/hooks.json + telemetry/&#10;• IDE 事件监听挂钩 (PostToolUse / SessionStart)" style="rounded=1;fillColor=#0369A1;strokeColor=#0284C7;fontColor=#FFFFFF;fontSize=10;align=left;spacingLeft=10;" vertex="1" parent="target_box"><mxGeometry x="20" y="155" width="500" height="45" as="geometry" /></mxCell>
-        <mxCell id="T6" value="CONFIG_SUMMARY.md (装配元数据清单与回滚快照索引)" style="rounded=1;fillColor=#0C4A6E;strokeColor=#0369A1;fontColor=#FFFFFF;fontSize=10;align=center;" vertex="1" parent="target_box"><mxGeometry x="20" y="210" width="500" height="30" as="geometry" /></mxCell>
+        <mxCell id="t_1" value=".ide/rules/ (生效规则)&#10;AST 语义合并后的完整规则文件" style="rounded=1;fillColor=#F0F9FF;strokeColor=#7DD3FC;fontColor=#0369A1;fontSize=10;fontStyle=1;" vertex="1" parent="tgt_box"><mxGeometry x="15" y="42" width="235" height="55" as="geometry" /></mxCell>
+        <mxCell id="t_2" value=".ide/skills/ (特化技能)&#10;准入裁剪后的角色精准 Skill 包" style="rounded=1;fillColor=#F0F9FF;strokeColor=#7DD3FC;fontColor=#0369A1;fontSize=10;fontStyle=1;" vertex="1" parent="tgt_box"><mxGeometry x="270" y="42" width="235" height="55" as="geometry" /></mxCell>
+        <mxCell id="t_3" value=".ide/mcp.json (连接配置)&#10;服务级深度合并后的工具集" style="rounded=1;fillColor=#F0F9FF;strokeColor=#7DD3FC;fontColor=#0369A1;fontSize=10;fontStyle=1;" vertex="1" parent="tgt_box"><mxGeometry x="15" y="110" width="235" height="55" as="geometry" /></mxCell>
+        <mxCell id="t_4" value=".githooks.yml (护栏开关)&#10;按角色画像分流生成的配置" style="rounded=1;fillColor=#F0F9FF;strokeColor=#7DD3FC;fontColor=#0369A1;fontSize=10;fontStyle=1;" vertex="1" parent="tgt_box"><mxGeometry x="270" y="110" width="235" height="55" as="geometry" /></mxCell>
+        <mxCell id="t_5" value=".ide/hooks.json + telemetry/ (事件挂钩)&#10;IDE 行为监听 (PostToolUse / SessionStart)，闭环效能数据" style="rounded=1;fillColor=#F0F9FF;strokeColor=#7DD3FC;fontColor=#0369A1;fontSize=10;fontStyle=1;" vertex="1" parent="tgt_box"><mxGeometry x="15" y="178" width="490" height="55" as="geometry" /></mxCell>
+        <mxCell id="t_6" value="CONFIG_SUMMARY.md (装配元数据清单与快照备份索引)" style="rounded=1;fillColor=#0C4A6E;strokeColor=#0369A1;fontColor=#FFFFFF;fontSize=11;fontStyle=1;align=center;" vertex="1" parent="tgt_box"><mxGeometry x="15" y="248" width="490" height="45" as="geometry" /></mxCell>
 
-        <!-- 连线 -->
-        <mxCell id="flow1" value="1. 声明式拉取" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2.5;strokeColor=#7E22CE;fontStyle=1;fontColor=#581C87;fontSize=11;" edge="1" parent="1" source="source_box" target="engine_box"/>
-        <mxCell id="flow2" value="2. 编译并写入" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2.5;strokeColor=#0284C7;fontStyle=1;fontColor=#0369A1;fontSize=11;" edge="1" parent="1" source="engine_box" target="target_box"/>
+        <!-- Connectors -->
+        <mxCell id="f_1" value="① 编译装配" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2.5;strokeColor=#7C3AED;fontStyle=1;fontColor=#581C87;fontSize=11;" edge="1" parent="1" source="src_box" target="eng_box"/>
+        <mxCell id="f_2" value="② 产物落盘" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2.5;strokeColor=#0284C7;fontStyle=1;fontColor=#0369A1;fontSize=11;" edge="1" parent="1" source="eng_box" target="tgt_box"/>
 
       </root>
     </mxGraphModel>

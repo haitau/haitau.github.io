@@ -1,0 +1,144 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="100%" height="100%">
+  <defs>
+    <filter id="soft-shadow" x="-8%" y="-8%" width="116%" height="116%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#0F172A" flood-opacity="0.06"/>
+    </filter>
+    <filter id="card-shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.04"/>
+    </filter>
+
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#F1F5F9"/>
+    </linearGradient>
+    <linearGradient id="bad-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F43F5E"/>
+      <stop offset="100%" stop-color="#E11D48"/>
+    </linearGradient>
+    <linearGradient id="good-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="100%" height="100%" fill="url(#bg-grad)"/>
+  <rect x="25" y="25" width="1150" height="630" rx="16" fill="#FFFFFF" fill-opacity="0.7" stroke="#E2E8F0" stroke-width="1.5" filter="url(#soft-shadow)"/>
+
+  <!-- Title -->
+  <g transform="translate(60, 48)">
+    <rect x="0" y="0" width="6" height="26" rx="3" fill="#E11D48"/>
+    <text x="18" y="20" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif" font-size="18" font-weight="800" fill="#0F172A" letter-spacing="-0.5px">
+      图 1.1：岗位收敛悖论 —— 全栈工程师的异构多仓困境与上下文作用域污染
+    </text>
+    <rect x="910" y="2" width="170" height="22" rx="11" fill="#FFE4E6" stroke="#FECDD3"/>
+    <text x="995" y="16" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#9F1239" text-anchor="middle">Context Scoping Dilemma</text>
+  </g>
+
+  <!-- Left: Bad Paradigm Card -->
+  <g transform="translate(60, 90)" filter="url(#card-shadow)">
+    <rect width="520" height="540" rx="12" fill="#FFFFFF" stroke="#FDA4AF" stroke-width="1.5"/>
+    <path d="M 0 12 Q 0 0 12 0 L 508 0 Q 520 0 520 12 L 520 36 L 0 36 Z" fill="url(#bad-grad)"/>
+    <text x="20" y="23" font-family="sans-serif" font-size="12.5" font-weight="700" fill="#FFFFFF">
+      ❌ 全量常驻装载模式 (Global Unmanaged Context)
+    </text>
+
+    <g transform="translate(18, 48)">
+      <!-- Top banner -->
+      <rect width="484" height="48" rx="8" fill="#881337"/>
+      <text x="242" y="22" font-family="sans-serif" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">全栈工程师 AI Code Agent (全局混杂会话)</text>
+      <text x="242" y="38" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#FECDD3" text-anchor="middle">同时塞入：PHP规范 + Vue3规范 + Python规范 + Go微服务规范 + 30+ MCP</text>
+
+      <!-- Cost 1 -->
+      <g transform="translate(0, 58)">
+        <rect width="484" height="65" rx="8" fill="#FFF1F2" stroke="#FECDD3"/>
+        <text x="14" y="22" font-family="sans-serif" font-size="11" font-weight="700" fill="#9F1239">💥 致命代价 1：跨技术栈幻觉 (Cross-Stack Hallucination)</text>
+        <text x="14" y="40" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#881337">• 在 Python 仓中误用 PHP 语法或 Vue 状态管理模式</text>
+        <text x="14" y="54" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#881337">• 混淆不同语言的异步并发模型与内存生命周期</text>
+      </g>
+
+      <!-- Cost 2 -->
+      <g transform="translate(0, 131)">
+        <rect width="484" height="65" rx="8" fill="#FFF1F2" stroke="#FECDD3"/>
+        <text x="14" y="22" font-family="sans-serif" font-size="11" font-weight="700" fill="#9F1239">💥 致命代价 2：规约与指令冲突 (Rule Collision)</text>
+        <text x="14" y="40" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#881337">• 前端组件强制 PascalCase vs 后端接口强制 snake_case 互搏</text>
+        <text x="14" y="54" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#881337">• 团队 Git 路由策略与不同仓库分支规范发生严重抵触</text>
+      </g>
+
+      <!-- Cost 3 -->
+      <g transform="translate(0, 204)">
+        <rect width="484" height="65" rx="8" fill="#FFF1F2" stroke="#FECDD3"/>
+        <text x="14" y="22" font-family="sans-serif" font-size="11" font-weight="700" fill="#9F1239">💥 致命代价 3：Token 膨胀与注意力稀释 (Attention Thrashing)</text>
+        <text x="14" y="40" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#881337">• 100k+ 上下文被无关技术栈的规则占满，模型注意力分散</text>
+        <text x="14" y="54" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#881337">• 核心架构规约被淹没在海量 Prompt 中，指令遵从度断崖式下跌</text>
+      </g>
+
+      <!-- Cost 4 -->
+      <g transform="translate(0, 277)">
+        <rect width="484" height="65" rx="8" fill="#FFF1F2" stroke="#FECDD3"/>
+        <text x="14" y="22" font-family="sans-serif" font-size="11" font-weight="700" fill="#9F1239">💥 致命代价 4：MCP 工具拥堵与 429 熔断 (Tool Bloat)</text>
+        <text x="14" y="40" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#881337">• 注册 30+ 异构工具，模型在决策选型时频繁误调无关工具</text>
+        <text x="14" y="54" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#881337">• 引发工具调用超时、上下文污染与 API Rate Limit 限流</text>
+      </g>
+
+      <!-- Result callout -->
+      <rect y="352" width="484" height="38" rx="6" fill="#FFE4E6" stroke="#FDA4AF"/>
+      <text x="242" y="23" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#9F1239" text-anchor="middle">
+        恶果：AI 助手越升级越迟钝，工程师被迫反复纠正代码低级语法错误
+      </text>
+    </g>
+  </g>
+
+  <!-- Right: Good Paradigm Card -->
+  <g transform="translate(620, 90)" filter="url(#card-shadow)">
+    <rect width="520" height="540" rx="12" fill="#FFFFFF" stroke="#86EFAC" stroke-width="1.5"/>
+    <path d="M 0 12 Q 0 0 12 0 L 508 0 Q 520 0 520 12 L 520 36 L 0 36 Z" fill="url(#good-grad)"/>
+    <text x="20" y="23" font-family="sans-serif" font-size="12.5" font-weight="700" fill="#FFFFFF">
+      ✅ 目录作用域聚焦加载模式 (Scoped Context Focus)
+    </text>
+
+    <g transform="translate(18, 48)">
+      <!-- Top banner -->
+      <rect width="484" height="48" rx="8" fill="#14532D"/>
+      <text x="242" y="22" font-family="sans-serif" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">全栈工程师 AI Code Agent (动态作用域会话)</text>
+      <text x="242" y="38" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#BBF7D0" text-anchor="middle">聚焦当前 Git 仓库，仅激活当前技术栈三要素 (Rule / Skill / MCP)</text>
+
+      <!-- Repo 1 -->
+      <g transform="translate(0, 58)">
+        <rect width="484" height="65" rx="8" fill="#ECFDF5" stroke="#A7F3D0"/>
+        <text x="14" y="22" font-family="sans-serif" font-size="11" font-weight="700" fill="#065F46">🎯 仓库 A：聚焦后端 Go/Webman 仓</text>
+        <text x="14" y="40" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#047857">• 仅激活: Go 并发规约、SQL 迁移审计 Skill、DB 检查 MCP</text>
+        <text x="14" y="54" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#047857">• 状态: 其余 N-1 个技术栈规则物理静默，零上下文干扰</text>
+      </g>
+
+      <!-- Repo 2 -->
+      <g transform="translate(0, 131)">
+        <rect width="484" height="65" rx="8" fill="#ECFDF5" stroke="#A7F3D0"/>
+        <text x="14" y="22" font-family="sans-serif" font-size="11" font-weight="700" fill="#065F46">🎯 仓库 B：聚焦前端 Vue3/React 仓</text>
+        <text x="14" y="40" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#047857">• 仅激活: UI 设计规范、组件原子化约束、Browser 调试 MCP</text>
+        <text x="14" y="54" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#047857">• 状态: 后端与算法规约完全隔离，专注于交互与响应式逻辑</text>
+      </g>
+
+      <!-- Repo 3 -->
+      <g transform="translate(0, 204)">
+        <rect width="484" height="65" rx="8" fill="#ECFDF5" stroke="#A7F3D0"/>
+        <text x="14" y="22" font-family="sans-serif" font-size="11" font-weight="700" fill="#065F46">🎯 仓库 C：聚焦算法与 MLOps 仓</text>
+        <text x="14" y="40" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#047857">• 仅激活: Python 科学计算基线、模型评估 SOP、MLflow MCP</text>
+        <text x="14" y="54" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#047857">• 状态: 零前端干扰，专注算法吞吐与精度调优</text>
+      </g>
+
+      <!-- Repo 4 -->
+      <g transform="translate(0, 277)">
+        <rect width="484" height="65" rx="8" fill="#ECFDF5" stroke="#A7F3D0"/>
+        <text x="14" y="22" font-family="sans-serif" font-size="11" font-weight="700" fill="#065F46">🎯 顶层 Meta-Repo：跨仓路由与影响分析</text>
+        <text x="14" y="40" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#047857">• 跨仓任务编排、接口契约联动校验、Subagent 任务分发</text>
+        <text x="14" y="54" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#047857">• 状态: 保持全局架构视角，精准下发细粒度子任务</text>
+      </g>
+
+      <!-- Result callout -->
+      <rect y="352" width="484" height="38" rx="6" fill="#DCFCE7" stroke="#86EFAC"/>
+      <text x="242" y="23" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#14532D" text-anchor="middle">
+        收益：100% 确定性、极低 Token 消耗、零跨栈幻觉、毫秒级响应
+      </text>
+    </g>
+  </g>
+</svg>

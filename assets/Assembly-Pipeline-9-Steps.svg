@@ -1,95 +1,203 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 650" width="100%" height="100%" style="background-color:#F8FAFC;">
-  <style>
-    .diagram-title { font-family: system-ui, -apple-system, sans-serif; font-size: 20px; font-weight: 800; fill: #0F172A; text-anchor: middle; }
-    .box-title { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; font-weight: 700; }
-    .node-title { font-family: system-ui, -apple-system, sans-serif; font-size: 11px; font-weight: 700; fill: #FFFFFF; }
-    .node-sub { font-family: system-ui, -apple-system, sans-serif; font-size: 10px; font-weight: 400; fill: #E2E8F0; }
-    .pre-title { font-family: system-ui, -apple-system, sans-serif; font-size: 11px; font-weight: 700; fill: #78350F; }
-    .pre-sub { font-family: system-ui, -apple-system, sans-serif; font-size: 10px; font-weight: 500; fill: #92400E; }
-    .succ-text { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 700; fill: #FFFFFF; text-anchor: middle; }
-  </style>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" width="100%" height="100%">
+  <defs>
+    <filter id="soft-shadow" x="-8%" y="-8%" width="116%" height="116%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#0F172A" flood-opacity="0.06"/>
+    </filter>
+    <filter id="card-shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.04"/>
+    </filter>
 
-  <text x="600" y="35" class="diagram-title">图 6.1：CLI 引擎 9 步原子化装配流水线全景</text>
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#F1F5F9"/>
+    </linearGradient>
+    <linearGradient id="step-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4F46E5"/>
+      <stop offset="100%" stop-color="#7C3AED"/>
+    </linearGradient>
 
-  <!-- Pre-Flight Phase -->
-  <rect x="50" y="60" width="1100" height="110" rx="10" fill="#FFFBEB" stroke="#F59E0B" stroke-width="2"/>
-  <text x="70" y="82" class="box-title" fill="#92400E">前置准备阶段 (Pre-Flight Phase · 零污染与安全防护)</text>
+    <marker id="m-flow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#6366F1"/>
+    </marker>
+  </defs>
 
-  <g transform="translate(70, 95)">
-    <rect width="335" height="60" rx="6" fill="#FEF3C7" stroke="#D97706" stroke-width="1.5"/>
-    <text x="15" y="24" class="pre-title">HTTP 直拉最新配置 Tarball</text>
-    <text x="15" y="44" class="pre-sub">解压至系统临时目录，避免 node_modules 污染</text>
+  <rect width="100%" height="100%" fill="url(#bg-grad)"/>
+  <rect x="25" y="25" width="1150" height="670" rx="16" fill="#FFFFFF" fill-opacity="0.7" stroke="#E2E8F0" stroke-width="1.5" filter="url(#soft-shadow)"/>
 
-    <rect x="360" width="340" height="60" rx="6" fill="#FEF3C7" stroke="#D97706" stroke-width="1.5"/>
-    <text x="375" y="24" class="pre-title">自动创建快照备份 (Backup)</text>
-    <text x="375" y="44" class="pre-sub">保留至多 10 份历史快照，支持秒级无损回滚</text>
-
-    <rect x="725" width="335" height="60" rx="6" fill="#FEF3C7" stroke="#D97706" stroke-width="1.5"/>
-    <text x="740" y="24" class="pre-title">清理废弃历史配置 (Cleanup)</text>
-    <text x="740" y="44" class="pre-sub">对比废弃清单，物理剔除过期的规则与 MCP 服务</text>
+  <!-- Title -->
+  <g transform="translate(60, 48)">
+    <rect x="0" y="0" width="6" height="26" rx="3" fill="#6366F1"/>
+    <text x="18" y="20" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif" font-size="18" font-weight="800" fill="#0F172A" letter-spacing="-0.5px">
+      图 6.1：CLI 引擎 9 步原子化装配流水线全景 (Atomic Assembly Pipeline)
+    </text>
+    <rect x="910" y="2" width="170" height="22" rx="11" fill="#EEF2FF" stroke="#C7D2FE"/>
+    <text x="995" y="16" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#4338CA" text-anchor="middle">9-Step Pipeline Engine</text>
   </g>
 
-  <!-- 9-Step Pipeline -->
-  <rect x="50" y="190" width="1100" height="350" rx="10" fill="#EEF2FF" stroke="#818CF8" stroke-width="2"/>
-  <text x="70" y="212" class="box-title" fill="#1E1B4B">9 步原子化编译装配执行流水线 (9-Step Atomic Assembly Pipeline)</text>
+  <!-- 3x3 Matrix of 9 Steps -->
+  <g transform="translate(60, 95)" filter="url(#card-shadow)">
 
-  <g transform="translate(70, 225)">
-    <!-- Row 1: Step 1-3 -->
-    <g>
-      <rect width="335" height="85" rx="6" fill="#312E81"/>
-      <text x="15" y="24" class="node-title">Step 1: buildUserRules()</text>
-      <text x="15" y="46" class="node-sub">• 生成开发者个人全局规则</text>
-      <text x="15" y="66" class="node-sub">• 输出: .ide/global-user-rules.md</text>
-
-      <rect x="360" width="340" height="85" rx="6" fill="#312E81"/>
-      <text x="375" y="24" class="node-title">Step 2: buildProjectRules()</text>
-      <text x="375" y="46" class="node-sub">• 标题级语义合并 Markdown 规则</text>
-      <text x="375" y="66" class="node-sub">• 继承通用基座，覆盖特化章节</text>
-
-      <rect x="725" width="335" height="85" rx="6" fill="#312E81"/>
-      <text x="740" y="24" class="node-title">Step 3: buildSkills()</text>
-      <text x="740" y="46" class="node-sub">• 按准入注册表黑白名单过滤</text>
-      <text x="740" y="66" class="node-sub">• 物理注入角色特化技能包</text>
+    <!-- Row 1: Steps 1 -> 2 -> 3 -->
+    <!-- Step 1 -->
+    <g transform="translate(0, 0)">
+      <rect width="330" height="155" rx="10" fill="#FFFFFF" stroke="#C7D2FE" stroke-width="1.5"/>
+      <rect x="0" y="0" width="330" height="32" rx="10" fill="#EEF2FF"/>
+      <circle cx="20" cy="16" r="10" fill="#4F46E5"/>
+      <text x="20" y="20" font-family="sans-serif" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
+      <text x="38" y="20" font-family="sans-serif" font-size="11.5" font-weight="700" fill="#312E81">preflight-check (前置探针)</text>
+      <text x="14" y="54" font-family="sans-serif" font-size="10" font-weight="600" fill="#1E293B">🔍 探针检查与基线探测</text>
+      <text x="14" y="72" font-family="sans-serif" font-size="9" font-weight="500" fill="#64748B">• 校验业务仓库 Node/Git 运行环境</text>
+      <text x="14" y="88" font-family="sans-serif" font-size="9" font-weight="500" fill="#64748B">• 嗅探仓库语言栈并自动定位装配模板</text>
+      <text x="14" y="104" font-family="sans-serif" font-size="9" font-weight="500" fill="#64748B">• 检测历史装配快照，评估增量升级策略</text>
+      <rect x="14" y="120" width="300" height="22" rx="4" fill="#F1F5F9"/>
+      <text x="164" y="135" font-family="monospace" font-size="9" font-weight="600" fill="#475569" text-anchor="middle">Step 1: Environment &amp; Tech-Stack Probe</text>
     </g>
 
-    <!-- Row 2: Step 4-6 -->
-    <g transform="translate(0, 95)">
-      <rect width="335" height="85" rx="6" fill="#4338CA"/>
-      <text x="15" y="24" class="node-title">Step 4: buildMcpConfig()</text>
-      <text x="15" y="46" class="node-sub">• 服务级深度合并 mcp.json</text>
-      <text x="15" y="66" class="node-sub">• 参数特化与凭据占位隔离</text>
+    <!-- Arrow 1 -> 2 -->
+    <path d="M 330 77 L 365 77" stroke="#6366F1" stroke-width="2" fill="none" marker-end="url(#m-flow)"/>
 
-      <rect x="360" width="340" height="85" rx="6" fill="#4338CA"/>
-      <text x="375" y="24" class="node-title">Step 5: injectWorkspaceAssets()</text>
-      <text x="375" y="46" class="node-sub">• 注入团队工程辅助模板与脚本</text>
-      <text x="375" y="66" class="node-sub">• 标准化工作区工具链与环境</text>
-
-      <rect x="725" width="335" height="85" rx="6" fill="#4338CA"/>
-      <text x="740" y="24" class="node-title">Step 6: createSummaryFile()</text>
-      <text x="740" y="46" class="node-sub">• 生成装配摘要 CONFIG_SUMMARY.md</text>
-      <text x="740" y="66" class="node-sub">• 记录角色画像与资产版本索引</text>
+    <!-- Step 2 -->
+    <g transform="translate(375, 0)">
+      <rect width="330" height="155" rx="10" fill="#FFFFFF" stroke="#C7D2FE" stroke-width="1.5"/>
+      <rect x="0" y="0" width="330" height="32" rx="10" fill="#EEF2FF"/>
+      <circle cx="20" cy="16" r="10" fill="#4F46E5"/>
+      <text x="20" y="20" font-family="sans-serif" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
+      <text x="38" y="20" font-family="sans-serif" font-size="11.5" font-weight="700" fill="#312E81">clean-target (环境隔离与清理)</text>
+      <text x="14" y="54" font-family="sans-serif" font-size="10" font-weight="600" fill="#1E293B">🧹 目标工作区幂等清理</text>
+      <text x="14" y="72" font-family="sans-serif" font-size="9" font-weight="500" fill="#64748B">• 备份待覆盖的本地历史配置快照</text>
+      <text x="14" y="88" font-family="sans-serif" font-size="9" font-weight="500" fill="#64748B">• 清理废弃规则与过期的符号软链接</text>
+      <text x="14" y="104" font-family="sans-serif" font-size="9" font-weight="500" fill="#64748B">• 建立全新目录拓扑 (.ide/, .agents/)</text>
+      <rect x="14" y="120" width="300" height="22" rx="4" fill="#F1F5F9"/>
+      <text x="164" y="135" font-family="monospace" font-size="9" font-weight="600" fill="#475569" text-anchor="middle">Step 2: Workspace Snapshot &amp; Pruning</text>
     </g>
 
-    <!-- Row 3: Step 7-9 -->
-    <g transform="translate(0, 190)">
-      <rect width="335" height="85" rx="6" fill="#4F46E5"/>
-      <text x="15" y="24" class="node-title">Step 7: buildGitScaffold()</text>
-      <text x="15" y="46" class="node-sub">• 行级清洗并三层堆叠 Gitignore</text>
-      <text x="15" y="66" class="node-sub">• 强制全局统一 LF 换行规则</text>
+    <!-- Arrow 2 -> 3 -->
+    <path d="M 705 77 L 740 77" stroke="#6366F1" stroke-width="2" fill="none" marker-end="url(#m-flow)"/>
 
-      <rect x="360" width="340" height="85" rx="6" fill="#4F46E5"/>
-      <text x="375" y="24" class="node-title">Step 8: buildGitHooks()</text>
-      <text x="375" y="46" class="node-sub">• 分发通用 Hook 硬执行脚本</text>
-      <text x="375" y="66" class="node-sub">• 注入角色专属 .githooks.yml 开关</text>
-
-      <rect x="725" width="335" height="85" rx="6" fill="#4F46E5"/>
-      <text x="740" y="24" class="node-title">Step 9: buildTelemetryHooks()</text>
-      <text x="740" y="46" class="node-sub">• 挂载 IDE 事件监听 hooks.json</text>
-      <text x="740" y="66" class="node-sub">• 连通效能监测与可观测性闭环</text>
+    <!-- Step 3 -->
+    <g transform="translate(750, 0)">
+      <rect width="330" height="155" rx="10" fill="#FFFFFF" stroke="#C7D2FE" stroke-width="1.5"/>
+      <rect x="0" y="0" width="330" height="32" rx="10" fill="#EEF2FF"/>
+      <circle cx="20" cy="16" r="10" fill="#4F46E5"/>
+      <text x="20" y="20" font-family="sans-serif" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">3</text>
+      <text x="38" y="20" font-family="sans-serif" font-size="11.5" font-weight="700" fill="#312E81">build-project-rules (规则合并)</text>
+      <text x="14" y="54" font-family="sans-serif" font-size="10" font-weight="600" fill="#1E293B">📝 Markdown AST 标题级语义合并</text>
+      <text x="14" y="72" font-family="sans-serif" font-size="9" font-weight="500" fill="#64748B">• 读取 Common、Domain 与 Role 规则</text>
+      <text x="14" y="88" font-family="sans-serif" font-size="9" font-weight="500" fill="#64748B">• 同名章节精准替换，独有章节追加合并</text>
+      <text x="14" y="104" font-family="sans-serif" font-size="9" font-weight="500" fill="#64748B">• 输出 AGENTS.md 单一事实源与薄指针</text>
+      <rect x="14" y="120" width="300" height="22" rx="4" fill="#F1F5F9"/>
+      <text x="164" y="135" font-family="monospace" font-size="9" font-weight="600" fill="#475569" text-anchor="middle">Step 3: AST Heading-Level Rules Compile</text>
     </g>
+
+    <!-- Arrow 3 -> 6 (Downwards from right) -->
+    <path d="M 915 155 L 915 190" stroke="#6366F1" stroke-width="2" fill="none" marker-end="url(#m-flow)"/>
+
+    <!-- Row 2: Steps 6 <- 5 <- 4 (Reverse direction) -->
+    <!-- Step 6 (on right) -->
+    <g transform="translate(750, 195)">
+      <rect width="330" height="155" rx="10" fill="#FFFFFF" stroke="#C7D2FE" stroke-width="1.5"/>
+      <rect x="0" y="0" width="330" height="32" rx="10" fill="#EEF2FF"/>
+      <circle cx="20" cy="16" r="10" fill="#4F46E5"/>
+      <text x="20" y="20" font-family="sans-serif" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">6</text>
+      <text x="38" y="20" font-family="sans-serif" font-size="11.5" font-weight="700" fill="#312E81">build-git-configs (Git 护栏注入)</text>
+      <text x="14" y="54" font-family="sans-serif" font-size="10" font-weight="600" fill="#1E293B">🔒 护栏开关与三层 Ignore 堆叠</text>
+      <text x="14" y="72" font-family="sans-serif" font-size="9" font-weight="500" fill="#64748B">• 依据角色画像生成 .githooks.yml 开关</text>
+      <text x="14" y="88" font-family="sans-serif" font-size="9" font-weight="500" fill="#64748B">• 注入通用+技术栈+本地 Ignore 规则</text>
+      <text x="14" y="104" font-family="sans-serif" font-size="9" font-weight="500" fill="#64748B">• 下发只读 hook 核心执行脚本至 .git/hooks</text>
+      <rect x="14" y="120" width="300" height="22" rx="4" fill="#F1F5F9"/>
+      <text x="164" y="135" font-family="monospace" font-size="9" font-weight="600" fill="#475569" text-anchor="middle">Step 6: Git Hooks &amp; Ignore Stacking</text>
+    </g>
+
+    <!-- Arrow 6 -> 5 (Leftwards) -->
+    <path d="M 750 272 L 715 272" stroke="#6366F1" stroke-width="2" fill="none" marker-end="url(#m-flow)"/>
+
+    <!-- Step 5 (in middle) -->
+    <g transform="translate(375, 195)">
+      <rect width="330" height="155" rx="10" fill="#FFFFFF" stroke="#C7D2FE" stroke-width="1.5"/>
+      <rect x="0" y="0" width="330" height="32" rx="10" fill="#EEF2FF"/>
+      <circle cx="20" cy="16" r="10" fill="#4F46E5"/>
+      <text x="20" y="20" font-family="sans-serif" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">5</text>
+      <text x="38" y="20" font-family="sans-serif" font-size="11.5" font-weight="700" fill="#312E81">build-mcp-config (MCP 深度合并)</text>
+      <text x="14" y="54" font-family="sans-serif" font-size="10" font-weight="600" fill="#1E293B">🔌 服务级 JSON 深度合并</text>
+      <text x="14" y="72" font-family="sans-serif" font-size="9" font-weight="500" fill="#64748B">• 遍历 mcpServers，合并公共与域服务</text>
+      <text x="14" y="88" font-family="sans-serif" font-size="9" font-weight="500" fill="#64748B">• 占位符隔离敏感 Token，保护本地凭证</text>
+      <text x="14" y="104" font-family="sans-serif" font-size="9" font-weight="500" fill="#64748B">• 建立根目录 .mcp.json 跨 Agent 软链</text>
+      <rect x="14" y="120" width="300" height="22" rx="4" fill="#F1F5F9"/>
+      <text x="164" y="135" font-family="monospace" font-size="9" font-weight="600" fill="#475569" text-anchor="middle">Step 5: MCP JSON Deep Merge</text>
+    </g>
+
+    <!-- Arrow 5 -> 4 (Leftwards) -->
+    <path d="M 375 272 L 340 272" stroke="#6366F1" stroke-width="2" fill="none" marker-end="url(#m-flow)"/>
+
+    <!-- Step 4 (on left) -->
+    <g transform="translate(0, 195)">
+      <rect width="330" height="155" rx="10" fill="#FFFFFF" stroke="#C7D2FE" stroke-width="1.5"/>
+      <rect x="0" y="0" width="330" height="32" rx="10" fill="#EEF2FF"/>
+      <circle cx="20" cy="16" r="10" fill="#4F46E5"/>
+      <text x="20" y="20" font-family="sans-serif" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">4</text>
+      <text x="38" y="20" font-family="sans-serif" font-size="11.5" font-weight="700" fill="#312E81">build-skills (技能包准入裁剪)</text>
+      <text x="14" y="54" font-family="sans-serif" font-size="10" font-weight="600" fill="#1E293B">🛠️ 技能包准入过滤与分发</text>
+      <text x="14" y="72" font-family="sans-serif" font-size="9" font-weight="500" fill="#64748B">• 解析 registry.yaml 准入白名单</text>
+      <text x="14" y="88" font-family="sans-serif" font-size="9" font-weight="500" fill="#64748B">• 物理剔除非本角色技能，防止上下文膨胀</text>
+      <text x="14" y="104" font-family="sans-serif" font-size="9" font-weight="500" fill="#64748B">• 输出至 .agents/skills/ 并建立 .claude 软链</text>
+      <rect x="14" y="120" width="300" height="22" rx="4" fill="#F1F5F9"/>
+      <text x="164" y="135" font-family="monospace" font-size="9" font-weight="600" fill="#475569" text-anchor="middle">Step 4: Skill Packaging &amp; Symlinking</text>
+    </g>
+
+    <!-- Arrow 4 -> 7 (Downwards from left) -->
+    <path d="M 165 350 L 165 385" stroke="#6366F1" stroke-width="2" fill="none" marker-end="url(#m-flow)"/>
+
+    <!-- Row 3: Steps 7 -> 8 -> 9 (Forward direction) -->
+    <!-- Step 7 -->
+    <g transform="translate(0, 390)">
+      <rect width="330" height="155" rx="10" fill="#FFFFFF" stroke="#C7D2FE" stroke-width="1.5"/>
+      <rect x="0" y="0" width="330" height="32" rx="10" fill="#EEF2FF"/>
+      <circle cx="20" cy="16" r="10" fill="#4F46E5"/>
+      <text x="20" y="20" font-family="sans-serif" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">7</text>
+      <text x="38" y="20" font-family="sans-serif" font-size="11.5" font-weight="700" fill="#312E81">build-hooks (事件挂钩配置)</text>
+      <text x="14" y="54" font-family="sans-serif" font-size="10" font-weight="600" fill="#1E293B">📡 IDE 行为事件监听挂钩</text>
+      <text x="14" y="72" font-family="sans-serif" font-size="9" font-weight="500" fill="#64748B">• 配置 SessionStart 会话启停监听</text>
+      <text x="14" y="88" font-family="sans-serif" font-size="9" font-weight="500" fill="#64748B">• 配置 PostToolUse 技能调用拦截与耗时探针</text>
+      <text x="14" y="104" font-family="sans-serif" font-size="9" font-weight="500" fill="#64748B">• 初始化 .telemetry/ 本地事件缓冲通道</text>
+      <rect x="14" y="120" width="300" height="22" rx="4" fill="#F1F5F9"/>
+      <text x="164" y="135" font-family="monospace" font-size="9" font-weight="600" fill="#475569" text-anchor="middle">Step 7: Event Hooks &amp; Telemetry Init</text>
+    </g>
+
+    <!-- Arrow 7 -> 8 -->
+    <path d="M 330 467 L 365 467" stroke="#6366F1" stroke-width="2" fill="none" marker-end="url(#m-flow)"/>
+
+    <!-- Step 8 -->
+    <g transform="translate(375, 390)">
+      <rect width="330" height="155" rx="10" fill="#FFFFFF" stroke="#C7D2FE" stroke-width="1.5"/>
+      <rect x="0" y="0" width="330" height="32" rx="10" fill="#EEF2FF"/>
+      <circle cx="20" cy="16" r="10" fill="#4F46E5"/>
+      <text x="20" y="20" font-family="sans-serif" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">8</text>
+      <text x="38" y="20" font-family="sans-serif" font-size="11.5" font-weight="700" fill="#312E81">summary (凭证与清单固化)</text>
+      <text x="14" y="54" font-family="sans-serif" font-size="10" font-weight="600" fill="#1E293B">📋 凭证记录与版本固化</text>
+      <text x="14" y="72" font-family="sans-serif" font-size="9" font-weight="500" fill="#64748B">• 生成 CONFIG_SUMMARY.md 凭证文件</text>
+      <text x="14" y="88" font-family="sans-serif" font-size="9" font-weight="500" fill="#64748B">• 记录装配时间戳、角色版本与文件哈希</text>
+      <text x="14" y="104" font-family="sans-serif" font-size="9" font-weight="500" fill="#64748B">• 为零克隆远程回流提供 Diff 基线凭证</text>
+      <rect x="14" y="120" width="300" height="22" rx="4" fill="#F1F5F9"/>
+      <text x="164" y="135" font-family="monospace" font-size="9" font-weight="600" fill="#475569" text-anchor="middle">Step 8: Manifest &amp; Digest Generation</text>
+    </g>
+
+    <!-- Arrow 8 -> 9 -->
+    <path d="M 705 467 L 740 467" stroke="#6366F1" stroke-width="2" fill="none" marker-end="url(#m-flow)"/>
+
+    <!-- Step 9 -->
+    <g transform="translate(750, 390)">
+      <rect width="330" height="155" rx="10" fill="#FFFFFF" stroke="#86EFAC" stroke-width="2"/>
+      <rect x="0" y="0" width="330" height="32" rx="10" fill="#ECFDF5"/>
+      <circle cx="20" cy="16" r="10" fill="#10B981"/>
+      <text x="20" y="20" font-family="sans-serif" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">9</text>
+      <text x="38" y="20" font-family="sans-serif" font-size="11.5" font-weight="700" fill="#065F46">self-check (完整性自检验收)</text>
+      <text x="14" y="54" font-family="sans-serif" font-size="10" font-weight="600" fill="#1E293B">✅ 100% 幂等与完整性验收</text>
+      <text x="14" y="72" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• 校验 .ide/ 核心文件完整性与软链可达性</text>
+      <text x="14" y="88" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• 检查 Git 拦截钩子可执行权限 (+x)</text>
+      <text x="14" y="104" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• 打印装配成功摘要，IDE 即刻就绪可用</text>
+      <rect x="14" y="120" width="300" height="22" rx="4" fill="#DCFCE7"/>
+      <text x="164" y="135" font-family="monospace" font-size="9" font-weight="700" fill="#065F46" text-anchor="middle">Step 9: Self-Verification &amp; Ready</text>
+    </g>
+
   </g>
-
-  <!-- Success Bar -->
-  <rect x="50" y="560" width="1100" height="40" rx="8" fill="#10B981" stroke="#059669"/>
-  <text x="600" y="585" class="succ-text">✨ 装配流水线执行完毕：工作区环境已自动对齐企业最新技术基准，即刻生效！</text>
 </svg>

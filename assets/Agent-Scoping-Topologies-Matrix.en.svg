@@ -1,0 +1,232 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="100%" height="100%">
+  <defs>
+    <filter id="soft-shadow" x="-8%" y="-8%" width="116%" height="116%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#0F172A" flood-opacity="0.06"/>
+    </filter>
+    <filter id="card-shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.04"/>
+    </filter>
+
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#F1F5F9"/>
+    </linearGradient>
+    <linearGradient id="g-pA" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284C7"/>
+      <stop offset="100%" stop-color="#0EA5E9"/>
+    </linearGradient>
+    <linearGradient id="g-pB" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4F46E5"/>
+      <stop offset="100%" stop-color="#6366F1"/>
+    </linearGradient>
+    <linearGradient id="g-pC" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7C3AED"/>
+      <stop offset="100%" stop-color="#9333EA"/>
+    </linearGradient>
+    <linearGradient id="g-pD" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="100%" height="100%" fill="url(#bg-grad)"/>
+  <rect x="25" y="25" width="1150" height="630" rx="16" fill="#FFFFFF" fill-opacity="0.7" stroke="#E2E8F0" stroke-width="1.5" filter="url(#soft-shadow)"/>
+
+  <!-- Title -->
+  <g transform="translate(60, 48)">
+    <rect x="0" y="0" width="6" height="26" rx="3" fill="#6366F1"/>
+    <text x="18" y="20" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="18" font-weight="800" fill="#0F172A" letter-spacing="-0.5px">
+      Figure 2.1: Comparison of Four AI Code Agent Context Scoping Paradigms
+    </text>
+    <rect x="910" y="2" width="170" height="22" rx="11" fill="#EEF2FF" stroke="#C7D2FE"/>
+    <text x="995" y="16" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#4338CA" text-anchor="middle">Four Scoping Paradigms</text>
+  </g>
+
+  <g transform="translate(60, 90)" filter="url(#card-shadow)">
+
+    <!-- Column 1: Paradigm A -->
+    <g transform="translate(0, 0)">
+      <rect width="255" height="540" rx="12" fill="#FFFFFF" stroke="#BAE6FD" stroke-width="1.5"/>
+      <path d="M 0 12 Q 0 0 12 0 L 243 0 Q 255 0 255 12 L 255 36 L 0 36 Z" fill="url(#g-pA)"/>
+      <text x="14" y="23" font-family="sans-serif" font-size="11.5" font-weight="700" fill="#FFFFFF">Paradigm A: Physical Isolation</text>
+
+      <g transform="translate(12, 46)">
+        <rect width="231" height="50" rx="6" fill="#0C4A6E"/>
+        <text x="115" y="20" font-family="sans-serif" font-size="9.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">Git Repo A (.ide/A)</text>
+        <text x="115" y="36" font-family="sans-serif" font-size="9.5" font-weight="700" fill="#7DD3FC" text-anchor="middle">Git Repo B (.ide/B)</text>
+
+        <!-- Tech -->
+        <g transform="translate(0, 58)">
+          <rect width="231" height="68" rx="6" fill="#F0F9FF" stroke="#BAE6FD"/>
+          <text x="10" y="18" font-family="sans-serif" font-size="10" font-weight="700" fill="#0369A1">[Core Mechanism]</text>
+          <text x="10" y="34" font-family="sans-serif" font-size="9" font-weight="500" fill="#0284C7">Each Git root maintains an isolated</text>
+          <text x="10" y="48" font-family="sans-serif" font-size="9" font-weight="500" fill="#0284C7">config folder (.ide / .trae / .claude).</text>
+        </g>
+
+        <!-- Pros -->
+        <g transform="translate(0, 134)">
+          <rect width="231" height="80" rx="6" fill="#ECFDF5" stroke="#A7F3D0"/>
+          <text x="10" y="18" font-family="sans-serif" font-size="10" font-weight="700" fill="#065F46">[Core Advantages]</text>
+          <text x="10" y="34" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• 100% physical isolation, zero noise</text>
+          <text x="10" y="48" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• Compatible with single-project IDEs</text>
+          <text x="10" y="62" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• High determinism per repository</text>
+        </g>
+
+        <!-- Cons -->
+        <g transform="translate(0, 222)">
+          <rect width="231" height="68" rx="6" fill="#FFF1F2" stroke="#FECDD3"/>
+          <text x="10" y="18" font-family="sans-serif" font-size="10" font-weight="700" fill="#9F1239">[Limitations]</text>
+          <text x="10" y="34" font-family="sans-serif" font-size="9" font-weight="500" fill="#881337">• Config redundancy across repos</text>
+          <text x="10" y="48" font-family="sans-serif" font-size="9" font-weight="500" fill="#881337">• Difficult multi-repo refactoring</text>
+        </g>
+
+        <!-- Target -->
+        <g transform="translate(0, 298)">
+          <rect width="231" height="65" rx="6" fill="#F8FAFC" stroke="#E2E8F0"/>
+          <text x="10" y="18" font-family="sans-serif" font-size="10" font-weight="700" fill="#334155">[Best Fit]</text>
+          <text x="10" y="34" font-family="sans-serif" font-size="9" font-weight="500" fill="#64748B">Deep single-repo coding; teams with</text>
+          <text x="10" y="48" font-family="sans-serif" font-size="9" font-weight="500" fill="#64748B">heterogeneous, independent stacks.</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- Column 2: Paradigm B -->
+    <g transform="translate(275, 0)">
+      <rect width="255" height="540" rx="12" fill="#FFFFFF" stroke="#C7D2FE" stroke-width="1.5"/>
+      <path d="M 0 12 Q 0 0 12 0 L 243 0 Q 255 0 255 12 L 255 36 L 0 36 Z" fill="url(#g-pB)"/>
+      <text x="14" y="23" font-family="sans-serif" font-size="11.5" font-weight="700" fill="#FFFFFF">Paradigm B: Logical Scoping</text>
+
+      <g transform="translate(12, 46)">
+        <rect width="231" height="50" rx="6" fill="#312E81"/>
+        <text x="115" y="20" font-family="sans-serif" font-size="9.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">Top Workspace (Monorepo)</text>
+        <text x="115" y="36" font-family="sans-serif" font-size="9.5" font-weight="700" fill="#A5B4FC" text-anchor="middle">├─ pkg-A (rule) └─ pkg-B (skill)</text>
+
+        <!-- Tech -->
+        <g transform="translate(0, 58)">
+          <rect width="231" height="68" rx="6" fill="#EEF2FF" stroke="#C7D2FE"/>
+          <text x="10" y="18" font-family="sans-serif" font-size="10" font-weight="700" fill="#3730A3">[Core Mechanism]</text>
+          <text x="10" y="34" font-family="sans-serif" font-size="9" font-weight="500" fill="#4338CA">Single global workspace; activates via</text>
+          <text x="10" y="48" font-family="sans-serif" font-size="9" font-weight="500" fill="#4338CA">nested auto-discovery &amp; path globs.</text>
+        </g>
+
+        <!-- Pros -->
+        <g transform="translate(0, 134)">
+          <rect width="231" height="80" rx="6" fill="#ECFDF5" stroke="#A7F3D0"/>
+          <text x="10" y="18" font-family="sans-serif" font-size="10" font-weight="700" fill="#065F46">[Core Advantages]</text>
+          <text x="10" y="34" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• Zero redundancy, smooth code nav</text>
+          <text x="10" y="48" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• Launch from sub-dir = precise focus</text>
+          <text x="10" y="62" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• Project-scoped dynamic MCP mount</text>
+        </g>
+
+        <!-- Cons -->
+        <g transform="translate(0, 222)">
+          <rect width="231" height="68" rx="6" fill="#FFF1F2" stroke="#FECDD3"/>
+          <text x="10" y="18" font-family="sans-serif" font-size="10" font-weight="700" fill="#9F1239">[Limitations]</text>
+          <text x="10" y="34" font-family="sans-serif" font-size="9" font-weight="500" fill="#881337">• Heavily agent-dependent (Only</text>
+          <text x="10" y="48" font-family="sans-serif" font-size="9" font-weight="500" fill="#881337">  Claude Code natively complete; IDEs weak)</text>
+        </g>
+
+        <!-- Target -->
+        <g transform="translate(0, 298)">
+          <rect width="231" height="65" rx="6" fill="#F8FAFC" stroke="#E2E8F0"/>
+          <text x="10" y="18" font-family="sans-serif" font-size="10" font-weight="700" fill="#334155">[Best Fit]</text>
+          <text x="10" y="34" font-family="sans-serif" font-size="9" font-weight="500" fill="#64748B">Large Monorepo codebases; Claude</text>
+          <text x="10" y="48" font-family="sans-serif" font-size="9" font-weight="500" fill="#64748B">Code CLI power users.</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- Column 3: Paradigm C -->
+    <g transform="translate(550, 0)">
+      <rect width="255" height="540" rx="12" fill="#FFFFFF" stroke="#E9D5FF" stroke-width="1.5"/>
+      <path d="M 0 12 Q 0 0 12 0 L 243 0 Q 255 0 255 12 L 255 36 L 0 36 Z" fill="url(#g-pC)"/>
+      <text x="14" y="23" font-family="sans-serif" font-size="11.5" font-weight="700" fill="#FFFFFF">Paradigm C: Meta-Repo Routing</text>
+
+      <g transform="translate(12, 46)">
+        <rect width="231" height="50" rx="6" fill="#581C87"/>
+        <text x="115" y="20" font-family="sans-serif" font-size="9.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">Meta-Repo Routing Hub</text>
+        <text x="115" y="36" font-family="sans-serif" font-size="9.5" font-weight="700" fill="#E9D5FF" text-anchor="middle">┌── Subagent A ── Subagent B ──┐</text>
+
+        <!-- Tech -->
+        <g transform="translate(0, 58)">
+          <rect width="231" height="68" rx="6" fill="#FAF5FF" stroke="#E9D5FF"/>
+          <text x="10" y="18" font-family="sans-serif" font-size="10" font-weight="700" fill="#6B21A8">[Core Mechanism]</text>
+          <text x="10" y="34" font-family="sans-serif" font-size="9" font-weight="500" fill="#7E22CE">Top meta-repo manages routing &amp;</text>
+          <text x="10" y="48" font-family="sans-serif" font-size="9" font-weight="500" fill="#7E22CE">impact analysis, dispatching subagents.</text>
+        </g>
+
+        <!-- Pros -->
+        <g transform="translate(0, 134)">
+          <rect width="231" height="80" rx="6" fill="#ECFDF5" stroke="#A7F3D0"/>
+          <text x="10" y="18" font-family="sans-serif" font-size="10" font-weight="700" fill="#065F46">[Core Advantages]</text>
+          <text x="10" y="34" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• Global overview + sub-repo isolation</text>
+          <text x="10" y="48" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• Single session orchestrates multi-repos</text>
+          <text x="10" y="62" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• Contract verification &amp; cascade analysis</text>
+        </g>
+
+        <!-- Cons -->
+        <g transform="translate(0, 222)">
+          <rect width="231" height="68" rx="6" fill="#FFF1F2" stroke="#FECDD3"/>
+          <text x="10" y="18" font-family="sans-serif" font-size="10" font-weight="700" fill="#9F1239">[Limitations]</text>
+          <text x="10" y="34" font-family="sans-serif" font-size="9" font-weight="500" fill="#881337">• Extra orchestration metadata overhead</text>
+          <text x="10" y="48" font-family="sans-serif" font-size="9" font-weight="500" fill="#881337">• Requires subagent process isolation</text>
+        </g>
+
+        <!-- Target -->
+        <g transform="translate(0, 298)">
+          <rect width="231" height="65" rx="6" fill="#F8FAFC" stroke="#E2E8F0"/>
+          <text x="10" y="18" font-family="sans-serif" font-size="10" font-weight="700" fill="#334155">[Best Fit]</text>
+          <text x="10" y="34" font-family="sans-serif" font-size="9" font-weight="500" fill="#64748B">Microservice multi-repo refactoring;</text>
+          <text x="10" y="48" font-family="sans-serif" font-size="9" font-weight="500" fill="#64748B">fullstack cross-repo collaboration.</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- Column 4: Paradigm D -->
+    <g transform="translate(825, 0)">
+      <rect width="255" height="540" rx="12" fill="#FFFFFF" stroke="#A7F3D0" stroke-width="1.5"/>
+      <path d="M 0 12 Q 0 0 12 0 L 243 0 Q 255 0 255 12 L 255 36 L 0 36 Z" fill="url(#g-pD)"/>
+      <text x="14" y="23" font-family="sans-serif" font-size="11.5" font-weight="700" fill="#FFFFFF">Paradigm D: Stack Matrix</text>
+
+      <g transform="translate(12, 46)">
+        <rect width="231" height="50" rx="6" fill="#065F46"/>
+        <text x="115" y="20" font-family="sans-serif" font-size="9.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">Common → Domain</text>
+        <text x="115" y="36" font-family="sans-serif" font-size="9.5" font-weight="700" fill="#A7F3D0" text-anchor="middle">↓ Role (Fullstack) → Stack</text>
+
+        <!-- Tech -->
+        <g transform="translate(0, 58)">
+          <rect width="231" height="68" rx="6" fill="#ECFDF5" stroke="#A7F3D0"/>
+          <text x="10" y="18" font-family="sans-serif" font-size="10" font-weight="700" fill="#065F46">[Core Mechanism]</text>
+          <text x="10" y="34" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">Scaffold adds 4th orthogonal stack tier:</text>
+          <text x="10" y="48" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">Common → Dept → Role → Stack.</text>
+        </g>
+
+        <!-- Pros -->
+        <g transform="translate(0, 134)">
+          <rect width="231" height="80" rx="6" fill="#ECFDF5" stroke="#A7F3D0"/>
+          <text x="10" y="18" font-family="sans-serif" font-size="10" font-weight="700" fill="#065F46">[Core Advantages]</text>
+          <text x="10" y="34" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• Specializes single fullstack role by stack</text>
+          <text x="10" y="48" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• Auto-detects language and compiles</text>
+          <text x="10" y="62" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• Single source of truth, versioned</text>
+        </g>
+
+        <!-- Cons -->
+        <g transform="translate(0, 222)">
+          <rect width="231" height="68" rx="6" fill="#FFFBEB" stroke="#FDE68A"/>
+          <text x="10" y="18" font-family="sans-serif" font-size="10" font-weight="700" fill="#92400E">[Limitations]</text>
+          <text x="10" y="34" font-family="sans-serif" font-size="9" font-weight="500" fill="#78350F">• Requires enterprise compilation tooling</text>
+          <text x="10" y="48" font-family="sans-serif" font-size="9" font-weight="500" fill="#78350F">• Must maintain stacks.yaml registry</text>
+        </g>
+
+        <!-- Target -->
+        <g transform="translate(0, 298)">
+          <rect width="231" height="65" rx="6" fill="#F8FAFC" stroke="#E2E8F0"/>
+          <text x="10" y="18" font-family="sans-serif" font-size="10" font-weight="700" fill="#334155">[Best Fit]</text>
+          <text x="10" y="34" font-family="sans-serif" font-size="9" font-weight="500" fill="#64748B">Enterprise multi-stack governance;</text>
+          <text x="10" y="48" font-family="sans-serif" font-size="9" font-weight="500" fill="#64748B">standardized fullstack workbench.</text>
+        </g>
+      </g>
+    </g>
+
+  </g>
+</svg>

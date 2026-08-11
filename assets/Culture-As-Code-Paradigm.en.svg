@@ -1,0 +1,182 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" width="100%" height="100%">
+  <defs>
+    <filter id="soft-shadow" x="-8%" y="-8%" width="116%" height="116%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#0F172A" flood-opacity="0.06"/>
+    </filter>
+    <filter id="card-shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.04"/>
+    </filter>
+
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#F1F5F9"/>
+    </linearGradient>
+    <linearGradient id="header-bad-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F43F5E"/>
+      <stop offset="100%" stop-color="#E11D48"/>
+    </linearGradient>
+    <linearGradient id="header-good-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="soft-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4F46E5"/>
+      <stop offset="100%" stop-color="#6366F1"/>
+    </linearGradient>
+    <linearGradient id="hard-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#0D9488"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="100%" height="100%" fill="url(#bg-grad)"/>
+  <rect x="25" y="25" width="1150" height="650" rx="16" fill="#FFFFFF" fill-opacity="0.7" stroke="#E2E8F0" stroke-width="1.5" filter="url(#soft-shadow)"/>
+
+  <!-- Diagram Title Banner -->
+  <g transform="translate(60, 48)">
+    <rect x="0" y="0" width="6" height="26" rx="3" fill="#4F46E5"/>
+    <text x="18" y="20" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="18" font-weight="800" fill="#0F172A" letter-spacing="-0.5px">
+      Figure 1.1: Culture as Code Paradigm Evolution &amp; Subjective-Objective Interlocking Architecture
+    </text>
+    <rect x="940" y="2" width="140" height="22" rx="11" fill="#EEF2FF" stroke="#C7D2FE"/>
+    <text x="1010" y="16" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#4338CA" text-anchor="middle">Agent-Native Paradigm</text>
+  </g>
+
+  <!-- Top Left: Legacy Paradigm Card -->
+  <g transform="translate(60, 95)" filter="url(#card-shadow)">
+    <rect width="520" height="215" rx="12" fill="#FFFFFF" stroke="#FECDD3" stroke-width="1.5"/>
+    <path d="M 0 12 Q 0 0 12 0 L 508 0 Q 520 0 520 12 L 520 38 L 0 38 Z" fill="url(#header-bad-grad)"/>
+    <text x="20" y="24" font-family="sans-serif" font-size="12.5" font-weight="700" fill="#FFFFFF">❌ Unstructured Human-AI Chat (High Friction &amp; Entropy)</text>
+
+    <g transform="translate(18, 52)">
+      <!-- Item 1 -->
+      <rect y="0" width="484" height="34" rx="6" fill="#FFF1F2" stroke="#FFE4E6"/>
+      <circle cx="16" cy="17" r="4" fill="#E11D48"/>
+      <text x="30" y="21" font-family="sans-serif" font-size="11" font-weight="600" fill="#9F1239">Ad-hoc Prompts: Enterprise architecture &amp; standards cannot penetrate</text>
+
+      <!-- Item 2 -->
+      <rect y="40" width="484" height="34" rx="6" fill="#FFF1F2" stroke="#FFE4E6"/>
+      <circle cx="16" cy="17" r="4" fill="#E11D48"/>
+      <text x="30" y="21" font-family="sans-serif" font-size="11" font-weight="600" fill="#9F1239">Context Pollution: Cluttered rules cause attention thrashing &amp; hallucinations</text>
+
+      <!-- Item 3 -->
+      <rect y="80" width="484" height="34" rx="6" fill="#FFF1F2" stroke="#FFE4E6"/>
+      <circle cx="16" cy="17" r="4" fill="#E11D48"/>
+      <text x="30" y="21" font-family="sans-serif" font-size="11" font-weight="600" fill="#9F1239">Soft Constraints Only: AI pushes directly to master &amp; rewrites public history</text>
+
+      <!-- Item 4 -->
+      <rect y="120" width="484" height="34" rx="6" fill="#FFF1F2" stroke="#FFE4E6"/>
+      <circle cx="16" cy="17" r="4" fill="#E11D48"/>
+      <text x="30" y="21" font-family="sans-serif" font-size="11" font-weight="600" fill="#9F1239">Ephemeral Knowledge: Prompts vanish across workstations with zero feedback</text>
+    </g>
+  </g>
+
+  <!-- Top Right: Modern Paradigm Card -->
+  <g transform="translate(620, 95)" filter="url(#card-shadow)">
+    <rect width="520" height="215" rx="12" fill="#FFFFFF" stroke="#A7F3D0" stroke-width="1.5"/>
+    <path d="M 0 12 Q 0 0 12 0 L 508 0 Q 520 0 520 12 L 520 38 L 0 38 Z" fill="url(#header-good-grad)"/>
+    <text x="20" y="24" font-family="sans-serif" font-size="12.5" font-weight="700" fill="#FFFFFF">✅ Enterprise AI Scaffold Paradigm (Culture as Code)</text>
+
+    <g transform="translate(18, 52)">
+      <!-- Item 1 -->
+      <rect y="0" width="484" height="34" rx="6" fill="#ECFDF5" stroke="#D1FAE5"/>
+      <circle cx="16" cy="17" r="4" fill="#059669"/>
+      <text x="30" y="21" font-family="sans-serif" font-size="11" font-weight="600" fill="#065F46">Culture as Code: Standards, rules &amp; SOPs compiled into versioned IDE configs</text>
+
+      <!-- Item 2 -->
+      <rect y="40" width="484" height="34" rx="6" fill="#ECFDF5" stroke="#D1FAE5"/>
+      <circle cx="16" cy="17" r="4" fill="#059669"/>
+      <text x="30" y="21" font-family="sans-serif" font-size="11" font-weight="600" fill="#065F46">DDD 3-Tier Isolation: Common → Domain → Role assembled on demand</text>
+
+      <!-- Item 3 -->
+      <rect y="80" width="484" height="34" rx="6" fill="#ECFDF5" stroke="#D1FAE5"/>
+      <circle cx="16" cy="17" r="4" fill="#059669"/>
+      <text x="30" y="21" font-family="sans-serif" font-size="11" font-weight="600" fill="#065F46">Subjective-Objective Interlocking: Soft prompts guide, hard Git hooks block</text>
+
+      <!-- Item 4 -->
+      <rect y="120" width="484" height="34" rx="6" fill="#ECFDF5" stroke="#D1FAE5"/>
+      <circle cx="16" cy="17" r="4" fill="#059669"/>
+      <text x="30" y="21" font-family="sans-serif" font-size="11" font-weight="600" fill="#065F46">Bidirectional Evolution: Zero-clone remote PR flow + IDE telemetry loop</text>
+    </g>
+  </g>
+
+  <!-- Bottom: Interlocking Mechanism Big Container -->
+  <g transform="translate(60, 325)" filter="url(#card-shadow)">
+    <rect width="1080" height="330" rx="14" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+    <rect x="0" y="0" width="1080" height="36" rx="14" fill="#F8FAFC"/>
+    <text x="24" y="23" font-family="sans-serif" font-size="13" font-weight="800" fill="#1E293B">🔄 Subjective-Objective Interlocking Architecture</text>
+    <rect x="880" y="8" width="180" height="20" rx="10" fill="#E2E8F0"/>
+    <text x="970" y="22" font-family="sans-serif" font-size="10" font-weight="700" fill="#475569" text-anchor="middle">Single Source of Truth (SSOT)</text>
+
+    <!-- Upper Layer: Soft Prompts -->
+    <g transform="translate(20, 48)">
+      <rect width="1040" height="85" rx="10" fill="#F5F3FF" stroke="#DDD6FE" stroke-width="1.5"/>
+      <path d="M 0 10 Q 0 0 10 0 L 1030 0 Q 1040 0 1040 10 L 1040 26 L 0 26 Z" fill="url(#soft-grad)"/>
+      <text x="16" y="18" font-family="sans-serif" font-size="11.5" font-weight="700" fill="#FFFFFF">[Upper Layer: Subjective Soft Rules · Rules Injected into AI Context]</text>
+
+      <g transform="translate(15, 34)">
+        <!-- Card S1 -->
+        <rect x="0" y="0" width="325" height="42" rx="6" fill="#FFFFFF" stroke="#C4B5FD"/>
+        <text x="12" y="18" font-family="sans-serif" font-size="11" font-weight="700" fill="#4338CA">👁️ Read-First Probe (Pre-flight)</text>
+        <text x="12" y="32" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#6B7280">Read exported APIs, caller context &amp; architectural designs</text>
+
+        <!-- Card S2 -->
+        <rect x="345" y="0" width="330" height="42" rx="6" fill="#FFFFFF" stroke="#C4B5FD"/>
+        <text x="12" y="18" font-family="sans-serif" font-size="11" font-weight="700" fill="#4338CA">🔄 Commit Flow Discipline</text>
+        <text x="12" y="32" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#6B7280">Enforce Conventional Commits &amp; issue key associations</text>
+
+        <!-- Card S3 -->
+        <rect x="695" y="0" width="325" height="42" rx="6" fill="#FFFFFF" stroke="#C4B5FD"/>
+        <text x="12" y="18" font-family="sans-serif" font-size="11" font-weight="700" fill="#4338CA">🚨 Branch Routing Strategy</text>
+        <text x="12" y="32" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#6B7280">Strictly enforce feature branching vs trunk-based flows by role</text>
+      </g>
+    </g>
+
+    <!-- Middle Connector: Configuration Switch Contract -->
+    <g transform="translate(20, 142)">
+      <rect width="1040" height="32" rx="6" fill="#FFFBEB" stroke="#FCD34D" stroke-width="1.5"/>
+      <circle cx="20" cy="16" r="6" fill="#F59E0B"/>
+      <text x="35" y="20" font-family="sans-serif" font-size="11" font-weight="700" fill="#92400E">
+        ⚙️ Declarative Switch Contract (.githooks.yml) — Unified single configuration drives both AI prompts and deterministic hooks
+      </text>
+    </g>
+
+    <!-- Lower Layer: Hard Guardrails -->
+    <g transform="translate(20, 182)">
+      <rect width="1040" height="135" rx="10" fill="#F0FDF4" stroke="#A7F3D0" stroke-width="1.5"/>
+      <path d="M 0 10 Q 0 0 10 0 L 1030 0 Q 1040 0 1040 10 L 1040 26 L 0 26 Z" fill="url(#hard-grad)"/>
+      <text x="16" y="18" font-family="sans-serif" font-size="11.5" font-weight="700" fill="#FFFFFF">[Lower Layer: Objective Hard Guardrails · Local Deterministic Git Hooks]</text>
+
+      <g transform="translate(15, 34)">
+        <!-- Hook 1 -->
+        <rect x="0" y="0" width="240" height="90" rx="6" fill="#FFFFFF" stroke="#86EFAC"/>
+        <text x="12" y="20" font-family="sans-serif" font-size="11" font-weight="700" fill="#065F46">commit-msg Hook</text>
+        <text x="12" y="40" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#374151">• Header length ≤ 100 chars</text>
+        <text x="12" y="58" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#374151">• Regex &amp; issue key verification</text>
+        <text x="12" y="76" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#374151">• Tag [Asset] on protected diffs</text>
+
+        <!-- Hook 2 -->
+        <rect x="255" y="0" width="245" height="90" rx="6" fill="#FFFFFF" stroke="#86EFAC"/>
+        <text x="12" y="20" font-family="sans-serif" font-size="11" font-weight="700" fill="#065F46">pre-commit Hook</text>
+        <text x="12" y="40" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#374151">• Block unauthorized branch commits</text>
+        <text x="12" y="58" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#374151">• Scan staged diffs for Secrets/Keys</text>
+        <text x="12" y="76" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#374151">• Enforce path modification ACLs</text>
+
+        <!-- Hook 3 -->
+        <rect x="515" y="0" width="245" height="90" rx="6" fill="#FFFFFF" stroke="#86EFAC"/>
+        <text x="12" y="20" font-family="sans-serif" font-size="11" font-weight="700" fill="#065F46">pre-push Hook</text>
+        <text x="12" y="40" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#374151">• Intercept master push, force MR</text>
+        <text x="12" y="58" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#374151">• Strictly block force-push rewrites</text>
+        <text x="12" y="76" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#374151">• Probe upstream divergence</text>
+
+        <!-- Hook 4 -->
+        <rect x="775" y="0" width="245" height="90" rx="6" fill="#FFFFFF" stroke="#86EFAC"/>
+        <text x="12" y="20" font-family="sans-serif" font-size="11" font-weight="700" fill="#065F46">pre-rebase Hook</text>
+        <text x="12" y="40" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#374151">• Block rebasing pushed public history</text>
+        <text x="12" y="58" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#374151">• Prevent branch graph entanglement</text>
+        <text x="12" y="76" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#374151">• Allow safe local feature rebasing</text>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="100%" height="100%">
+  <defs>
+    <filter id="soft-shadow" x="-8%" y="-8%" width="116%" height="116%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#0F172A" flood-opacity="0.06"/>
+    </filter>
+    <filter id="card-shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.04"/>
+    </filter>
+
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#F1F5F9"/>
+    </linearGradient>
+    <linearGradient id="h-left" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4F46E5"/>
+      <stop offset="100%" stop-color="#6366F1"/>
+    </linearGradient>
+    <linearGradient id="h-right" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="100%" height="100%" fill="url(#bg-grad)"/>
+  <rect x="25" y="25" width="1150" height="630" rx="16" fill="#FFFFFF" fill-opacity="0.7" stroke="#E2E8F0" stroke-width="1.5" filter="url(#soft-shadow)"/>
+
+  <!-- Title -->
+  <g transform="translate(60, 48)">
+    <rect x="0" y="0" width="6" height="26" rx="3" fill="#4F46E5"/>
+    <text x="18" y="20" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="18" font-weight="800" fill="#0F172A" letter-spacing="-0.5px">
+      Figure 4.1: Bi-directional Evolution Loop — Zero-Clone Remote Contribution &amp; IDE Telemetry Loop
+    </text>
+    <rect x="880" y="2" width="200" height="22" rx="11" fill="#EEF2FF" stroke="#C7D2FE"/>
+    <text x="980" y="16" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#4338CA" text-anchor="middle">Bi-directional Evolution Loop</text>
+  </g>
+
+  <!-- Left: Zero-Clone Contribution Pipeline -->
+  <g transform="translate(60, 90)" filter="url(#card-shadow)">
+    <rect width="520" height="540" rx="12" fill="#FFFFFF" stroke="#C7D2FE" stroke-width="1.5"/>
+    <path d="M 0 12 Q 0 0 12 0 L 508 0 Q 520 0 520 12 L 520 36 L 0 36 Z" fill="url(#h-left)"/>
+    <text x="20" y="23" font-family="sans-serif" font-size="12.5" font-weight="700" fill="#FFFFFF">
+      🚀 Zero-Clone Remote Contribution Pipeline
+    </text>
+
+    <g transform="translate(18, 48)">
+      <!-- Step 1 -->
+      <g>
+        <rect width="484" height="65" rx="8" fill="#F5F3FF" stroke="#DDD6FE"/>
+        <text x="14" y="22" font-family="sans-serif" font-size="11" font-weight="700" fill="#4338CA">1. Local Diff Calculation &amp; Boundary ACLs</text>
+        <text x="14" y="40" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#6B7280">• Read CONFIG_SUMMARY.md manifest, compute diff against remote baseline</text>
+        <text x="14" y="54" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#6B7280">• Validate role scopes to prevent unauthorized rule overwriting</text>
+      </g>
+
+      <!-- Step 2 -->
+      <g transform="translate(0, 75)">
+        <rect width="484" height="65" rx="8" fill="#F5F3FF" stroke="#DDD6FE"/>
+        <text x="14" y="22" font-family="sans-serif" font-size="11" font-weight="700" fill="#4338CA">2. Multi-Pass Local Sanitization</text>
+        <text x="14" y="40" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#6B7280">• Strip absolute local paths (/Users/...) &amp; personal API keys</text>
+        <text x="14" y="54" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#6B7280">• Replace private environment tokens with placeholders</text>
+      </g>
+
+      <!-- Step 3 -->
+      <g transform="translate(0, 150)">
+        <rect width="484" height="65" rx="8" fill="#F5F3FF" stroke="#DDD6FE"/>
+        <text x="14" y="22" font-family="sans-serif" font-size="11" font-weight="700" fill="#4338CA">3. HTTP Structured Payload Remote Dispatch</text>
+        <text x="14" y="40" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#6B7280">• Zero requirement to git clone the central scaffold repository</text>
+        <text x="14" y="54" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#6B7280">• CLI securely posts sanitized JSON payload to the config gateway</text>
+      </g>
+
+      <!-- Step 4 -->
+      <g transform="translate(0, 225)">
+        <rect width="484" height="65" rx="8" fill="#F5F3FF" stroke="#DDD6FE"/>
+        <text x="14" y="22" font-family="sans-serif" font-size="11" font-weight="700" fill="#4338CA">4. Cloud-Side Git Open API Branch &amp; PR Generation</text>
+        <text x="14" y="40" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#6B7280">• Gateway authenticates &amp; spawns contrib/&lt;user&gt; branch via Git APIs</text>
+        <text x="14" y="54" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#6B7280">• Automatically creates Pull Request for architecture team review</text>
+      </g>
+
+      <!-- Footer Callout -->
+      <rect y="300" width="484" height="42" rx="6" fill="#4338CA"/>
+      <text x="242" y="25" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">
+        Zero-Friction Feedback: From "Personal Private Prompts" to "Shared Enterprise Assets"
+      </text>
+    </g>
+  </g>
+
+  <!-- Right: IDE Telemetry Observability -->
+  <g transform="translate(620, 90)" filter="url(#card-shadow)">
+    <rect width="520" height="540" rx="12" fill="#FFFFFF" stroke="#A7F3D0" stroke-width="1.5"/>
+    <path d="M 0 12 Q 0 0 12 0 L 508 0 Q 520 0 520 12 L 520 36 L 0 36 Z" fill="url(#h-right)"/>
+    <text x="20" y="23" font-family="sans-serif" font-size="12.5" font-weight="700" fill="#FFFFFF">
+      📊 IDE Telemetry Observability
+    </text>
+
+    <g transform="translate(18, 48)">
+      <!-- Hook S1 -->
+      <g>
+        <rect width="484" height="65" rx="8" fill="#ECFDF5" stroke="#A7F3D0"/>
+        <text x="14" y="22" font-family="sans-serif" font-size="11" font-weight="700" fill="#065F46">1. IDE Native Event Multi-Point Interception</text>
+        <text x="14" y="40" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#047857">• SessionStart: Record role profile, session context, active ruleset</text>
+        <text x="14" y="54" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#047857">• PostToolUse: Measure Skill trigger rates, MCP tool latency &amp; errors</text>
+      </g>
+
+      <!-- Hook S2 -->
+      <g transform="translate(0, 75)">
+        <rect width="484" height="65" rx="8" fill="#ECFDF5" stroke="#A7F3D0"/>
+        <text x="14" y="22" font-family="sans-serif" font-size="11" font-weight="700" fill="#065F46">2. High-Throughput Append-Only Buffer Log</text>
+        <text x="14" y="40" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#047857">• Millisecond asynchronous writes to local .telemetry/events.jsonl</text>
+        <text x="14" y="54" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#047857">• Built-in 7-day rolling window prevents local disk exhaustion</text>
+      </g>
+
+      <!-- Hook S3 -->
+      <g transform="translate(0, 150)">
+        <rect width="484" height="65" rx="8" fill="#ECFDF5" stroke="#A7F3D0"/>
+        <text x="14" y="22" font-family="sans-serif" font-size="11" font-weight="700" fill="#065F46">3. Smart Batch Flush Pipeline</text>
+        <text x="14" y="40" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#047857">• Flushes silently when batch threshold (N events) or idle cycle hit</text>
+        <text x="14" y="54" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#047857">• Offline buffering &amp; exponential retries preserve data integrity</text>
+      </g>
+
+      <!-- Hook S4 -->
+      <g transform="translate(0, 225)">
+        <rect width="484" height="65" rx="8" fill="#ECFDF5" stroke="#A7F3D0"/>
+        <text x="14" y="22" font-family="sans-serif" font-size="11" font-weight="700" fill="#065F46">4. Metrics Dashboard &amp; Architectural Feedback</text>
+        <text x="14" y="40" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#047857">• Aggregates rule usage frequency; flags dead or conflicting rules</text>
+        <text x="14" y="54" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#047857">• Quantifies R&amp;D productivity ROI to guide next scaffold iteration</text>
+      </g>
+
+      <!-- Footer Callout -->
+      <rect y="300" width="484" height="42" rx="6" fill="#065F46"/>
+      <text x="242" y="25" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">
+        Panoramic Observability: Data-Driven Evolution &amp; Pruning of Engineering Rules
+      </text>
+    </g>
+  </g>
+</svg>

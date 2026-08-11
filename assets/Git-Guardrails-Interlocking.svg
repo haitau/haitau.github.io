@@ -1,81 +1,146 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 650" width="100%" height="100%" style="background-color:#F8FAFC;">
-  <style>
-    .diagram-title { font-family: system-ui, -apple-system, sans-serif; font-size: 20px; font-weight: 800; fill: #0F172A; text-anchor: middle; }
-    .box-title { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; font-weight: 700; }
-    .node-title { font-family: system-ui, -apple-system, sans-serif; font-size: 11px; font-weight: 700; fill: #FFFFFF; }
-    .node-sub { font-family: system-ui, -apple-system, sans-serif; font-size: 10px; font-weight: 400; fill: #CBD5E1; }
-    .tpl-title { font-family: system-ui, -apple-system, sans-serif; font-size: 11px; font-weight: 700; fill: #78350F; }
-    .tpl-body { font-family: system-ui, -apple-system, sans-serif; font-size: 10px; font-weight: 500; fill: #92400E; }
-    .term-text { font-family: 'JetBrains Mono', Consolas, Monaco, monospace; font-size: 11px; fill: #A7F3D0; }
-    .term-err { font-family: 'JetBrains Mono', Consolas, Monaco, monospace; font-size: 12px; font-weight: 700; fill: #FCA5A5; }
-    .term-tip { font-family: 'JetBrains Mono', Consolas, Monaco, monospace; font-size: 11px; font-weight: 700; fill: #FDE047; }
-  </style>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="100%" height="100%">
+  <defs>
+    <filter id="soft-shadow" x="-8%" y="-8%" width="116%" height="116%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#0F172A" flood-opacity="0.06"/>
+    </filter>
+    <filter id="card-shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.04"/>
+    </filter>
 
-  <text x="600" y="35" class="diagram-title">图 3.1：Git 护栏矩阵 —— 一套通用脚本与声明式开关分流机制</text>
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#F1F5F9"/>
+    </linearGradient>
+    <linearGradient id="script-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="100%" stop-color="#475569"/>
+    </linearGradient>
+    <linearGradient id="switch-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#D97706"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+    <linearGradient id="diag-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+  </defs>
 
-  <!-- Top: Shared Scripts -->
-  <rect x="50" y="60" width="1100" height="105" rx="10" fill="#F1F5F9" stroke="#475569" stroke-width="2"/>
-  <text x="70" y="82" class="box-title" fill="#0F172A">共享核心执行脚本 (全公司物理同一套 · 只读分发至 .git/hooks/ · 逻辑零分叉)</text>
+  <rect width="100%" height="100%" fill="url(#bg-grad)"/>
+  <rect x="25" y="25" width="1150" height="630" rx="16" fill="#FFFFFF" fill-opacity="0.7" stroke="#E2E8F0" stroke-width="1.5" filter="url(#soft-shadow)"/>
 
-  <g transform="translate(70, 95)">
-    <rect width="250" height="55" rx="6" fill="#1E293B"/>
-    <text x="125" y="24" class="node-title" text-anchor="middle">commit-msg Hook</text>
-    <text x="125" y="42" class="node-sub" text-anchor="middle">规范正则 / 长度 / 资产 tag 检查</text>
-
-    <rect x="270" width="250" height="55" rx="6" fill="#1E293B"/>
-    <text x="395" y="24" class="node-title" text-anchor="middle">pre-commit Hook</text>
-    <text x="395" y="42" class="node-sub" text-anchor="middle">受保护分支 / 硬编码密钥扫描</text>
-
-    <rect x="540" width="250" height="55" rx="6" fill="#1E293B"/>
-    <text x="665" y="24" class="node-title" text-anchor="middle">pre-push Hook</text>
-    <text x="665" y="42" class="node-sub" text-anchor="middle">铁律拦截 force-push / 主干直推</text>
-
-    <rect x="810" width="250" height="55" rx="6" fill="#1E293B"/>
-    <text x="935" y="24" class="node-title" text-anchor="middle">pre-rebase Hook</text>
-    <text x="935" y="42" class="node-sub" text-anchor="middle">按策略阻断已推送历史重写</text>
+  <!-- Title -->
+  <g transform="translate(60, 48)">
+    <rect x="0" y="0" width="6" height="26" rx="3" fill="#D97706"/>
+    <text x="18" y="20" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif" font-size="18" font-weight="800" fill="#0F172A" letter-spacing="-0.5px">
+      图 3.1：Git 护栏矩阵 —— 一套通用脚本与声明式开关分流机制
+    </text>
+    <rect x="880" y="2" width="200" height="22" rx="11" fill="#FEF3C7" stroke="#FDE68A"/>
+    <text x="980" y="16" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#92400E" text-anchor="middle">Guardrail Matrix Architecture</text>
   </g>
 
-  <!-- Middle: Declarative Switch Matrix -->
-  <rect x="50" y="185" width="1100" height="155" rx="10" fill="#FFFBEB" stroke="#F59E0B" stroke-width="2"/>
-  <text x="70" y="207" class="box-title" fill="#92400E">声明式开关配置文件 (.githooks.yml · 依据角色画像模板按需分流)</text>
+  <!-- Top Container: Shared Execution Scripts -->
+  <g transform="translate(60, 90)" filter="url(#card-shadow)">
+    <rect width="1080" height="120" rx="12" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+    <path d="M 0 12 Q 0 0 12 0 L 1068 0 Q 1080 0 1080 12 L 1080 34 L 0 34 Z" fill="url(#script-grad)"/>
+    <text x="20" y="22" font-family="sans-serif" font-size="12.5" font-weight="700" fill="#FFFFFF">
+      🛡️ 共享核心执行脚本 (全公司物理同一套 · 只读分发至 .git/hooks/ · 逻辑零分叉)
+    </text>
 
-  <g transform="translate(70, 220)">
-    <!-- Template Dev -->
-    <rect width="335" height="105" rx="6" fill="#FEF3C7" stroke="#D97706" stroke-width="1.5"/>
-    <text x="15" y="22" class="tpl-title">工程开发模板 (base.yml)</text>
-    <text x="15" y="44" class="tpl-body">• master_protected: true (禁止主干直接提交/推包)</text>
-    <text x="15" y="64" class="tpl-body">• diff_guard: true (扫描代码硬编码密钥与 Token)</text>
-    <text x="15" y="84" class="tpl-body">• block_rebase_pushed: false (个人特性分支放行)</text>
+    <g transform="translate(18, 46)">
+      <!-- Hook 1 -->
+      <rect x="0" y="0" width="250" height="58" rx="6" fill="#F8FAFC" stroke="#E2E8F0"/>
+      <text x="12" y="22" font-family="sans-serif" font-size="11" font-weight="700" fill="#1E293B">commit-msg Hook</text>
+      <text x="12" y="42" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#64748B">规范正则 / Header 长度 / 资产 tag 检查</text>
 
-    <!-- Template PM -->
-    <rect x="360" width="340" height="105" rx="6" fill="#FEF3C7" stroke="#D97706" stroke-width="1.5"/>
-    <text x="375" y="22" class="tpl-title">产品管理模板 (pm.yml)</text>
-    <text x="375" y="44" class="tpl-body">• master_protected: false (单人主干极速直推)</text>
-    <text x="375" y="64" class="tpl-body">• diff_guard: false (文档库豁免控制台/关键字检查)</text>
-    <text x="375" y="84" class="tpl-body">• asset_guard: true (修改敏感受保护资产需显式标记)</text>
+      <!-- Hook 2 -->
+      <rect x="265" y="0" width="250" height="58" rx="6" fill="#F8FAFC" stroke="#E2E8F0"/>
+      <text x="12" y="22" font-family="sans-serif" font-size="11" font-weight="700" fill="#1E293B">pre-commit Hook</text>
+      <text x="12" y="42" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#64748B">受保护分支拦截 / 硬编码密钥扫描</text>
 
-    <!-- Template Algo -->
-    <rect x="725" width="335" height="105" rx="6" fill="#FEF3C7" stroke="#D97706" stroke-width="1.5"/>
-    <text x="740" y="22" class="tpl-title">算法研究模板 (ai-algo.yml)</text>
-    <text x="740" y="44" class="tpl-body">• master_protected: true (模型迭代强制走评估流)</text>
-    <text x="740" y="64" class="tpl-body">• sensitive_patterns: [MLflow_Key, S3_Key, CUDA]</text>
-    <text x="740" y="84" class="tpl-body">• check_divergence: true (大模型基线落后探针)</text>
+      <!-- Hook 3 -->
+      <rect x="530" y="0" width="250" height="58" rx="6" fill="#F8FAFC" stroke="#E2E8F0"/>
+      <text x="12" y="22" font-family="sans-serif" font-size="11" font-weight="700" fill="#1E293B">pre-push Hook</text>
+      <text x="12" y="42" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#64748B">铁律拦截 force-push / 主干直推</text>
+
+      <!-- Hook 4 -->
+      <rect x="795" y="0" width="250" height="58" rx="6" fill="#F8FAFC" stroke="#E2E8F0"/>
+      <text x="12" y="22" font-family="sans-serif" font-size="11" font-weight="700" fill="#1E293B">pre-rebase Hook</text>
+      <text x="12" y="42" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#64748B">按策略阻断已推送公共历史重写</text>
+    </g>
   </g>
 
-  <!-- Bottom: Self-Healing Diagnostic Terminal -->
-  <rect x="50" y="360" width="1100" height="260" rx="10" fill="#ECFDF5" stroke="#10B981" stroke-width="2"/>
-  <text x="70" y="382" class="box-title" fill="#065F46">结构化诊断与自愈闭环体验 (Actionable Self-Healing Diagnostic Output)</text>
+  <!-- Middle Container: Declarative Switches -->
+  <g transform="translate(60, 225)" filter="url(#card-shadow)">
+    <rect width="1080" height="155" rx="12" fill="#FFFFFF" stroke="#FDE68A" stroke-width="1.5"/>
+    <path d="M 0 12 Q 0 0 12 0 L 1068 0 Q 1080 0 1080 12 L 1080 34 L 0 34 Z" fill="url(#switch-grad)"/>
+    <text x="20" y="22" font-family="sans-serif" font-size="12.5" font-weight="700" fill="#FFFFFF">
+      ⚙️ 声明式开关配置文件 (.githooks.yml · 依据角色画像模板按需分流)
+    </text>
 
-  <g transform="translate(70, 395)">
-    <rect width="1060" height="210" rx="8" fill="#064E3B" stroke="#059669"/>
-    
-    <text x="20" y="30" class="term-err">❌ [GIT GUARD 拦截]：检测到未授权的主干直接提交操作！</text>
-    <text x="20" y="52" class="term-text">========================================================================================</text>
-    <text x="20" y="75" class="term-text">触发拦截项: pre_commit.master_protected = true</text>
-    <text x="20" y="97" class="term-text">违规上下文: 当前处于 master 主干分支，团队工程规范要求所有特性开发必须走分支 + MR 协同。</text>
-    <text x="20" y="119" class="term-text">----------------------------------------------------------------------------------------</text>
-    <text x="20" y="142" class="term-tip">💡 AI / 开发者自愈操作建议 (可直接复制到终端执行):</text>
-    <text x="20" y="165" class="term-text">   git checkout -b feat/your-feature-name</text>
-    <text x="20" y="187" class="term-text">   git commit -m "feat(scope): 描述具体业务变更" &amp;&amp; git push -u origin feat/your-feature-name</text>
+    <g transform="translate(18, 44)">
+      <!-- Template 1 -->
+      <rect x="0" y="0" width="335" height="98" rx="8" fill="#FFFBEB" stroke="#FCD34D"/>
+      <text x="14" y="20" font-family="sans-serif" font-size="11" font-weight="700" fill="#92400E">工程开发模板 (base.yml)</text>
+      <text x="14" y="40" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#78350F">• master_protected: true (禁止主干直接提交/推送)</text>
+      <text x="14" y="58" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#78350F">• diff_guard: true (扫描代码硬编码密钥与 Token)</text>
+      <text x="14" y="76" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#78350F">• block_rebase_pushed: false (个人特性分支放行)</text>
+
+      <!-- Template 2 -->
+      <rect x="355" y="0" width="335" height="98" rx="8" fill="#FFFBEB" stroke="#FCD34D"/>
+      <text x="14" y="20" font-family="sans-serif" font-size="11" font-weight="700" fill="#92400E">产品管理模板 (pm.yml)</text>
+      <text x="14" y="40" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#78350F">• master_protected: false (单人主干极速直推)</text>
+      <text x="14" y="58" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#78350F">• diff_guard: false (文档库豁免控制台/关键字检查)</text>
+      <text x="14" y="76" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#78350F">• asset_guard: true (修改受保护资产需显式标记)</text>
+
+      <!-- Template 3 -->
+      <rect x="710" y="0" width="335" height="98" rx="8" fill="#FFFBEB" stroke="#FCD34D"/>
+      <text x="14" y="20" font-family="sans-serif" font-size="11" font-weight="700" fill="#92400E">算法研究模板 (ai-algo.yml)</text>
+      <text x="14" y="40" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#78350F">• master_protected: true (模型迭代强制走评估流)</text>
+      <text x="14" y="58" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#78350F">• sensitive_patterns: [MLflow_Key, S3_Key, CUDA]</text>
+      <text x="14" y="76" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#78350F">• check_divergence: true (大模型基线落后探针)</text>
+    </g>
+  </g>
+
+  <!-- Bottom Container: Terminal Diagnostic Experience -->
+  <g transform="translate(60, 395)" filter="url(#card-shadow)">
+    <rect width="1080" height="240" rx="12" fill="#FFFFFF" stroke="#A7F3D0" stroke-width="1.5"/>
+    <path d="M 0 12 Q 0 0 12 0 L 1068 0 Q 1080 0 1080 12 L 1080 34 L 0 34 Z" fill="url(#diag-grad)"/>
+    <text x="20" y="22" font-family="sans-serif" font-size="12.5" font-weight="700" fill="#FFFFFF">
+      💻 结构化诊断与自愈闭环体验 (Actionable Self-Healing Diagnostic Output)
+    </text>
+
+    <g transform="translate(18, 44)">
+      <rect width="1044" height="180" rx="8" fill="#0F172A" stroke="#1E293B"/>
+      <!-- Terminal Header -->
+      <circle cx="16" cy="14" r="4.5" fill="#EF4444"/>
+      <circle cx="30" cy="14" r="4.5" fill="#F59E0B"/>
+      <circle cx="44" cy="14" r="4.5" fill="#10B981"/>
+      <text x="60" y="17" font-family="monospace" font-size="10" fill="#64748B">terminal — git-guardrail-output</text>
+
+      <!-- Terminal Body -->
+      <g transform="translate(16, 32)">
+        <text x="0" y="18" font-family="'JetBrains Mono', Consolas, monospace" font-size="11.5" font-weight="700" fill="#F87171">
+          ❌ [GIT GUARD 拦截]：检测到未授权的主干直接提交操作！
+        </text>
+        <text x="0" y="38" font-family="'JetBrains Mono', Consolas, monospace" font-size="10.5" fill="#94A3B8">
+          ========================================================================================
+        </text>
+        <text x="0" y="58" font-family="'JetBrains Mono', Consolas, monospace" font-size="10.5" fill="#E2E8F0">
+          触发拦截项: <tspan fill="#38BDF8">pre_commit.master_protected = true</tspan>
+        </text>
+        <text x="0" y="78" font-family="'JetBrains Mono', Consolas, monospace" font-size="10.5" fill="#E2E8F0">
+          违规上下文: 当前处于 master 主干分支，团队工程规范要求所有特性开发必须走分支 + MR 协同。
+        </text>
+        <text x="0" y="98" font-family="'JetBrains Mono', Consolas, monospace" font-size="10.5" fill="#94A3B8">
+          ----------------------------------------------------------------------------------------
+        </text>
+        <text x="0" y="118" font-family="'JetBrains Mono', Consolas, monospace" font-size="11" font-weight="700" fill="#FDE047">
+          💡 AI / 开发者自愈操作建议 (可直接复制到终端执行):
+        </text>
+        <text x="0" y="138" font-family="'JetBrains Mono', Consolas, monospace" font-size="10.5" fill="#4ADE80">
+          git checkout -b feat/your-feature-name &amp;&amp; git commit -m "feat(scope): 描述业务变更" &amp;&amp; git push -u origin feat/your-feature-name
+        </text>
+      </g>
+    </g>
   </g>
 </svg>

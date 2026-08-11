@@ -1,0 +1,144 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="100%" height="100%">
+  <defs>
+    <filter id="soft-shadow" x="-8%" y="-8%" width="116%" height="116%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#0F172A" flood-opacity="0.06"/>
+    </filter>
+    <filter id="card-shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.04"/>
+    </filter>
+
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#F1F5F9"/>
+    </linearGradient>
+    <linearGradient id="bad-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F43F5E"/>
+      <stop offset="100%" stop-color="#E11D48"/>
+    </linearGradient>
+    <linearGradient id="good-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="100%" height="100%" fill="url(#bg-grad)"/>
+  <rect x="25" y="25" width="1150" height="630" rx="16" fill="#FFFFFF" fill-opacity="0.7" stroke="#E2E8F0" stroke-width="1.5" filter="url(#soft-shadow)"/>
+
+  <!-- Title -->
+  <g transform="translate(60, 48)">
+    <rect x="0" y="0" width="6" height="26" rx="3" fill="#E11D48"/>
+    <text x="18" y="20" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="18" font-weight="800" fill="#0F172A" letter-spacing="-0.5px">
+      Figure 1.1: The Fullstack Convergence Dilemma &amp; Context Scoping Pollution
+    </text>
+    <rect x="910" y="2" width="170" height="22" rx="11" fill="#FFE4E6" stroke="#FECDD3"/>
+    <text x="995" y="16" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#9F1239" text-anchor="middle">Context Scoping Dilemma</text>
+  </g>
+
+  <!-- Left: Bad Paradigm Card -->
+  <g transform="translate(60, 90)" filter="url(#card-shadow)">
+    <rect width="520" height="540" rx="12" fill="#FFFFFF" stroke="#FDA4AF" stroke-width="1.5"/>
+    <path d="M 0 12 Q 0 0 12 0 L 508 0 Q 520 0 520 12 L 520 36 L 0 36 Z" fill="url(#bad-grad)"/>
+    <text x="20" y="23" font-family="sans-serif" font-size="12.5" font-weight="700" fill="#FFFFFF">
+      ❌ Global Unmanaged Context (All Stacks Preloaded)
+    </text>
+
+    <g transform="translate(18, 48)">
+      <!-- Top banner -->
+      <rect width="484" height="48" rx="8" fill="#881337"/>
+      <text x="242" y="22" font-family="sans-serif" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">Fullstack AI Code Agent (Cluttered Monolithic Session)</text>
+      <text x="242" y="38" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#FECDD3" text-anchor="middle">Stuffed with: PHP rules + Vue3 rules + Python rules + Go rules + 30+ MCPs</text>
+
+      <!-- Cost 1 -->
+      <g transform="translate(0, 58)">
+        <rect width="484" height="65" rx="8" fill="#FFF1F2" stroke="#FECDD3"/>
+        <text x="14" y="22" font-family="sans-serif" font-size="11" font-weight="700" fill="#9F1239">💥 Cost 1: Cross-Stack Hallucination</text>
+        <text x="14" y="40" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#881337">• Writing PHP/Vue syntax inside Python repositories</text>
+        <text x="14" y="54" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#881337">• Confusing distinct asynchronous concurrency and memory models</text>
+      </g>
+
+      <!-- Cost 2 -->
+      <g transform="translate(0, 131)">
+        <rect width="484" height="65" rx="8" fill="#FFF1F2" stroke="#FECDD3"/>
+        <text x="14" y="22" font-family="sans-serif" font-size="11" font-weight="700" fill="#9F1239">💥 Cost 2: Rule &amp; Instruction Collision</text>
+        <text x="14" y="40" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#881337">• Frontend PascalCase conventions clash with backend snake_case contracts</text>
+        <text x="14" y="54" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#881337">• Conflicting branch routing and Git protection policies override each other</text>
+      </g>
+
+      <!-- Cost 3 -->
+      <g transform="translate(0, 204)">
+        <rect width="484" height="65" rx="8" fill="#FFF1F2" stroke="#FECDD3"/>
+        <text x="14" y="22" font-family="sans-serif" font-size="11" font-weight="700" fill="#9F1239">💥 Cost 3: Token Bloat &amp; Attention Thrashing</text>
+        <text x="14" y="40" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#881337">• 100k+ tokens flooded with irrelevant stack rules, diluting model attention</text>
+        <text x="14" y="54" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#881337">• Crucial architecture constraints are ignored as prompt entropy spikes</text>
+      </g>
+
+      <!-- Cost 4 -->
+      <g transform="translate(0, 277)">
+        <rect width="484" height="65" rx="8" fill="#FFF1F2" stroke="#FECDD3"/>
+        <text x="14" y="22" font-family="sans-serif" font-size="11" font-weight="700" fill="#9F1239">💥 Cost 4: MCP Tool Bloat &amp; 429 Rate Limits</text>
+        <text x="14" y="40" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#881337">• Over-registering 30+ tools causes model confusion during tool invocation</text>
+        <text x="14" y="54" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#881337">• Triggers tool timeouts, context pollution &amp; API 429 rate-limiting</text>
+      </g>
+
+      <!-- Result callout -->
+      <rect y="352" width="484" height="38" rx="6" fill="#FFE4E6" stroke="#FDA4AF"/>
+      <text x="242" y="23" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#9F1239" text-anchor="middle">
+        Outcome: Sluggish agent performance, forcing developers to fix trivial syntax mistakes
+      </text>
+    </g>
+  </g>
+
+  <!-- Right: Good Paradigm Card -->
+  <g transform="translate(620, 90)" filter="url(#card-shadow)">
+    <rect width="520" height="540" rx="12" fill="#FFFFFF" stroke="#86EFAC" stroke-width="1.5"/>
+    <path d="M 0 12 Q 0 0 12 0 L 508 0 Q 520 0 520 12 L 520 36 L 0 36 Z" fill="url(#good-grad)"/>
+    <text x="20" y="23" font-family="sans-serif" font-size="12.5" font-weight="700" fill="#FFFFFF">
+      ✅ Scoped Context Focus (Directory-Granular Activation)
+    </text>
+
+    <g transform="translate(18, 48)">
+      <!-- Top banner -->
+      <rect width="484" height="48" rx="8" fill="#14532D"/>
+      <text x="242" y="22" font-family="sans-serif" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">Fullstack AI Code Agent (Dynamic Scoped Session)</text>
+      <text x="242" y="38" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#BBF7D0" text-anchor="middle">Focus on current Git repo, activating strictly relevant Rule / Skill / MCP</text>
+
+      <!-- Repo 1 -->
+      <g transform="translate(0, 58)">
+        <rect width="484" height="65" rx="8" fill="#ECFDF5" stroke="#A7F3D0"/>
+        <text x="14" y="22" font-family="sans-serif" font-size="11" font-weight="700" fill="#065F46">🎯 Repo A: Focused on Go/Webman Backend</text>
+        <text x="14" y="40" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#047857">• Active: Go concurrency standards, SQL migration skill, DB MCP</text>
+        <text x="14" y="54" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#047857">• State: Remaining N-1 tech stack rules physically silent (Zero noise)</text>
+      </g>
+
+      <!-- Repo 2 -->
+      <g transform="translate(0, 131)">
+        <rect width="484" height="65" rx="8" fill="#ECFDF5" stroke="#A7F3D0"/>
+        <text x="14" y="22" font-family="sans-serif" font-size="11" font-weight="700" fill="#065F46">🎯 Repo B: Focused on Vue3/React Frontend</text>
+        <text x="14" y="40" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#047857">• Active: UI design system, component atomicity, Browser MCP</text>
+        <text x="14" y="54" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#047857">• State: Backend &amp; algorithm rules fully isolated; focused on reactivity</text>
+      </g>
+
+      <!-- Repo 3 -->
+      <g transform="translate(0, 204)">
+        <rect width="484" height="65" rx="8" fill="#ECFDF5" stroke="#A7F3D0"/>
+        <text x="14" y="22" font-family="sans-serif" font-size="11" font-weight="700" fill="#065F46">🎯 Repo C: Focused on Python AI/MLOps</text>
+        <text x="14" y="40" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#047857">• Active: Scientific computing baseline, evaluation SOP, MLflow MCP</text>
+        <text x="14" y="54" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#047857">• State: Zero frontend noise, maximizing model throughput &amp; accuracy</text>
+      </g>
+
+      <!-- Repo 4 -->
+      <g transform="translate(0, 277)">
+        <rect width="484" height="65" rx="8" fill="#ECFDF5" stroke="#A7F3D0"/>
+        <text x="14" y="22" font-family="sans-serif" font-size="11" font-weight="700" fill="#065F46">🎯 Top Meta-Repo: Cross-Repo Routing &amp; Impact Analysis</text>
+        <text x="14" y="40" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#047857">• Orchestrates cross-repo tasks, verifies API contracts, dispatches subagents</text>
+        <text x="14" y="54" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#047857">• State: Maintains architectural overview while isolating sub-tasks</text>
+      </g>
+
+      <!-- Result callout -->
+      <rect y="352" width="484" height="38" rx="6" fill="#DCFCE7" stroke="#86EFAC"/>
+      <text x="242" y="23" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#14532D" text-anchor="middle">
+        Benefits: 100% Determinism, Low Token Overhead, Zero Cross-Stack Hallucination
+      </text>
+    </g>
+  </g>
+</svg>

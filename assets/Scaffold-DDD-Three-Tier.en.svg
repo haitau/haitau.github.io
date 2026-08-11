@@ -1,0 +1,215 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" width="100%" height="100%">
+  <defs>
+    <filter id="soft-shadow" x="-8%" y="-8%" width="116%" height="116%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#0F172A" flood-opacity="0.06"/>
+    </filter>
+    <filter id="card-shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.04"/>
+    </filter>
+
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#F1F5F9"/>
+    </linearGradient>
+    <linearGradient id="l1-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4F46E5"/>
+      <stop offset="100%" stop-color="#6366F1"/>
+    </linearGradient>
+    <linearGradient id="l2-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#D97706"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+    <linearGradient id="l3-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+    <linearGradient id="eng-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7C3AED"/>
+      <stop offset="100%" stop-color="#9333EA"/>
+    </linearGradient>
+    <linearGradient id="target-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284C7"/>
+      <stop offset="100%" stop-color="#0EA5E9"/>
+    </linearGradient>
+
+    <marker id="m-purple" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#7C3AED"/>
+    </marker>
+    <marker id="m-blue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#0284C7"/>
+    </marker>
+  </defs>
+
+  <rect width="100%" height="100%" fill="url(#bg-grad)"/>
+  <rect x="25" y="25" width="1150" height="670" rx="16" fill="#FFFFFF" fill-opacity="0.7" stroke="#E2E8F0" stroke-width="1.5" filter="url(#soft-shadow)"/>
+
+  <!-- Diagram Title -->
+  <g transform="translate(60, 48)">
+    <rect x="0" y="0" width="6" height="26" rx="3" fill="#7C3AED"/>
+    <text x="18" y="20" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="18" font-weight="800" fill="#0F172A" letter-spacing="-0.5px">
+      Figure 2.1: DDD Three-Tier Domain Isolation Topology &amp; Multi-Strategy Assembly Engine
+    </text>
+    <rect x="910" y="2" width="170" height="22" rx="11" fill="#FAF5FF" stroke="#E9D5FF"/>
+    <text x="995" y="16" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#6B21A8" text-anchor="middle">Three-Tier Architecture</text>
+  </g>
+
+  <!-- Left Column: Source Assets Container -->
+  <g transform="translate(60, 90)" filter="url(#card-shadow)">
+    <rect width="520" height="580" rx="12" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+    <rect x="0" y="0" width="520" height="36" rx="12" fill="#F8FAFC"/>
+    <text x="18" y="23" font-family="sans-serif" font-size="12.5" font-weight="800" fill="#1E293B">📦 Scaffold Asset Source Repository</text>
+
+    <!-- Layer 1: Common -->
+    <g transform="translate(16, 48)">
+      <rect width="488" height="105" rx="8" fill="#F5F3FF" stroke="#C7D2FE" stroke-width="1.5"/>
+      <path d="M 0 8 Q 0 0 8 0 L 480 0 Q 488 0 488 8 L 488 24 L 0 24 Z" fill="url(#l1-grad)"/>
+      <text x="12" y="16" font-family="sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">1. Common Baseline Layer (1-common · Enterprise Baseline)</text>
+
+      <g transform="translate(10, 32)">
+        <rect x="0" y="0" width="228" height="30" rx="5" fill="#FFFFFF" stroke="#C7D2FE"/>
+        <text x="10" y="19" font-family="sans-serif" font-size="10" font-weight="700" fill="#312E81">Git Workflow Baseline (git-workflow.md)</text>
+
+        <rect x="238" y="0" width="230" height="30" rx="5" fill="#FFFFFF" stroke="#C7D2FE"/>
+        <text x="10" y="19" font-family="sans-serif" font-size="10" font-weight="700" fill="#312E81">Git Hooks Core Read-Only Scripts</text>
+
+        <rect x="0" y="36" width="228" height="30" rx="5" fill="#FFFFFF" stroke="#C7D2FE"/>
+        <text x="10" y="19" font-family="sans-serif" font-size="10" font-weight="700" fill="#312E81">Base MCP Servers (Filesystem/Code)</text>
+
+        <rect x="238" y="36" width="230" height="30" rx="5" fill="#FFFFFF" stroke="#C7D2FE"/>
+        <text x="10" y="19" font-family="sans-serif" font-size="10" font-weight="700" fill="#312E81">Universal Gitignore / Gitattributes</text>
+      </g>
+    </g>
+
+    <!-- Layer 2: Domain -->
+    <g transform="translate(16, 165)">
+      <rect width="488" height="115" rx="8" fill="#FFFBEB" stroke="#FDE68A" stroke-width="1.5"/>
+      <path d="M 0 8 Q 0 0 8 0 L 480 0 Q 488 0 488 8 L 488 24 L 0 24 Z" fill="url(#l2-grad)"/>
+      <text x="12" y="16" font-family="sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">2. Business Domain Layer (2-domains · Domain &amp; Tech Stack)</text>
+
+      <g transform="translate(10, 32)">
+        <rect x="0" y="0" width="228" height="32" rx="5" fill="#FFFFFF" stroke="#FCD34D"/>
+        <text x="10" y="20" font-family="sans-serif" font-size="10" font-weight="700" fill="#92400E">Tech-Stack Ignores (Node/Java/Py)</text>
+
+        <rect x="238" y="0" width="230" height="32" rx="5" fill="#FFFFFF" stroke="#FCD34D"/>
+        <text x="10" y="20" font-family="sans-serif" font-size="10" font-weight="700" fill="#92400E">Domain Shared Skills (Jira/Review)</text>
+
+        <rect x="0" y="38" width="228" height="36" rx="5" fill="#FFFFFF" stroke="#FCD34D"/>
+        <text x="10" y="18" font-family="sans-serif" font-size="9.5" font-weight="700" fill="#92400E">Domain-Specific MCPs</text>
+        <text x="10" y="30" font-family="sans-serif" font-size="9" font-weight="500" fill="#B45309">(MLflow / Internal APIs)</text>
+
+        <rect x="238" y="38" width="230" height="36" rx="5" fill="#FFFFFF" stroke="#FCD34D"/>
+        <text x="10" y="18" font-family="sans-serif" font-size="9.5" font-weight="700" fill="#B45309">Registry Config registry.yaml</text>
+        <text x="10" y="30" font-family="sans-serif" font-size="9" font-weight="500" fill="#92400E">(only_for / exclude ACLs)</text>
+      </g>
+    </g>
+
+    <!-- Layer 3: Role -->
+    <g transform="translate(16, 292)">
+      <rect width="488" height="270" rx="8" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1.5"/>
+      <path d="M 0 8 Q 0 0 8 0 L 480 0 Q 488 0 488 8 L 488 24 L 0 24 Z" fill="url(#l3-grad)"/>
+      <text x="12" y="16" font-family="sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">3. Role Specialization Layer (roles/&lt;role&gt; · 16+ Role Profiles)</text>
+
+      <g transform="translate(10, 30)">
+        <!-- Role 1 -->
+        <rect x="0" y="0" width="468" height="42" rx="5" fill="#FFFFFF" stroke="#86EFAC"/>
+        <text x="10" y="18" font-family="sans-serif" font-size="10" font-weight="700" fill="#065F46">Backend Engineer (Java / Go / PHP)</text>
+        <text x="10" y="32" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• SQL migration audits • API contract generation • DB MCP</text>
+
+        <!-- Role 2 -->
+        <rect x="0" y="48" width="468" height="42" rx="5" fill="#FFFFFF" stroke="#86EFAC"/>
+        <text x="10" y="18" font-family="sans-serif" font-size="10" font-weight="700" fill="#065F46">Frontend Engineer (Vue3 / React / TypeScript)</text>
+        <text x="10" y="32" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• Component atomicity • UI design system • Constant modularity</text>
+
+        <!-- Role 3 -->
+        <rect x="0" y="96" width="468" height="42" rx="5" fill="#FFFFFF" stroke="#86EFAC"/>
+        <text x="10" y="18" font-family="sans-serif" font-size="10" font-weight="700" fill="#065F46">Algorithm Researcher (AI / Vision / MLOps)</text>
+        <text x="10" y="32" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• Model evaluation SOP • Dataset version gating • MLflow MCP</text>
+
+        <!-- Role 4 -->
+        <rect x="0" y="144" width="468" height="42" rx="5" fill="#FFFFFF" stroke="#86EFAC"/>
+        <text x="10" y="18" font-family="sans-serif" font-size="10" font-weight="700" fill="#065F46">Product Manager (Product-Mgr / Director)</text>
+        <text x="10" y="32" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• PRD formatting • Requirement triage • Trunk direct push</text>
+
+        <!-- Role 5 -->
+        <rect x="0" y="192" width="468" height="38" rx="5" fill="#FFFFFF" stroke="#86EFAC"/>
+        <text x="10" y="16" font-family="sans-serif" font-size="10" font-weight="700" fill="#065F46">QA Engineer (QA-Automation)</text>
+        <text x="10" y="30" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• End-to-end test generation • CI pipeline automated linkages</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Right Top: Engine Container -->
+  <g transform="translate(620, 90)" filter="url(#card-shadow)">
+    <rect width="520" height="270" rx="12" fill="#FFFFFF" stroke="#DDD6FE" stroke-width="1.5"/>
+    <path d="M 0 12 Q 0 0 12 0 L 508 0 Q 520 0 520 12 L 520 34 L 0 34 Z" fill="url(#eng-grad)"/>
+    <text x="18" y="22" font-family="sans-serif" font-size="12.5" font-weight="700" fill="#FFFFFF">⚙️ Multi-Strategy CLI Compilation Engine</text>
+
+    <g transform="translate(16, 44)">
+      <!-- E1 -->
+      <rect y="0" width="488" height="48" rx="6" fill="#F5F3FF" stroke="#C4B5FD"/>
+      <text x="12" y="18" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#581C87">Markdown AST Heading-Level Smart Merge</text>
+      <text x="12" y="34" font-family="sans-serif" font-size="9" font-weight="500" fill="#6B21A8">• Inherits common layout • Overrides matching headings • Appends unique sections</text>
+
+      <!-- E2 -->
+      <rect y="54" width="488" height="48" rx="6" fill="#F5F3FF" stroke="#C4B5FD"/>
+      <text x="12" y="18" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#581C87">JSON MCP Service-Level Deep Merge</text>
+      <text x="12" y="34" font-family="sans-serif" font-size="9" font-weight="500" fill="#6B21A8">• Deep traverses mcpServers • Merges granular args • Protects local tokens</text>
+
+      <!-- E3 -->
+      <rect y="108" width="488" height="48" rx="6" fill="#F5F3FF" stroke="#C4B5FD"/>
+      <text x="12" y="18" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#581C87">Git Ignore / Attr Line-Level Stacking</text>
+      <text x="12" y="34" font-family="sans-serif" font-size="9" font-weight="500" fill="#6B21A8">• Unifies OS/IDE baselines • Injects stack rules • Preserves local customs</text>
+
+      <!-- E4 -->
+      <rect y="162" width="488" height="48" rx="6" fill="#FAF5FF" stroke="#A855F7" stroke-dasharray="4,2"/>
+      <text x="12" y="18" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#6B21A8">Registry Ingestion Pruning</text>
+      <text x="12" y="34" font-family="sans-serif" font-size="9" font-weight="500" fill="#7E22CE">• Evaluates only_for/exclude • Physically prunes irrelevant skills</text>
+    </g>
+  </g>
+
+  <!-- Right Bottom: Target Workspace Container -->
+  <g transform="translate(620, 380)" filter="url(#card-shadow)">
+    <rect width="520" height="290" rx="12" fill="#FFFFFF" stroke="#BAE6FD" stroke-width="1.5"/>
+    <path d="M 0 12 Q 0 0 12 0 L 508 0 Q 520 0 520 12 L 520 34 L 0 34 Z" fill="url(#target-grad)"/>
+    <text x="18" y="22" font-family="sans-serif" font-size="12.5" font-weight="700" fill="#FFFFFF">🎯 Target Workspace Output Layout (.ide/)</text>
+
+    <g transform="translate(16, 44)">
+      <!-- Row 1 -->
+      <g>
+        <rect width="238" height="52" rx="6" fill="#F0F9FF" stroke="#7DD3FC"/>
+        <text x="12" y="20" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#0369A1">.ide/rules/ (Active Rules)</text>
+        <text x="12" y="36" font-family="sans-serif" font-size="9" font-weight="500" fill="#0284C7">AST merged full rulesets</text>
+
+        <rect x="250" width="238" height="52" rx="6" fill="#F0F9FF" stroke="#7DD3FC"/>
+        <text x="12" y="20" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#0369A1">.ide/skills/ (Active Skills)</text>
+        <text x="12" y="36" font-family="sans-serif" font-size="9" font-weight="500" fill="#0284C7">Pruned role-specific skill bundles</text>
+      </g>
+
+      <!-- Row 2 -->
+      <g transform="translate(0, 60)">
+        <rect width="238" height="52" rx="6" fill="#F0F9FF" stroke="#7DD3FC"/>
+        <text x="12" y="20" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#0369A1">.ide/mcp.json (Tool Config)</text>
+        <text x="12" y="36" font-family="sans-serif" font-size="9" font-weight="500" fill="#0284C7">Deep-merged tool registry</text>
+
+        <rect x="250" width="238" height="52" rx="6" fill="#F0F9FF" stroke="#7DD3FC"/>
+        <text x="12" y="20" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#0369A1">.githooks.yml (Guardrails)</text>
+        <text x="12" y="36" font-family="sans-serif" font-size="9" font-weight="500" fill="#0284C7">Role-tailored switch toggles</text>
+      </g>
+
+      <!-- Row 3 -->
+      <g transform="translate(0, 120)">
+        <rect width="488" height="48" rx="6" fill="#F0F9FF" stroke="#7DD3FC"/>
+        <text x="12" y="20" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#0369A1">.ide/hooks.json + telemetry/ (Event Hooks)</text>
+        <text x="12" y="36" font-family="sans-serif" font-size="9" font-weight="500" fill="#0284C7">IDE event listeners (PostToolUse/SessionStart) logging metrics</text>
+      </g>
+
+      <!-- Summary Pill -->
+      <rect y="176" width="488" height="34" rx="6" fill="#0C4A6E"/>
+      <text x="244" y="21" font-family="sans-serif" font-size="10" font-weight="700" fill="#FFFFFF" text-anchor="middle">CONFIG_SUMMARY.md (Assembly Manifest &amp; Snapshot Index)</text>
+    </g>
+  </g>
+
+  <!-- Connectors -->
+  <path d="M 580 220 L 620 220" stroke="#7C3AED" stroke-width="2.5" fill="none" marker-end="url(#m-purple)"/>
+  <path d="M 880 360 L 880 380" stroke="#0284C7" stroke-width="2.5" fill="none" marker-end="url(#m-blue)"/>
+</svg>

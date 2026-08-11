@@ -1,0 +1,51 @@
+<mxfile host="Electron" modified="2026-08-11T17:40:00.000Z" agent="Antigravity" version="21.6.8" type="device">
+  <diagram id="pipeline_9steps_en" name="9-Step Atomic Assembly Pipeline">
+    <mxGraphModel dx="1200" dy="720" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageWidth="1200" pageHeight="720" background="#F8FAFC">
+      <root>
+        <mxCell id="0" strokeColor="none"/><mxCell id="1" parent="0" />
+
+        <mxCell id="title" value="Figure 6.1: CLI Engine 9-Step Atomic Assembly Pipeline" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=18;fontStyle=1;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="50" y="15" width="1100" height="35" as="geometry" />
+        </mxCell>
+
+        <!-- Step 1 -->
+        <mxCell id="s1" value="1. preflight-check (Pre-flight)&#10;• Verify Node/Git runtime environments&#10;• Probe stack language &amp; resolve templates&#10;• Detect snapshot index for incremental upgrade" style="rounded=1;fillColor=#FFFFFF;strokeColor=#C7D2FE;fontColor=#312E81;fontSize=10.5;align=left;spacingLeft=10;" vertex="1" parent="1"><mxGeometry x="50" y="70" width="340" height="150" as="geometry" /></mxCell>
+
+        <!-- Step 2 -->
+        <mxCell id="s2" value="2. clean-target (Workspace Prune)&#10;• Backup local configs to snapshot directory&#10;• Prune stale rules &amp; expired symlinks&#10;• Establish clean layout (.ide/, .agents/)" style="rounded=1;fillColor=#FFFFFF;strokeColor=#C7D2FE;fontColor=#312E81;fontSize=10.5;align=left;spacingLeft=10;" vertex="1" parent="1"><mxGeometry x="430" y="70" width="340" height="150" as="geometry" /></mxCell>
+
+        <!-- Step 3 -->
+        <mxCell id="s3" value="3. build-project-rules (Rules Merge)&#10;• Read Common, Domain &amp; Role rulesets&#10;• AST heading-level semantic merge&#10;• Output AGENTS.md SSOT &amp; thin pointer" style="rounded=1;fillColor=#FFFFFF;strokeColor=#C7D2FE;fontColor=#312E81;fontSize=10.5;align=left;spacingLeft=10;" vertex="1" parent="1"><mxGeometry x="810" y="70" width="340" height="150" as="geometry" /></mxCell>
+
+        <!-- Step 6 -->
+        <mxCell id="s6" value="6. build-git-configs (Git Guardrails)&#10;• Generate .githooks.yml switches by role&#10;• Stack Common + Domain + Local Ignore rules&#10;• Install read-only scripts to .git/hooks/" style="rounded=1;fillColor=#FFFFFF;strokeColor=#C7D2FE;fontColor=#312E81;fontSize=10.5;align=left;spacingLeft=10;" vertex="1" parent="1"><mxGeometry x="810" y="270" width="340" height="150" as="geometry" /></mxCell>
+
+        <!-- Step 5 -->
+        <mxCell id="s5" value="5. build-mcp-config (MCP Merge)&#10;• Traverse mcpServers, deep merge tool configs&#10;• Token placeholders protect local secrets&#10;• Symlink root .mcp.json for CLI agents" style="rounded=1;fillColor=#FFFFFF;strokeColor=#C7D2FE;fontColor=#312E81;fontSize=10.5;align=left;spacingLeft=10;" vertex="1" parent="1"><mxGeometry x="430" y="270" width="340" height="150" as="geometry" /></mxCell>
+
+        <!-- Step 4 -->
+        <mxCell id="s4" value="4. build-skills (Skill Pruning)&#10;• Parse registry.yaml access control list&#10;• Physically prune skills outside role boundary&#10;• Emit to .agents/skills/ and build symlink" style="rounded=1;fillColor=#FFFFFF;strokeColor=#C7D2FE;fontColor=#312E81;fontSize=10.5;align=left;spacingLeft=10;" vertex="1" parent="1"><mxGeometry x="50" y="270" width="340" height="150" as="geometry" /></mxCell>
+
+        <!-- Step 7 -->
+        <mxCell id="s7" value="7. build-hooks (Event Listeners)&#10;• Configure SessionStart lifecycle hook&#10;• Configure PostToolUse latency probes&#10;• Initialize .telemetry/ local event buffer" style="rounded=1;fillColor=#FFFFFF;strokeColor=#C7D2FE;fontColor=#312E81;fontSize=10.5;align=left;spacingLeft=10;" vertex="1" parent="1"><mxGeometry x="50" y="470" width="340" height="150" as="geometry" /></mxCell>
+
+        <!-- Step 8 -->
+        <mxCell id="s8" value="8. summary (Manifest Generation)&#10;• Generate CONFIG_SUMMARY.md manifest&#10;• Record timestamp, role version &amp; file digests&#10;• Provide baseline credentials for zero-clone PRs" style="rounded=1;fillColor=#FFFFFF;strokeColor=#C7D2FE;fontColor=#312E81;fontSize=10.5;align=left;spacingLeft=10;" vertex="1" parent="1"><mxGeometry x="430" y="470" width="340" height="150" as="geometry" /></mxCell>
+
+        <!-- Step 9 -->
+        <mxCell id="s9" value="9. self-check (Integrity Audit)&#10;• Audit .ide/ file integrity &amp; symlink reachability&#10;• Check executable permissions (+x) on hooks&#10;• Print success summary; IDE ready for action" style="rounded=1;fillColor=#ECFDF5;strokeColor=#86EFAC;fontColor=#065F46;fontSize=10.5;align=left;spacingLeft=10;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="810" y="470" width="340" height="150" as="geometry" /></mxCell>
+
+        <!-- Flow arrows -->
+        <mxCell id="a1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#6366F1;" edge="1" parent="1" source="s1" target="s2"/>
+        <mxCell id="a2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#6366F1;" edge="1" parent="1" source="s2" target="s3"/>
+        <mxCell id="a3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#6366F1;" edge="1" parent="1" source="s3" target="s6"/>
+        <mxCell id="a4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#6366F1;" edge="1" parent="1" source="s6" target="s5"/>
+        <mxCell id="a5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#6366F1;" edge="1" parent="1" source="s5" target="s4"/>
+        <mxCell id="a6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#6366F1;" edge="1" parent="1" source="s4" target="s7"/>
+        <mxCell id="a7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#6366F1;" edge="1" parent="1" source="s7" target="s8"/>
+        <mxCell id="a8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#10B981;" edge="1" parent="1" source="s8" target="s9"/>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

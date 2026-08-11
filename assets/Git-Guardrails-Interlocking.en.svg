@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="100%" height="100%">
+  <defs>
+    <filter id="soft-shadow" x="-8%" y="-8%" width="116%" height="116%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#0F172A" flood-opacity="0.06"/>
+    </filter>
+    <filter id="card-shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.04"/>
+    </filter>
+
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#F1F5F9"/>
+    </linearGradient>
+    <linearGradient id="script-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="100%" stop-color="#475569"/>
+    </linearGradient>
+    <linearGradient id="switch-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#D97706"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+    <linearGradient id="diag-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="100%" height="100%" fill="url(#bg-grad)"/>
+  <rect x="25" y="25" width="1150" height="630" rx="16" fill="#FFFFFF" fill-opacity="0.7" stroke="#E2E8F0" stroke-width="1.5" filter="url(#soft-shadow)"/>
+
+  <!-- Title -->
+  <g transform="translate(60, 48)">
+    <rect x="0" y="0" width="6" height="26" rx="3" fill="#D97706"/>
+    <text x="18" y="20" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="18" font-weight="800" fill="#0F172A" letter-spacing="-0.5px">
+      Figure 3.1: Git Guardrails Matrix — Shared Scripts &amp; Declarative Switch Interlocking
+    </text>
+    <rect x="880" y="2" width="200" height="22" rx="11" fill="#FEF3C7" stroke="#FDE68A"/>
+    <text x="980" y="16" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#92400E" text-anchor="middle">Guardrail Matrix Architecture</text>
+  </g>
+
+  <!-- Top Container: Shared Execution Scripts -->
+  <g transform="translate(60, 90)" filter="url(#card-shadow)">
+    <rect width="1080" height="120" rx="12" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+    <path d="M 0 12 Q 0 0 12 0 L 1068 0 Q 1080 0 1080 12 L 1080 34 L 0 34 Z" fill="url(#script-grad)"/>
+    <text x="20" y="22" font-family="sans-serif" font-size="12.5" font-weight="700" fill="#FFFFFF">
+      🛡️ Shared Core Hook Scripts (Identical across enterprise · Distributed to .git/hooks/ · Zero logic fork)
+    </text>
+
+    <g transform="translate(18, 46)">
+      <!-- Hook 1 -->
+      <rect x="0" y="0" width="250" height="58" rx="6" fill="#F8FAFC" stroke="#E2E8F0"/>
+      <text x="12" y="22" font-family="sans-serif" font-size="11" font-weight="700" fill="#1E293B">commit-msg Hook</text>
+      <text x="12" y="42" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#64748B">Regex / Header max 100 / Asset tags</text>
+
+      <!-- Hook 2 -->
+      <rect x="265" y="0" width="250" height="58" rx="6" fill="#F8FAFC" stroke="#E2E8F0"/>
+      <text x="12" y="22" font-family="sans-serif" font-size="11" font-weight="700" fill="#1E293B">pre-commit Hook</text>
+      <text x="12" y="42" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#64748B">Protected branch commit / Secret scanner</text>
+
+      <!-- Hook 3 -->
+      <rect x="530" y="0" width="250" height="58" rx="6" fill="#F8FAFC" stroke="#E2E8F0"/>
+      <text x="12" y="22" font-family="sans-serif" font-size="11" font-weight="700" fill="#1E293B">pre-push Hook</text>
+      <text x="12" y="42" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#64748B">Strictly block force-push / Master direct push</text>
+
+      <!-- Hook 4 -->
+      <rect x="795" y="0" width="250" height="58" rx="6" fill="#F8FAFC" stroke="#E2E8F0"/>
+      <text x="12" y="22" font-family="sans-serif" font-size="11" font-weight="700" fill="#1E293B">pre-rebase Hook</text>
+      <text x="12" y="42" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#64748B">Block rebasing pushed public history</text>
+    </g>
+  </g>
+
+  <!-- Middle Container: Declarative Switches -->
+  <g transform="translate(60, 225)" filter="url(#card-shadow)">
+    <rect width="1080" height="155" rx="12" fill="#FFFFFF" stroke="#FDE68A" stroke-width="1.5"/>
+    <path d="M 0 12 Q 0 0 12 0 L 1068 0 Q 1080 0 1080 12 L 1080 34 L 0 34 Z" fill="url(#switch-grad)"/>
+    <text x="20" y="22" font-family="sans-serif" font-size="12.5" font-weight="700" fill="#FFFFFF">
+      ⚙️ Declarative Switch Matrix (.githooks.yml · Role profile templates driving dynamic behavior)
+    </text>
+
+    <g transform="translate(18, 44)">
+      <!-- Template 1 -->
+      <rect x="0" y="0" width="335" height="98" rx="8" fill="#FFFBEB" stroke="#FCD34D"/>
+      <text x="14" y="20" font-family="sans-serif" font-size="11" font-weight="700" fill="#92400E">Software Engineering (base.yml)</text>
+      <text x="14" y="40" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#78350F">• master_protected: true (Block direct commit/push)</text>
+      <text x="14" y="58" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#78350F">• diff_guard: true (Scan hardcoded secrets &amp; tokens)</text>
+      <text x="14" y="76" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#78350F">• block_rebase_pushed: false (Allow feature rebasing)</text>
+
+      <!-- Template 2 -->
+      <rect x="355" y="0" width="335" height="98" rx="8" fill="#FFFBEB" stroke="#FCD34D"/>
+      <text x="14" y="20" font-family="sans-serif" font-size="11" font-weight="700" fill="#92400E">Product Management (pm.yml)</text>
+      <text x="14" y="40" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#78350F">• master_protected: false (Trunk direct push enabled)</text>
+      <text x="14" y="58" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#78350F">• diff_guard: false (Exempt console/keyword checks)</text>
+      <text x="14" y="76" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#78350F">• asset_guard: true (Tag required on protected assets)</text>
+
+      <!-- Template 3 -->
+      <rect x="710" y="0" width="335" height="98" rx="8" fill="#FFFBEB" stroke="#FCD34D"/>
+      <text x="14" y="20" font-family="sans-serif" font-size="11" font-weight="700" fill="#92400E">Algorithm &amp; MLOps (ai-algo.yml)</text>
+      <text x="14" y="40" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#78350F">• master_protected: true (Model iterations via MR)</text>
+      <text x="14" y="58" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#78350F">• sensitive_patterns: [MLflow_Key, S3_Key, CUDA]</text>
+      <text x="14" y="76" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#78350F">• check_divergence: true (Probe upstream baseline drift)</text>
+    </g>
+  </g>
+
+  <!-- Bottom Container: Terminal Diagnostic Experience -->
+  <g transform="translate(60, 395)" filter="url(#card-shadow)">
+    <rect width="1080" height="240" rx="12" fill="#FFFFFF" stroke="#A7F3D0" stroke-width="1.5"/>
+    <path d="M 0 12 Q 0 0 12 0 L 1068 0 Q 1080 0 1080 12 L 1080 34 L 0 34 Z" fill="url(#diag-grad)"/>
+    <text x="20" y="22" font-family="sans-serif" font-size="12.5" font-weight="700" fill="#FFFFFF">
+      💻 Actionable Self-Healing Diagnostic Output
+    </text>
+
+    <g transform="translate(18, 44)">
+      <rect width="1044" height="180" rx="8" fill="#0F172A" stroke="#1E293B"/>
+      <!-- Terminal Header -->
+      <circle cx="16" cy="14" r="4.5" fill="#EF4444"/>
+      <circle cx="30" cy="14" r="4.5" fill="#F59E0B"/>
+      <circle cx="44" cy="14" r="4.5" fill="#10B981"/>
+      <text x="60" y="17" font-family="monospace" font-size="10" fill="#64748B">terminal — git-guardrail-output</text>
+
+      <!-- Terminal Body -->
+      <g transform="translate(16, 32)">
+        <text x="0" y="18" font-family="'JetBrains Mono', Consolas, monospace" font-size="11.5" font-weight="700" fill="#F87171">
+          ❌ [GIT GUARD INTERCEPT]: Unauthorized direct commit on protected master branch!
+        </text>
+        <text x="0" y="38" font-family="'JetBrains Mono', Consolas, monospace" font-size="10.5" fill="#94A3B8">
+          ========================================================================================
+        </text>
+        <text x="0" y="58" font-family="'JetBrains Mono', Consolas, monospace" font-size="10.5" fill="#E2E8F0">
+          Triggered Rule: <tspan fill="#38BDF8">pre_commit.master_protected = true</tspan>
+        </text>
+        <text x="0" y="78" font-family="'JetBrains Mono', Consolas, monospace" font-size="10.5" fill="#E2E8F0">
+          Violation Context: Currently on branch 'master'. Engineering discipline requires feature branch + MR flow.
+        </text>
+        <text x="0" y="98" font-family="'JetBrains Mono', Consolas, monospace" font-size="10.5" fill="#94A3B8">
+          ----------------------------------------------------------------------------------------
+        </text>
+        <text x="0" y="118" font-family="'JetBrains Mono', Consolas, monospace" font-size="11" font-weight="700" fill="#FDE047">
+          💡 Actionable Self-Healing Command (Copy &amp; run directly in terminal):
+        </text>
+        <text x="0" y="138" font-family="'JetBrains Mono', Consolas, monospace" font-size="10.5" fill="#4ADE80">
+          git checkout -b feat/your-feature-name &amp;&amp; git commit -m "feat(scope): describe changes" &amp;&amp; git push -u origin feat/your-feature-name
+        </text>
+      </g>
+    </g>
+  </g>
+</svg>
