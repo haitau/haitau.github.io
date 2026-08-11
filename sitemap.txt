@@ -1,7 +1,7 @@
 https://blog.191022.xyz/2026/08/10/post-saas-enterprise-self-healing-hub.en/
+https://blog.191022.xyz/2026/08/11/multi-git-fullstack-ai-agent-architecture/
 https://blog.191022.xyz/2026/08/10/post-saas-enterprise-self-healing-hub/
 https://blog.191022.xyz/2026/08/11/multi-git-fullstack-ai-agent-architecture.en/
-https://blog.191022.xyz/2026/08/11/multi-git-fullstack-ai-agent-architecture/
 https://blog.191022.xyz/2026/08/11/enterprise-ai-scaffold-architecture.en/
 https://blog.191022.xyz/2026/08/11/enterprise-ai-scaffold-architecture/
 https://blog.191022.xyz/about/index.html
@@ -20,8 +20,8 @@ https://blog.191022.xyz/tags/AI%E6%95%88%E8%83%BD%E5%9F%BA%E5%BA%A7/
 https://blog.191022.xyz/tags/%E7%A0%94%E5%8F%91%E6%95%88%E8%83%BD/
 https://blog.191022.xyz/tags/Fullstack-Engineering/
 https://blog.191022.xyz/tags/Multi-Git-Governance/
+https://blog.191022.xyz/tags/Post-SaaS/
 https://blog.191022.xyz/tags/%E5%85%A8%E6%A0%88%E5%B7%A5%E7%A8%8B%E5%B8%88/
 https://blog.191022.xyz/tags/%E5%A4%9AGit%E6%B2%BB%E7%90%86/
-https://blog.191022.xyz/tags/Post-SaaS/
 https://blog.191022.xyz/categories/System-Architecture/
 https://blog.191022.xyz/categories/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/
