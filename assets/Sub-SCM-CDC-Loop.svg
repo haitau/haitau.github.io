@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="100%" height="100%" style="background-color:#F8FAFC;">
+  <style>
+    .diagram-title { font-family: system-ui, -apple-system, sans-serif; font-size: 20px; font-weight: 800; fill: #0F172A; text-anchor: middle; }
+    .layer-title { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; font-weight: 700; }
+    .node-dark { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 800; fill: #0F172A !important; text-anchor: middle; }
+    .node-light { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 800; fill: #FFFFFF !important; text-anchor: middle; }
+    .node-purple { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 800; fill: #6B21A8 !important; text-anchor: middle; }
+    .node-sub { font-family: system-ui, -apple-system, sans-serif; font-size: 10px; font-weight: 500; fill: #E2E8F0 !important; text-anchor: middle; }
+    .edge-label { font-family: system-ui, -apple-system, sans-serif; font-size: 11px; font-weight: 700; fill: #1E293B !important; text-anchor: middle; }
+  </style>
+
+  <text x="600" y="40" class="diagram-title">图 2.2：专题下钻 A - 供应链 SCM &amp; CDC 自愈调度闭环</text>
+
+  <g transform="translate(80, 250)">
+    <rect width="250" height="80" rx="8" fill="#0F172A" stroke="#020617"/><text x="125" y="45" class="node-light">Headless SCM / WMS 数据基底</text>
+  </g>
+  <g transform="translate(440, 250)">
+    <rect width="240" height="80" rx="8" fill="#334155" stroke="#1E293B"/><text x="120" y="45" class="node-light">Data CDC 变更感知</text>
+  </g>
+  <g transform="translate(800, 250)">
+    <rect width="250" height="80" rx="8" fill="#991B1B" stroke="#7F1D1D"/><text x="125" y="45" class="node-light">Supply Agent 调度内核</text>
+  </g>
+  <g transform="translate(800, 440)">
+    <rect width="250" height="80" rx="8" fill="#B45309" stroke="#92400E"/><text x="125" y="45" class="node-light">FSM 预算与合规闸口</text>
+  </g>
+  <g transform="translate(440, 440)">
+    <rect width="240" height="80" rx="8" fill="#059669" stroke="#047857"/><text x="120" y="45" class="node-light">B2B Agent 网关</text>
+  </g>
+  <g transform="translate(800, 90)">
+    <rect width="250" height="80" rx="8" fill="#312E81" stroke="#4338CA"/><text x="125" y="38" class="node-light">Agent Shell 终端</text><text x="125" y="58" class="node-sub">(双签确认 · 追踪知会)</text>
+  </g>
+
+  <path d="M 330 290 L 440 290" stroke="#0F172A" stroke-width="3" fill="none" marker-end="url(#ar1)"/>
+  <text x="385" y="280" class="edge-label">1. 库存剧降</text>
+  <path d="M 680 290 L 800 290" stroke="#334155" stroke-width="3" fill="none" marker-end="url(#ar1)"/>
+  <text x="740" y="280" class="edge-label">2. 事件广播</text>
+  <path d="M 925 330 L 925 440" stroke="#991B1B" stroke-width="3" fill="none" marker-end="url(#ar1)"/>
+  <text x="965" y="390" class="edge-label">3. 拟定方案</text>
+  <path d="M 1050 470 L 1090 470 L 1090 135 L 1050 135" stroke="#312E81" stroke-width="3" fill="none" marker-end="url(#ar1)"/>
+  <text x="1105" y="307" class="edge-label" transform="rotate(90 1105 307)">4. 校验通过 · 推送双签</text>
+  <path d="M 800 135 L 560 135 L 560 440" stroke="#059669" stroke-width="3" fill="none" marker-end="url(#ar1)"/>
+  <text x="682" y="122" class="edge-label">5. 双签确认 · 下达电子订单</text>
+  <path d="M 440 480 L 205 480 L 205 330" stroke="#059669" stroke-width="3" fill="none" marker-end="url(#ar1)"/>
+  <text x="320" y="470" class="edge-label">6. 下单下发数据基底</text>
+  <path d="M 925 250 L 925 170" stroke="#312E81" stroke-width="3" fill="none" marker-end="url(#ar1)"/>
+  <text x="978" y="210" class="edge-label">7. 追踪卡片知会</text>
+
+  <defs><marker id="ar1" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#334155"/></marker></defs>
+</svg>

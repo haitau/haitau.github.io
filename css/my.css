@@ -1,0 +1,21 @@
+/* Custom code block styling & font normalization */
+pre code,
+pre code span,
+.code-area pre,
+.code-area pre code,
+.code-area pre code span,
+.highlight,
+.highlight span,
+.highlight td.code,
+.highlight td.code pre,
+.highlight td.code span {
+    font-size: 0.92rem !important;
+    line-height: 1.6 !important;
+    font-family: Inconsolata, Monaco, Consolas, 'Courier New', Courier, monospace !important;
+    margin: 0 !important;
+}
+
+.highlight td.gutter,
+.gutter {
+    display: none !important;
+}

@@ -1,0 +1,1298 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Multi-Git Projects and Fullstack Engineers: AI Code Agent Context Scoping Governance and Multi-Stack Environment Architecture, Agent-Native, Post-SaaS, 企业自愈中枢, AI 架构, 动态 MCP, FSM 确定性">
+    <meta name="description" content="
+💡 阅读中文原版 (Chinese Version)
+
+
+Executive Summary &amp;amp; Motivation:
+In the previous article, Culture as Code: Architectur">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <meta name="bytedance-verification-code" content="/hXr6iglxmydPTdbFFGG" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>Multi-Git Projects and Fullstack Engineers: AI Code Agent Context Scoping Governance and Multi-Stack Environment Architecture | Do Than Imagine</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+
+
+    <!-- bg-cover style     -->
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css?v=1788492461939">
+<link rel="stylesheet" type="text/css" href="/css/my.css?v=1788492461939">
+<link rel="stylesheet" type="text/css" href="/css/dark.css?v=1788492461939" media="none" onload="if(media!='all')media='all'">
+
+<style>
+/* Code Block Font & Title Normalization */
+pre, code,
+.code-area pre,
+.code-area pre code,
+.highlight,
+.highlight td.code pre {
+    font-size: 0.91rem !important;
+    line-height: 1.6 !important;
+    font-family: Inconsolata, Monaco, Consolas, 'Courier New', Courier, monospace !important;
+}
+
+.code-area .title,
+.highlight .title,
+pre .title,
+code .title,
+.highlight span,
+.code-area pre code span {
+    font-size: inherit !important;
+    font-weight: inherit !important;
+    line-height: inherit !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.highlight td.gutter,
+.gutter {
+    display: none !important;
+}
+</style>
+
+
+
+
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/css/post.css?v=1788492461939">
+
+
+
+
+
+    
+
+
+
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="Do Than Imagine" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Do Than Imagine</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/news/" class="waves-effect waves-light">
+      
+      <i class="fas fa-satellite-dish" style="zoom: 0.6;"></i>
+      
+      <span>资讯</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Do Than Imagine</div>
+        <div class="logo-desc">
+            
+            探索 Post-SaaS 时代、Agent-Native 架构、企业自愈中枢与 AI 驱动的全栈技术演进。
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/news/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-satellite-dish"></i>
+			
+			资讯
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/haitau" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/haitau" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Multi-Git Projects and Fullstack Engineers: AI Code Agent Context Scoping Governance and Multi-Stack Environment Architecture</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Agent-Native/">
+                                <span class="chip bg-color">Agent-Native</span>
+                            </a>
+                        
+                            <a href="/tags/System-Architecture/">
+                                <span class="chip bg-color">System Architecture</span>
+                            </a>
+                        
+                            <a href="/tags/AI-Platform/">
+                                <span class="chip bg-color">AI Platform</span>
+                            </a>
+                        
+                            <a href="/tags/Fullstack-Engineering/">
+                                <span class="chip bg-color">Fullstack Engineering</span>
+                            </a>
+                        
+                            <a href="/tags/Multi-Git-Governance/">
+                                <span class="chip bg-color">Multi-Git Governance</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/System-Architecture/" class="post-category">
+                                System Architecture
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2026-08-11
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    2k
+                </div>
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <blockquote>
+<p>💡 <em><a href="/2026/08/11/multi-git-fullstack-ai-agent-architecture/">阅读中文原版 (Chinese Version)</a></em></p>
+</blockquote>
+<blockquote>
+<p><strong>Executive Summary &amp; Motivation</strong>:</p>
+<p>In the previous article, <em>Culture as Code: Architectural Evolution and Engineering Practices of an Enterprise AI Programming Scaffold</em>, we systematically detailed how Domain-Driven Design (DDD) three-tier domain isolation (<strong>Common Baseline → Business Domain → Role Profile</strong>) compiles enterprise engineering culture into an executable, version-controlled IDE foundation.</p>
+<p>However, during actual production rollout, a prominent organizational evolution has emerged: <strong>with the exponential leap in AI Code Agent reasoning and execution capabilities, traditional fine-grained engineering specialization is rapidly converging into “Fullstack Engineers” (or AI Orchestration Engineers)</strong>. A single engineer, augmented by AI, can now seamlessly deliver end-to-end user interfaces, backend microservices, database migrations, and automated regression test suites.</p>
+<p>Yet this fullstack convergence introduces a brand-new architectural dilemma: fullstack engineers no longer work within a single monolithic codebase, but <strong>concurrently maintain a cluster of heterogeneous Git repositories spanning distinct technology stacks (e.g., Go&#x2F;Webman backend, Vue3&#x2F;React frontend, Python AI&#x2F;MLOps pipelines)</strong>.</p>
+<p>When an AI Code Agent operates across heterogeneous multi-repo clusters, naive approaches that load all tech-stack rules globally into the prompt cause <strong>severe context pollution, cross-stack code hallucinations, and rule collisions</strong>. This article explores how to achieve <strong>Context Scoping governance and a unified cross-agent environment architecture</strong> under multi-stack, multi-Git enterprise environments.</p>
+</blockquote>
+<hr>
+<h2 id="1-Problem-Definition-From-“Git-Management”-to-“AI-Context-Scoping-Governance”"><a href="#1-Problem-Definition-From-“Git-Management”-to-“AI-Context-Scoping-Governance”" class="headerlink" title="1. Problem Definition: From “Git Management” to “AI Context Scoping Governance”"></a>1. Problem Definition: From “Git Management” to “AI Context Scoping Governance”</h2><p>In traditional software engineering, “multi-Git management” typically points to repository aggregation tooling (such as Git Submodules, Google Repo, Lerna&#x2F;Turborepo, or custom aggregation shell scripts).<br>In the Agent-Native era, however, the fundamental bottleneck has shifted: <strong>this is not a Git version control problem, but an AI Code Agent Context Scoping and Attention Allocation problem.</strong></p>
+<p align="center">
+  <img src="/assets/Polyglot-Context-Pollution-Paradox.en.svg" alt="The Fullstack Multi-Repo Context Pollution Dilemma and Scoped Focus" width="100%" />
+</p>
+
+<h3 id="1-1-The-Four-Fatal-Costs-of-Unmanaged-Global-Context"><a href="#1-1-The-Four-Fatal-Costs-of-Unmanaged-Global-Context" class="headerlink" title="1.1 The Four Fatal Costs of Unmanaged Global Context"></a>1.1 The Four Fatal Costs of Unmanaged Global Context</h3><p>When a fullstack engineer opens an aggregated workspace (or multi-repo hub) with an AI Agent and naively stuffs all rules, skills, and MCP tools across all technology stacks into a single global prompt, four systemic failure modes inevitably emerge:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Failure Mode</th>
+<th align="left">Production Symptoms &amp; Destructive Consequences</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">💥 Cross-Stack Hallucination</td>
+<td align="left">Writing PHP syntax inside Python repos; applying Vue reactive state patterns inside Go microservices; confusing asynchronous concurrency models.</td>
+</tr>
+<tr>
+<td align="left">💥 Rule &amp; Instruction Collision</td>
+<td align="left">Frontend PascalCase component rules conflicting with backend snake_case API contracts; conflicting branch protection and Git routing policies across repos.</td>
+</tr>
+<tr>
+<td align="left">💥 Token Bloat &amp; Attention Thrashing</td>
+<td align="left">100k+ token context windows flooded with irrelevant stack rules, severely diluting model attention and causing core architectural constraints to be ignored.</td>
+</tr>
+<tr>
+<td align="left">💥 MCP Tool Bloat &amp; 429 Rate Limiting</td>
+<td align="left">Registering 30+ heterogeneous MCP tools causes model confusion during tool selection, leading to retries, timeouts, and upstream API 429 rate limit triggers.</td>
+</tr>
+</tbody></table>
+<h3 id="1-2-Target-State-Directory-Granular-Context-Scoping"><a href="#1-2-Target-State-Directory-Granular-Context-Scoping" class="headerlink" title="1.2 Target State: Directory-Granular Context Scoping"></a>1.2 Target State: Directory-Granular Context Scoping</h3><p>The essence of the problem is <strong>configuration namespace and visibility scoping</strong>, directly analogous to package visibility and namespace isolation in programming languages.</p>
+<blockquote>
+<p><strong>Target Architectural State</strong>:</p>
+<p><strong>When a fullstack engineer focuses on a specific Git repository, the AI Agent activates strictly the “configuration trinity” (Rule &#x2F; Skill &#x2F; MCP) belonging to that specific technology stack. All other $N-1$ irrelevant stack configurations remain physically or logically silent. Upon switching to another repository, the environment dynamically switches in milliseconds.</strong></p>
+</blockquote>
+<hr>
+<h2 id="2-Deep-Dive-Context-Scoping-Topologies-Across-Mainstream-AI-Code-Agents"><a href="#2-Deep-Dive-Context-Scoping-Topologies-Across-Mainstream-AI-Code-Agents" class="headerlink" title="2. Deep Dive: Context Scoping Topologies Across Mainstream AI Code Agents"></a>2. Deep Dive: Context Scoping Topologies Across Mainstream AI Code Agents</h2><p>To engineer an optimal governance architecture, we systematically evaluated leading Code Agents (covering both terminal CLI tools and native IDE extensions) regarding their directory and tech-stack loading mechanics:</p>
+<table>
+<thead>
+<tr>
+<th>Agent Runtime</th>
+<th>Architectural Category</th>
+<th align="center">Path-Glob Rules</th>
+<th align="center">Nested Dir Skill Auto-Discovery</th>
+<th align="center">Project-Scope MCP</th>
+<th align="center">Directory Start &#x3D; Focus</th>
+<th align="center">Multi-Git Fit</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Claude Code</strong> (Anthropic)</td>
+<td>CLI Agent</td>
+<td align="center">✅ <code>.claude/rules</code> (paths)</td>
+<td align="center">✅ <strong>Exclusive Native Support</strong></td>
+<td align="center">✅ Multi-Level Scoping</td>
+<td align="center">✅ <strong>Naturally Precise</strong></td>
+<td align="center">⭐️⭐️⭐️⭐️⭐️ (Exceptional)</td>
+</tr>
+<tr>
+<td><strong>Trae</strong> (ByteDance)</td>
+<td>GUI IDE</td>
+<td align="center">✅ <code>.trae/rules</code> (globs)</td>
+<td align="center">❌ (Single Project Root)</td>
+<td align="center">✅ Project-Level Config</td>
+<td align="center">⚠️ Multi-Root Weak</td>
+<td align="center">⭐️⭐️⭐️⭐️ (Single Repo)</td>
+</tr>
+<tr>
+<td><strong>Cursor</strong></td>
+<td>GUI IDE</td>
+<td align="center">✅ <code>.cursor/rules/*.mdc</code></td>
+<td align="center">❌ (Single Project Root)</td>
+<td align="center">✅ Project-Level Config</td>
+<td align="center">⚠️ Multi-Root Weak</td>
+<td align="center">⭐️⭐️⭐️⭐️ (Single Repo)</td>
+</tr>
+<tr>
+<td><strong>opencode</strong></td>
+<td>CLI &#x2F; Web</td>
+<td align="center">⚠️ Plugin-dependent</td>
+<td align="center">❌</td>
+<td align="center">⚠️ Global-first</td>
+<td align="center">⚠️ Manual Declaration</td>
+<td align="center">⭐️⭐️⭐️ (Exploring)</td>
+</tr>
+<tr>
+<td><strong>Cline</strong></td>
+<td>VS Code Extension</td>
+<td align="center">❌ (Global project-wide)</td>
+<td align="center">❌</td>
+<td align="center">⚠️ Project-Level Config</td>
+<td align="center">❌ <strong>Multi-Root Bug</strong></td>
+<td align="center">⭐️⭐️ (Primary folder only)</td>
+</tr>
+<tr>
+<td><strong>Aider</strong></td>
+<td>CLI Agent</td>
+<td align="center">❌</td>
+<td align="center">❌</td>
+<td align="center">N&#x2F;A (Repo-map AST)</td>
+<td align="center">✅ Naturally Per-Repo</td>
+<td align="center">⭐️⭐️⭐️⭐️ (Pure Single Repo)</td>
+</tr>
+</tbody></table>
+<h3 id="2-1-The-Logical-Scoping-Advantage-of-Claude-Code"><a href="#2-1-The-Logical-Scoping-Advantage-of-Claude-Code" class="headerlink" title="2.1 The Logical Scoping Advantage of Claude Code"></a>2.1 The Logical Scoping Advantage of Claude Code</h3><p>Claude Code provides the most complete logical scoping architecture for multi-package and multi-repository setups (Monorepo &#x2F; Multi-Repo):</p>
+<ul>
+<li><strong>Directory Launch as Primary Isolation</strong>: Launching <code>claude</code> from a sub-directory reads <code>.claude/settings.json</code> strictly from that launch directory without inheriting from parents. A simple <code>cd</code> command establishes clean isolation.</li>
+<li><strong>Nested Per-Directory Skills Auto-Discovery</strong>: Skills located in sub-directory <code>.claude/skills/</code> are dynamically loaded only when the agent inspects files in that sub-tree, with optional frontmatter <code>paths</code> glob gating.</li>
+<li><strong>On-Demand Cross-Repo Granting</strong>: Using <code>--add-dir ../repo-b</code> grants controlled read&#x2F;write access to sibling repositories in a single session without polluting global memory.</li>
+</ul>
+<h3 id="2-2-The-Physical-Isolation-Model-of-Single-Project-IDEs-Trae-Cursor"><a href="#2-2-The-Physical-Isolation-Model-of-Single-Project-IDEs-Trae-Cursor" class="headerlink" title="2.2 The Physical Isolation Model of Single-Project IDEs (Trae &#x2F; Cursor)"></a>2.2 The Physical Isolation Model of Single-Project IDEs (Trae &#x2F; Cursor)</h3><p>Trae and Cursor operate on a single-project workspace model: “one project root &#x3D; one configuration directory (<code>.trae/</code> or <code>.cursor/</code>)”.<br>While they offer robust file-level Path-Glob rule matching within a project, they <strong>lack mechanisms for auto-discovering or unloading Skills&#x2F;MCP across nested sub-directories</strong>. In VS Code Multi-Root Workspaces, rules from multiple repositories frequently collide or apply only to the primary root folder.</p>
+<hr>
+<h2 id="3-Four-Architectural-Paradigms-for-Multi-Stack-Isolation"><a href="#3-Four-Architectural-Paradigms-for-Multi-Stack-Isolation" class="headerlink" title="3. Four Architectural Paradigms for Multi-Stack Isolation"></a>3. Four Architectural Paradigms for Multi-Stack Isolation</h2><p>To address fullstack multi-repo development, four architectural paradigms exist across the industry:</p>
+<p align="center">
+  <img src="/assets/Agent-Scoping-Topologies-Matrix.en.svg" alt="Comparison of Four Context Scoping Paradigms" width="100%" />
+</p>
+
+<h3 id="Paradigm-A-Physical-Isolation"><a href="#Paradigm-A-Physical-Isolation" class="headerlink" title="Paradigm A: Physical Isolation"></a>Paradigm A: Physical Isolation</h3><ul>
+<li><strong>Mechanism</strong>: Every Git repository root maintains an independent configuration directory (<code>repo-backend/.trae/</code>, <code>repo-frontend/.trae/</code>).</li>
+<li><strong>Advantages</strong>: 100% physical isolation, zero context pollution, universal compatibility with single-project IDEs (Trae, Cursor, VS Code).</li>
+<li><strong>Limitations</strong>: Redundant configurations across repos; cross-repo refactoring requires opening multiple independent IDE windows.</li>
+</ul>
+<h3 id="Paradigm-B-Logical-Scoping"><a href="#Paradigm-B-Logical-Scoping" class="headerlink" title="Paradigm B: Logical Scoping"></a>Paradigm B: Logical Scoping</h3><ul>
+<li><strong>Mechanism</strong>: In a single top-level workspace, configurations dynamically activate via agent-native nested discovery, path globs, and project-scoped MCP servers.</li>
+<li><strong>Advantages</strong>: Zero configuration redundancy, seamless cross-repo code navigation.</li>
+<li><strong>Limitations</strong>: Strongly dependent on runtime capabilities (currently only Claude Code natively supports this end-to-end; GUI IDEs remain limited).</li>
+</ul>
+<h3 id="Paradigm-C-Meta-Repo-Orchestration"><a href="#Paradigm-C-Meta-Repo-Orchestration" class="headerlink" title="Paradigm C: Meta-Repo Orchestration"></a>Paradigm C: Meta-Repo Orchestration</h3><ul>
+<li><strong>Mechanism</strong>: A lightweight “Meta-Repo” (Repo-of-Repos) sits above individual Git repositories, storing global architectural routing, API contract catalogs, and subagent orchestration configs. Cross-repo tasks are dispatched by a top-level agent to dedicated subagents focused on individual repositories.</li>
+<li><strong>Advantages</strong>: Combines a global architectural overview with sub-repo physical isolation; enables one-click orchestration of fullstack multi-repo refactoring.</li>
+<li><strong>Limitations</strong>: Requires maintaining an orchestration metadata layer.</li>
+</ul>
+<h3 id="Paradigm-D-Tech-Stack-Matrix-Compilation"><a href="#Paradigm-D-Tech-Stack-Matrix-Compilation" class="headerlink" title="Paradigm D: Tech-Stack Matrix Compilation"></a>Paradigm D: Tech-Stack Matrix Compilation</h3><ul>
+<li><strong>Mechanism</strong>: The enterprise scaffolding engine introduces an orthogonal “Stack Dimension”, extending the three-tier hierarchy into four tiers:<br><strong>Common Baseline → Domain → Role (Fullstack) → Stack (Go &#x2F; Vue3 &#x2F; Python &#x2F; Java)</strong></li>
+<li><strong>Advantages</strong>: Unified fullstack role definition; the CLI scaffold automatically detects repo languages or takes arguments to compile specialized configurations from a single source of truth.</li>
+<li><strong>Limitations</strong>: Requires mature enterprise scaffolding compilation infrastructure.</li>
+</ul>
+<hr>
+<h2 id="4-Unified-Cross-Agent-Protocol-AGENTS-md-Single-Source-of-Truth-Symlink-Bridge"><a href="#4-Unified-Cross-Agent-Protocol-AGENTS-md-Single-Source-of-Truth-Symlink-Bridge" class="headerlink" title="4. Unified Cross-Agent Protocol: AGENTS.md Single Source of Truth &amp; Symlink Bridge"></a>4. Unified Cross-Agent Protocol: <code>AGENTS.md</code> Single Source of Truth &amp; Symlink Bridge</h2><p>When engineering organizations have developers concurrently using Trae (GUI interaction and scaffold management), Cursor (inline autocomplete), and Claude Code (terminal deep refactoring), <strong>maintaining separate configuration folders for each tool is an anti-pattern that leads to severe configuration drift</strong>.</p>
+<p>We designed a lightweight bridge architecture centered around the <strong><code>AGENTS.md</code> open standard as the Single Source of Truth (SSOT)</strong>:</p>
+<p align="center">
+  <img src="/assets/Agents-Md-Unified-Bridge.en.svg" alt="AGENTS.md Single Source of Truth Cross-Agent Bridge Architecture" width="100%" />
+</p>
+
+<h3 id="4-1-Core-Architectural-Mechanics"><a href="#4-1-Core-Architectural-Mechanics" class="headerlink" title="4.1 Core Architectural Mechanics"></a>4.1 Core Architectural Mechanics</h3><ol>
+<li><strong><code>AGENTS.md</code> as the Sole Rule Source of Truth</strong>:<ul>
+<li>Following the open standard (<a target="_blank" rel="noopener" href="https://agents.md/">agents.md</a>), the scaffold compilation engine merges domain and role rules directly into a root <code>AGENTS.md</code>.</li>
+<li>Trae, Cursor, and opencode natively import and consume this file as their core project rules.</li>
+</ul>
+</li>
+<li><strong>Thin Pointer (<code>CLAUDE.md</code>) for Claude Code</strong>:<ul>
+<li>Claude Code natively looks for <code>CLAUDE.md</code>. We generate a single-line thin pointer in the root directory:<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">@AGENTS.md</span><br></pre></td></tr></table></figure></li>
+<li>The Claude Code preprocessor automatically ingests the entire <code>AGENTS.md</code> content at session startup, ensuring zero duplication.</li>
+</ul>
+</li>
+<li><strong>Cross-Agent Convention Directory &amp; Symlink Bridges</strong>:<ul>
+<li><strong>Skills Packaging</strong>: Standardized under the cross-agent convention directory <code>.agents/skills/&lt;name&gt;/SKILL.md</code>. A symbolic link is created from <code>.claude/skills</code> to <code>../.agents/skills</code>.</li>
+<li><strong>MCP Protocol</strong>: The physical source is maintained at <code>.trae/mcp.json</code>, with a root <code>.mcp.json</code> symlink bridging CLI agents.</li>
+</ul>
+</li>
+</ol>
+<p align="center">
+  <img src="/assets/Agents-Md-Directory-Topology.en.svg" alt="Business Repository Physical Directory Layout: AGENTS.md SSOT Bridge" width="100%" />
+</p>
+
+<blockquote>
+<p><strong>Architectural ROI</strong>: The entire repository incurs an overhead of <strong>only 1 thin pointer file + 2 symlinks</strong>, completely eliminating redundant multi-agent configurations and realizing “assemble once, run everywhere”.</p>
+</blockquote>
+<hr>
+<h2 id="5-Orthogonal-Two-Tier-Architecture-Directory-Scoping-Focus-×-Worktree-Concurrency"><a href="#5-Orthogonal-Two-Tier-Architecture-Directory-Scoping-Focus-×-Worktree-Concurrency" class="headerlink" title="5. Orthogonal Two-Tier Architecture: Directory Scoping (Focus) × Worktree Concurrency"></a>5. Orthogonal Two-Tier Architecture: Directory Scoping (Focus) × Worktree Concurrency</h2><p>Developers often confuse “multi-repo context scoping” with “single-repo Worktree multi-agent concurrency”. These two mechanisms operate on completely orthogonal dimensions and must be cleanly decoupled:</p>
+<p align="center">
+  <img src="/assets/Multi-Repo-Worktree-Two-Tier.en.svg" alt="Orthogonal Two-Tier Architecture: Directory Scoping and Worktree Concurrency" width="100%" />
+</p>
+
+<h3 id="5-1-Orthogonal-Comparison-of-Dimensions"><a href="#5-1-Orthogonal-Comparison-of-Dimensions" class="headerlink" title="5.1 Orthogonal Comparison of Dimensions"></a>5.1 Orthogonal Comparison of Dimensions</h3><table>
+<thead>
+<tr>
+<th>Architectural Dimension</th>
+<th>Outer Tier: Multi-Repo Directory Scoping (Focus)</th>
+<th>Inner Tier: Single-Repo Worktree Concurrency</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Core Problem Solved</strong></td>
+<td>Context pollution and stack mismatches <strong>across different repos</strong></td>
+<td>Single-threaded throughput bottlenecks <strong>within the same repo</strong></td>
+</tr>
+<tr>
+<td><strong>Primary Isolation Object</strong></td>
+<td>Agent Rule &#x2F; Skill &#x2F; MCP context windows</td>
+<td>Filesystem sandboxes and Git branch execution environments</td>
+</tr>
+<tr>
+<td><strong>Typical Scenario</strong></td>
+<td>Switching focus between a Go backend repo and a Vue frontend repo</td>
+<td>Concurrently building Auth and Payment modules within the Go backend</td>
+</tr>
+<tr>
+<td><strong>Failure Modes</strong></td>
+<td>Cross-stack hallucinations, token bloat, rule collision</td>
+<td>Git merge conflicts, 429 rate limits, workspace file contention</td>
+</tr>
+</tbody></table>
+<h3 id="5-2-The-Interlocking-Workflow"><a href="#5-2-The-Interlocking-Workflow" class="headerlink" title="5.2 The Interlocking Workflow"></a>5.2 The Interlocking Workflow</h3><p>The optimal workflow for fullstack engineers is a two-tier interlocking execution loop:</p>
+<ol>
+<li><strong>Macro Outer Tier</strong>: The engineer <code>cd</code>s into a specific repository, or initiates a session in the Meta-Repo. Outer scoping guarantees that the agent’s context is locked strictly to that technology stack, <strong>eliminating cross-repo pollution</strong>.</li>
+<li><strong>Micro Inner Tier</strong>: Inside the chosen repository, when facing parallelizable tasks, Git Worktree dynamically spawns isolated working directories (<code>worktree/feat-auth</code>, <code>worktree/feat-pay</code>). Multiple background worker agents code in parallel, coordinated through a centralized compute gateway for token flow control.</li>
+</ol>
+<hr>
+<h2 id="6-Progressive-Implementation-Roadmap-Daily-Workflows"><a href="#6-Progressive-Implementation-Roadmap-Daily-Workflows" class="headerlink" title="6. Progressive Implementation Roadmap &amp; Daily Workflows"></a>6. Progressive Implementation Roadmap &amp; Daily Workflows</h2><p>For multi-stack multi-Git governance, we recommend a phased adoption strategy: <strong>“Add Stack Dimension → Establish AGENTS.md Single Source → Adopt Meta-Repo Orchestration on Demand”</strong>.</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[Phase 1: Tech-Stack Dimension Extension] (Highest Short-Term ROI)</span><br><span class="line">Introduce stacks.yaml into scaffold for Common→Domain→Role→Stack compilation</span><br><span class="line">                       │</span><br><span class="line">                       ▼</span><br><span class="line">[Phase 2: AGENTS.md SSOT &amp; Symlink Bridge]</span><br><span class="line">Output root AGENTS.md + thin CLAUDE.md + .agents/skills symlinks across agents</span><br><span class="line">                       │</span><br><span class="line">                       ▼</span><br><span class="line">[Phase 3: Top-Level Meta-Repo Router]</span><br><span class="line">Establish root meta-repo cataloging stacks &amp; contracts for global architecture</span><br><span class="line">                       │</span><br><span class="line">                       ▼</span><br><span class="line">[Phase 4: Subagent Orchestration &amp; Worktree Concurrency]</span><br><span class="line">Leverage subagents and worktree sandboxes for high-throughput parallel delivery</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-1-Daily-High-Frequency-Developer-Workflows"><a href="#6-1-Daily-High-Frequency-Developer-Workflows" class="headerlink" title="6.1 Daily High-Frequency Developer Workflows"></a>6.1 Daily High-Frequency Developer Workflows</h3><h4 id="Scenario-A-Deep-Single-Stack-Repository-Coding-90-of-Daily-Work"><a href="#Scenario-A-Deep-Single-Stack-Repository-Coding-90-of-Daily-Work" class="headerlink" title="Scenario A: Deep Single-Stack Repository Coding (90% of Daily Work)"></a>Scenario A: Deep Single-Stack Repository Coding (90% of Daily Work)</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 1. Enter the target repository (e.g., Go backend microservice)</span></span><br><span class="line"><span class="built_in">cd</span> /workspace/polyglot-cluster/service-backend</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. Launch Agent (Claude Code or Trae)</span></span><br><span class="line"><span class="comment">#    Automatically reads CLAUDE.md -&gt; ingests @AGENTS.md -&gt; activates only Go rules &amp; DB MCP</span></span><br><span class="line">claude</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3. Verify context purity</span></span><br><span class="line">/context</span><br><span class="line"><span class="comment"># Output confirms: Memory files contain strictly Go repo rules, zero frontend/algorithm pollution</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="Scenario-B-Cross-Repo-Collaborative-Feature-Refactoring"><a href="#Scenario-B-Cross-Repo-Collaborative-Feature-Refactoring" class="headerlink" title="Scenario B: Cross-Repo Collaborative Feature Refactoring"></a>Scenario B: Cross-Repo Collaborative Feature Refactoring</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Method 1: Launch from backend repo with explicit sibling access</span></span><br><span class="line"><span class="built_in">cd</span> /workspace/polyglot-cluster/service-backend</span><br><span class="line">claude --add-dir ../frontend-dashboard</span><br><span class="line"></span><br><span class="line"><span class="comment"># Method 2: Launch from top-level Meta-Repo and dispatch subagents</span></span><br><span class="line"><span class="built_in">cd</span> /workspace/polyglot-cluster/meta-hub &amp;&amp; claude</span><br><span class="line"><span class="comment"># Prompt:</span></span><br><span class="line"><span class="comment"># &quot;Based on contracts/api.proto, have Backend-Subagent update the endpoint, while Frontend-Subagent updates Pinia state&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="Scenario-C-One-Click-Scaffold-Upgrade"><a href="#Scenario-C-One-Click-Scaffold-Upgrade" class="headerlink" title="Scenario C: One-Click Scaffold Upgrade"></a>Scenario C: One-Click Scaffold Upgrade</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /workspace/polyglot-cluster/service-backend</span><br><span class="line"><span class="comment"># Update scaffold: re-compiles AGENTS.md and refreshes symlink topology based on Go stack profile</span></span><br><span class="line">npx scaffold update</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="7-Conclusion-Elevating-Fullstack-Engineering-Literacy-in-the-AI-Era"><a href="#7-Conclusion-Elevating-Fullstack-Engineering-Literacy-in-the-AI-Era" class="headerlink" title="7. Conclusion: Elevating Fullstack Engineering Literacy in the AI Era"></a>7. Conclusion: Elevating Fullstack Engineering Literacy in the AI Era</h2><p>The proliferation of AI programming agents has not made software engineering trivial; rather, it has elevated the required engineering literacy to a higher plane of abstraction:</p>
+<ul>
+<li>In the past, fullstack developers were constrained by individual cognitive bandwidth, frequently overwhelmed by disparate syntax nuances and build configs across languages;</li>
+<li><strong>In the AI era, the core competitive moat of a fullstack engineer lies in “AI Context Scoping Governance” and “Multi-Agent Orchestration Architecture.”</strong></li>
+</ul>
+<p>By seamlessly integrating enterprise AI scaffolding with the <code>AGENTS.md</code> open standard, Meta-Repo routing, and Worktree concurrency, organizations eliminate cross-stack hallucinations and establish a deterministic, agile, and self-healing AI development workspace for fullstack engineers.</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">shawn</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://blog.191022.xyz/2026/08/11/multi-git-fullstack-ai-agent-architecture.en/">https://blog.191022.xyz/2026/08/11/multi-git-fullstack-ai-agent-architecture.en/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">shawn</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Agent-Native/">
+                                    <span class="chip bg-color">Agent-Native</span>
+                                </a>
+                            
+                                <a href="/tags/System-Architecture/">
+                                    <span class="chip bg-color">System Architecture</span>
+                                </a>
+                            
+                                <a href="/tags/AI-Platform/">
+                                    <span class="chip bg-color">AI Platform</span>
+                                </a>
+                            
+                                <a href="/tags/Fullstack-Engineering/">
+                                    <span class="chip bg-color">Fullstack Engineering</span>
+                                </a>
+                            
+                                <a href="/tags/Multi-Git-Governance/">
+                                    <span class="chip bg-color">Multi-Git Governance</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2026/08/11/multi-agent-worktree-collaboration-isolation.en/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="Multi-Agent Git Worktree Collaboration and Environment Isolation: A Practical Tutorial">
+                        
+                        <span class="card-title">Multi-Agent Git Worktree Collaboration and Environment Isolation: A Practical Tutorial</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2026-08-11
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Engineering-Practice/" class="post-category">
+                                    Engineering Practice
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Agent-Native/">
+                        <span class="chip bg-color">Agent-Native</span>
+                    </a>
+                    
+                    <a href="/tags/Git-Worktree/">
+                        <span class="chip bg-color">Git Worktree</span>
+                    </a>
+                    
+                    <a href="/tags/CLI/">
+                        <span class="chip bg-color">CLI</span>
+                    </a>
+                    
+                    <a href="/tags/Multi-Agent-Collaboration/">
+                        <span class="chip bg-color">Multi-Agent Collaboration</span>
+                    </a>
+                    
+                    <a href="/tags/Environment-Isolation/">
+                        <span class="chip bg-color">Environment Isolation</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2026/08/11/multi-git-fullstack-ai-agent-architecture/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="多 Git 项目与全栈工程师：AI 编码智能体多技术栈作用域治理与环境架构">
+                        
+                        <span class="card-title">多 Git 项目与全栈工程师：AI 编码智能体多技术栈作用域治理与环境架构</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2026-08-11
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/" class="post-category">
+                                    架构设计
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Agent-Native/">
+                        <span class="chip bg-color">Agent-Native</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/">
+                        <span class="chip bg-color">架构设计</span>
+                    </a>
+                    
+                    <a href="/tags/AI%E6%95%88%E8%83%BD%E5%9F%BA%E5%BA%A7/">
+                        <span class="chip bg-color">AI效能基座</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%85%A8%E6%A0%88%E5%B7%A5%E7%A8%8B%E5%B8%88/">
+                        <span class="chip bg-color">全栈工程师</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%A4%9AGit%E6%B2%BB%E7%90%86/">
+                        <span class="chip bg-color">多Git治理</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2021-2026</span>
+            
+            <a href="/about" target="_blank">shawn</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            
+            <br>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/haitau" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:shawn@191022.xyz" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+    
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

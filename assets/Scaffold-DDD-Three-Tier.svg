@@ -1,0 +1,252 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" width="100%" height="100%">
+  <defs>
+    <!-- Shadows & Glows -->
+    <filter id="soft-shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#0F172A" flood-opacity="0.06"/>
+    </filter>
+    <filter id="card-shadow" x="-4%" y="-4%" width="108%" height="108%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.05"/>
+    </filter>
+
+    <!-- Gradients -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#F1F5F9"/>
+    </linearGradient>
+    <linearGradient id="l1-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4F46E5"/>
+      <stop offset="100%" stop-color="#6366F1"/>
+    </linearGradient>
+    <linearGradient id="l2-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#D97706"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+    <linearGradient id="l3-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+    <linearGradient id="eng-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7C3AED"/>
+      <stop offset="100%" stop-color="#9333EA"/>
+    </linearGradient>
+    <linearGradient id="target-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284C7"/>
+      <stop offset="100%" stop-color="#38BDF8"/>
+    </linearGradient>
+
+    <!-- Markers -->
+    <marker id="m-purple" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#7C3AED"/>
+    </marker>
+    <marker id="m-blue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#0284C7"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#bg-grad)"/>
+  <rect x="25" y="25" width="1150" height="650" rx="16" fill="#FFFFFF" fill-opacity="0.75" stroke="#E2E8F0" stroke-width="1.5" filter="url(#soft-shadow)"/>
+
+  <!-- Title Banner -->
+  <g transform="translate(60, 48)">
+    <rect x="0" y="0" width="6" height="26" rx="3" fill="#4F46E5"/>
+    <text x="18" y="20" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif" font-size="18" font-weight="800" fill="#0F172A" letter-spacing="-0.5px">
+      图 2.1：DDD 领域三层装配模型与脚手架编译流水线
+    </text>
+    <rect x="910" y="2" width="170" height="22" rx="11" fill="#EEF2FF" stroke="#C7D2FE"/>
+    <text x="995" y="16" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#4338CA" text-anchor="middle">DDD 3-Tier Assembly</text>
+  </g>
+
+  <!-- Left Column: 3-Tier Source Structure -->
+  <g transform="translate(60, 90)" filter="url(#card-shadow)">
+    <!-- Container -->
+    <rect width="520" height="580" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+    <rect x="0" y="0" width="520" height="36" rx="12" fill="#F8FAFC"/>
+    <text x="18" y="23" font-family="sans-serif" font-size="12.5" font-weight="800" fill="#1E293B">📦 脚手架资产源仓库 (Source Repository Layout)</text>
+
+    <!-- Layer 1: Common -->
+    <g transform="translate(16, 48)">
+      <rect width="488" height="105" rx="8" fill="#F5F3FF" stroke="#C7D2FE" stroke-width="1.5"/>
+      <path d="M 0 8 Q 0 0 8 0 L 480 0 Q 488 0 488 8 L 488 24 L 0 24 Z" fill="url(#l1-grad)"/>
+      <text x="12" y="16" font-family="sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">1. 通用底线层 (1-common · 团队基线与全局规范)</text>
+
+      <g transform="translate(10, 32)">
+        <!-- Row 1 -->
+        <g transform="translate(0, 0)">
+          <rect x="0" width="228" height="30" rx="5" fill="#FFFFFF" stroke="#C7D2FE"/>
+          <text x="10" y="19" font-family="sans-serif" font-size="10" font-weight="700" fill="#312E81">全员 Git 协同底线 (git-workflow.md)</text>
+
+          <rect x="238" width="230" height="30" rx="5" fill="#FFFFFF" stroke="#C7D2FE"/>
+          <text x="248" y="19" font-family="sans-serif" font-size="10" font-weight="700" fill="#312E81">Git Hooks 核心只读执行脚本</text>
+        </g>
+
+        <!-- Row 2 -->
+        <g transform="translate(0, 36)">
+          <rect x="0" width="228" height="30" rx="5" fill="#FFFFFF" stroke="#C7D2FE"/>
+          <text x="10" y="19" font-family="sans-serif" font-size="10" font-weight="700" fill="#312E81">基座 MCP 服务 (Filesystem / Code)</text>
+
+          <rect x="238" width="230" height="30" rx="5" fill="#FFFFFF" stroke="#C7D2FE"/>
+          <text x="248" y="19" font-family="sans-serif" font-size="10" font-weight="700" fill="#312E81">通用 Gitignore / Gitattributes 底线</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- Layer 2: Domain -->
+    <g transform="translate(16, 165)">
+      <rect width="488" height="115" rx="8" fill="#FFFBEB" stroke="#FDE68A" stroke-width="1.5"/>
+      <path d="M 0 8 Q 0 0 8 0 L 480 0 Q 488 0 488 8 L 488 24 L 0 24 Z" fill="url(#l2-grad)"/>
+      <text x="12" y="16" font-family="sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">2. 业务域/技术栈层 (2-domains · 领域规范与技术栈)</text>
+
+      <g transform="translate(10, 32)">
+        <!-- Row 1 -->
+        <g transform="translate(0, 0)">
+          <rect x="0" width="228" height="32" rx="5" fill="#FFFFFF" stroke="#FCD34D"/>
+          <text x="10" y="20" font-family="sans-serif" font-size="10" font-weight="700" fill="#92400E">技术栈 Ignore 规则 (Node/Java/Py)</text>
+
+          <rect x="238" width="230" height="32" rx="5" fill="#FFFFFF" stroke="#FCD34D"/>
+          <text x="248" y="20" font-family="sans-serif" font-size="10" font-weight="700" fill="#92400E">业务域共享技能 (Jira/TAPD/审查)</text>
+        </g>
+
+        <!-- Row 2 -->
+        <g transform="translate(0, 38)">
+          <rect x="0" width="228" height="36" rx="5" fill="#FFFFFF" stroke="#FCD34D"/>
+          <text x="10" y="18" font-family="sans-serif" font-size="9.5" font-weight="700" fill="#92400E">域专属 MCP 服务</text>
+          <text x="10" y="30" font-family="sans-serif" font-size="9" font-weight="500" fill="#B45309">(MLflow / 内部业务数据服务)</text>
+
+          <rect x="238" width="230" height="36" rx="5" fill="#FFFFFF" stroke="#FCD34D"/>
+          <text x="248" y="18" font-family="sans-serif" font-size="9.5" font-weight="700" fill="#B45309">准入注册表 registry.yaml</text>
+          <text x="248" y="30" font-family="sans-serif" font-size="9" font-weight="500" fill="#92400E">(only_for / exclude 声明式准入)</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- Layer 3: Role -->
+    <g transform="translate(16, 292)">
+      <rect width="488" height="270" rx="8" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1.5"/>
+      <path d="M 0 8 Q 0 0 8 0 L 480 0 Q 488 0 488 8 L 488 24 L 0 24 Z" fill="url(#l3-grad)"/>
+      <text x="12" y="16" font-family="sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">3. 岗位特化层 (roles/&lt;role&gt; · 16+ 个性化岗位画像)</text>
+
+      <g transform="translate(10, 30)">
+        <!-- Role 1 -->
+        <g transform="translate(0, 0)">
+          <rect width="468" height="42" rx="5" fill="#FFFFFF" stroke="#86EFAC"/>
+          <text x="10" y="18" font-family="sans-serif" font-size="10" font-weight="700" fill="#065F46">后端开发岗 (Backend-Java/Go/PHP)</text>
+          <text x="10" y="32" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• SQL 迁移审计 • 接口契约生成 • 数据库检测 MCP</text>
+        </g>
+
+        <!-- Role 2 -->
+        <g transform="translate(0, 48)">
+          <rect width="468" height="42" rx="5" fill="#FFFFFF" stroke="#86EFAC"/>
+          <text x="10" y="18" font-family="sans-serif" font-size="10" font-weight="700" fill="#065F46">前端开发岗 (Frontend-Vue/React)</text>
+          <text x="10" y="32" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• 组件原子化规范 • UI 设计约束 • 常量模块化治理</text>
+        </g>
+
+        <!-- Role 3 -->
+        <g transform="translate(0, 96)">
+          <rect width="468" height="42" rx="5" fill="#FFFFFF" stroke="#86EFAC"/>
+          <text x="10" y="18" font-family="sans-serif" font-size="10" font-weight="700" fill="#065F46">算法研究岗 (AI-Algo / Vision / MLOps)</text>
+          <text x="10" y="32" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• 模型评测 SOP • 数据集版本约束 • 算力追踪 MCP</text>
+        </g>
+
+        <!-- Role 4 -->
+        <g transform="translate(0, 144)">
+          <rect width="468" height="42" rx="5" fill="#FFFFFF" stroke="#86EFAC"/>
+          <text x="10" y="18" font-family="sans-serif" font-size="10" font-weight="700" fill="#065F46">产品管理岗 (Product-Mgr / Director)</text>
+          <text x="10" y="32" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• PRD 编写规约 • 需求分级梳理 • 单人主干直推策略</text>
+        </g>
+
+        <!-- Role 5 -->
+        <g transform="translate(0, 192)">
+          <rect width="468" height="38" rx="5" fill="#FFFFFF" stroke="#86EFAC"/>
+          <text x="10" y="16" font-family="sans-serif" font-size="10" font-weight="700" fill="#065F46">测试工程岗 (QA-Engineer)</text>
+          <text x="10" y="30" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• 全链路用例生成 • 自动化测试流水线联动</text>
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <!-- Right Top: Engine Container -->
+  <g transform="translate(620, 90)" filter="url(#card-shadow)">
+    <rect width="520" height="270" rx="12" fill="#FFFFFF" stroke="#DDD6FE" stroke-width="1.5"/>
+    <path d="M 0 12 Q 0 0 12 0 L 508 0 Q 520 0 520 12 L 520 34 L 0 34 Z" fill="url(#eng-grad)"/>
+    <text x="18" y="22" font-family="sans-serif" font-size="12.5" font-weight="700" fill="#FFFFFF">⚙️ 多策略装配编译引擎 (CLI Compilation Engine)</text>
+
+    <g transform="translate(16, 44)">
+      <!-- E1 -->
+      <g transform="translate(0, 0)">
+        <rect width="488" height="48" rx="6" fill="#F5F3FF" stroke="#C4B5FD"/>
+        <text x="12" y="18" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#581C87">Markdown AST 标题级语义覆盖 (Heading-Level Smart Merge)</text>
+        <text x="12" y="34" font-family="sans-serif" font-size="9" font-weight="500" fill="#6B21A8">• 继承通用结构 • 逐字匹配覆盖同名章节 • 追加特化独有章节</text>
+      </g>
+
+      <!-- E2 -->
+      <g transform="translate(0, 54)">
+        <rect width="488" height="48" rx="6" fill="#F5F3FF" stroke="#C4B5FD"/>
+        <text x="12" y="18" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#581C87">JSON MCP 服务级深度合并 (Service Deep Merge)</text>
+        <text x="12" y="34" font-family="sans-serif" font-size="9" font-weight="500" fill="#6B21A8">• 深度遍历 mcpServers • 细粒度参数重写 • 敏感 Token 占位隔离</text>
+      </g>
+
+      <!-- E3 -->
+      <g transform="translate(0, 108)">
+        <rect width="488" height="48" rx="6" fill="#F5F3FF" stroke="#C4B5FD"/>
+        <text x="12" y="18" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#581C87">Git Ignore / Attr 智能清洗与三层堆叠 (Line-Level Stacking)</text>
+        <text x="12" y="34" font-family="sans-serif" font-size="9" font-weight="500" fill="#6B21A8">• 统一 OS/IDE 底线 • 注入技术栈规则 • 保护本地自定义项</text>
+      </g>
+
+      <!-- E4 -->
+      <g transform="translate(0, 162)">
+        <rect width="488" height="48" rx="6" fill="#FAF5FF" stroke="#A855F7" stroke-dasharray="4,2"/>
+        <text x="12" y="18" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#6B21A8">Registry 准入过滤裁剪 (Pruning)</text>
+        <text x="12" y="34" font-family="sans-serif" font-size="9" font-weight="500" fill="#7E22CE">• 读取 only_for/exclude 规则 • 物理隔离非本岗位技能</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Right Bottom: Target Workspace Container -->
+  <g transform="translate(620, 380)" filter="url(#card-shadow)">
+    <rect width="520" height="290" rx="12" fill="#FFFFFF" stroke="#BAE6FD" stroke-width="1.5"/>
+    <path d="M 0 12 Q 0 0 12 0 L 508 0 Q 520 0 520 12 L 520 34 L 0 34 Z" fill="url(#target-grad)"/>
+    <text x="18" y="22" font-family="sans-serif" font-size="12.5" font-weight="700" fill="#FFFFFF">🎯 目标工作区最终装配成果 (.ide/)</text>
+
+    <g transform="translate(16, 44)">
+      <!-- Row 1 -->
+      <g transform="translate(0, 0)">
+        <rect width="238" height="52" rx="6" fill="#F0F9FF" stroke="#7DD3FC"/>
+        <text x="12" y="20" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#0369A1">.ide/rules/ (生效规则)</text>
+        <text x="12" y="36" font-family="sans-serif" font-size="9" font-weight="500" fill="#0284C7">AST 语义合并后的完整规则文件</text>
+
+        <rect x="250" width="238" height="52" rx="6" fill="#F0F9FF" stroke="#7DD3FC"/>
+        <text x="262" y="20" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#0369A1">.ide/skills/ (特化技能)</text>
+        <text x="262" y="36" font-family="sans-serif" font-size="9" font-weight="500" fill="#0284C7">准入裁剪后的角色精准 Skill 包</text>
+      </g>
+
+      <!-- Row 2 -->
+      <g transform="translate(0, 60)">
+        <rect width="238" height="52" rx="6" fill="#F0F9FF" stroke="#7DD3FC"/>
+        <text x="12" y="20" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#0369A1">.ide/mcp.json (连接配置)</text>
+        <text x="12" y="36" font-family="sans-serif" font-size="9" font-weight="500" fill="#0284C7">服务级深度合并后的工具集</text>
+
+        <rect x="250" width="238" height="52" rx="6" fill="#F0F9FF" stroke="#7DD3FC"/>
+        <text x="262" y="20" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#0369A1">.githooks.yml (护栏开关)</text>
+        <text x="262" y="36" font-family="sans-serif" font-size="9" font-weight="500" fill="#0284C7">按角色画像分流生成的配置</text>
+      </g>
+
+      <!-- Row 3 -->
+      <g transform="translate(0, 120)">
+        <rect width="488" height="48" rx="6" fill="#F0F9FF" stroke="#7DD3FC"/>
+        <text x="12" y="20" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#0369A1">.ide/hooks.json + telemetry/ (事件挂钩)</text>
+        <text x="12" y="36" font-family="sans-serif" font-size="9" font-weight="500" fill="#0284C7">IDE 行为监听 (PostToolUse / SessionStart)，闭环效能数据</text>
+      </g>
+
+      <!-- Summary Pill -->
+      <g transform="translate(0, 176)">
+        <rect width="488" height="34" rx="6" fill="#0C4A6E"/>
+        <text x="244" y="21" font-family="sans-serif" font-size="10" font-weight="700" fill="#FFFFFF" text-anchor="middle">CONFIG_SUMMARY.md (装配元数据清单与快照备份索引)</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Connectors -->
+  <path d="M 580 220 L 620 220" stroke="#7C3AED" stroke-width="2.5" fill="none" marker-end="url(#m-purple)"/>
+  <path d="M 880 360 L 880 380" stroke="#0284C7" stroke-width="2.5" fill="none" marker-end="url(#m-blue)"/>
+</svg>

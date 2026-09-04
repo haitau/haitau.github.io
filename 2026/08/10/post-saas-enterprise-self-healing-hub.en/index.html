@@ -1,0 +1,1317 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="The Post-SaaS Endstate: The Enterprise Self-Healing Hub, Agent-Native, Post-SaaS, 企业自愈中枢, AI 架构, 动态 MCP, FSM 确定性">
+    <meta name="description" content="
+💡 阅读中文原版 (Chinese Version)
+
+
+Subtitle: The Dissolution of Application Forms across the Enterprise Value Chain in the A">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <meta name="bytedance-verification-code" content="/hXr6iglxmydPTdbFFGG" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>The Post-SaaS Endstate: The Enterprise Self-Healing Hub | Do Than Imagine</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+
+
+    <!-- bg-cover style     -->
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css?v=1788492461942">
+<link rel="stylesheet" type="text/css" href="/css/my.css?v=1788492461942">
+<link rel="stylesheet" type="text/css" href="/css/dark.css?v=1788492461942" media="none" onload="if(media!='all')media='all'">
+
+<style>
+/* Code Block Font & Title Normalization */
+pre, code,
+.code-area pre,
+.code-area pre code,
+.highlight,
+.highlight td.code pre {
+    font-size: 0.91rem !important;
+    line-height: 1.6 !important;
+    font-family: Inconsolata, Monaco, Consolas, 'Courier New', Courier, monospace !important;
+}
+
+.code-area .title,
+.highlight .title,
+pre .title,
+code .title,
+.highlight span,
+.code-area pre code span {
+    font-size: inherit !important;
+    font-weight: inherit !important;
+    line-height: inherit !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.highlight td.gutter,
+.gutter {
+    display: none !important;
+}
+</style>
+
+
+
+
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/css/post.css?v=1788492461942">
+
+
+
+
+
+    
+
+
+
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="Do Than Imagine" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Do Than Imagine</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/news/" class="waves-effect waves-light">
+      
+      <i class="fas fa-satellite-dish" style="zoom: 0.6;"></i>
+      
+      <span>资讯</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Do Than Imagine</div>
+        <div class="logo-desc">
+            
+            探索 Post-SaaS 时代、Agent-Native 架构、企业自愈中枢与 AI 驱动的全栈技术演进。
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/news/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-satellite-dish"></i>
+			
+			资讯
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/haitau" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/haitau" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">The Post-SaaS Endstate: The Enterprise Self-Healing Hub</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Agent-Native/">
+                                <span class="chip bg-color">Agent-Native</span>
+                            </a>
+                        
+                            <a href="/tags/System-Architecture/">
+                                <span class="chip bg-color">System Architecture</span>
+                            </a>
+                        
+                            <a href="/tags/Post-SaaS/">
+                                <span class="chip bg-color">Post-SaaS</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/System-Architecture/" class="post-category">
+                                System Architecture
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2026-08-10
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    2.5k
+                </div>
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <blockquote>
+<p>💡 <em><a href="/2026/08/10/post-saas-enterprise-self-healing-hub/">阅读中文原版 (Chinese Version)</a></em></p>
+</blockquote>
+<blockquote>
+<p><strong>Subtitle</strong>: <em>The Dissolution of Application Forms across the Enterprise Value Chain in the Agent-Native Era</em></p>
+<p><strong>Document Purpose</strong>: This article explores the architectural trajectory of Agent-Native paradigms in reshaping enterprise infrastructure (ERP, CRM, HR, OA, BI, SCM, WMS, PLM, MES, and Legal&#x2F;Finance). The central thesis is: <strong>Human-facing “Applications” will cease to exist as persistent software products; their capabilities will be decomposed into granular Capability Atoms orchestrated on-demand by AI Agents.</strong></p>
+<p><strong>Notice</strong>: This document is an architectural deduction of technological paradigms, not a short-term implementation roadmap or an authoritative prescription. Technological progress in the AI era iterates on a weekly basis. Underlying technical capabilities (connector gateways, credential boundaries, model-driven UI synthesis, semantic caching) already possess open-source implementations or engineering reference models.</p>
+</blockquote>
+<hr>
+<h2 id="1-Core-Thesis-Application-Form-Dissolution"><a href="#1-Core-Thesis-Application-Form-Dissolution" class="headerlink" title="1. Core Thesis: Application Form Dissolution"></a>1. Core Thesis: Application Form Dissolution</h2><p>Modern enterprise digitization has long been split across two rigid silos:</p>
+<ol>
+<li><strong>Siloed Business SaaS Stacks</strong>: Employees manually transfer data and fill forms across isolated GUI interfaces.</li>
+<li><strong>Unstructured Communication Channels (Slack, Teams, WeChat)</strong>: Real decision-making, negotiation, and unstructured contextual data remain trapped in chat logs, unexploited by structural workflows.</li>
+</ol>
+<h3 id="Paradigm-Shift-Application-Form-Dissolution"><a href="#Paradigm-Shift-Application-Form-Dissolution" class="headerlink" title="Paradigm Shift: Application Form Dissolution"></a>Paradigm Shift: Application Form Dissolution</h3><p>The central claim is not merely “stripping GUIs” or “deconstructing SaaS,” but reimagining software delivery: <strong>Software applications no longer exist as persistent products directly operated by human employees. Their capabilities are atomized into Agent-invokable primitives, shifting employees away from the “open app → operate → close app” workflow.</strong></p>
+<p>In legacy SaaS, the fundamental building block is the “Application” (an ERP, a CRM, or a WMS). Each application encapsulates its own data models, business logic, UI, and permission boundaries, producing systemic data silos. Agent-Native architecture breaks this premise. Software primitives are decomposed into <strong>Capability Atoms</strong>:</p>
+<ul>
+<li><strong>Capability Atoms</strong> are single-responsibility business logic primitives accessible via Model Context Protocol (MCP) servers (e.g., <code>QueryInventoryLevel</code>, <code>InitiateStockTransfer</code>, <code>ReconcileFourWayMatch</code>, <code>CreateECN</code>).</li>
+<li>Capability Atoms do not bind to proprietary GUIs or isolate data. They register as stateless capabilities on dynamic MCP routing networks.</li>
+<li>Agents act as runtime orchestrators, dynamically composing Capability Atoms based on user intent to fulfill ephemeral business loops that dissolve upon completion.</li>
+</ul>
+<blockquote>
+<p><strong>Human-facing “Applications” will no longer exist as persistent products. Enterprise software will rely on Capability Atoms as building blocks, orchestrated on-demand by Agents inside an Agentic Environment.</strong></p>
+</blockquote>
+<p>GUI interfaces transition from “static software products” to <strong>Just-in-Time (JIT) Interaction Projections</strong>: When Agents compose atoms to execute a workflow, necessary micro-UIs are projected ephemerally for human review&#x2F;confirmation and disappear once resolved.</p>
+<h3 id="Agent-Native-Architectural-Blueprint"><a href="#Agent-Native-Architectural-Blueprint" class="headerlink" title="Agent-Native Architectural Blueprint"></a>Agent-Native Architectural Blueprint</h3><p>The architecture replacing traditional SaaS stacks comprises: <strong>Client-side Agentic Shell + Orchestration&#x2F;Governance Kernel + Duplex MCP Gateway + Headless Capability Fabric</strong>.</p>
+<p align="center">
+  <img src="/assets/Post-SaaS-Deconstruction.en.svg" alt="Agent-Native Application Deconstruction" width="100%" />
+</p>
+
+<hr>
+<h3 id="Value-Chain-Scenario-Deconstruction"><a href="#Value-Chain-Scenario-Deconstruction" class="headerlink" title="Value-Chain Scenario Deconstruction"></a>Value-Chain Scenario Deconstruction</h3><h4 id="SCM-WMS-→-Autonomous-Supply-Mesh"><a href="#SCM-WMS-→-Autonomous-Supply-Mesh" class="headerlink" title="SCM &amp; WMS → Autonomous Supply Mesh"></a>SCM &amp; WMS → Autonomous Supply Mesh</h4><ul>
+<li><strong>Legacy Bottleneck</strong>: Manual forecasting via static reports and phone calls across warehouses leading to stockouts and overstock.</li>
+<li><strong>Agent-Native Evolution</strong>: Perception layers monitor sales rates, transit weather, and stock levels in real time. Agents autonomously negotiate cross-warehouse transfers, lock WMS slots via MCP, and achieve self-healing supply networks.</li>
+</ul>
+<h4 id="PLM-R-D-→-Dynamic-BOM-Engine"><a href="#PLM-R-D-→-Dynamic-BOM-Engine" class="headerlink" title="PLM &amp; R&amp;D → Dynamic BOM Engine"></a>PLM &amp; R&amp;D → Dynamic BOM Engine</h4><ul>
+<li><strong>Legacy Bottleneck</strong>: Manual Engineering Change Notices (ECN) in PLM often lead to missed dependencies and dead inventory.</li>
+<li><strong>Agent-Native Evolution</strong>: Engineers express design intents in natural language (e.g., “Replace MCU A with low-power MCU B”). Agents cascade impact analysis across PLM, verify SCM stock and supplier lead times, update test suites, and generate approval cards.</li>
+</ul>
+<h4 id="MES-→-Edge-Agent-Manufacturing"><a href="#MES-→-Edge-Agent-Manufacturing" class="headerlink" title="MES → Edge Agent Manufacturing"></a>MES → Edge Agent Manufacturing</h4><ul>
+<li><strong>Legacy Bottleneck</strong>: Line anomalies rely on human inspection and manual QC logging.</li>
+<li><strong>Agent-Native Evolution</strong>: Edge Agents stream PLC&#x2F;IoT telemetries. Upon detecting elevated error rates at Workstation A, the Edge Agent issues throttling commands, locks spare parts in WMS, and pushes repair SOPs directly to maintenance technicians.</li>
+</ul>
+<h4 id="Legal-Finance-→-Autonomous-Contract-Guard"><a href="#Legal-Finance-→-Autonomous-Contract-Guard" class="headerlink" title="Legal &amp; Finance → Autonomous Contract Guard"></a>Legal &amp; Finance → Autonomous Contract Guard</h4><ul>
+<li><strong>Legacy Bottleneck</strong>: Contracts remain static PDFs; four-way matching (PO, Invoice, Receiving Receipt, Payment) consumes massive labor.</li>
+<li><strong>Agent-Native Evolution</strong>: Contracts are parsed into executable logical contracts with deterministic triggers. Agents monitor WMS receipts and bank pools, performing four-way matching autonomously to trigger payments or issue dunning notices.</li>
+</ul>
+<h4 id="Collaboration-→-Chat-as-Data-Flow"><a href="#Collaboration-→-Chat-as-Data-Flow" class="headerlink" title="Collaboration → Chat-as-Data &amp; Flow"></a>Collaboration → Chat-as-Data &amp; Flow</h4><ul>
+<li><strong>Legacy Bottleneck</strong>: Critical business decisions made in chat channels are lost without CRM&#x2F;OA entry.</li>
+<li><strong>Agent-Native Evolution</strong>: Agents listen to communication channels, extracting intents (customer leads, pricing, budgets) to write back to unified data structures automatically.</li>
+</ul>
+<h4 id="BI-→-Semantic-on-Demand-Analytics"><a href="#BI-→-Semantic-on-Demand-Analytics" class="headerlink" title="BI → Semantic-on-Demand Analytics"></a>BI → Semantic-on-Demand Analytics</h4><ul>
+<li><strong>Legacy Bottleneck</strong>: High dependency on pre-built OLAP cubes and long engineering cycles.</li>
+<li><strong>Agent-Native Evolution</strong>: LLMs compile natural language queries into sandboxed execution pipelines, pulling raw streams from the Unified Data Body to render ephemeral micro-charts.</li>
+</ul>
+<h4 id="Corporate-Memory-→-Dynamic-Memory-Graph"><a href="#Corporate-Memory-→-Dynamic-Memory-Graph" class="headerlink" title="Corporate Memory → Dynamic Memory Graph"></a>Corporate Memory → Dynamic Memory Graph</h4><ul>
+<li><strong>Legacy Bottleneck</strong>: Unmaintained static Markdown&#x2F;Word documentation quickly becomes obsolete.</li>
+<li><strong>Agent-Native Evolution</strong>: Agents automatically extract decision context from daily workflows to construct a real-time semantic corporate memory graph.</li>
+</ul>
+<h4 id="B2B-Collaboration-→-B2B-Agent-Fabric"><a href="#B2B-Collaboration-→-B2B-Agent-Fabric" class="headerlink" title="B2B Collaboration → B2B Agent Fabric"></a>B2B Collaboration → B2B Agent Fabric</h4><ul>
+<li><strong>Legacy Bottleneck</strong>: Cross-company coordination relies on manual chat groups or costly EDI integrations.</li>
+<li><strong>Agent-Native Evolution</strong>: Encrypted MCP gateways enable Agent-to-Agent automated RFQ, negotiations, PO confirmations, and reconciliation.</li>
+</ul>
+<hr>
+<h2 id="2-Overall-System-Architecture-Topology"><a href="#2-Overall-System-Architecture-Topology" class="headerlink" title="2. Overall System Architecture Topology"></a>2. Overall System Architecture Topology</h2><p><strong>Defining the Enterprise Self-Healing Hub</strong>: The “Self-Healing Hub” is not a single product name, but a class of systems that continuously senses business state via a perception layer (including Database CDC), dispatches tasks across a multi-tier decision matrix (L1 Autonomous &#x2F; L2 Collaborative &#x2F; L3 Executive Approval), and enforces transaction legality via strict FSM Gatekeepers.</p>
+<h3 id="2-1-Master-Architecture-Topology-Map"><a href="#2-1-Master-Architecture-Topology-Map" class="headerlink" title="2.1 Master Architecture Topology Map"></a>2.1 Master Architecture Topology Map</h3><p align="center">
+  <img src="/assets/Post-SaaS-Architecture.en.svg" alt="Post-SaaS Overall Architecture" width="100%" />
+</p>
+
+<h3 id="2-2-Sub-system-Deep-Dive-A-SCM-CDC-Self-Healing-Loop"><a href="#2-2-Sub-system-Deep-Dive-A-SCM-CDC-Self-Healing-Loop" class="headerlink" title="2.2 Sub-system Deep Dive A: SCM &amp; CDC Self-Healing Loop"></a>2.2 Sub-system Deep Dive A: SCM &amp; CDC Self-Healing Loop</h3><p align="center">
+  <img src="/assets/Sub-SCM-CDC-Loop.en.svg" alt="SCM & CDC Loop" width="100%" />
+</p>
+
+<h3 id="2-3-Sub-system-Deep-Dive-B-Determinism-Assurance-Agent-Proposer-FSM-Gatekeeper"><a href="#2-3-Sub-system-Deep-Dive-B-Determinism-Assurance-Agent-Proposer-FSM-Gatekeeper" class="headerlink" title="2.3 Sub-system Deep Dive B: Determinism Assurance (Agent Proposer -&gt; FSM Gatekeeper)"></a>2.3 Sub-system Deep Dive B: Determinism Assurance (Agent Proposer -&gt; FSM Gatekeeper)</h3><p align="center">
+  <img src="/assets/Sub-FSM-Gatekeeper.en.svg" alt="FSM Gatekeeper Architecture" width="100%" />
+</p>
+
+<h3 id="2-4-Sub-system-Deep-Dive-C-Dynamic-MCP-Resolver"><a href="#2-4-Sub-system-Deep-Dive-C-Dynamic-MCP-Resolver" class="headerlink" title="2.4 Sub-system Deep Dive C: Dynamic MCP Resolver"></a>2.4 Sub-system Deep Dive C: Dynamic MCP Resolver</h3><p align="center">
+  <img src="/assets/Sub-MCP-Resolver.en.svg" alt="Dynamic MCP Resolver" width="100%" />
+</p>
+
+<hr>
+<h2 id="3-Core-Duplex-Interaction-Loops-Scenario-Demonstrations"><a href="#3-Core-Duplex-Interaction-Loops-Scenario-Demonstrations" class="headerlink" title="3. Core Duplex Interaction Loops &amp; Scenario Demonstrations"></a>3. Core Duplex Interaction Loops &amp; Scenario Demonstrations</h2><h3 id="3-1-Scenario-A-SCM-Self-Healing-Dispatch"><a href="#3-1-Scenario-A-SCM-Self-Healing-Dispatch" class="headerlink" title="3.1 Scenario A: SCM Self-Healing Dispatch"></a>3.1 Scenario A: SCM Self-Healing Dispatch</h3><ol>
+<li><strong>Perception</strong>: East China Warehouse stock drops below safety thresholds due to a spike in sales.</li>
+<li><strong>Global Intelligent Dispatch</strong>: <code>Supply-Chain-Agent</code> collaborates with <code>Logistics-Agent</code> to analyze South China surplus, in-transit cargo, and supplier capacity.</li>
+<li><strong>FSM Compliance Check</strong>: Agent generates a transfer plan (“Transfer 2,000 units from South China, order 5,000 additional units from Supplier C”), verified by FSM state machine hard limits.</li>
+<li><strong>Dual-Sign Confirmation &amp; Execution</strong>: After FSM validation, the PO proposal is pushed to the Procurement Director’s Shell for dual-signature confirmation before issuing electronic POs to supplier systems via <code>B2B Agent-MCP</code>.</li>
+</ol>
+<h3 id="3-2-Scenario-B-Chat-as-Data-Entry"><a href="#3-2-Scenario-B-Chat-as-Data-Entry" class="headerlink" title="3.2 Scenario B: Chat-as-Data Entry"></a>3.2 Scenario B: Chat-as-Data Entry</h3><ol>
+<li><strong>Unstructured Communication</strong>: Sales rep mentions in Agent Shell: “Met Client A’s CEO today; strong intent for 500 units at ~2M budget, delivery next month.”</li>
+<li><strong>Stream Extraction</strong>: Conversation Extractor parses <code>Client</code>, <code>Intent Amount</code>, and <code>Estimated Delivery</code>, generating a structured CRM card.</li>
+<li><strong>One-Click Save</strong>: Sales rep clicks “Save to CRM”, passing FSM verification and updating records via <code>CRM-MCP</code>.</li>
+</ol>
+<h3 id="3-3-Scenario-C-Semantic-BI-on-Demand"><a href="#3-3-Scenario-C-Semantic-BI-on-Demand" class="headerlink" title="3.3 Scenario C: Semantic BI on Demand"></a>3.3 Scenario C: Semantic BI on Demand</h3><ol>
+<li><strong>Edge Preprocessing</strong>: User queries: “Analyze component defect rates and corresponding supplier batches over the last 3 months.” Local SLM &#x2F; Semantic Cache intercepts and preprocesses.</li>
+<li><strong>Cross-System Correlation</strong>: <code>BI-Agent</code> correlates real-time streams across MES (defects), PLM (BOM), and SCM (supplier batches).</li>
+<li><strong>Dynamic Projection Rendering</strong>: Client-side model synthesizes ephemeral UI projections with causal charts, which dissolve upon workflow completion.</li>
+</ol>
+<h3 id="3-4-Human-Perspective-Where-Does-the-Human-Stand-in-the-Self-Healing-Hub"><a href="#3-4-Human-Perspective-Where-Does-the-Human-Stand-in-the-Self-Healing-Hub" class="headerlink" title="3.4 Human Perspective: Where Does the Human Stand in the Self-Healing Hub?"></a>3.4 Human Perspective: Where Does the Human Stand in the Self-Healing Hub?</h3><p>When the system self-heals, what remains for humans? Humans cease acting as the “hands and feet” of software systems, returning to <strong>judgment, strategy, and accountability</strong>.</p>
+<ul>
+<li><strong>Lao Zhou (Procurement Director)</strong>: Moves from manual Excel tracking to handling only 3 L3 exception cards per day for strategic decisions.</li>
+<li><strong>Xiao Lin (Sales Rep)</strong>: Replaces manual CRM data entry with natural speech extraction, spending 100% of time building human client relationships.</li>
+<li><strong>Ah Qiang (Line Foreman)</strong>: Edge Agents handle PLC error throttling and spare part locking; Ah Qiang focuses on solving complex engineering bottlenecks.</li>
+<li><strong>Lao Wang (Finance)</strong>: Contract Guard handles 4-way matching automatically, forwarding only anomalous entries for review.</li>
+</ul>
+<h3 id="3-5-Organizational-Dissolution-From-“Station-Based-Orchestration”-to-“Intent-Endpoint-Networks”"><a href="#3-5-Organizational-Dissolution-From-“Station-Based-Orchestration”-to-“Intent-Endpoint-Networks”" class="headerlink" title="3.5 Organizational Dissolution: From “Station-Based Orchestration” to “Intent Endpoint Networks”"></a>3.5 Organizational Dissolution: From “Station-Based Orchestration” to “Intent Endpoint Networks”</h3><p>Traditional enterprises orchestrate people by rigid job stations (Procurement, Sales, Production, Finance) wired by manual workflows. The Self-Healing Hub dissolves these static silos into:</p>
+<ul>
+<li><strong>Shared Equilibrium Goals</strong>: Inventory thresholds, credit limits, quality metrics.</li>
+<li><strong>Agent Capability Pool</strong>: Reusable MCP Capability Atoms across SCM, PLM, MES, Legal.</li>
+<li><strong>Network of Intent Endpoints</strong>: Empowered human decision-makers initiating intent and auditing final value.</li>
+</ul>
+<hr>
+<h2 id="4-Key-Technical-Components-Mechanism-Design"><a href="#4-Key-Technical-Components-Mechanism-Design" class="headerlink" title="4. Key Technical Components &amp; Mechanism Design"></a>4. Key Technical Components &amp; Mechanism Design</h2><h3 id="4-1-Full-Value-Chain-MCP-Fabric"><a href="#4-1-Full-Value-Chain-MCP-Fabric" class="headerlink" title="4.1 Full Value-Chain MCP Fabric"></a>4.1 Full Value-Chain MCP Fabric</h3><ul>
+<li><strong>SCM&#x2F;WMS-MCP</strong>: Inventory locking, transfer calculations, logistics carrier APIs.</li>
+<li><strong>PLM&#x2F;R&amp;D-MCP</strong>: BOM cascade queries, ECN change submission APIs.</li>
+<li><strong>MES-MCP</strong>: Equipment OEE telemetry, line throttling APIs.</li>
+<li><strong>IoT&#x2F;Edge-MCP</strong>: Device telemetry subscription, Edge Agent decision signing, physical action execution.</li>
+<li><strong>Legal&#x2F;Treasury-MCP</strong>: Direct bank payment triggers, 4-way matching validation APIs.</li>
+</ul>
+<h3 id="4-2-Multi-Tier-Decision-Matrix"><a href="#4-2-Multi-Tier-Decision-Matrix" class="headerlink" title="4.2 Multi-Tier Decision Matrix"></a>4.2 Multi-Tier Decision Matrix</h3><table>
+<thead>
+<tr>
+<th align="left">Decision Tier</th>
+<th align="left">Trigger &amp; Risk Profile</th>
+<th align="left">Primary Actor</th>
+<th align="left">Validation Mechanism</th>
+<th align="left">Typical Scenarios</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>L1 Autonomous</strong></td>
+<td align="left">High-frequency, low-risk, closed-loop</td>
+<td align="left"><strong>Autonomous Agent</strong></td>
+<td align="left">FSM hard-rule automatic validation</td>
+<td align="left">Auto-replenishment, routine reconciliation, B2B RFQs</td>
+</tr>
+<tr>
+<td align="left"><strong>L2 Collaborative</strong></td>
+<td align="left">Medium-risk, strategy selection</td>
+<td align="left"><strong>Human + Agent Collaboration</strong></td>
+<td align="left">Pre-built UI card + Dry-run simulation callback</td>
+<td align="left">Supplier substitution selection, budget overflow alerts</td>
+</tr>
+<tr>
+<td align="left"><strong>L3 Executive Approval</strong></td>
+<td align="left">High-risk, rule conflicts</td>
+<td align="left"><strong>Human Executives</strong></td>
+<td align="left">Async approval queue + Dual sign-off + Audit log</td>
+<td align="left">Major ECN change, large budget escalation, HR anomalies</td>
+</tr>
+</tbody></table>
+<h3 id="4-3-Data-Ontology-Fabric"><a href="#4-3-Data-Ontology-Fabric" class="headerlink" title="4.3 Data Ontology Fabric"></a>4.3 Data Ontology Fabric</h3><ul>
+<li><strong>Conceptual &amp; Physical Integration</strong>:<ol>
+<li><strong>Upper Concept Schema</strong>: Defines entities (people, materials, orders, contracts) to eliminate semantic ambiguity across headless systems.</li>
+<li><strong>Unified Data Body</strong>: Unifies CDC (Change Data Capture) database streams, unstructured chat streams, and IoT time-series telemetries into a single physical substrate.</li>
+</ol>
+</li>
+<li><strong>Three Imperative Constraints</strong>: (1) On-demand convergence instead of full upfront data ingestion; (2) Continuous maintenance of upper concept schemas; (3) Prioritizing value-closed loops over data volume scale.</li>
+</ul>
+<h3 id="4-4-Edge-to-Physical-Self-Healing"><a href="#4-4-Edge-to-Physical-Self-Healing" class="headerlink" title="4.4 Edge-to-Physical Self-Healing"></a>4.4 Edge-to-Physical Self-Healing</h3><p>Physical actions represent the ultimate landing zone of self-healing (throttling lines, rerouting AGVs, switching mechanical arms). Edge Agents enforce local decision autonomy during network disruptions, maintaining continuous physical state stability.</p>
+<hr>
+<h2 id="5-Open-Architectural-Challenges-Research-Frontiers"><a href="#5-Open-Architectural-Challenges-Research-Frontiers" class="headerlink" title="5. Open Architectural Challenges &amp; Research Frontiers"></a>5. Open Architectural Challenges &amp; Research Frontiers</h2><h3 id="Challenge-1-Merging-Probabilistic-Agents-with-Deterministic-Finite-State-Machines-FSM"><a href="#Challenge-1-Merging-Probabilistic-Agents-with-Deterministic-Finite-State-Machines-FSM" class="headerlink" title="Challenge 1: Merging Probabilistic Agents with Deterministic Finite State Machines (FSM)"></a>Challenge 1: Merging Probabilistic Agents with Deterministic Finite State Machines (FSM)</h3><ul>
+<li><strong>Core Bottleneck</strong>: LLMs are probabilistic engines prone to hallucinations, whereas enterprise actions demand strict transaction determinism.</li>
+<li><strong>Hypothesis</strong>: Agents act as <strong>Proposers</strong>, while FSM Gatekeepers act as the sole transaction <strong>Executors</strong>.</li>
+<li><strong>Hallucination Interception Layers</strong>: (1) Action Templating; (2) Fail-closed access control; (3) Human dual-signoff on critical actions.</li>
+<li><strong>Engineering Reference</strong>: Cloudflare OS Gatekeeper models validate <strong>Dry-run Simulation &amp; Async Approval Queues</strong> to decouple Agent execution latency from human decision bottlenecks.</li>
+</ul>
+<h3 id="Challenge-2-Client-side-SLM-Routing-for-BI-Chat-Extraction"><a href="#Challenge-2-Client-side-SLM-Routing-for-BI-Chat-Extraction" class="headerlink" title="Challenge 2: Client-side SLM Routing for BI &amp; Chat Extraction"></a>Challenge 2: Client-side SLM Routing for BI &amp; Chat Extraction</h3><p>Establishes a 3-tier routing architecture: <code>Client SLM (Real-time extraction) -&gt; Semantic Cache (Isolated per user) -&gt; Cloud LLM (Complex attribution)</code>.</p>
+<h3 id="Challenge-3-Dynamic-MCP-Resolver-for-Large-Scale-Tools"><a href="#Challenge-3-Dynamic-MCP-Resolver-for-Large-Scale-Tools" class="headerlink" title="Challenge 3: Dynamic MCP Resolver for Large-Scale Tools"></a>Challenge 3: Dynamic MCP Resolver for Large-Scale Tools</h3><p>Vector-based semantic indexing over 10,000+ Actions, retrieving Top-N MCP tool definitions dynamically per task. Validated by open-source <strong>OpenConnector</strong> gateway foundations.</p>
+<h3 id="Challenge-4-Model-Driven-UI-Synthesis-Ephemeral-Interaction-vs-Durable-Evidence"><a href="#Challenge-4-Model-Driven-UI-Synthesis-Ephemeral-Interaction-vs-Durable-Evidence" class="headerlink" title="Challenge 4: Model-Driven UI Synthesis (Ephemeral Interaction vs. Durable Evidence)"></a>Challenge 4: Model-Driven UI Synthesis (Ephemeral Interaction vs. Durable Evidence)</h3><ul>
+<li><strong>Model-Driven UI</strong>: Synthesizes Just-in-Time (JIT) micro-interfaces on demand based on task context and Design System constraints.</li>
+<li><strong>Two-Layer Lifecycle</strong>:<ul>
+<li><strong>Ephemeral Interaction Layer</strong>: Micro-UIs dissolve immediately after workflow completion.</li>
+<li><strong>Durable Evidence Layer</strong>: Synchronously records a structured semantic snapshot (intent, parameters, confidence, human signoff, timestamp), allowing 100% exact re-projection for compliance audits.</li>
+</ul>
+</li>
+</ul>
+<h3 id="Challenge-5-Multi-modal-On-Demand-Data-Ingestion"><a href="#Challenge-5-Multi-modal-On-Demand-Data-Ingestion" class="headerlink" title="Challenge 5: Multi-modal On-Demand Data Ingestion"></a>Challenge 5: Multi-modal On-Demand Data Ingestion</h3><p>Ingests time-series, relational, and unstructured conversation data dynamically into the Data Ontology Fabric.</p>
+<h3 id="Challenge-6-Cross-Enterprise-Agent-Mesh-Trust-Compliance"><a href="#Challenge-6-Cross-Enterprise-Agent-Mesh-Trust-Compliance" class="headerlink" title="Challenge 6: Cross-Enterprise Agent Mesh Trust &amp; Compliance"></a>Challenge 6: Cross-Enterprise Agent Mesh Trust &amp; Compliance</h3><p>Establishes credential firewalls, OAuth boundaries, and tamper-proof audit trails (validated by OpenConnector Credential Firewall implementations).</p>
+<h3 id="Challenge-7-Self-Evolving-Skills-Cognitive-Self-Healing"><a href="#Challenge-7-Self-Evolving-Skills-Cognitive-Self-Healing" class="headerlink" title="Challenge 7: Self-Evolving Skills &amp; Cognitive Self-Healing"></a>Challenge 7: Self-Evolving Skills &amp; Cognitive Self-Healing</h3><ul>
+<li><strong>Paradigm Evolution</strong>: Upgrades self-healing from passive business restoration to active cognitive immunity.</li>
+<li><strong>Dual-Loop Architecture</strong>: Outer loop restores business state; inner loop recycles failure signals (FSM blocks, human rejections) to refine Agent skills via attribution, abstraction, and replay verification.</li>
+<li><strong>Engineering Evidence</strong>: Validated by VeriSkill (Peking Univ.), GSE (Tsinghua Univ.), SkillSentry (Tsinghua Univ.), and PrimeIntellect <code>prime-agent</code> Continual Harness implementations.</li>
+</ul>
+<hr>
+<h2 id="6-Evolutionary-Roadmap-Implementation-Strategy"><a href="#6-Evolutionary-Roadmap-Implementation-Strategy" class="headerlink" title="6. Evolutionary Roadmap &amp; Implementation Strategy"></a>6. Evolutionary Roadmap &amp; Implementation Strategy</h2><ol>
+<li><strong>Phase 1: Advisory Mode &amp; High-Determinism Single-System Loops (POC)</strong>: Agent operates in read-only advisory mode; auto 4-way matching, inventory replenishment, read-only semantic BI.</li>
+<li><strong>Phase 2: Data CDC + FSM Gatekeeper + Physical Loops</strong>: Extends CDC streams across SCM&#x2F;MES; deploys Edge Agents for physical line self-healing.</li>
+<li><strong>Phase 3: Unstructured Flow &amp; Cross-Domain BI</strong>: Deploys Chat-as-Data extraction with mandatory human L2 single-click confirmation.</li>
+<li><strong>Phase 4: Dynamic MCP Resolver &amp; B2B Agent Mesh</strong>: Full dynamic tool vector routing and cross-enterprise Agent-to-Agent contract execution.</li>
+</ol>
+<hr>
+<h2 id="7-Target-Industry-Boundaries-Competitive-Analysis-Compliance"><a href="#7-Target-Industry-Boundaries-Competitive-Analysis-Compliance" class="headerlink" title="7. Target Industry Boundaries, Competitive Analysis &amp; Compliance"></a>7. Target Industry Boundaries, Competitive Analysis &amp; Compliance</h2><h3 id="7-1-Target-Industry-Applicability"><a href="#7-1-Target-Industry-Applicability" class="headerlink" title="7.1 Target Industry Applicability"></a>7.1 Target Industry Applicability</h3><ul>
+<li><strong>High Applicability</strong>: Manufacturing, SCM-intensive enterprises, B2B distribution.</li>
+<li><strong>Medium Applicability</strong>: Retail &amp; E-commerce.</li>
+<li><strong>Low Applicability</strong>: Light-asset consulting, pure service industries.</li>
+</ul>
+<h3 id="7-2-Competitive-Paradigm-Comparison"><a href="#7-2-Competitive-Paradigm-Comparison" class="headerlink" title="7.2 Competitive Paradigm Comparison"></a>7.2 Competitive Paradigm Comparison</h3><ol>
+<li><strong>Embedded Copilot Paradigm</strong>: Limited to single SaaS applications; lacks cross-system orchestration and FSM determinism.</li>
+<li><strong>General Orchestration Framework Paradigm (LangChain)</strong>: High flexibility but lacks business-grade FSM gatekeepers and fail-closed security.</li>
+<li><strong>Legacy SaaS + Agent Bolt-on Paradigm</strong>: Ecosystem lock-in; fails to achieve vendor-neutral cross-system orchestration.</li>
+<li><strong>Workflow Engine + Agent Paradigm (ServiceNow)</strong>: Pre-defined static workflow paths rather than dynamic runtime capability composition.</li>
+</ol>
+<h3 id="7-3-Compliance-Notice"><a href="#7-3-Compliance-Notice" class="headerlink" title="7.3 Compliance Notice"></a>7.3 Compliance Notice</h3><p>All cross-enterprise data flows must comply with data protection regulations (GDPR, PII laws) and industry-specific audit constraints.</p>
+<hr>
+<h2 id="Appendix"><a href="#Appendix" class="headerlink" title="Appendix"></a>Appendix</h2><h3 id="Appendix-A-Post-SaaS-Full-Topology-High-Resolution-Architecture-Map"><a href="#Appendix-A-Post-SaaS-Full-Topology-High-Resolution-Architecture-Map" class="headerlink" title="Appendix A: Post-SaaS Full-Topology High-Resolution Architecture Map"></a>Appendix A: Post-SaaS Full-Topology High-Resolution Architecture Map</h3><p align="center">
+  <img src="/assets/Post-SaaS-Full-Topology.en.svg" alt="Post-SaaS Full Topology Architecture" width="100%" />
+</p>
+
+<h3 id="Appendix-B-Engineering-References-Literature-Index-GitHub-arXiv"><a href="#Appendix-B-Engineering-References-Literature-Index-GitHub-arXiv" class="headerlink" title="Appendix B: Engineering References &amp; Literature Index (GitHub &#x2F; arXiv)"></a>Appendix B: Engineering References &amp; Literature Index (GitHub &#x2F; arXiv)</h3><h4 id="1-Open-Source-Repositories-Platforms"><a href="#1-Open-Source-Repositories-Platforms" class="headerlink" title="1. Open-Source Repositories &amp; Platforms"></a>1. Open-Source Repositories &amp; Platforms</h4><table>
+<thead>
+<tr>
+<th align="left">Component &#x2F; Challenge</th>
+<th align="left">Project Name</th>
+<th align="left">License &#x2F; Author</th>
+<th align="left">GitHub &#x2F; Official Link</th>
+<th align="left">Architectural Reference &amp; Engineering Proof</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>Challenge 1, 4, 7</strong></td>
+<td align="left"><strong>Cloudflare OS</strong></td>
+<td align="left">Apache-2.0 &#x2F; Cloudflare</td>
+<td align="left"><a target="_blank" rel="noopener" href="https://github.com/cloudflare/cloudflare-os">cloudflare&#x2F;cloudflare-os</a></td>
+<td align="left">Enterprise Agent workbench validating Gatekeeper credential isolation, Dry-run simulation, Gadget micro-app sandboxes, and Blueprint event workflows.</td>
+</tr>
+<tr>
+<td align="left"><strong>Challenge 3 &amp; 6</strong></td>
+<td align="left"><strong>OpenConnector</strong></td>
+<td align="left">Apache-2.0 &#x2F; OpenConnector</td>
+<td align="left"><a target="_blank" rel="noopener" href="https://github.com/openconnector/openconnector">openconnector&#x2F;openconnector</a></td>
+<td align="left">Unified connector gateway (1000+ SaaS &#x2F; 10000+ Actions) validating Credential&#x2F;OAuth boundaries and redacted audit logs.</td>
+</tr>
+<tr>
+<td align="left"><strong>Challenge 7</strong></td>
+<td align="left"><strong>prime-agent</strong></td>
+<td align="left">MIT &#x2F; PrimeIntellect</td>
+<td align="left"><a target="_blank" rel="noopener" href="https://github.com/PrimeIntellect/prime-agent">PrimeIntellect&#x2F;prime-agent</a></td>
+<td align="left">First open-source self-rewriting Harness Agent formalizing <code>(ρ, G, K, M)</code> interfaces with online refinement loops.</td>
+</tr>
+</tbody></table>
+<h4 id="2-Academic-Literature-Research-Papers"><a href="#2-Academic-Literature-Research-Papers" class="headerlink" title="2. Academic Literature &amp; Research Papers"></a>2. Academic Literature &amp; Research Papers</h4><table>
+<thead>
+<tr>
+<th align="left">Challenge</th>
+<th align="left">Paper &#x2F; Framework Title</th>
+<th align="left">Institution &#x2F; Authors</th>
+<th align="left">Venue &#x2F; arXiv ID</th>
+<th align="left">Core Theory &amp; Empirical Proof</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>Challenge 7</strong></td>
+<td align="left"><strong>VeriSkill</strong></td>
+<td align="left">Peking University</td>
+<td align="left">arXiv preprints (2026)</td>
+<td align="left">3-step self-evolution loop (attribution -&gt; abstraction -&gt; verification); proves PASS rate plummets without verification steps.</td>
+</tr>
+<tr>
+<td align="left"><strong>Challenge 7</strong></td>
+<td align="left"><strong>GSE</strong> (Graph Skill Evolution)</td>
+<td align="left">Tsinghua University</td>
+<td align="left">arXiv preprints (2026)</td>
+<td align="left">Skill relation graph &amp; clustering generalization; boosts F1 from 0.43 to 0.71 in industrial bug triage agents.</td>
+</tr>
+<tr>
+<td align="left"><strong>Challenge 7</strong></td>
+<td align="left"><strong>SkillSentry</strong></td>
+<td align="left">Tsinghua University</td>
+<td align="left">arXiv preprints (2026)</td>
+<td align="left">Adaptive honeypots and capability contract quadruple-matching; achieves 99.5% recall on high-risk skill auditing.</td>
+</tr>
+<tr>
+<td align="left"><strong>Challenge 7</strong></td>
+<td align="left"><strong>SESA &#x2F; Skill-SP</strong></td>
+<td align="left">Peking Univ. &#x2F; Alibaba</td>
+<td align="left">arXiv preprints (2026)</td>
+<td align="left">Self-play problem formulation and training-time curriculum engines solving cold-start bootstrap problems.</td>
+</tr>
+</tbody></table>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">shawn</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://blog.191022.xyz/2026/08/10/post-saas-enterprise-self-healing-hub.en/">https://blog.191022.xyz/2026/08/10/post-saas-enterprise-self-healing-hub.en/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">shawn</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Agent-Native/">
+                                    <span class="chip bg-color">Agent-Native</span>
+                                </a>
+                            
+                                <a href="/tags/System-Architecture/">
+                                    <span class="chip bg-color">System Architecture</span>
+                                </a>
+                            
+                                <a href="/tags/Post-SaaS/">
+                                    <span class="chip bg-color">Post-SaaS</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2026/08/11/enterprise-ai-scaffold-architecture/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="规范即代码：企业级 AI 编程脚手架的架构演进与落地实践 (Culture as Code)">
+                        
+                        <span class="card-title">规范即代码：企业级 AI 编程脚手架的架构演进与落地实践 (Culture as Code)</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2026-08-11
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/" class="post-category">
+                                    架构设计
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Agent-Native/">
+                        <span class="chip bg-color">Agent-Native</span>
+                    </a>
+                    
+                    <a href="/tags/DevOps/">
+                        <span class="chip bg-color">DevOps</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/">
+                        <span class="chip bg-color">架构设计</span>
+                    </a>
+                    
+                    <a href="/tags/AI%E6%95%88%E8%83%BD%E5%9F%BA%E5%BA%A7/">
+                        <span class="chip bg-color">AI效能基座</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%A0%94%E5%8F%91%E6%95%88%E8%83%BD/">
+                        <span class="chip bg-color">研发效能</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2026/08/10/post-saas-enterprise-self-healing-hub/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="Post-SaaS 终局：企业自愈中枢">
+                        
+                        <span class="card-title">Post-SaaS 终局：企业自愈中枢</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2026-08-10
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/" class="post-category">
+                                    架构设计
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Agent-Native/">
+                        <span class="chip bg-color">Agent-Native</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/">
+                        <span class="chip bg-color">架构设计</span>
+                    </a>
+                    
+                    <a href="/tags/Post-SaaS/">
+                        <span class="chip bg-color">Post-SaaS</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2021-2026</span>
+            
+            <a href="/about" target="_blank">shawn</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            
+            <br>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/haitau" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:shawn@191022.xyz" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+    
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

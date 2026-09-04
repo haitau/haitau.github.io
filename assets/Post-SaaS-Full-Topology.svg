@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="100%" height="100%" style="background-color:#F8FAFC;">
+  <style>
+    .diagram-title { font-family: system-ui, -apple-system, sans-serif; font-size: 20px; font-weight: 800; fill: #0F172A; text-anchor: middle; }
+    .layer-title { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; font-weight: 700; }
+    .node-dark { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 800; fill: #0F172A !important; text-anchor: middle; }
+    .node-light { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 800; fill: #FFFFFF !important; text-anchor: middle; }
+    .node-purple { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 800; fill: #6B21A8 !important; text-anchor: middle; }
+    .node-sub { font-family: system-ui, -apple-system, sans-serif; font-size: 10px; font-weight: 500; fill: #E2E8F0 !important; text-anchor: middle; }
+    .edge-label { font-family: system-ui, -apple-system, sans-serif; font-size: 11px; font-weight: 700; fill: #1E293B !important; text-anchor: middle; }
+  </style>
+
+  <text x="600" y="35" class="diagram-title">附录：Post-SaaS 全要素高清展开拓扑图 (全系统/全组件/数据本体完整闭环)</text>
+  <rect x="50" y="60" width="1100" height="150" rx="10" fill="#EEF2FF" stroke="#818CF8" stroke-width="2"/>
+  <text x="70" y="80" class="layer-title" fill="#1E1B4B">L1. Agentic Communication Shell Layer (端侧交互与语义终端)</text>
+  <g transform="translate(80, 95)">
+    <rect width="180" height="40" rx="6" fill="#312E81"/><text x="90" y="24" class="node-light">Voice / Audio Stream</text>
+    <rect x="200" width="200" height="40" rx="6" fill="#312E81"/><text x="300" y="24" class="node-light">Text / Semantic BI Query</text>
+    <rect x="420" width="310" height="40" rx="6" fill="#4338CA"/><text x="575" y="24" class="node-light">Agent Shell (统一交互终端)</text>
+    <rect x="750" width="290" height="40" rx="6" fill="#4F46E5"/><text x="895" y="24" class="node-light">Semantic Cache &amp; SLM (端侧算力)</text>
+    <rect y="50" width="1040" height="40" rx="6" fill="#6366F1"/><text x="520" y="74" class="node-light">Semantic BI &amp; Interaction Projection Renderer (交互投影 · 动态组件/卡片 · 即用即散)</text>
+  </g>
+
+  <rect x="50" y="235" width="1100" height="190" rx="10" fill="#FFFBEB" stroke="#FBBF24" stroke-width="2"/>
+  <text x="70" y="255" class="layer-title" fill="#451A03">L2. Reactive Agent Kernel &amp; Governance (编排、决策与强状态机闸口)</text>
+  <g transform="translate(80, 270)">
+    <rect width="260" height="45" rx="6" fill="#7C3AED"/><text x="130" y="27" class="node-light">Ontology Compiler (数据本体编译器)</text>
+    <rect x="280" width="340" height="45" rx="6" fill="#D97706"/><text x="450" y="27" class="node-light">Multi-Tier Decision Engine (多级决策)</text>
+    <rect x="640" width="400" height="45" rx="6" fill="#991B1B"/><text x="840" y="27" class="node-light">Strict FSM Gatekeeper (闸口 × 动作模板化 × 双签)</text>
+    
+    <rect y="55" width="360" height="45" rx="6" fill="#B45309"/><text x="180" y="82" class="node-light">Agent Personas (HR/SCM/PLM/MES Agents)</text>
+    <rect x="380" y="55" width="350" height="45" rx="6" fill="#F59E0B"/><text x="555" y="82" class="node-light">Hybrid Task Dispatcher (混合任务分发)</text>
+    <rect x="750" y="55" width="290" height="45" rx="6" fill="#065F46"/><text x="895" y="82" class="node-light">Dynamic Memory Graph (企业记忆图谱)</text>
+  </g>
+
+  <rect x="50" y="450" width="1100" height="150" rx="10" fill="#ECFDF5" stroke="#34D399" stroke-width="2"/>
+  <text x="70" y="470" class="layer-title" fill="#064E3B">L3. Dual-Mode MCP Protocol Mesh (协议寻址与代理网关)</text>
+  <g transform="translate(80, 485)">
+    <rect width="300" height="45" rx="6" fill="#065F46"/><text x="150" y="27" class="node-light">Resolver × Connector Gateway</text>
+    <rect x="320" width="360" height="45" rx="6" fill="#059669"/><text x="500" y="27" class="node-light">Ontology Data Broker (本体数据代理)</text>
+    <rect x="700" width="340" height="45" rx="6" fill="#10B981"/><text x="870" y="27" class="node-light">B2B Agent Mesh (跨企业对接)</text>
+    <rect y="55" width="1040" height="40" rx="6" fill="#047857"/><text x="520" y="80" class="node-light">Full Value-Chain MCP Servers (SCM / MES / PLM / ERP / Legal MCP Clusters)</text>
+  </g>
+
+  <rect x="50" y="625" width="1100" height="150" rx="10" fill="#FAF5FF" stroke="#6B21A8" stroke-width="2"/>
+  <text x="70" y="645" class="layer-title" fill="#581C87">L4. Unified Enterprise Data Ontology Fabric (企业数据本体物理大集合)</text>
+  <g transform="translate(80, 660)">
+    <rect width="280" height="60" rx="8" fill="#581C87"/><text x="140" y="28" class="node-light">Data CDC Stream Monitor</text><text x="140" y="46" class="node-sub">(数据变更/沟通流捕获)</text>
+    <rect x="300" width="460" height="60" rx="8" fill="#6B21A8"/><text x="530" y="26" class="node-light">Enterprise Data Ontology Fabric (数据本体大集合)</text><text x="530" y="46" class="node-sub">[ 哲学实体映射 + 全量业务数据 + 沟通流 + 历史行为 ]</text>
+    <rect x="780" width="260" height="60" rx="8" fill="#334155"/><text x="910" y="28" class="node-light">Immutable Audit Log</text><text x="910" y="46" class="node-sub">(只读不可篡改审计日志)</text>
+  </g>
+
+  <path d="M 600 210 L 600 235" stroke="#4338CA" stroke-width="3" fill="none"/>
+  <path d="M 600 425 L 600 450" stroke="#B45309" stroke-width="3" fill="none"/>
+  <path d="M 600 600 L 600 625" stroke="#6B21A8" stroke-width="3" fill="none"/>
+</svg>

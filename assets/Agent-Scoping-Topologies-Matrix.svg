@@ -1,0 +1,232 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="100%" height="100%">
+  <defs>
+    <filter id="soft-shadow" x="-8%" y="-8%" width="116%" height="116%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#0F172A" flood-opacity="0.06"/>
+    </filter>
+    <filter id="card-shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.04"/>
+    </filter>
+
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#F1F5F9"/>
+    </linearGradient>
+    <linearGradient id="g-pA" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284C7"/>
+      <stop offset="100%" stop-color="#0EA5E9"/>
+    </linearGradient>
+    <linearGradient id="g-pB" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4F46E5"/>
+      <stop offset="100%" stop-color="#6366F1"/>
+    </linearGradient>
+    <linearGradient id="g-pC" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7C3AED"/>
+      <stop offset="100%" stop-color="#9333EA"/>
+    </linearGradient>
+    <linearGradient id="g-pD" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="100%" height="100%" fill="url(#bg-grad)"/>
+  <rect x="25" y="25" width="1150" height="630" rx="16" fill="#FFFFFF" fill-opacity="0.7" stroke="#E2E8F0" stroke-width="1.5" filter="url(#soft-shadow)"/>
+
+  <!-- Title -->
+  <g transform="translate(60, 48)">
+    <rect x="0" y="0" width="6" height="26" rx="3" fill="#6366F1"/>
+    <text x="18" y="20" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif" font-size="18" font-weight="800" fill="#0F172A" letter-spacing="-0.5px">
+      图 2.1：多技术栈多 Git 场景下 AI Code Agent 四大上下文隔离范式对比
+    </text>
+    <rect x="910" y="2" width="170" height="22" rx="11" fill="#EEF2FF" stroke="#C7D2FE"/>
+    <text x="995" y="16" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#4338CA" text-anchor="middle">Four Scoping Paradigms</text>
+  </g>
+
+  <g transform="translate(60, 90)" filter="url(#card-shadow)">
+
+    <!-- Column 1: Paradigm A -->
+    <g transform="translate(0, 0)">
+      <rect width="255" height="540" rx="12" fill="#FFFFFF" stroke="#BAE6FD" stroke-width="1.5"/>
+      <path d="M 0 12 Q 0 0 12 0 L 243 0 Q 255 0 255 12 L 255 36 L 0 36 Z" fill="url(#g-pA)"/>
+      <text x="14" y="23" font-family="sans-serif" font-size="11.5" font-weight="700" fill="#FFFFFF">范式 A：物理隔离模式</text>
+
+      <g transform="translate(12, 46)">
+        <rect width="231" height="50" rx="6" fill="#0C4A6E"/>
+        <text x="115" y="20" font-family="sans-serif" font-size="9.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">Git 仓库 A (.ide/A)</text>
+        <text x="115" y="36" font-family="sans-serif" font-size="9.5" font-weight="700" fill="#7DD3FC" text-anchor="middle">Git 仓库 B (.ide/B)</text>
+
+        <!-- Tech -->
+        <g transform="translate(0, 58)">
+          <rect width="231" height="68" rx="6" fill="#F0F9FF" stroke="#BAE6FD"/>
+          <text x="10" y="18" font-family="sans-serif" font-size="10" font-weight="700" fill="#0369A1">【机制核心】</text>
+          <text x="10" y="34" font-family="sans-serif" font-size="9" font-weight="500" fill="#0284C7">每个 Git 仓库根目录独立装配专属</text>
+          <text x="10" y="48" font-family="sans-serif" font-size="9" font-weight="500" fill="#0284C7">配置目录 (.ide / .trae / .claude)。</text>
+        </g>
+
+        <!-- Pros -->
+        <g transform="translate(0, 134)">
+          <rect width="231" height="80" rx="6" fill="#ECFDF5" stroke="#A7F3D0"/>
+          <text x="10" y="18" font-family="sans-serif" font-size="10" font-weight="700" fill="#065F46">【核心优势】</text>
+          <text x="10" y="34" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• 100% 物理隔离，零上下文污染</text>
+          <text x="10" y="48" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• 兼容所有单项目 IDE (Cursor/Trae)</text>
+          <text x="10" y="62" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• 确定性极高，各仓独立运作</text>
+        </g>
+
+        <!-- Cons -->
+        <g transform="translate(0, 222)">
+          <rect width="231" height="68" rx="6" fill="#FFF1F2" stroke="#FECDD3"/>
+          <text x="10" y="18" font-family="sans-serif" font-size="10" font-weight="700" fill="#9F1239">【局限痛点】</text>
+          <text x="10" y="34" font-family="sans-serif" font-size="9" font-weight="500" fill="#881337">• 配置冗余，升级需逐仓同步</text>
+          <text x="10" y="48" font-family="sans-serif" font-size="9" font-weight="500" fill="#881337">• 跨仓协同难以在一个会话内完成</text>
+        </g>
+
+        <!-- Target -->
+        <g transform="translate(0, 298)">
+          <rect width="231" height="65" rx="6" fill="#F8FAFC" stroke="#E2E8F0"/>
+          <text x="10" y="18" font-family="sans-serif" font-size="10" font-weight="700" fill="#334155">【最佳适用】</text>
+          <text x="10" y="34" font-family="sans-serif" font-size="9" font-weight="500" fill="#64748B">单仓高强度深度编码、技术栈迥异</text>
+          <text x="10" y="48" font-family="sans-serif" font-size="9" font-weight="500" fill="#64748B">的独立开发团队。</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- Column 2: Paradigm B -->
+    <g transform="translate(275, 0)">
+      <rect width="255" height="540" rx="12" fill="#FFFFFF" stroke="#C7D2FE" stroke-width="1.5"/>
+      <path d="M 0 12 Q 0 0 12 0 L 243 0 Q 255 0 255 12 L 255 36 L 0 36 Z" fill="url(#g-pB)"/>
+      <text x="14" y="23" font-family="sans-serif" font-size="11.5" font-weight="700" fill="#FFFFFF">范式 B：逻辑作用域模式</text>
+
+      <g transform="translate(12, 46)">
+        <rect width="231" height="50" rx="6" fill="#312E81"/>
+        <text x="115" y="20" font-family="sans-serif" font-size="9.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">Top Workspace (Monorepo)</text>
+        <text x="115" y="36" font-family="sans-serif" font-size="9.5" font-weight="700" fill="#A5B4FC" text-anchor="middle">├─ pkg-A (rule) └─ pkg-B (skill)</text>
+
+        <!-- Tech -->
+        <g transform="translate(0, 58)">
+          <rect width="231" height="68" rx="6" fill="#EEF2FF" stroke="#C7D2FE"/>
+          <text x="10" y="18" font-family="sans-serif" font-size="10" font-weight="700" fill="#3730A3">【机制核心】</text>
+          <text x="10" y="34" font-family="sans-serif" font-size="9" font-weight="500" fill="#4338CA">单个全局 Workspace，依靠嵌套发现</text>
+          <text x="10" y="48" font-family="sans-serif" font-size="9" font-weight="500" fill="#4338CA">+ Path Glob 动态激活三要素。</text>
+        </g>
+
+        <!-- Pros -->
+        <g transform="translate(0, 134)">
+          <rect width="231" height="80" rx="6" fill="#ECFDF5" stroke="#A7F3D0"/>
+          <text x="10" y="18" font-family="sans-serif" font-size="10" font-weight="700" fill="#065F46">【核心优势】</text>
+          <text x="10" y="34" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• 零冗余，天然支持跨包代码跳转</text>
+          <text x="10" y="48" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• 按目录启动即精准聚焦上下文</text>
+          <text x="10" y="62" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• 动态挂载 Project-Scope MCP</text>
+        </g>
+
+        <!-- Cons -->
+        <g transform="translate(0, 222)">
+          <rect width="231" height="68" rx="6" fill="#FFF1F2" stroke="#FECDD3"/>
+          <text x="10" y="18" font-family="sans-serif" font-size="10" font-weight="700" fill="#9F1239">【局限痛点】</text>
+          <text x="10" y="34" font-family="sans-serif" font-size="9" font-weight="500" fill="#881337">• 强依赖 Agent 原生能力 (目前仅</text>
+          <text x="10" y="48" font-family="sans-serif" font-size="9" font-weight="500" fill="#881337">  Claude Code 支持完整，IDE 弱)</text>
+        </g>
+
+        <!-- Target -->
+        <g transform="translate(0, 298)">
+          <rect width="231" height="65" rx="6" fill="#F8FAFC" stroke="#E2E8F0"/>
+          <text x="10" y="18" font-family="sans-serif" font-size="10" font-weight="700" fill="#334155">【最佳适用】</text>
+          <text x="10" y="34" font-family="sans-serif" font-size="9" font-weight="500" fill="#64748B">Monorepo 大型代码库、Claude Code</text>
+          <text x="10" y="48" font-family="sans-serif" font-size="9" font-weight="500" fill="#64748B">CLI 深度使用者。</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- Column 3: Paradigm C -->
+    <g transform="translate(550, 0)">
+      <rect width="255" height="540" rx="12" fill="#FFFFFF" stroke="#E9D5FF" stroke-width="1.5"/>
+      <path d="M 0 12 Q 0 0 12 0 L 243 0 Q 255 0 255 12 L 255 36 L 0 36 Z" fill="url(#g-pC)"/>
+      <text x="14" y="23" font-family="sans-serif" font-size="11.5" font-weight="700" fill="#FFFFFF">范式 C：Meta-Repo 编排</text>
+
+      <g transform="translate(12, 46)">
+        <rect width="231" height="50" rx="6" fill="#581C87"/>
+        <text x="115" y="20" font-family="sans-serif" font-size="9.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">Meta-Repo 顶层路由</text>
+        <text x="115" y="36" font-family="sans-serif" font-size="9.5" font-weight="700" fill="#E9D5FF" text-anchor="middle">┌── Subagent A ── Subagent B ──┐</text>
+
+        <!-- Tech -->
+        <g transform="translate(0, 58)">
+          <rect width="231" height="68" rx="6" fill="#FAF5FF" stroke="#E9D5FF"/>
+          <text x="10" y="18" font-family="sans-serif" font-size="10" font-weight="700" fill="#6B21A8">【机制核心】</text>
+          <text x="10" y="34" font-family="sans-serif" font-size="9" font-weight="500" fill="#7E22CE">顶层建立元仓库，承载跨仓路由与</text>
+          <text x="10" y="48" font-family="sans-serif" font-size="9" font-weight="500" fill="#7E22CE">影响分析，分派 Subagent 执行。</text>
+        </g>
+
+        <!-- Pros -->
+        <g transform="translate(0, 134)">
+          <rect width="231" height="80" rx="6" fill="#ECFDF5" stroke="#A7F3D0"/>
+          <text x="10" y="18" font-family="sans-serif" font-size="10" font-weight="700" fill="#065F46">【核心优势】</text>
+          <text x="10" y="34" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• 兼顾上帝全局视角与子仓隔离</text>
+          <text x="10" y="48" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• 一次对话编排跨仓联调与发布</text>
+          <text x="10" y="62" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• 接口契约联动与自动化影响分析</text>
+        </g>
+
+        <!-- Cons -->
+        <g transform="translate(0, 222)">
+          <rect width="231" height="68" rx="6" fill="#FFF1F2" stroke="#FECDD3"/>
+          <text x="10" y="18" font-family="sans-serif" font-size="10" font-weight="700" fill="#9F1239">【局限痛点】</text>
+          <text x="10" y="34" font-family="sans-serif" font-size="9" font-weight="500" fill="#881337">• 增加一层编排元数据维护成本</text>
+          <text x="10" y="48" font-family="sans-serif" font-size="9" font-weight="500" fill="#881337">• 需要 Subagent 会话/进程隔离支持</text>
+        </g>
+
+        <!-- Target -->
+        <g transform="translate(0, 298)">
+          <rect width="231" height="65" rx="6" fill="#F8FAFC" stroke="#E2E8F0"/>
+          <text x="10" y="18" font-family="sans-serif" font-size="10" font-weight="700" fill="#334155">【最佳适用】</text>
+          <text x="10" y="34" font-family="sans-serif" font-size="9" font-weight="500" fill="#64748B">微服务多仓联调、全栈工程师跨</text>
+          <text x="10" y="48" font-family="sans-serif" font-size="9" font-weight="500" fill="#64748B">前后端代码库协同。</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- Column 4: Paradigm D -->
+    <g transform="translate(825, 0)">
+      <rect width="255" height="540" rx="12" fill="#FFFFFF" stroke="#A7F3D0" stroke-width="1.5"/>
+      <path d="M 0 12 Q 0 0 12 0 L 243 0 Q 255 0 255 12 L 255 36 L 0 36 Z" fill="url(#g-pD)"/>
+      <text x="14" y="23" font-family="sans-serif" font-size="11.5" font-weight="700" fill="#FFFFFF">范式 D：技术栈矩阵装配</text>
+
+      <g transform="translate(12, 46)">
+        <rect width="231" height="50" rx="6" fill="#065F46"/>
+        <text x="115" y="20" font-family="sans-serif" font-size="9.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">Common → Domain</text>
+        <text x="115" y="36" font-family="sans-serif" font-size="9.5" font-weight="700" fill="#A7F3D0" text-anchor="middle">↓ Role (Fullstack) → Stack</text>
+
+        <!-- Tech -->
+        <g transform="translate(0, 58)">
+          <rect width="231" height="68" rx="6" fill="#ECFDF5" stroke="#A7F3D0"/>
+          <text x="10" y="18" font-family="sans-serif" font-size="10" font-weight="700" fill="#065F46">【机制核心】</text>
+          <text x="10" y="34" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">脚手架引入第四层正交「技术栈</text>
+          <text x="10" y="48" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">维度」：Common→Dept→Role→Stack。</text>
+        </g>
+
+        <!-- Pros -->
+        <g transform="translate(0, 134)">
+          <rect width="231" height="80" rx="6" fill="#ECFDF5" stroke="#A7F3D0"/>
+          <text x="10" y="18" font-family="sans-serif" font-size="10" font-weight="700" fill="#065F46">【核心优势】</text>
+          <text x="10" y="34" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• 同一全栈角色按技术栈精准特化</text>
+          <text x="10" y="48" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• 自动嗅探语言并编译装配环境</text>
+          <text x="10" y="62" font-family="sans-serif" font-size="9" font-weight="500" fill="#047857">• 单一事实源，集中版本化分发</text>
+        </g>
+
+        <!-- Cons -->
+        <g transform="translate(0, 222)">
+          <rect width="231" height="68" rx="6" fill="#FFFBEB" stroke="#FDE68A"/>
+          <text x="10" y="18" font-family="sans-serif" font-size="10" font-weight="700" fill="#92400E">【局限痛点】</text>
+          <text x="10" y="34" font-family="sans-serif" font-size="9" font-weight="500" fill="#78350F">• 需要企业级脚手架编译流水线支撑</text>
+          <text x="10" y="48" font-family="sans-serif" font-size="9" font-weight="500" fill="#78350F">• 需维护技术栈注册表 stacks.yaml</text>
+        </g>
+
+        <!-- Target -->
+        <g transform="translate(0, 298)">
+          <rect width="231" height="65" rx="6" fill="#F8FAFC" stroke="#E2E8F0"/>
+          <text x="10" y="18" font-family="sans-serif" font-size="10" font-weight="700" fill="#334155">【最佳适用】</text>
+          <text x="10" y="34" font-family="sans-serif" font-size="9" font-weight="500" fill="#64748B">企业级多技术栈治理、全栈工程师</text>
+          <text x="10" y="48" font-family="sans-serif" font-size="9" font-weight="500" fill="#64748B">标准化 AI 工作台。</text>
+        </g>
+      </g>
+    </g>
+
+  </g>
+</svg>

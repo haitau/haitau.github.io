@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="1200" height="680">
+  <defs>
+    <filter id="soft-shadow" x="-8%" y="-8%" width="116%" height="116%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#0F172A" flood-opacity="0.06"/>
+    </filter>
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F8FAFC"/><stop offset="100%" stop-color="#F1F5F9"/>
+    </linearGradient>
+    <linearGradient id="h-com" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284C7"/><stop offset="100%" stop-color="#0EA5E9"/>
+    </linearGradient>
+    <linearGradient id="h-dom" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7C3AED"/><stop offset="100%" stop-color="#9333EA"/>
+    </linearGradient>
+    <linearGradient id="h-eng" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="680" fill="url(#bg-grad)"/>
+  <rect x="25" y="25" width="1150" height="630" rx="16" fill="#FFFFFF" fill-opacity="0.7" stroke="#E2E8F0" stroke-width="1.5" filter="url(#soft-shadow)"/>
+  <g transform="translate(60, 52)">
+    <rect x="0" y="0" width="6" height="26" rx="3" fill="#0284C7"/>
+    <text x="18" y="20" font-family="-apple-system,'PingFang SC',sans-serif" font-size="18" font-weight="800" fill="#0F172A">scaffold-core/ Directory Organization Model (DDD Three-Tier Isolation Topology)</text>
+  </g>
+  <g transform="translate(920, 52)">
+    <rect x="0" y="0" rx="12" width="215" height="26" fill="#E0F2FE" stroke="#BAE6FD"/>
+    <text x="107" y="18" text-anchor="middle" font-family="Menlo,Consolas,monospace" font-size="12" font-weight="700" fill="#0284C7">scaffold-core/</text>
+  </g>
+  <rect x="480" y="100" width="240" height="42" rx="10" fill="#0F172A" filter="url(#soft-shadow)"/>
+  <text x="600" y="127" text-anchor="middle" font-family="Menlo,Consolas,monospace" font-size="15" font-weight="700" fill="#FFFFFF">scaffold-core/</text>
+    <rect x="60" y="185" width="340" height="456" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+    <rect x="60" y="185" width="340" height="46" rx="12" fill="url(#h-com)"/>
+    <rect x="60" y="219" width="340" height="12" fill="url(#h-com)"/>
+    <text x="230.0" y="214" text-anchor="middle" font-family="-apple-system,sans-serif" font-size="14.5" font-weight="700" fill="#FFFFFF">1-common/ · Universal Baseline (Company-wide)</text>
+    <rect x="80" y="250" width="300" height="40" rx="8" fill="#0284C7" fill-opacity="0.06" stroke="#0284C7" stroke-opacity="0.25" stroke-width="1"/>
+    <text x="94" y="267" font-family="Menlo,Consolas,monospace" font-size="12.5" font-weight="600" fill="#0F172A">git/</text>
+    <text x="94" y="283" font-family="-apple-system,sans-serif" font-size="10.5" fill="#64748B">Global Gitignore templates &amp; basic configs</text>
+    <rect x="80" y="300" width="300" height="40" rx="8" fill="#0284C7" fill-opacity="0.06" stroke="#0284C7" stroke-opacity="0.25" stroke-width="1"/>
+    <text x="94" y="317" font-family="Menlo,Consolas,monospace" font-size="12.5" font-weight="600" fill="#0F172A">git-hooks/</text>
+    <text x="94" y="333" font-family="-apple-system,sans-serif" font-size="10.5" fill="#64748B">Unified Git Hooks scripts &amp; tool libraries</text>
+    <rect x="80" y="350" width="300" height="40" rx="8" fill="#0284C7" fill-opacity="0.06" stroke="#0284C7" stroke-opacity="0.25" stroke-width="1"/>
+    <text x="94" y="367" font-family="Menlo,Consolas,monospace" font-size="12.5" font-weight="600" fill="#0F172A">mcp/</text>
+    <text x="94" y="383" font-family="-apple-system,sans-serif" font-size="10.5" fill="#64748B">Enterprise baseline MCP service configs</text>
+    <rect x="80" y="400" width="300" height="40" rx="8" fill="#0284C7" fill-opacity="0.06" stroke="#0284C7" stroke-opacity="0.25" stroke-width="1"/>
+    <text x="94" y="417" font-family="Menlo,Consolas,monospace" font-size="12.5" font-weight="600" fill="#0F172A">rules/</text>
+    <text x="94" y="433" font-family="-apple-system,sans-serif" font-size="10.5" fill="#64748B">Company-wide collaboration baseline &amp; discipline</text>
+    <rect x="80" y="450" width="300" height="40" rx="8" fill="#0284C7" fill-opacity="0.06" stroke="#0284C7" stroke-opacity="0.25" stroke-width="1"/>
+    <text x="94" y="467" font-family="Menlo,Consolas,monospace" font-size="12.5" font-weight="600" fill="#0F172A">skills/</text>
+    <text x="94" y="483" font-family="-apple-system,sans-serif" font-size="10.5" fill="#64748B">Universal foundational skills</text>
+    <rect x="430" y="185" width="400" height="456" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+    <rect x="430" y="185" width="400" height="46" rx="12" fill="url(#h-dom)"/>
+    <rect x="430" y="219" width="400" height="12" fill="url(#h-dom)"/>
+    <text x="630.0" y="214" text-anchor="middle" font-family="-apple-system,sans-serif" font-size="14.5" font-weight="700" fill="#FFFFFF">2-domains/ · Business Domain / Stack Layer</text>
+    <rect x="450" y="250" width="360" height="40" rx="8" fill="#7C3AED" fill-opacity="0.06" stroke="#7C3AED" stroke-opacity="0.25" stroke-width="1"/>
+    <text x="464" y="267" font-family="Menlo,Consolas,monospace" font-size="12.5" font-weight="600" fill="#0F172A">core-platform/</text>
+    <text x="464" y="283" font-family="-apple-system,sans-serif" font-size="10.5" fill="#64748B">Core platform domain</text>
+    <rect x="470" y="310" width="340" height="40" rx="8" fill="#A78BFA" fill-opacity="0.06" stroke="#A78BFA" stroke-opacity="0.25" stroke-width="1"/>
+    <text x="484" y="327" font-family="Menlo,Consolas,monospace" font-size="12.5" font-weight="600" fill="#0F172A">git/</text>
+    <text x="484" y="343" font-family="-apple-system,sans-serif" font-size="10.5" fill="#64748B">Stack Ignore rules</text>
+    <rect x="470" y="350" width="340" height="40" rx="8" fill="#A78BFA" fill-opacity="0.06" stroke="#A78BFA" stroke-opacity="0.25" stroke-width="1"/>
+    <text x="484" y="367" font-family="Menlo,Consolas,monospace" font-size="12.5" font-weight="600" fill="#0F172A">mcp/</text>
+    <text x="484" y="383" font-family="-apple-system,sans-serif" font-size="10.5" fill="#64748B">Domain-specific MCP</text>
+    <rect x="470" y="390" width="340" height="40" rx="8" fill="#A78BFA" fill-opacity="0.06" stroke="#A78BFA" stroke-opacity="0.25" stroke-width="1"/>
+    <text x="484" y="407" font-family="Menlo,Consolas,monospace" font-size="12.5" font-weight="600" fill="#0F172A">skills/</text>
+    <text x="484" y="423" font-family="-apple-system,sans-serif" font-size="10.5" fill="#64748B">Domain skills (task synergy / domain review)</text>
+    <rect x="470" y="430" width="340" height="40" rx="8" fill="#A78BFA" fill-opacity="0.06" stroke="#A78BFA" stroke-opacity="0.25" stroke-width="1"/>
+    <text x="484" y="447" font-family="Menlo,Consolas,monospace" font-size="12.5" font-weight="600" fill="#0F172A">skills-registry.yaml</text>
+    <text x="484" y="463" font-family="-apple-system,sans-serif" font-size="10.5" fill="#64748B">Domain admission registry (allow / deny lists)</text>
+    <rect x="470" y="474" width="340" height="104" rx="8" fill="#7C3AED" fill-opacity="0.06" stroke="#7C3AED" stroke-opacity="0.25" stroke-width="1"/>
+    <text x="484" y="498" font-family="Menlo,Consolas,monospace" font-size="12.5" font-weight="600" fill="#0F172A">roles/</text>
+    <text x="540" y="498" font-family="-apple-system,sans-serif" font-size="10.5" fill="#64748B">Fine-grained role profiles</text>
+    <rect x="490" y="516" rx="6" width="155" height="26" fill="#7C3AED" fill-opacity="0.1"/>
+    <text x="500" y="534" font-family="Menlo,Consolas,monospace" font-size="10.5" fill="#5B21B6">backend-java/  Java Backend</text>
+    <rect x="655" y="516" rx="6" width="155" height="26" fill="#7C3AED" fill-opacity="0.1"/>
+    <text x="665" y="534" font-family="Menlo,Consolas,monospace" font-size="10.5" fill="#5B21B6">frontend-vue/  Frontend</text>
+    <rect x="490" y="548" rx="6" width="155" height="26" fill="#7C3AED" fill-opacity="0.1"/>
+    <text x="500" y="566" font-family="Menlo,Consolas,monospace" font-size="10.5" fill="#5B21B6">product-mgr/  Product Mgr</text>
+    <rect x="655" y="548" rx="6" width="155" height="26" fill="#7C3AED" fill-opacity="0.1"/>
+    <text x="665" y="566" font-family="Menlo,Consolas,monospace" font-size="10.5" fill="#5B21B6">qa-engineer/  QA Engineer</text>
+    <rect x="450" y="588" width="360" height="40" rx="8" fill="#7C3AED" fill-opacity="0.06" stroke="#7C3AED" stroke-opacity="0.25" stroke-width="1"/>
+    <text x="464" y="605" font-family="Menlo,Consolas,monospace" font-size="12.5" font-weight="600" fill="#0F172A">ai-research/ · iot-embedded/</text>
+    <text x="464" y="621" font-family="-apple-system,sans-serif" font-size="10.5" fill="#64748B">AI algorithm domain (MLflow / data versioning) · IoT / embedded domain</text>
+    <rect x="860" y="185" width="280" height="456" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+    <rect x="860" y="185" width="280" height="46" rx="12" fill="url(#h-eng)"/>
+    <rect x="860" y="219" width="280" height="12" fill="url(#h-eng)"/>
+    <text x="1000.0" y="214" text-anchor="middle" font-family="-apple-system,sans-serif" font-size="14.5" font-weight="700" fill="#FFFFFF">engine/ · Compile &amp; Assembly Engine</text>
+    <rect x="880" y="250" width="240" height="40" rx="8" fill="#059669" fill-opacity="0.06" stroke="#059669" stroke-opacity="0.25" stroke-width="1"/>
+    <text x="894" y="267" font-family="-apple-system,sans-serif" font-size="12.5" font-weight="600" fill="#0F172A">CLI Runtime</text>
+    <text x="894" y="283" font-family="-apple-system,sans-serif" font-size="10.5" fill="#64748B">Scaffold compilation entry</text>
+    <rect x="880" y="310" width="240" height="40" rx="8" fill="#059669" fill-opacity="0.06" stroke="#059669" stroke-opacity="0.25" stroke-width="1"/>
+    <text x="894" y="327" font-family="-apple-system,sans-serif" font-size="12.5" font-weight="600" fill="#0F172A">Multi-strategy</text>
+    <text x="894" y="343" font-family="-apple-system,sans-serif" font-size="10.5" fill="#64748B">Differentiated asset merging</text>
+    <rect x="880" y="370" width="240" height="40" rx="8" fill="#059669" fill-opacity="0.06" stroke="#059669" stroke-opacity="0.25" stroke-width="1"/>
+    <text x="894" y="387" font-family="-apple-system,sans-serif" font-size="12.5" font-weight="600" fill="#0F172A">Declarative</text>
+    <text x="894" y="403" font-family="-apple-system,sans-serif" font-size="10.5" fill="#64748B">Declarative admission control</text>
+    <rect x="880" y="430" width="240" height="40" rx="8" fill="#059669" fill-opacity="0.06" stroke="#059669" stroke-opacity="0.25" stroke-width="1"/>
+    <text x="894" y="447" font-family="-apple-system,sans-serif" font-size="12.5" font-weight="600" fill="#0F172A">Stack Dimension</text>
+    <text x="894" y="463" font-family="-apple-system,sans-serif" font-size="10.5" fill="#64748B">Orthogonal stack-dimension extension</text>
+  <path d="M 600 142 V 160 H 230 V 185" stroke="#94A3B8" stroke-width="1.8" fill="none"/>
+  <path d="M 600 142 V 185" stroke="#94A3B8" stroke-width="1.8" fill="none"/>
+  <path d="M 600 142 V 160 H 1000 V 185" stroke="#94A3B8" stroke-width="1.8" fill="none"/>
+</svg>

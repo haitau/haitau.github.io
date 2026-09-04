@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="100%" height="100%" style="background-color:#F8FAFC;">
+  <style>
+    .diagram-title { font-family: system-ui, -apple-system, sans-serif; font-size: 20px; font-weight: 800; fill: #0F172A; text-anchor: middle; }
+    .layer-title { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; font-weight: 700; }
+    .node-dark { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 800; fill: #0F172A !important; text-anchor: middle; }
+    .node-light { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 800; fill: #FFFFFF !important; text-anchor: middle; }
+    .node-purple { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 800; fill: #6B21A8 !important; text-anchor: middle; }
+    .node-sub { font-family: system-ui, -apple-system, sans-serif; font-size: 10px; font-weight: 500; fill: #E2E8F0 !important; text-anchor: middle; }
+    .edge-label { font-family: system-ui, -apple-system, sans-serif; font-size: 11px; font-weight: 700; fill: #1E293B !important; text-anchor: middle; }
+  </style>
+
+  <text x="600" y="40" class="diagram-title">Figure 2.4: Deep Dive C — Dynamic MCP Resolver (Vector Search × Connector Gateway Two-Stage)</text>
+
+  <!-- Left: Task Context -->
+  <g transform="translate(100, 270)">
+    <rect width="220" height="80" rx="8" fill="#B45309" stroke="#92400E"/>
+    <text x="110" y="45" class="node-light">Task Context Window</text>
+  </g>
+
+  <!-- Mid Top: Top-N Dimensionality-Reduced Tools -->
+  <g transform="translate(440, 100)">
+    <rect width="320" height="70" rx="8" fill="#059669" stroke="#047857"/>
+    <text x="160" y="30" class="node-light">Top-N Scoped Toolset</text>
+    <text x="160" y="50" class="node-sub">(On-demand mount · ephemeral)</text>
+  </g>
+
+  <!-- Mid Center: Dynamic MCP Resolver -->
+  <g transform="translate(440, 270)">
+    <rect width="320" height="80" rx="8" fill="#065F46" stroke="#047857"/>
+    <text x="160" y="35" class="node-light">Dynamic MCP Resolver</text>
+    <text x="160" y="55" class="node-sub">(Vector semantic search · Resolves "Which tools")</text>
+  </g>
+
+  <!-- Mid Bottom: Connector Gateway -->
+  <g transform="translate(440, 440)">
+    <rect width="320" height="90" rx="8" fill="#047857" stroke="#065F46"/>
+    <text x="160" y="32" class="node-light">Connector Gateway</text>
+    <text x="160" y="52" class="node-sub">(Unified connector layer · OpenConnector proof)</text>
+    <text x="160" y="70" class="node-sub">(Resolves "Can it connect")</text>
+  </g>
+
+  <!-- Right: Tool Pool -->
+  <g transform="translate(880, 430)">
+    <rect width="220" height="110" rx="8" fill="#0F172A" stroke="#020617"/>
+    <text x="110" y="42" class="node-light">SaaS &amp; System Tool Pool</text>
+    <text x="110" y="64" class="node-sub">(1,000+ Providers</text>
+    <text x="110" y="82" class="node-sub">10,000+ Actions)</text>
+  </g>
+
+  <!-- Connectors -->
+  <path d="M 320 310 L 440 310" stroke="#B45309" stroke-width="3" fill="none" marker-end="url(#ar3)"/>
+  <text x="380" y="298" class="edge-label">1. Vector Search</text>
+
+  <path d="M 600 350 L 600 440" stroke="#065F46" stroke-width="3" fill="none" marker-end="url(#ar3)"/>
+  <text x="720" y="398" class="edge-label">2. Catalog Discovery &amp; Expose</text>
+
+  <path d="M 760 485 L 880 485" stroke="#047857" stroke-width="3" fill="none" marker-end="url(#ar3)"/>
+  <text x="820" y="473" class="edge-label">Unified Ingest</text>
+
+  <path d="M 600 270 L 600 170" stroke="#059669" stroke-width="3" fill="none" marker-end="url(#ar3)"/>
+  <text x="710" y="220" class="edge-label">3. Mount Top-N Tools</text>
+
+  <defs><marker id="ar3" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#065F46"/></marker></defs>
+</svg>
