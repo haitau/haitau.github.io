@@ -1,3 +1,4 @@
+https://blog.191022.xyz/news/2026-09-10/index.html
 https://blog.191022.xyz/news/2026-09-09/index.html
 https://blog.191022.xyz/news/2026-09-08/index.html
 https://blog.191022.xyz/news/2026-09-07/index.html
@@ -5,11 +6,10 @@ https://blog.191022.xyz/news/2026-09-06/index.html
 https://blog.191022.xyz/news/2026-09-05/index.html
 https://blog.191022.xyz/news/2026-09-04/index.html
 https://blog.191022.xyz/news/index.html
-https://blog.191022.xyz/tags/index.html
 https://blog.191022.xyz/tag/index.html
+https://blog.191022.xyz/tags/index.html
 https://blog.191022.xyz/news/2026-09-03/index.html
 https://blog.191022.xyz/categories/index.html
-https://blog.191022.xyz/news/2026-09-02/index.html
 https://blog.191022.xyz/2026/08/10/post-saas-enterprise-self-healing-hub/
 https://blog.191022.xyz/about/index.html
 https://blog.191022.xyz/2026/08/11/enterprise-ai-scaffold-architecture.en/
