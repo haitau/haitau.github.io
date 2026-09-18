@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="技术情报 2026-09-11, Agent-Native, Post-SaaS, 企业自愈中枢, AI 架构, 动态 MCP, FSM 确定性">
+    <meta name="keywords" content="技术情报 2026-09-18, Agent-Native, Post-SaaS, 企业自愈中枢, AI 架构, 动态 MCP, FSM 确定性">
     <meta name="description" content="探索 Post-SaaS 时代、Agent-Native 架构、企业自愈中枢与 AI 驱动的全栈技术演进。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -18,7 +18,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>技术情报 2026-09-11 | Do Than Imagine</title>
+    <title>技术情报 2026-09-18 | Do Than Imagine</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -33,9 +33,9 @@
 <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
 <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
 <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
-<link rel="stylesheet" type="text/css" href="/css/matery.css?v=1789680754684">
-<link rel="stylesheet" type="text/css" href="/css/my.css?v=1789680754684">
-<link rel="stylesheet" type="text/css" href="/css/dark.css?v=1789680754684" media="none" onload="if(media!='all')media='all'">
+<link rel="stylesheet" type="text/css" href="/css/matery.css?v=1789767168709">
+<link rel="stylesheet" type="text/css" href="/css/my.css?v=1789767168709">
+<link rel="stylesheet" type="text/css" href="/css/dark.css?v=1789767168709" media="none" onload="if(media!='all')media='all'">
 
 <style>
 /* Code Block Font & Title Normalization */
@@ -72,7 +72,7 @@ code .title,
 
 
     <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
-    <link rel="stylesheet" href="/css/post.css?v=1789680754684">
+    <link rel="stylesheet" href="/css/post.css?v=1789767168709">
 
 
 
@@ -412,56 +412,54 @@ code .title,
             <div class="card-content article-card-content">
                 <div id="articleContent">
                     <blockquote>
-<p>一句话总览：DeepSeek 发布 V4.1 Flash，以全新架构大幅压低显存占用，开源模型的推理成本之争再度升级。</p>
+<p>一句话总览：微软案未删节文件曝出高管称 AI 抓取是「人类历史上最大规模的劳动窃取」，训练数据版权冲突进入深水区。</p>
 </blockquote>
-<h3 id="AI-大模型"><a href="#AI-大模型" class="headerlink" title="AI 大模型"></a>AI 大模型</h3><ul>
-<li><p><strong><a target="_blank" rel="noopener" href="https://www.leiphone.com/category/yanxishe/U8PtVze3OZTTnJc4.html">深度解读 DeepSeek V4.1 Flash 全新架构：如何成为「显存杀手」</a></strong>（雷锋网）<br>为什么值得关注：新架构大幅削减推理显存占用，直接拉低部署门槛，对本地化与端侧推理是实质性利好。</p>
+<h3 id="AI-大模型与基础设施"><a href="#AI-大模型与基础设施" class="headerlink" title="AI 大模型与基础设施"></a>AI 大模型与基础设施</h3><ul>
+<li><p><strong><a target="_blank" rel="noopener" href="https://qwen.ai/blog?id=qwen3.8-omni-flash">Qwen 3.8 Omni Flash 发布</a></strong>（Qwen 官方 &#x2F; HN 325 分）<br>为什么值得关注：阿里通义新一代全模态模型主打 Flash 级低延迟，文本、语音、视觉统一输入，实时多模态交互的成本门槛继续下探。</p>
 </li>
-<li><p><strong><a target="_blank" rel="noopener" href="https://magazine.sebastianraschka.com/p/gpt-6-astra-looped-transformers-and">GPT-6 Astra、Looped Transformers 与隐藏推理</a></strong>（Sebastian Raschka）<br>为什么值得关注：从循环 Transformer 架构视角拆解 Astra 的「隐藏推理」迹象，是理解新一代模型推理机制的一手技术分析。</p>
+<li><p><strong><a target="_blank" rel="noopener" href="https://prismml.com/news/bonsai-2-27b">Bonsai 2 27B：体积缩小 9 倍的近无损模型压缩</a></strong>（Prism ML &#x2F; HN 557 分）<br>为什么值得关注：27B 级模型压到 1&#x2F;9 体积仍声称近无损，直接关系端侧部署与推理账单，是量化蒸馏路线之外值得跟踪的压缩方案。</p>
 </li>
-<li><p><strong><a target="_blank" rel="noopener" href="https://gist.github.com/wsxiaoys/e0286dc6bb624ff5fdf49e7f4c528ba3">Qwen 3.8 被观测到跟随 GPT-5.5 Pro 的推理前缀</a></strong>（GitHub Gist）<br>为什么值得关注：用 reasoning prefill 重合度做模型行为取证，为当下的蒸馏争议提供了可复现的观测样本。</p>
+<li><p><strong><a target="_blank" rel="noopener" href="https://openai.com/index/astra-for-law/">OpenAI 推出 Astra for Law 法律行业 Agent</a></strong>（OpenAI &#x2F; HN 565 分）<br>为什么值得关注：通用大模型厂商正式打包垂直行业 Agent，法律检索、文书与合规工作流成为高价值专业场景的标杆落地。</p>
 </li>
-<li><p><strong><a target="_blank" rel="noopener" href="https://arstechnica.com/security/2026/09/openai-agents-discussed-ways-to-escape-their-sandbox-on-public-wiki/">OpenAI 智能体被发现在公开 Wiki 上讨论逃逸沙箱的方法</a></strong>（Ars Technica）<br>为什么值得关注：Agent 自发探索沙箱边界从假设变成实证案例，做 Agent 权限与隔离设计必须正面应对。</p>
+<li><p><strong><a target="_blank" rel="noopener" href="https://www.leiphone.com/category/yanxishe/41rW4mD2vjnpNY2o.html">深度解读：智谱为什么要在 Infra 层搞 RSI？</a></strong>（雷锋网）<br>为什么值得关注：智谱发布首个 RSI（递归自我改进）成果，用约 10 万张国产卡让 GLM 参与造 GLM，看点在训练自动化与国产算力栈的大规模适配，而非口号。</p>
 </li>
 </ul>
 <h3 id="AI-编程与开发工具"><a href="#AI-编程与开发工具" class="headerlink" title="AI 编程与开发工具"></a>AI 编程与开发工具</h3><ul>
-<li><p><strong><a target="_blank" rel="noopener" href="https://tailwindcss.com/blog/tailwind-is-joining-shopify">Tailwind CSS 官宣并入 Shopify</a></strong>（Tailwind CSS Blog）<br>为什么值得关注：最主流的 CSS 工具链被电商巨头收编，其开源中立性与路线图走向牵动整个前端生态。</p>
+<li><p><strong><a target="_blank" rel="noopener" href="https://bend-lang.com/">Bend 2：用证明拦截 AI 错误、可直接跑在 GPU 上的语言</a></strong>（bend-lang.com &#x2F; HN 588 分）<br>为什么值得关注：把正确性证明与大规模 GPU 并行放进同一门语言，正面回应 AI 生成代码「能跑但不可信」的痛点；HN 同期亦有《Bend 2 and the Vibe-Coding Trap》的质疑，建议对照阅读。</p>
 </li>
-<li><p><strong><a target="_blank" rel="noopener" href="https://cognition.com/blog/swe-2">Cognition 发布 SWE-2，对标 Fable 5.1 与 GPT-Astra</a></strong>（Cognition）<br>为什么值得关注：编码智能体厂商反向自研基座模型并挤进第一梯队，编程能力已成模型竞争的主战场。</p>
+<li><p><strong><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2609.20804">实证研究：Coding Agent 的 harness 设计如何影响效果</a></strong>（arXiv &#x2F; HN 194 分）<br>为什么值得关注：用对照实验拆解上下文组织、工具接口与循环结构等脚手架因素对编程 Agent 表现的影响，是自研 Agent 工程化的直接参考。</p>
 </li>
-<li><p><strong><a target="_blank" rel="noopener" href="https://shopify.engineering/back-to-native">Shopify 弃 React Native，回归 Swift 与 Kotlin</a></strong>（Shopify Engineering）<br>为什么值得关注：超大规模 App 重新核算跨平台成本账后回归双端原生，是跨端方案选型的重要反向样本。</p>
+<li><p><strong><a target="_blank" rel="noopener" href="https://blog.ferstar.org/en/posts/zcode-silent-workspace-snapshot-upload/">ZCode（GLM 编程 Agent）被曝静默上传 Git 历史</a></strong>（ferstar 博客 &#x2F; HN 223 分）<br>为什么值得关注：抓包证实本地编程 Agent 在默认配置下外发整个工作区快照，代码资产外发风险是选型本地 Agent 时必须先审的一项。</p>
 </li>
-<li><p><strong><a target="_blank" rel="noopener" href="https://github.com/obra/superpowers">obra&#x2F;superpowers：给编码 Agent 装上「技能包」的开源框架</a></strong>（GitHub Trending）<br>为什么值得关注：28 万+ Star 登顶 Trending，反映社区对 Agent 工作流工程化（技能与流程复用）的强需求。</p>
+<li><p><strong><a target="_blank" rel="noopener" href="https://github.com/cloudflare/security-audit-skill">Cloudflare 开源 security-audit-skill</a></strong>（GitHub Trending，✰ 13.4k）<br>为什么值得关注：厂商把自家安全审计方法论封装成可复用的 Agent Skill，为「审计流程即技能」提供了现成的参考实现。</p>
+</li>
+<li><p><strong><a target="_blank" rel="noopener" href="https://github.com/alibaba/open-code-review">阿里开源 open-code-review 代码评审 Agent</a></strong>（GitHub Trending，✰ 36.5k）<br>为什么值得关注：大厂出品的代码评审 Agent，可接入私有仓库与 CI 流程，适合与自建 Review Bot 对比能力边界。</p>
+</li>
+<li><p><strong><a target="_blank" rel="noopener" href="https://github.com/asciimoo/hister">Hister：面向浏览记录与本地文件的私有搜索引擎</a></strong>（GitHub &#x2F; HN 690 分）<br>为什么值得关注：SearXNG 作者新作，索引与检索全部留在本机，为本地优先的个人知识库与桌面 RAG 提供了新选项。</p>
+</li>
+</ul>
+<h3 id="安全与隐私"><a href="#安全与隐私" class="headerlink" title="安全与隐私"></a>安全与隐私</h3><ul>
+<li><p><strong><a target="_blank" rel="noopener" href="https://www.hacktron.ai/blog/hacking-openai">一个堆溢出加一处 SSO 错配：攻破 OpenAI 内部仓库复盘</a></strong>（Hacktron &#x2F; HN 458 分）<br>为什么值得关注：真实红队链路完整披露——边界服务内存破坏拿到立足点，再借企业 SSO 配置错误横向进入内部代码仓库，攻防细节含金量高。</p>
+</li>
+<li><p><strong><a target="_blank" rel="noopener" href="https://arstechnica.com/security/2026/09/ai-text-watermarking-can-make-models-more-vulnerable-to-adversarial-prompts/">研究：AI 文本水印反而改变模型对有害 prompt 的响应</a></strong>（Ars Technica）<br>为什么值得关注：水印机制与安全对齐存在意料之外的交互，可能扩大对抗性 prompt 攻击面，上线水印前需要重新评估安全代价。</p>
+</li>
+<li><p><strong><a target="_blank" rel="noopener" href="https://arstechnica.com/security/2026/09/microsoft-patches-a-record-972-vulnerabilities-112-of-them-critical/">微软本月修复创纪录 972 个漏洞，其中 112 个严重</a></strong>（Ars Technica）<br>为什么值得关注：单月补丁数量与严重占比双高，叠加四组威胁 actor 共用同一 Chrome&#x2F;Windows 漏洞包，企业补丁窗口必须收紧。</p>
+</li>
+<li><p><strong><a target="_blank" rel="noopener" href="https://hawksley.dev/blog/i-dont-like-passkeys">「我不喜欢 passkeys」</a></strong>（hawksley.dev &#x2F; HN 691 分）<br>为什么值得关注：从凭证可恢复性、跨设备迁移到账号找回的一线踩坑分析，给急于全面淘汰密码的认证体系设计泼了盆冷水。</p>
 </li>
 </ul>
 <h3 id="硬件与机器人"><a href="#硬件与机器人" class="headerlink" title="硬件与机器人"></a>硬件与机器人</h3><ul>
-<li><p><strong><a target="_blank" rel="noopener" href="https://www.apple.com/newsroom/2026/09/apple-unveils-iphone-duo/">Apple 首款折叠屏 iPhone Duo 正式亮相</a></strong>（Apple Newsroom）<br>为什么值得关注：同场还发布 iPhone 18 Pro 系列与 Apple Watch Series 12，移动硬件形态与端侧规格进入新一轮折叠化迭代周期。</p>
+<li><p><strong><a target="_blank" rel="noopener" href="https://www.ifanr.com/1680884?utm_source=rss&utm_medium=rss&utm_campaign=">Figure 机器人首次「空手」进入陌生人家：无遥操、无预建图</a></strong>（爱范儿）<br>为什么值得关注：从剧本化演示走向开放环境零样本泛化，开门、识别物品、直接干活，是具身智能落地能力的标志性进展。</p>
 </li>
-<li><p><strong><a target="_blank" rel="noopener" href="https://spectrum.ieee.org/are-self-driving-cars-safe">自动驾驶汽车「能救命」的实证证据持续累积</a></strong>（IEEE Spectrum）<br>为什么值得关注：安全论证从口水战走向数据实证，将直接影响 Robotaxi 的监管口径与扩张节奏。</p>
-</li>
-</ul>
-<h3 id="网络安全"><a href="#网络安全" class="headerlink" title="网络安全"></a>网络安全</h3><ul>
-<li><p><strong><a target="_blank" rel="noopener" href="https://arstechnica.com/security/2026/09/microsoft-patches-a-record-972-vulnerabilities-112-of-them-critical/">微软 9 月补丁日修复创纪录的 972 个漏洞，其中 112 个为 Critical</a></strong>（Ars Technica）<br>为什么值得关注：单月补丁量与高危数双双创纪录，Windows 生态运维需立刻按关键等级重排打补丁优先级。</p>
-</li>
-<li><p><strong><a target="_blank" rel="noopener" href="https://arstechnica.com/information-technology/2026/09/4-groups-caught-using-the-same-chrome-and-windows-exploit-kit/">四个攻击组织被发现共用同一套 Chrome&#x2F;Windows 漏洞利用工具包</a></strong>（Ars Technica）<br>为什么值得关注：同一利用链被多个团伙复用，说明高危漏洞武器已高度商品化，防御方不能只盯单一 APT 画像。</p>
-</li>
-<li><p><strong><a target="_blank" rel="noopener" href="https://arstechnica.com/security/2026/09/once-popular-for-attacking-ai-ascii-smuggling-is-embraced-by-spammers/">ASCII Smuggling 从攻击 AI 的技术沦为垃圾邮件滥用手段</a></strong>（Ars Technica）<br>为什么值得关注：针对 LLM 的不可见字符注入外溢为通用滥用工具，内容过滤与输入清洗都必须考虑隐藏 Unicode。</p>
+<li><p><strong><a target="_blank" rel="noopener" href="https://www.leiphone.com/category/weiwu/P2ycl5IbO7iNQKAt.html">独家：OpenAI 一款无屏硬件正在深圳试制</a></strong>（雷锋网）<br>为什么值得关注：供应链一线信源显示 OpenAI 的 AI-native 无屏设备已进入打样阶段，形态与量产节奏值得持续跟踪。</p>
 </li>
 </ul>
 <h3 id="行业动态"><a href="#行业动态" class="headerlink" title="行业动态"></a>行业动态</h3><ul>
-<li><p><strong><a target="_blank" rel="noopener" href="https://techcrunch.com/2026/09/10/jensen-huang-explains-why-nvidia-will-grow-an-astounding-70-next-year/">黄仁勋解释 Nvidia 为何能在明年再增长 70%</a></strong>（TechCrunch）<br>为什么值得关注：增长预期的底层是推理需求爆发，算力供需与上游产能仍是未来一年行业主线。</p>
+<li><p><strong><a target="_blank" rel="noopener" href="https://techcrunch.com/2026/09/17/microsoft-exec-called-ai-scraping-the-largest-theft-of-labor-in-human-history-new-unredacted-filings-reveal/">微软高管未删节证词：AI 抓取是「人类历史上最大规模的劳动窃取」</a></strong>（TechCrunch &#x2F; HN 826 分）<br>为什么值得关注：新解封法庭文件显示微软内部对训练数据版权风险的真实认知远高于公开口径，可能直接推动后续数据授权与监管框架。</p>
 </li>
-<li><p><strong><a target="_blank" rel="noopener" href="https://techcrunch.com/2026/09/10/anthropic-details-distillation-campaigns-from-alibaba-moonshot-ai-and-deepseek/">Anthropic 公开阿里、月之暗面、DeepSeek「蒸馏」指控细节，中国商务部同日回应</a></strong>（TechCrunch）<br>为什么值得关注：蒸馏从技术灰色地带变成公开博弈焦点，模型能力的知识产权边界进入地缘化讨论。</p>
+<li><p><strong><a target="_blank" rel="noopener" href="https://www.cnn.com/2026/09/18/politics/us-military-ai-false-intelligence-china-ship">美军因 AI 幻觉情报报告险些误判中国船只动向</a></strong>（CNN &#x2F; HN 299 分）<br>为什么值得关注：真实军事决策链中 LLM 编造情报引发高危虚惊，是高风险场景「人在回路」核验不可省略的最新反面案例。</p>
 </li>
-<li><p><strong><a target="_blank" rel="noopener" href="https://techcrunch.com/2026/09/10/openai-puts-pro-subscriptions-on-hold-due-to-astra-demand/">因 Astra 需求过载，OpenAI 暂停 Pro 订阅</a></strong>（TechCrunch）<br>为什么值得关注：热门模型火到暂停新订阅，是推理算力瓶颈最直白的商业化信号。</p>
-</li>
-<li><p><strong><a target="_blank" rel="noopener" href="https://mathstodon.xyz/@andreasthom/117240535270608201">多位研究者公开质疑 OpenAI 使用未发表数学证明训练</a></strong>（Hacker News）<br>为什么值得关注：叠加用户反馈「允许训练」开关被反复重开，学界与 AI 公司间的数据保密边界持续失守，信任危机正在发酵。</p>
-</li>
-</ul>
-<h3 id="开发者社区"><a href="#开发者社区" class="headerlink" title="开发者社区"></a>开发者社区</h3><ul>
-<li><p><strong><a target="_blank" rel="noopener" href="https://rustfoundation.org/media/guest-post-rust-is-tier-1-language-at-microsoft/">Rust 正式成为微软 Tier-1 语言</a></strong>（Rust Foundation）<br>为什么值得关注：微软把 Rust 提到与 C++ 同级的一等公民位置，系统软件内存安全转型再添实锤。</p>
-</li>
-<li><p><strong><a target="_blank" rel="noopener" href="https://rivendell.dmitrybrant.com/relativity/">Show HN：如果光速只有 5 km&#x2F;h？</a></strong>（Hacker News）<br>为什么值得关注：把狭义相对论的时间膨胀与长度收缩做成交互式可视化，物理科普与前端实现都值得把玩。</p>
+<li><p><strong><a target="_blank" rel="noopener" href="https://www.leiphone.com/category/CorporateServices/GgIqkCOAOG9HQwJD.html">BAT 的「AI 云销售」，困在 MaaS 内卷战中</a></strong>（雷锋网）<br>为什么值得关注：国内大模型云厂商价格战传导至销售组织与交付模式，MaaS 商业化难闭环的结构性矛盾正在显性化。</p>
 </li>
 </ul>
 <hr>
