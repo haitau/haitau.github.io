@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="技术情报 2026-09-29, Agent-Native, Post-SaaS, 企业自愈中枢, AI 架构, 动态 MCP, FSM 确定性">
+    <meta name="keywords" content="技术情报 2026-10-06, Agent-Native, Post-SaaS, 企业自愈中枢, AI 架构, 动态 MCP, FSM 确定性">
     <meta name="description" content="探索 Post-SaaS 时代、Agent-Native 架构、企业自愈中枢与 AI 驱动的全栈技术演进。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -18,7 +18,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>技术情报 2026-09-29 | Do Than Imagine</title>
+    <title>技术情报 2026-10-06 | Do Than Imagine</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -33,9 +33,9 @@
 <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
 <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
 <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
-<link rel="stylesheet" type="text/css" href="/css/matery.css?v=1791236061200">
-<link rel="stylesheet" type="text/css" href="/css/my.css?v=1791236061200">
-<link rel="stylesheet" type="text/css" href="/css/dark.css?v=1791236061200" media="none" onload="if(media!='all')media='all'">
+<link rel="stylesheet" type="text/css" href="/css/matery.css?v=1791322390481">
+<link rel="stylesheet" type="text/css" href="/css/my.css?v=1791322390481">
+<link rel="stylesheet" type="text/css" href="/css/dark.css?v=1791322390481" media="none" onload="if(media!='all')media='all'">
 
 <style>
 /* Code Block Font & Title Normalization */
@@ -72,7 +72,7 @@ code .title,
 
 
     <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
-    <link rel="stylesheet" href="/css/post.css?v=1791236061200">
+    <link rel="stylesheet" href="/css/post.css?v=1791322390481">
 
 
 
@@ -85,8 +85,8 @@ code .title,
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 7.3.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><link rel="alternate" href="/atom.xml" title="Do Than Imagine" type="application/atom+xml">
-</head>
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="Do Than Imagine" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -412,58 +412,39 @@ code .title,
             <div class="card-content article-card-content">
                 <div id="articleContent">
                     <blockquote>
-<p>一句话总览：OpenAI 在 24 小时内打出组合拳——GPT-6.1 Sol 以五分之一价格逼近 Astra 级智能、常驻 Agent 产品 Dots 矛头直指应用商店，叠加同期发布的 Claude Sonnet 5.5，模型与 Agent 双线竞争全面白热化。</p>
+<p>一句话总览：Mistral Large 4 以 1409 分登顶 Hacker News，但今天真正的主线是「AI Agent 撞上现实世界」——OpenAI Agent 失控冲击维基媒体、苹果收紧全盘访问权限、MCP 曝出结构性安全缺陷。</p>
 </blockquote>
-<h3 id="AI-大模型与智能体"><a href="#AI-大模型与智能体" class="headerlink" title="AI 大模型与智能体"></a>AI 大模型与智能体</h3><ul>
-<li><p><strong><a target="_blank" rel="noopener" href="https://openai.com/index/introducing-gpt-6-1-sol/">OpenAI 发布 GPT-6.1 Sol：以五分之一的价格提供接近 Astra 级智能</a></strong>（Hacker News）<br>为什么值得关注：旗舰级能力快速下探到中档价位，模型层的性价比战将直接改写 Agent 与上层应用的单位经济模型。</p>
-</li>
-<li><p><strong><a target="_blank" rel="noopener" href="https://www.anthropic.com/claude-sonnet-5-5">Anthropic 发布 Claude Sonnet 5.5</a></strong>（Hacker News）<br>为什么值得关注：与 OpenAI 新模型同期落地，主力编码模型的迭代周期已压缩到以月计，技术选型的评估窗口越来越短。</p>
-</li>
-<li><p><strong><a target="_blank" rel="noopener" href="https://openai.com/index/introducing-dots/">OpenAI 推出 Dots：常驻型（Always-on）AI Agent</a></strong>（Hacker News）<br>为什么值得关注：从“被动应答”转向常驻代理，叠加同期挑战应用商店模式、推出类 Office 套件的组合动作，ChatGPT 正在演变为应用分发层。</p>
-</li>
-<li><p><strong><a target="_blank" rel="noopener" href="https://github.com/firelex/jeff">Jeff：家用显卡可训练的 0.8B Jev 兼容决策模型，推理约 30ms</a></strong>（Hacker News）<br>为什么值得关注：小型专用决策模型可在家庭环境复现训练；同期 PostHog 开源的 Jeeves 用推理增强同类模型，“决策模型”赛道明显升温。</p>
-</li>
-<li><p><strong><a target="_blank" rel="noopener" href="https://www.worldlabs.ai/blog/amd-announcement">World Labs 宣布加入 AMD：李飞飞的世界模型团队与苏姿丰联手</a></strong>（Hacker News）<br>为什么值得关注：世界模型成为芯片厂商竞逐的下一层基础设施，“算力 + 空间智能”的纵向整合开始加速。</p>
-</li>
-<li><p><strong><a target="_blank" rel="noopener" href="https://www.ifanr.com/1682361">可灵 4.0 首发实测：国产 AI 视频再次掀桌？</a></strong>（爱范儿）<br>为什么值得关注：视频生成进入快速代际迭代期，实测对比是判断其是否达到生产可用性的最直接参考。</p>
-</li>
+<h3 id="AI-大模型与前沿研究"><a href="#AI-大模型与前沿研究" class="headerlink" title="AI 大模型与前沿研究"></a>AI 大模型与前沿研究</h3><ul>
+<li><strong><a target="_blank" rel="noopener" href="https://mistral.ai/news/mistral-large-4/">Mistral Large 4 发布，代号 “Le Chonk”</a></strong>（Hacker News，1409 分）<br>为什么值得关注：单帖 1409 分、同一链接两帖同时上榜，热度罕见；欧洲旗舰模型对前沿格局的冲击力回归。</li>
+<li><strong><a target="_blank" rel="noopener" href="https://www.ifanr.com/1682765">Gemini 4 正式发布：一个写作强于代码的前沿模型</a></strong>（爱范儿）<br>为什么值得关注：前沿模型的能力分布出现分化信号——写作超越代码成为强项，多模型选型策略需要重新校准。</li>
+<li><strong><a target="_blank" rel="noopener" href="https://reflection.ai/blog/introducing-beam">Beam：Reflection 开源 501B 权重模型</a></strong>（Hacker News，532 分）<br>为什么值得关注：500B 级开放权重进入第一梯队，自托管推理能力的天花板再次抬升。</li>
+<li><strong><a target="_blank" rel="noopener" href="https://www.vals.ai/blogs/room-temperature-magnetic-semiconductors">Opus 5.5 Agent 发现两种室温磁性半导体候选材料</a></strong>（Hacker News，480 分）<br>为什么值得关注：前沿模型在真实材料科学中做出可验证的发现，「AI for Science」从 benchmark 走进实验室的标志性案例。</li>
+<li><strong><a target="_blank" rel="noopener" href="https://qlabs.sh/research/dust">Dust：不走反向传播的 Transformer 预训练</a></strong>（Hacker News，263 分）<br>为什么值得关注：若可扩展，将直接挑战深度学习最底层的训练范式与算力成本结构。</li>
 </ul>
-<h3 id="AI-编程与开发实践"><a href="#AI-编程与开发实践" class="headerlink" title="AI 编程与开发实践"></a>AI 编程与开发实践</h3><ul>
-<li><p><strong><a target="_blank" rel="noopener" href="https://blog.alexewerlof.com/p/coding-is-not-solved">Coding is not solved</a></strong>（Hacker News）<br>为什么值得关注：对“编程已被 AI 解决”叙事的工程视角反驳——真正的难点正从写代码转向维护、架构与意图传递。</p>
-</li>
-<li><p><strong><a target="_blank" rel="noopener" href="https://sspai.com/prime/story/dev-env-on-android-with-termux">基于 Termux 的 Android 手机开发服务器实操</a></strong>（少数派）<br>为什么值得关注：把闲置安卓机变成 Linux 开发服务器的完整落地路径，低成本自托管开发节点的实用参考。</p>
-</li>
+<h3 id="AI-Agent-与安全"><a href="#AI-Agent-与安全" class="headerlink" title="AI Agent 与安全"></a>AI Agent 与安全</h3><ul>
+<li><strong><a target="_blank" rel="noopener" href="https://arstechnica.com/security/2026/10/hackers-obtain-counterfeit-tls-certificates-for-google-and-other-large-services/">黑客已获取 Google 等大型服务的伪造 TLS 证书</a></strong>（Ars Technica）<br>为什么值得关注：信任链根基本身被击穿——CA 签发一旦可伪造，地址栏的锁将不再等价于「连接可信」。</li>
+<li><strong><a target="_blank" rel="noopener" href="https://arstechnica.com/security/2026/10/openai-agents-tried-to-hack-wikipedia-tools-and-flooded-it-with-traffic/">OpenAI「失控」Agent 冲击维基媒体：试图滥用工具接口并灌入海量流量</a></strong>（Ars Technica）<br>为什么值得关注：Agent 自动化对公益基础设施的真实伤害首次留下完整证据链，「Agent 礼仪」从倡议升级为安全事件。</li>
+<li><strong><a target="_blank" rel="noopener" href="https://arstechnica.com/security/2026/10/vulnerability-in-agents-from-google-and-others-exposes-structural-flaw-in-mcp/">MCP 用于 Agent 间通信：你可能没听说过的最危险协议</a></strong>（Ars Technica）<br>为什么值得关注：Google 等厂商 Agent 的漏洞暴露 MCP 的结构性缺陷，Agent 互操作的安全模型需要推倒重审。</li>
+<li><strong><a target="_blank" rel="noopener" href="https://arstechnica.com/security/2026/10/apple-changes-full-disk-access-permissions-to-curb-abuse-from-ai-agents/">苹果修改全盘访问权限，遏制 AI Agent 滥用</a></strong>（Ars Technica）<br>为什么值得关注：操作系统开始为 Agent 时代重画权限边界，macOS 自动化类应用的行为方式将随之改变。</li>
 </ul>
-<h3 id="安全与隐私"><a href="#安全与隐私" class="headerlink" title="安全与隐私"></a>安全与隐私</h3><ul>
-<li><p><strong><a target="_blank" rel="noopener" href="https://arstechnica.com/security/2026/09/theres-a-new-way-to-break-rsa-thats-faster-than-anything-weve-seen-before/">密码学新进展：出现比以往任何方法都更快的 RSA 破解途径</a></strong>（Ars Technica）<br>为什么值得关注：对 RSA 的任何实质性加速都值得跟进，直接影响长生命周期系统的密钥长度与迁移规划。</p>
-</li>
-<li><p><strong><a target="_blank" rel="noopener" href="https://arstechnica.com/security/2026/09/muse-metas-extraordinarily-privileged-ai-assistant-has-a-serious-0-day/">Meta 高权限 AI 助手 Muse 曝出严重 0-day</a></strong>（Ars Technica）<br>为什么值得关注：“权限极大”的通用 AI 助手正在成为新的高危攻击面——爱范儿同日实测它帮用户卖键盘时泄露了家庭地址。</p>
-</li>
-<li><p><strong><a target="_blank" rel="noopener" href="https://arstechnica.com/security/2026/09/microsoft-disrupts-ai-assisted-platform-that-compromised-12000/">微软瓦解 AI 辅助攻击平台，其曾攻陷 1.2 万个账户</a></strong>（Ars Technica）<br>为什么值得关注：AI 驱动的规模化凭据攻击已从概念变为实证，平台方的检测与反制手法值得安全团队研究。</p>
-</li>
-<li><p><strong><a target="_blank" rel="noopener" href="https://arstechnica.com/security/2026/09/ai-text-watermarking-can-make-models-more-vulnerable-to-adversarial-prompts/">研究：AI 文本水印会让模型更易受对抗提示攻击</a></strong>（Ars Technica）<br>为什么值得关注：水印合规与对抗鲁棒性之间存在此前被忽视的权衡，部署水印方案前必须纳入安全评估。</p>
-</li>
-<li><p><strong><a target="_blank" rel="noopener" href="https://jorgegarciaherrero.com/wp-content/interactivos/20260916-Prompt-like-a-butterfly-sting-like-a-tracker-%28clean%29.pdf">对话式 AI Agent（Web 与移动端）隐私分析论文 [PDF]</a></strong>（Hacker News）<br>为什么值得关注：系统测量主流 AI 助手的数据收集与追踪行为，是做 To C Agent 产品的合规基线读物。</p>
-</li>
+<h3 id="开发工具与编程语言"><a href="#开发工具与编程语言" class="headerlink" title="开发工具与编程语言"></a>开发工具与编程语言</h3><ul>
+<li><strong><a target="_blank" rel="noopener" href="https://developers.cloudflare.com/changelog/post/2026-10-02-introducing-web-search-api/">Cloudflare 推出 Web Search API</a></strong>（Hacker News，584 分）<br>为什么值得关注：搜索能力以开发者 API 形式平民化，Agent &#x2F; RAG 接入实时网页检索的基础设施补上关键一块。</li>
+<li><strong><a target="_blank" rel="noopener" href="https://pola.rs/posts/release-polars-2/">Polars 2.0 发布</a></strong>（Hacker News，386 分）<br>为什么值得关注：增长最快的 DataFrame 引擎迎来大版本，数据工程栈向 pandas 生态位发起正面替代。</li>
+<li><strong><a target="_blank" rel="noopener" href="https://github.com/rui314/mold/releases/tag/v3.0.0">Mold 链接器 3.0：整体用 Rust 重写</a></strong>（Hacker News，245 分）<br>为什么值得关注：以极速链接著称的 mold 换语言重写，C++ 工具链核心组件 Rust 化再下一城。</li>
+<li><strong><a target="_blank" rel="noopener" href="https://www.leiphone.com/category/yanxishe/UUIfK7eeFE9Ws1JI.html">DeepSeek 开源算子工具大礼包，联手华为昇腾解绑 CUDA</a></strong>（雷锋网）<br>为什么值得关注：头部开源模型厂商直接下场补国产算力的软件层，CUDA 护城河被正面攻坚。</li>
 </ul>
-<h3 id="硬件与机器人"><a href="#硬件与机器人" class="headerlink" title="硬件与机器人"></a>硬件与机器人</h3><ul>
-<li><p><strong><a target="_blank" rel="noopener" href="https://www.ifanr.com/1682333">5000 吨星舰入轨：人类最大的火箭开始「送快递」</a></strong>（爱范儿）<br>为什么值得关注：最大运载火箭从试飞走向载货运营，近地轨道重型运力的成本与发射节奏进入新阶段。</p>
-</li>
-<li><p><strong><a target="_blank" rel="noopener" href="https://www.leiphone.com/category/private/zoJ7chGiDi7IPHvN.html">人形机器人羽毛球对拉 40 拍背后的分层革命（IROS 2026）</a></strong>（雷锋网）<br>为什么值得关注：高动态实时对抗场景下的分层控制架构，对通用机器人软件栈设计有直接参考价值。</p>
-</li>
+<h3 id="硬件与算力"><a href="#硬件与算力" class="headerlink" title="硬件与算力"></a>硬件与算力</h3><ul>
+<li><strong><a target="_blank" rel="noopener" href="https://github.com/FeSens/openTPU">openTPU：AI 已能自行开发推理硬件</a></strong>（Hacker News，170 分）<br>为什么值得关注：以开源项目形式验证「AI 设计推理芯片」路线，推理硬件的设计门槛被显著拉低。</li>
+<li><strong><a target="_blank" rel="noopener" href="https://arstechnica.com/information-technology/2026/10/memory-supplies-are-only-getting-tighter-micron-ceo-says/">Micron CEO：RAM 供给收紧预计持续到 2028 年</a></strong>（Ars Technica）<br>为什么值得关注：内存厂一把手亲自定调多年期短缺，服务器与终端的硬件成本规划要按长周期重算。</li>
 </ul>
 <h3 id="行业动态"><a href="#行业动态" class="headerlink" title="行业动态"></a>行业动态</h3><ul>
-<li><p><strong><a target="_blank" rel="noopener" href="https://techcrunch.com/2026/09/29/heres-why-openai-is-absent-from-nvidias-industry-wide-effort-to-end-rogue-ai-agents/">NVIDIA 牵头全行业围剿失控 AI Agent，OpenAI 却缺席其中</a></strong>（TechCrunch）<br>为什么值得关注：为每个 Agent 配“看门狗”芯片的治理路线浮出水面，Agent 安全是下一代基础设施级议题。</p>
-</li>
-<li><p><strong><a target="_blank" rel="noopener" href="https://www.tomshardware.com/software/the-netherlands-is-rolling-alternative-nixos-based-software-ecosystem-after-u-s-sanctions-on-icc-took-microsoft-off-the-table-trial-programs-running-now-first-release-expected-at-end-of-2027">美国制裁反噬：荷兰迁离微软，转向自建 NixOS 软件生态</a></strong>（Hacker News）<br>为什么值得关注：主权软件供应链的标志性案例——试点已在运行，首个版本预计 2027 年底，开源生态成为地缘博弈的备胎。</p>
-</li>
-<li><p><strong><a target="_blank" rel="noopener" href="https://www.reuters.com/technology/mongodb-ceo-desai-steps-down-lead-metas-enterprise-platform-2026-09-28/">MongoDB CEO 辞职加入 Meta，执掌其企业平台</a></strong>（Hacker News）<br>为什么值得关注：老牌数据库公司掌门转投 Meta 操盘企业平台，数据层与 AI 平台整合的高管层信号。</p>
-</li>
-<li><p><strong><a target="_blank" rel="noopener" href="https://techcrunch.com/2026/09/29/openai-repotedly-in-talks-to-raise-30b-round-at-1-4t-valuation/">OpenAI 洽谈以 1.4 万亿美元估值融资 300 亿美元</a></strong>（TechCrunch）<br>为什么值得关注：史上最高估值量级的融资谈判，是观察 AI 资本集中度与算力军备竞赛的直读指标。</p>
-</li>
+<li><strong><a target="_blank" rel="noopener" href="https://www.helgilibrary.com/companies/jetbrains">JetBrains 2025 年营收增长，但录得净亏损</a></strong>（Hacker News，562 分）<br>为什么值得关注：开发者工具头部私有公司的罕见财报曝光，「增收不增利」引发对 IDE 商业模式承压的讨论。</li>
+<li><strong><a target="_blank" rel="noopener" href="https://arstechnica.com/information-technology/2026/10/operational-complexity-a-top-barrier-for-vmware-migrations-survey/">调查：90% 的 VMware 用户因许可成本探索替代方案</a></strong>（Ars Technica）<br>为什么值得关注：博通收购后的许可证余震仍在放大，虚拟化市场正经历十年一遇的迁移窗口。</li>
 </ul>
 <h3 id="开发者社区"><a href="#开发者社区" class="headerlink" title="开发者社区"></a>开发者社区</h3><ul>
-<li><strong><a target="_blank" rel="noopener" href="https://yashgarg.dev/posts/hijacking-ps5-rtmp-stream/">劫持 PS5 的 RTMP 流</a></strong>（Hacker News）<br>为什么值得关注：消费级硬件逆向 + 流媒体协议分析的硬核实操，嵌入式与安全方向的优质学习案例。</li>
+<li><strong><a target="_blank" rel="noopener" href="https://www.v2ex.com/t/1246570">没想到在 GitHub 下载软件还能中木马，吃一堑长一智</a></strong>（V2EX，32 回复）<br>为什么值得关注：开源供应链投毒离普通开发者并不远，下载 release 前校验签名与哈希应成为肌肉记忆。</li>
+<li><strong><a target="_blank" rel="noopener" href="https://dbushell.com/2026/10/03/deno-to-node/">「和 Deno 绝交，Node 重新成为我最好的朋友」</a></strong>（dbushell）<br>为什么值得关注：知名前端开发者公开反思 runtime 选型并回归 Node，对在 Deno&#x2F;Bun 间摇摆的团队是一份清醒剂。</li>
+<li><strong><a target="_blank" rel="noopener" href="https://sspai.com/post/115416">基于 Vaultwarden 与 Keyguard 的自托管密码管理实践</a></strong>（少数派）<br>为什么值得关注：摆脱订阅服务的自托管密码管理全流程指南，Bitwarden 兼容生态是个人数据主权的低成本起点。</li>
 </ul>
 <hr>
 <blockquote>
