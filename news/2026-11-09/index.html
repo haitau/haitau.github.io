@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="技术情报 2026-11-01, Agent-Native, Post-SaaS, 企业自愈中枢, AI 架构, 动态 MCP, FSM 确定性">
+    <meta name="keywords" content="技术情报 2026-11-09, Agent-Native, Post-SaaS, 企业自愈中枢, AI 架构, 动态 MCP, FSM 确定性">
     <meta name="description" content="探索 Post-SaaS 时代、Agent-Native 架构、企业自愈中枢与 AI 驱动的全栈技术演进。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -18,7 +18,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>技术情报 2026-11-01 | Do Than Imagine</title>
+    <title>技术情报 2026-11-09 | Do Than Imagine</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -33,9 +33,9 @@
 <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
 <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
 <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
-<link rel="stylesheet" type="text/css" href="/css/matery.css?v=1794087143308">
-<link rel="stylesheet" type="text/css" href="/css/my.css?v=1794087143308">
-<link rel="stylesheet" type="text/css" href="/css/dark.css?v=1794087143308" media="none" onload="if(media!='all')media='all'">
+<link rel="stylesheet" type="text/css" href="/css/matery.css?v=1794259976285">
+<link rel="stylesheet" type="text/css" href="/css/my.css?v=1794259976285">
+<link rel="stylesheet" type="text/css" href="/css/dark.css?v=1794259976285" media="none" onload="if(media!='all')media='all'">
 
 <style>
 /* Code Block Font & Title Normalization */
@@ -72,7 +72,7 @@ code .title,
 
 
     <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
-    <link rel="stylesheet" href="/css/post.css?v=1794087143308">
+    <link rel="stylesheet" href="/css/post.css?v=1794259976285">
 
 
 
@@ -412,37 +412,39 @@ code .title,
             <div class="card-content article-card-content">
                 <div id="articleContent">
                     <blockquote>
-<p>一句话总览：Cursor 上的 Anthropic 官方扩展遭供应链投毒近 12 小时，叠加 Linux 内核 TCP UAF（CVSS 9.8）、UEFI 固件漏洞与 PHP 紧急补丁预警，今天是开发者集中打补丁的一天。</p>
+<p>一句话总览：Anthropic 在 RSI 安全争议中双发 Claude Fable 5.2 &#x2F; Mythos 5.2，同日高盛从交易终端撤下 Claude Code、“Opus 5.5 降智”质疑发酵——模型能力之外的“信任与治理”成为今天 AI 圈的主线。</p>
 </blockquote>
-<h3 id="安全与漏洞"><a href="#安全与漏洞" class="headerlink" title="安全与漏洞"></a>安全与漏洞</h3><ul>
-<li><strong><a target="_blank" rel="noopener" href="https://arstechnica.com/security/2026/10/anthropic-vs-code-extension-on-cursor-backdoored-for-nearly-12-hours/">Cursor 上的 Anthropic VS Code 扩展被植入后门近 12 小时</a></strong>（Ars Technica）<br>为什么值得关注：供应链攻击打到 AI 编程工具的官方分发渠道，受影响窗口内的凭证与代码都可能外泄，需立即核对扩展版本与更新来源。</li>
-<li><strong><a target="_blank" rel="noopener" href="https://atlasum.net/blog/cve-2026-98432-linux-ipv4-tcp-uaf">Linux 内核 TCP Use-After-Free 漏洞 CVE-2026-98432（CVSS 9.8）</a></strong>（Hacker News）<br>为什么值得关注：IPv4&#x2F;TCP 路径的内核级 UAF，触发面覆盖几乎所有 Linux 服务器，内核升级应列入最高优先级。</li>
-<li><strong><a target="_blank" rel="noopener" href="https://arstechnica.com/security/2026/10/code-execution-flaw-in-uefi-firmware-threatens-most-servers-on-planet-earth/">影响全球大多数服务器的 UEFI 固件代码执行漏洞</a></strong>（Ars Technica）<br>为什么值得关注：漏洞驻留在操作系统之下的固件层，常规重装无效，云厂商与自建机房都需确认固件升级计划。</li>
-<li><strong><a target="_blank" rel="noopener" href="https://arstechnica.com/security/2026/10/php-maintainers-tell-web-devs-to-prepare-themselves-for-critical-security-patches/">PHP 预告即将发布两个紧急安全补丁</a></strong>（Ars Technica）<br>为什么值得关注：官方罕见提前吹风，大概率是可被主动利用的高危漏洞，Web 运维应预留紧急升级窗口。</li>
-<li><strong><a target="_blank" rel="noopener" href="https://arstechnica.com/security/2026/10/the-internet-goes-on-high-alert-after-discovery-of-8-compromised-tls-certs/">eMudhra 证书私钥风波发酵：8 张受损 TLS 证书引发全网警戒</a></strong>（Ars Technica）<br>为什么值得关注：CA 私钥被直接动用意味着信任链失守，eMudhra 已退出 TLS 业务，企业需排查自家证书的签发链。</li>
-<li><strong><a target="_blank" rel="noopener" href="https://arstechnica.com/information-technology/2026/10/300-tor-exit-nodes-hijacked-to-intercept-ssh-traffic-and-retrieve-plaintext-email/">333 个 Tor 出口节点被劫持，拦截 SSH 流量与明文邮件</a></strong>（Ars Technica）<br>为什么值得关注：出口节点中间人规模化实战，经 Tor 的 SSH&#x2F;SMTP 若非全程加密认证等于裸奔。</li>
-<li><strong><a target="_blank" rel="noopener" href="https://blog.talosintelligence.com/appraisal-by-ai-model-driven-victim-prioritization-in-the-volta-infostealer/">Volta 窃密木马用 LLM 给受害者“估值排序”</a></strong>（Cisco Talos）<br>为什么值得关注：攻击链开始用模型批量评估受害者价值来分配资源，AI 驱动攻击从概念变成流水线。</li>
-<li><strong><a target="_blank" rel="noopener" href="https://www.parameter.ai/labs/we-found-a-gap-at-openai">Do the math：我们是这样接管 ChatGPT 账户的</a></strong>（Hacker News）<br>为什么值得关注：账号恢复&#x2F;验证流程的逻辑缺口即可导致完整账户接管，做账号系统的人值得通读这篇复盘。</li>
-</ul>
 <h3 id="AI-大模型"><a href="#AI-大模型" class="headerlink" title="AI 大模型"></a>AI 大模型</h3><ul>
-<li><strong><a target="_blank" rel="noopener" href="https://www.ifanr.com/1687026">DeepSeek 发布全新 Agent 架构：AI 开始指挥 AI 干活</a></strong>（爱范儿）<br>为什么值得关注：从单轮对话走向多 Agent 编排与任务分派，开源阵营在 Agent 基础设施层继续加码。</li>
-<li><strong><a target="_blank" rel="noopener" href="https://www.leiphone.com/category/industrynews/es0ZV9LsDEsG7QLE.html">阿里巴巴与 Apple 达成合作：千问集成至国行 Apple 智能</a></strong>（雷锋网）<br>为什么值得关注：国行 iPhone 的 AI 技术路线正式落定，Qwen 系列借此进入十亿级设备入口。</li>
-<li><strong><a target="_blank" rel="noopener" href="https://www.leiphone.com/category/industrynews/MK1z0js4sqcp1xca.html">Pika 开源 H3 Flex：基于 MiniMax H3 实现音视频联合生成</a></strong>（雷锋网）<br>为什么值得关注：开源了六步走完的音视频联合生成管线，视听同步生成的工程路径可直接复用。</li>
-<li><strong><a target="_blank" rel="noopener" href="https://github.com/guregodevo/memdoor/tree/main/examples/workflows/team-solve">Memdoor：5 个 Qwen3.8-27B 组队在 LiveCodeBench Hard 上超越 Fable 5</a></strong>（Hacker News）<br>为什么值得关注：小模型多智能体协作的工程编排跑赢旗舰单模型，是“模型规模 vs 系统编排”的有力数据点。</li>
+<li><strong><a target="_blank" rel="noopener" href="https://www.anthropic.com/claude-fable-and-mythos-5-2">Anthropic 发布 Claude Fable 5.2 与 Mythos 5.2</a></strong>（Anthropic 官方，via Hacker News）<br>为什么值得关注：双旗舰同发且正值 RSI（递归自我改进）安全争议，公告原文是判断新模型能力边界与安全立场的第一手材料。</li>
+<li><strong><a target="_blank" rel="noopener" href="https://twitter.com/shanemelaugh/status/2119192075505893695">Opus 5.5 被“降智”实锤？11 月 3 日起思维模式悄然改变</a></strong>（Hacker News）<br>为什么值得关注：社区实测显示思维链行为突变，模型静默更新已是生产环境必须纳入评估的系统性风险。</li>
+<li><strong><a target="_blank" rel="noopener" href="https://techcrunch.com/2026/11/09/meta-releases-muse-ember-a-new-lightweight-model-for-agent-execution/">Meta 发布 Muse Ember：专为 Agent 执行打造的轻量模型</a></strong>（TechCrunch）<br>为什么值得关注：把执行层从旗舰模型剥离、用轻量模型承担高频低成本调用，Agent 成本结构的关键分工正在成型。</li>
+<li><strong><a target="_blank" rel="noopener" href="https://github.com/synchopate/llama-modchip">Llama-modchip：64GB 内存、零 GPU 跑起 284B DeepSeek</a></strong>（GitHub，via Hacker News）<br>为什么值得关注：纯 CPU&#x2F;内存推理两千亿级参数模型的工程实现，本地部署玩家不可错过的硬核参考。</li>
 </ul>
 <h3 id="AI-编程与开发工具"><a href="#AI-编程与开发工具" class="headerlink" title="AI 编程与开发工具"></a>AI 编程与开发工具</h3><ul>
-<li><strong><a target="_blank" rel="noopener" href="https://help.openai.com/en/articles/20001625-understanding-chatgpt-and-codex-usage-limits">ChatGPT 与 Codex 用量额度正式合并</a></strong>（OpenAI 官方文档）<br>为什么值得关注：对话与编程两个产品共享同一额度池，重度依赖 Codex 的开发者需要重新核算自己的配额策略。</li>
-<li><strong><a target="_blank" rel="noopener" href="https://nolanlawson.com/2026/10/28/the-ai-cost-of-javascript-frameworks/">The AI Cost of JavaScript Frameworks</a></strong>（Nolan Lawson）<br>为什么值得关注：框架抽象不仅影响人类上手曲线，也直接决定 AI 读写代码的质量与成本，技术选型多了一个硬指标。</li>
-<li><strong><a target="_blank" rel="noopener" href="https://github.com/thedotmack/claude-mem">claude-mem：Claude Code 跨会话记忆插件登 GitHub Trending 榜首</a></strong>（GitHub）<br>为什么值得关注：给 Coding Agent 加持久记忆层正在成为标配需求，其记忆压缩与召回实现值得参考。</li>
+<li><strong><a target="_blank" rel="noopener" href="https://www.thestateofai.com/news/goldman-sachs-claude-code-traders-bankers">高盛从银行家与交易员处撤下 Claude Code</a></strong>（The State of AI，via Hacker News）<br>为什么值得关注：从全员推广到紧急撤回，金融机构对 AI 编码工具的风险定价转向，是企业采用曲线的重要拐点信号。</li>
+<li><strong><a target="_blank" rel="noopener" href="https://github.com/anthropics/skills">anthropics&#x2F;skills：Anthropic 官方 Agent Skills 仓库</a></strong>（GitHub Trending，✰ 190.8k）<br>为什么值得关注：Skills 已成 Agent 能力封装的事实标准，官方仓库是编写生产级技能的最权威范式。</li>
+<li><strong><a target="_blank" rel="noopener" href="https://github.com/vercel-labs/agent-browser">vercel-labs&#x2F;agent-browser：为 Agent 设计的浏览器运行时</a></strong>（GitHub Trending，✰ 48.4k）<br>为什么值得关注：把浏览器操作抽象成 Agent 友好接口，Web Agent 基础设施的又一块关键拼图。</li>
+<li><strong><a target="_blank" rel="noopener" href="https://news.ycombinator.com/item?id=50422628">ChatGPT Desktop 会将你的 SSH agent 转发至远程机器</a></strong>（Hacker News）<br>为什么值得关注：AI 桌面助手默认触碰 SSH agent 这类最高敏感凭证，Agent 工具的权限模型亟需重新审计。</li>
+<li><strong><a target="_blank" rel="noopener" href="https://arstechnica.com/security/2026/10/anthropic-vs-code-extension-on-cursor-backdoored-for-nearly-12-hours/">Anthropic VS Code 扩展在 Cursor 上被植入后门近 12 小时</a></strong>（Ars Technica）<br>为什么值得关注：编辑器插件供应链攻击的实战案例，AI 编程生态的信任链远比想象中脆弱。</li>
 </ul>
-<h3 id="行业动态与硬件"><a href="#行业动态与硬件" class="headerlink" title="行业动态与硬件"></a>行业动态与硬件</h3><ul>
-<li><strong><a target="_blank" rel="noopener" href="https://techcrunch.com/2026/11/01/binance-resumes-withdrawals-following-6-3-billion-breach/">币安遭 63 亿美元损失攻击后恢复提币</a></strong>（TechCrunch）<br>为什么值得关注：交易所史上金额级别的安全事件，热钱包风控与提币应急响应流程值得安全团队复盘。</li>
-<li><strong><a target="_blank" rel="noopener" href="https://mashable.com/tech/anthropic-takes-steps-to-block-video-game-cloning-and-reverse-engineering">Anthropic 收紧使用政策：拦截“训练更大模型”相关请求与游戏逆向工程</a></strong>（Mashable）<br>为什么值得关注：头部模型厂商开始按话题域主动阻断请求，做 AI 应用时应把厂商侧内容策略当作一项运行时依赖来评估。</li>
-<li><strong><a target="_blank" rel="noopener" href="https://sspai.com/post/117827">全球首款 Android XR 有线眼镜 XREAL AURA 发售</a></strong>（少数派）<br>为什么值得关注：有线形态把算力放回手机侧，Android XR 开发者生态有了第一块低成本可编程屏幕。</li>
+<h3 id="安全"><a href="#安全" class="headerlink" title="安全"></a>安全</h3><ul>
+<li><strong><a target="_blank" rel="noopener" href="https://arstechnica.com/security/2026/11/vulnerability-that-lets-hackers-ssh-into-linux-devices-is-under-active-exploitation/">*sshole：允许无密码 SSH 登录 Linux 设备的漏洞正被在野利用</a></strong>（Ars Technica）<br>为什么值得关注：波及嵌入式 Linux 设备且已现活跃攻击，运维应立即收敛 SSH 暴露面并排查。</li>
+<li><strong><a target="_blank" rel="noopener" href="https://arstechnica.com/security/2026/11/chainalysis-says-hackers-stole-credentials-and-tokens-for-all-of-its-customers/">Chainalysis 确认全体客户的凭证与 token 遭窃取</a></strong>（Ars Technica）<br>为什么值得关注：链上追踪巨头自身被攻陷且波及全部客户，安全厂商同样是供应链上的单点风险。</li>
+<li><strong><a target="_blank" rel="noopener" href="https://arstechnica.com/security/2026/11/uefi-bootkit-infected-fully-patched-windows-machines-is-microsoft-to-blame/">UEFI bootkit 攻陷完全打好补丁的 Windows 机器</a></strong>（Ars Technica）<br>为什么值得关注：固件层攻击绕过所有 OS 级补丁，“补丁打满即安全”的假设在 bootkit 面前失效。</li>
+<li><strong><a target="_blank" rel="noopener" href="https://shubs.io/unlocking-any-car-from-x-brand-in-most-of-the-world/">研究披露：可解锁全球多数地区某品牌的几乎任意车辆</a></strong>（shubs.io，via Hacker News）<br>为什么值得关注：完整披露车联网身份体系的设计缺陷，是 IoT 凭证架构的反面教材级研究。</li>
 </ul>
-<h3 id="开发者社区"><a href="#开发者社区" class="headerlink" title="开发者社区"></a>开发者社区</h3><ul>
-<li><strong><a target="_blank" rel="noopener" href="https://karpathy.bearblog.dev/hacker-tube/">Karpathy 上线 HackerTube：用 HN 推荐视频拼出一个 YouTube</a></strong>（Hacker News）<br>为什么值得关注：“社区信号 + 简单聚合”的周末级项目，也是 HN 数据管道的现成参考实现。</li>
-<li><strong><a target="_blank" rel="noopener" href="https://jepsen.io/analyses/particledb-1.1.4">Jepsen 发布 ParticleDB 1.1.4 一致性分析</a></strong>（Jepsen）<br>为什么值得关注：Jepsen 级别的分布式正确性审计，选型分布式数据库前必读的验证方法论样本。</li>
+<h3 id="硬件与图形技术"><a href="#硬件与图形技术" class="headerlink" title="硬件与图形技术"></a>硬件与图形技术</h3><ul>
+<li><strong><a target="_blank" rel="noopener" href="https://www.ifanr.com/1688485">苹果罕见公开人形机器人进展：宇树 G1 背着跑千问的 Mac mini</a></strong>（爱范儿）<br>为什么值得关注：苹果机器人路线首次露出实验形态，“现成硬件 + 开源模型”的组合透露其务实取向。</li>
+<li><strong><a target="_blank" rel="noopener" href="https://ketchup3d.github.io/app/">KetchUp：Rust + WebGPU 打造的开源 SketchUp 替代品</a></strong>（Hacker News）<br>为什么值得关注：浏览器端 3D 建模逼近桌面级体验，是 WebGPU 图形栈成熟度的最佳佐证之一。</li>
+</ul>
+<h3 id="行业动态"><a href="#行业动态" class="headerlink" title="行业动态"></a>行业动态</h3><ul>
+<li><strong><a target="_blank" rel="noopener" href="https://techcrunch.com/2026/11/09/jensen-huangs-affair-with-alleged-chinese-spy-puts-nvidias-china-ambitions-under-scrutiny/">黄仁勋绯闻持续发酵，Nvidia 中国业务前景遭全面审视</a></strong>（TechCrunch）<br>为什么值得关注：CEO 个人危机与地缘审查叠加，直接牵动 Nvidia 对华战略与产业链预期。</li>
+<li><strong><a target="_blank" rel="noopener" href="https://247wallst.com/investing/2026/11/07/openai-just-raised-11-billion-at-a-1-25-trillion-valuation-below-the-1-4-trillion-it-first-sought/">OpenAI 完成 110 亿美元融资，估值 1.25 万亿美元</a></strong>（24&#x2F;7 Wall St.，via Hacker News）<br>为什么值得关注：低于最初寻求的 1.4 万亿估值仍完成巨额融资，资本狂热与议价权衰减并存的信号值得玩味。</li>
+<li><strong><a target="_blank" rel="noopener" href="https://matteoraso.github.io/im-not-convinced-the-ai-bubble-exists.html">万字长文：我不认为存在 AI 泡沫</a></strong>（Hacker News）<br>为什么值得关注：用资本开支与现金流数据系统性反驳泡沫论，是当前 AI 投资大辩论中论据最扎实的一篇。</li>
+</ul>
+<h3 id="开发者社区与深度阅读"><a href="#开发者社区与深度阅读" class="headerlink" title="开发者社区与深度阅读"></a>开发者社区与深度阅读</h3><ul>
+<li><strong><a target="_blank" rel="noopener" href="https://mailroute.net/blog/outlook-rejecting-email-without-dmarc">Outlook.com 开始拒收未配置 DMARC 域名的邮件</a></strong>（Mailroute，via Hacker News）<br>为什么值得关注：邮件反欺骗从“建议”变“红线”，自建域名不配 DMARC 将直接进不了 Outlook 收件箱。</li>
+<li><strong><a target="_blank" rel="noopener" href="https://benmandrew.com/articles/what-is-malloc-doing-anyway">malloc 到底在做什么？</a></strong>（Ben Andrew，via Hacker News）<br>为什么值得关注：把内存分配器的内部机制讲得通透，系统编程入门少有的优质长文。</li>
 </ul>
 <hr>
 <blockquote>
