@@ -1,0 +1,149 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 460" width="100%" height="100%">
+  <style>
+    
+    text {
+      font-family: 'JetBrains Mono', 'SF Mono', 'Noto Sans', sans-serif;
+    }
+  </style>
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#e2e8f0" stroke-width="0.6"/>
+    </pattern>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#64748b"/>
+    </marker>
+    <marker id="arrow-primary" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#0891b2"/>
+    </marker>
+    <marker id="arrow-secondary" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#059669"/>
+    </marker>
+    <marker id="arrow-accent" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#d97706"/>
+    </marker>
+  </defs>
+
+  <!-- 1. Background + Grid -->
+  <rect width="100%" height="100%" fill="#f8fafc"/>
+  <rect width="100%" height="100%" fill="url(#grid)"/>
+
+  <!-- 2. Region boundaries -->
+  <!-- Mobile Region -->
+  <rect x="30" y="70" width="210" height="310" rx="12" fill="none" stroke="#0891b2" stroke-width="1.2" stroke-dasharray="8,4"/>
+  <text x="44" y="92" fill="#0891b2" font-size="10" font-weight="700">Mobile Client (Public Roaming)</text>
+
+  <!-- Cloud VPS Region -->
+  <rect x="290" y="70" width="230" height="310" rx="12" fill="none" stroke="#d97706" stroke-width="1.2" stroke-dasharray="8,4"/>
+  <text x="304" y="92" fill="#d97706" font-size="10" font-weight="700">1. Tunnel Plane · Cloud VPS</text>
+
+  <!-- Internal Mac Region -->
+  <rect x="570" y="70" width="320" height="310" rx="12" fill="none" stroke="#059669" stroke-width="1.2" stroke-dasharray="8,4"/>
+  <text x="584" y="92" fill="#059669" font-size="10" font-weight="700">Private Mac (Behind NAT · No Public IP)</text>
+
+  <!-- 3. Connection arrows and lines -->
+  <!-- Termius -> frps :6022 -->
+  <line x1="220" y1="150" x2="310" y2="150" stroke="#0891b2" stroke-width="1.8" marker-end="url(#arrow-primary)"/>
+  <text x="265" y="138" fill="#0891b2" font-size="9" font-weight="600" text-anchor="middle">Direct SSH</text>
+  <text x="265" y="166" fill="#475569" font-size="8" text-anchor="middle">Ed25519 Key</text>
+
+  <!-- frpc -> frps :7000 (Outbound control tunnel) -->
+  <line x1="590" y1="240" x2="500" y2="240" stroke="#d97706" stroke-width="1.8" marker-end="url(#arrow-accent)"/>
+  <text x="545" y="228" fill="#d97706" font-size="9" font-weight="600" text-anchor="middle">Outbound Tunnel</text>
+  <text x="545" y="256" fill="#475569" font-size="8" text-anchor="middle">token + allowPorts</text>
+
+  <!-- frps :6022 -> frps :7000 internal bridge -->
+  <line x1="405" y1="185" x2="405" y2="205" stroke="#d97706" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrow-accent)"/>
+
+  <!-- frps -> Mac sshd :22 (Traffic forwarding) -->
+  <line x1="500" y1="150" x2="590" y2="150" stroke="#059669" stroke-width="1.8" marker-end="url(#arrow-secondary)"/>
+  <text x="545" y="138" fill="#059669" font-size="9" font-weight="600" text-anchor="middle">Tunnel Forward</text>
+  <text x="545" y="166" fill="#475569" font-size="8" text-anchor="middle">127.0.0.1:22</text>
+
+  <!-- Mac sshd :22 -> herdr -->
+  <line x1="730" y1="185" x2="730" y2="205" stroke="#059669" stroke-width="1.8" marker-end="url(#arrow-secondary)"/>
+
+  <!-- Mac frpc -> Mac sshd local loop -->
+  <path d="M 660 205 L 660 185" fill="none" stroke="#64748b" stroke-width="1.2" stroke-dasharray="3,3" marker-end="url(#arrow)"/>
+
+  <!-- Claude Hooks -> Bark/ntfy -> Mobile Lock Screen (Plane 3 Notification) -->
+  <line x1="590" y1="330" x2="500" y2="330" stroke="#ea580c" stroke-width="1.6" stroke-dasharray="5,3" marker-end="url(#arrow)"/>
+  <line x1="310" y1="330" x2="220" y2="330" stroke="#ea580c" stroke-width="1.6" stroke-dasharray="5,3" marker-end="url(#arrow)"/>
+  <text x="545" y="320" fill="#ea580c" font-size="8" font-weight="600" text-anchor="middle">curl Hook</text>
+  <text x="265" y="320" fill="#ea580c" font-size="8" font-weight="600" text-anchor="middle">APNs / Push</text>
+
+  <!-- 4. Opaque masking rects & 5. Component boxes & 6. Text labels -->
+  <!-- Mobile: Termius -->
+  <rect x="50" y="115" width="170" height="70" rx="6" fill="#f8fafc"/>
+  <rect x="50" y="115" width="170" height="70" rx="6" fill="rgba(6,182,212,0.12)" stroke="#0891b2" stroke-width="1.5"/>
+  <text x="135" y="142" fill="#0f172a" font-size="11" font-weight="700" text-anchor="middle">Mobile Termius</text>
+  <text x="135" y="160" fill="#475569" font-size="8.5" text-anchor="middle">Ed25519 Key Stays on Phone</text>
+  <text x="135" y="174" fill="#475569" font-size="8.5" text-anchor="middle">Touch Pane / Approve Prompts</text>
+
+  <!-- Mobile: Lock screen notification -->
+  <rect x="50" y="295" width="170" height="65" rx="6" fill="#f8fafc"/>
+  <rect x="50" y="295" width="170" height="65" rx="6" fill="rgba(234,88,12,0.12)" stroke="#ea580c" stroke-width="1.5"/>
+  <text x="135" y="322" fill="#0f172a" font-size="11" font-weight="700" text-anchor="middle">Lock Screen Alert</text>
+  <text x="135" y="340" fill="#475569" font-size="8.5" text-anchor="middle">Tap Notification → Termius</text>
+  <text x="135" y="353" fill="#475569" font-size="8" text-anchor="middle">&lt; 30s Response Loop</text>
+
+  <!-- VPS: frps :6022 -->
+  <rect x="310" y="115" width="190" height="70" rx="6" fill="#f8fafc"/>
+  <rect x="310" y="115" width="190" height="70" rx="6" fill="rgba(217,119,6,0.12)" stroke="#d97706" stroke-width="1.5"/>
+  <text x="405" y="142" fill="#0f172a" font-size="11" font-weight="700" text-anchor="middle">VPS Entry :6022</text>
+  <text x="405" y="160" fill="#475569" font-size="8.5" text-anchor="middle">Locked via allowPorts</text>
+  <text x="405" y="174" fill="#475569" font-size="8.5" text-anchor="middle">Cloud Security Group Rule</text>
+
+  <!-- VPS: frps :7000 -->
+  <rect x="310" y="205" width="190" height="70" rx="6" fill="#f8fafc"/>
+  <rect x="310" y="205" width="190" height="70" rx="6" fill="rgba(217,119,6,0.12)" stroke="#d97706" stroke-width="1.5"/>
+  <text x="405" y="232" fill="#0f172a" font-size="11" font-weight="700" text-anchor="middle">frps Control :7000</text>
+  <text x="405" y="250" fill="#475569" font-size="8.5" text-anchor="middle">systemd Always-On Service</text>
+  <text x="405" y="264" fill="#475569" font-size="8.5" text-anchor="middle">Strong Random auth.token</text>
+
+  <!-- Cloud Push Relay: Bark / ntfy -->
+  <rect x="310" y="295" width="190" height="65" rx="6" fill="#f8fafc"/>
+  <rect x="310" y="295" width="190" height="65" rx="6" fill="rgba(234,88,12,0.12)" stroke="#ea580c" stroke-width="1.5"/>
+  <text x="405" y="322" fill="#0f172a" font-size="10.5" font-weight="700" text-anchor="middle">3. Notification · Bark/ntfy</text>
+  <text x="405" y="340" fill="#475569" font-size="8.5" text-anchor="middle">Zero-Polling Push Alert</text>
+
+  <!-- Mac: sshd :22 -->
+  <rect x="590" y="115" width="280" height="70" rx="6" fill="#f8fafc"/>
+  <rect x="590" y="115" width="280" height="70" rx="6" fill="rgba(225,29,72,0.12)" stroke="#e11d48" stroke-width="1.5"/>
+  <text x="730" y="140" fill="#0f172a" font-size="11" font-weight="700" text-anchor="middle">Mac sshd :22 (Hardened)</text>
+  <text x="730" y="158" fill="#475569" font-size="8.5" text-anchor="middle">PasswordAuthentication no</text>
+  <text x="730" y="172" fill="#475569" font-size="8.5" text-anchor="middle">+ KbdInteractiveAuthentication no</text>
+
+  <!-- Mac: frpc + Session Plane -->
+  <rect x="590" y="205" width="130" height="70" rx="6" fill="#f8fafc"/>
+  <rect x="590" y="205" width="130" height="70" rx="6" fill="rgba(100,116,139,0.12)" stroke="#64748b" stroke-width="1.5"/>
+  <text x="655" y="232" fill="#0f172a" font-size="10.5" font-weight="700" text-anchor="middle">frpc Client</text>
+  <text x="655" y="250" fill="#475569" font-size="8" text-anchor="middle">LaunchAgent Daemon</text>
+  <text x="655" y="264" fill="#475569" font-size="8" text-anchor="middle">KeepAlive Auto-Heal</text>
+
+  <rect x="735" y="205" width="135" height="70" rx="6" fill="#f8fafc"/>
+  <rect x="735" y="205" width="135" height="70" rx="6" fill="rgba(5,150,105,0.12)" stroke="#059669" stroke-width="1.8"/>
+  <text x="802" y="230" fill="#0f172a" font-size="10.5" font-weight="700" text-anchor="middle">2. Session Plane</text>
+  <text x="802" y="247" fill="#0f172a" font-size="9.5" font-weight="600" text-anchor="middle">herdr Session Daemon</text>
+  <text x="802" y="263" fill="#475569" font-size="8" text-anchor="middle">Holds PTYs · Drop-Safe</text>
+
+  <!-- Mac: Claude Code Hooks -->
+  <rect x="590" y="295" width="280" height="65" rx="6" fill="#f8fafc"/>
+  <rect x="590" y="295" width="280" height="65" rx="6" fill="rgba(124,58,237,0.12)" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="730" y="320" fill="#0f172a" font-size="10.5" font-weight="700" text-anchor="middle">Concurrent AI Agents (Claude Code / OpenCode)</text>
+  <text x="730" y="338" fill="#475569" font-size="8.5" text-anchor="middle">Notification / Stop Hook Fires Push</text>
+  <text x="730" y="352" fill="#475569" font-size="8" text-anchor="middle">Endpoint-Agnostic (Proxy / Ark / GLM / Official)</text>
+
+  <!-- 7. Legend -->
+  <rect x="30" y="398" width="860" height="36" rx="6" fill="#f8fafc"/>
+  <rect x="30" y="398" width="860" height="36" rx="6" fill="rgba(100,116,139,0.12)" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="50" y="420" fill="#0f172a" font-size="9.5" font-weight="600">Three-Plane Separation:</text>
+  <circle cx="195" cy="416" r="5" fill="#d97706"/>
+  <text x="206" y="420" fill="#475569" font-size="9.5">1. Tunnel Plane (frp): Reachability</text>
+  <circle cx="425" cy="416" r="5" fill="#059669"/>
+  <text x="436" y="420" fill="#475569" font-size="9.5">2. Session Plane (herdr): Continuity</text>
+  <circle cx="675" cy="416" r="5" fill="#ea580c"/>
+  <text x="686" y="420" fill="#475569" font-size="9.5">3. Notification Plane: Timely Awareness</text>
+
+  <!-- 8. Title block -->
+  <text x="30" y="42" fill="#0f172a" font-size="15" font-weight="700">Remote Mobile to Private Mac: frp + SSH + herdr Three-Plane Architecture</text>
+</svg>

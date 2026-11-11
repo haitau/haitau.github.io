@@ -1,0 +1,752 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="技术情报 2026-11-11, Agent-Native, Post-SaaS, 企业自愈中枢, AI 架构, 动态 MCP, FSM 确定性">
+    <meta name="description" content="探索 Post-SaaS 时代、Agent-Native 架构、企业自愈中枢与 AI 驱动的全栈技术演进。">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <meta name="bytedance-verification-code" content="/hXr6iglxmydPTdbFFGG" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>技术情报 2026-11-11 | Do Than Imagine</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+
+
+    <!-- bg-cover style     -->
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css?v=1794432767228">
+<link rel="stylesheet" type="text/css" href="/css/my.css?v=1794432767228">
+<link rel="stylesheet" type="text/css" href="/css/dark.css?v=1794432767228" media="none" onload="if(media!='all')media='all'">
+
+<style>
+/* Code Block Font & Title Normalization */
+pre, code,
+.code-area pre,
+.code-area pre code,
+.highlight,
+.highlight td.code pre {
+    font-size: 0.91rem !important;
+    line-height: 1.6 !important;
+    font-family: Inconsolata, Monaco, Consolas, 'Courier New', Courier, monospace !important;
+}
+
+.code-area .title,
+.highlight .title,
+pre .title,
+code .title,
+.highlight span,
+.code-area pre code span {
+    font-size: inherit !important;
+    font-weight: inherit !important;
+    line-height: inherit !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.highlight td.gutter,
+.gutter {
+    display: none !important;
+}
+</style>
+
+
+
+
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/css/post.css?v=1794432767228">
+
+
+
+
+
+    
+
+
+
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="Do Than Imagine" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Do Than Imagine</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/news/" class="waves-effect waves-light">
+      
+      <i class="fas fa-satellite-dish" style="zoom: 0.6;"></i>
+      
+      <span>资讯</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Do Than Imagine</div>
+        <div class="logo-desc">
+            
+            探索 Post-SaaS 时代、Agent-Native 架构、企业自愈中枢与 AI 驱动的全栈技术演进。
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/news/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-satellite-dish"></i>
+			
+			资讯
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/haitau" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/haitau" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    <style type="text/css">
+    /* don't remove. */
+    .about-cover {
+        height: 75vh;
+    }
+    .news-item {
+        padding: 0.4rem 0;
+        border-bottom: 1px dashed #e0e0e0;
+    }
+    .news-item:last-child {
+        border-bottom: none;
+    }
+    .news-item .news-title {
+        font-size: 1.05rem;
+    }
+    .news-item .news-why {
+        color: #616161;
+        font-size: 0.95rem;
+        margin-top: 0.2rem;
+    }
+    .news-item .news-source {
+        font-size: 0.8rem;
+        color: #9e9e9e;
+    }
+    .news-item .chip {
+        font-size: 0.75rem;
+        height: 22px;
+        line-height: 22px;
+    }
+</style>
+
+<div class="bg-cover pd-header about-cover">
+    <div class="container">
+    <div class="row">
+    <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
+        <div class="brand">
+            <div class="title center-align">
+                
+                志不强者智不达
+                
+            </div>
+
+            <div class="description center-align">
+                
+                <span id="subtitle"></span>
+                <script src="/libs/typed/typed.js"></script>
+                <script>
+                    var typed = new Typed("#subtitle", {
+                        strings: [ 
+                            
+                                "沉思的人有一个目标，幻想的人却没有",
+                            
+                                "Those who contemplate have a goal, those who imagine do not.",
+                            
+                        ],
+                        startDelay: 300,
+                        typeSpeed: 100,
+                        loop: true,
+                        backSpeed: 50,
+                        showCursor: true
+                    });
+                </script>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    // 每天切换 banner 图.  Switch banner image every day.
+    var bannerUrl = "/medias/banner/" + new Date().getDay() + '.jpg';
+    $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
+</script>
+<script>
+    
+      var bannerUrl = "/medias/featureimages/" + Math.floor(Math.random() * 24) + '.jpg';
+    
+    $('.bg-cover.about-cover').css('background-image', 'url(' + bannerUrl + ')');
+
+</script>
+
+
+    </div>
+</div>
+
+<main class="content">
+    <div class="container">
+        <div class="card" data-aos="fade-up">
+            <div class="card-content article-card-content">
+                <div id="articleContent">
+                    <blockquote>
+<p>一句话总览：DeepMind 发布 AlphaProof Code，把数学证明级形式化推理引入代码生成——AI 编程能力冲顶的同一天，Grok 编码 agent 大规模泄密与「AI 正在制造脆弱代码库」的热议也给行业敲响了信任警钟。</p>
+</blockquote>
+<h3 id="AI-大模型"><a href="#AI-大模型" class="headerlink" title="AI 大模型"></a>AI 大模型</h3><ul>
+<li><p><strong><a target="_blank" rel="noopener" href="https://deepmind.google/blog/introducing-alphaproof-code/">DeepMind 发布 AlphaProof Code：数学证明级推理走进代码生成</a></strong>（Hacker News）<br>为什么值得关注：将 AlphaProof 的形式化推理能力迁移到代码任务，意味着大模型竞争从「写得快」转向「可证明正确」，对高可靠性软件开发是标志性进展。</p>
+</li>
+<li><p><strong><a target="_blank" rel="noopener" href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/">谷歌 Gemini 4 Carbon 正式上线</a></strong>（Hacker News）<br>为什么值得关注：谷歌新一代旗舰模型开放使用，命名指向能效&#x2F;碳耗优化，模型选型与成本对比的基准又多了一个关键变量。</p>
+</li>
+<li><p><strong><a target="_blank" rel="noopener" href="https://claude.com/resources/articles/sheets-whiteboards-data">Anthropic 推出 Claude Whiteboards、Sheets 与 Data 数据办公套件</a></strong>（Hacker News）<br>为什么值得关注：Claude 从对话&#x2F;编码界面向结构化数据协作场景扩张，直接对标表格与 BI 工作流，值得关注其 API 化集成路径。</p>
+</li>
+<li><p><strong><a target="_blank" rel="noopener" href="https://www.leiphone.com/category/industrynews/sqz0hf4DoTPX5mqI.html">百度文心 5.5 Flash Preview 发布：编程、3D 建模与知识工作全面升级</a></strong>（雷锋网）<br>为什么值得关注：Flash 定位主打低成本高吞吐，编程能力升级后国产模型在轻量 agent 场景的性价比竞争进一步加剧。</p>
+</li>
+<li><p><strong><a target="_blank" rel="noopener" href="https://www.ifanr.com/1688790">实测 MiniMax H3 Image：GPT 的效果加 MJ 的审美，且权重开源</a></strong>（爱范儿）<br>为什么值得关注：开源图像模型在出图质量与美学风格上首次被实测认为逼近闭源第一梯队，自托管图像生成的可用性门槛显著下降。</p>
+</li>
+</ul>
+<h3 id="AI-编程与开发工具"><a href="#AI-编程与开发工具" class="headerlink" title="AI 编程与开发工具"></a>AI 编程与开发工具</h3><ul>
+<li><p><strong><a target="_blank" rel="noopener" href="https://pietromiotti.com/latest/maya-site/?maya">谷歌 SWE 团队派 48 个 AI agent 处理 NASA 激光雷达数据，72 小时定位未测绘玛雅金字塔</a></strong>（Hacker News）<br>为什么值得关注：多 agent 并行在真实科研数据管线中完成跨领域发现，展示了 agent 集群作为「研究劳动力」而非只是代码补全的落地形态。</p>
+</li>
+<li><p><strong><a target="_blank" rel="noopener" href="https://evanxmerz.com/post/ai-usage-generates-a-fragile-codebase/">AI 编码正在生成脆弱的代码库</a></strong>（Hacker News，626 分）<br>为什么值得关注：一线开发者系统论证 AI 生成代码如何累积隐性复杂度与维护债务，是评估「vibe coding」长期成本时绕不开的反面论据。</p>
+</li>
+<li><p><strong><a target="_blank" rel="noopener" href="https://github.com/aws/aws-emulator">AWS 官方开源 aws-emulator：在本地模拟 AWS 服务</a></strong>（Hacker News）<br>为什么值得关注：官方下场做本地云模拟器，直击集成测试依赖真实云环境的痛点，有望改变 serverless 应用的本地调试与 CI 范式。</p>
+</li>
+<li><p><strong><a target="_blank" rel="noopener" href="https://github.com/GoogleChrome/modern-web-guidance">Chrome 团队开源 modern-web-guidance：让编码 agent 用上现代 Web 原语</a></strong>（Hacker News）<br>为什么值得关注：专门面向 AI agent 的 Web 平台知识指南，纠正 agent 停留在过时 JS 写法的问题，本质是在给模型补「平台时效性」这一课。</p>
+</li>
+<li><p><strong><a target="_blank" rel="noopener" href="https://www.blender.org/download/releases/5-3/">Blender 5.3 发布，原生支持 Gaussian Splat</a></strong>（Hacker News）<br>为什么值得关注：高斯泼溅进入主流开源 DCC 工作流，3D 重建、NeRF 类资产与传统建模管线的合流又近了一步。</p>
+</li>
+</ul>
+<h3 id="安全与隐私"><a href="#安全与隐私" class="headerlink" title="安全与隐私"></a>安全与隐私</h3><ul>
+<li><p><strong><a target="_blank" rel="noopener" href="https://arstechnica.com/security/2026/11/vulnerability-that-lets-hackers-ssh-into-linux-devices-is-under-active-exploitation/">Linux SSH 免登录漏洞「*sshole」正遭活跃利用</a></strong>（Ars Technica）<br>为什么值得关注：无需密码即可 SSH 登入且已有在野利用，所有暴露 SSH 服务的 Linux 设备需要立即排查补丁状态，属于今天优先级最高的运维事项。</p>
+</li>
+<li><p><strong><a target="_blank" rel="noopener" href="https://arstechnica.com/security/2026/11/chainalysis-says-hackers-stole-credentials-and-tokens-for-all-of-its-customers/">Chainalysis 承认黑客窃取了全部客户的凭证与令牌</a></strong>（Ars Technica）<br>为什么值得关注：区块链分析巨头全量客户凭证失守，第三方供应链信任模型再受冲击，接入其服务的机构需紧急轮换密钥。</p>
+</li>
+<li><p><strong><a target="_blank" rel="noopener" href="https://arstechnica.com/security/2026/11/uefi-bootkit-infected-fully-patched-windows-machines-is-microsoft-to-blame/">UEFI bootkit 感染完全补丁的 Windows 机器，微软安全机制遭质疑</a></strong>（Ars Technica）<br>为什么值得关注：固件级恶意软件突破全补丁防线，意味着磁盘重装已无法保证清除，Secure Boot 链条的实际防护效果需要重新评估。</p>
+</li>
+<li><p><strong><a target="_blank" rel="noopener" href="https://arstechnica.com/security/2026/11/grok-build-coding-agent-leaks-oodles-of-confidential-info-some-belonging-to-spacexsi/">xAI Grok Build 编码 agent 泄露大量机密信息，部分属于 SpaceX</a></strong>（Ars Technica）<br>为什么值得关注：编码 agent 的上下文隔离与数据边界问题以最严重的形式爆雷，给所有把私有代码库接入云端 agent 的团队提供了真实事故样本。</p>
+</li>
+</ul>
+<h3 id="硬件与本地算力"><a href="#硬件与本地算力" class="headerlink" title="硬件与本地算力"></a>硬件与本地算力</h3><ul>
+<li><p><strong><a target="_blank" rel="noopener" href="https://9to5mac.com/2026/11/10/apple-has-new-mac-app-coming-to-make-running-local-ai-models-easy/">苹果将推出 Mac 新应用，大幅降低本地跑 AI 模型的门槛</a></strong>（Hacker News）<br>为什么值得关注：苹果官方做本地模型运行时，意味着统一内存架构的算力优势将被产品化，隐私敏感场景的本地推理生态可能被重新定义。</p>
+</li>
+<li><p><strong><a target="_blank" rel="noopener" href="https://chipsandcheese.com/p/amds-zen-6-family-feeding-the-beast">深度解析 AMD Zen 6 家族：如何喂饱这头巨兽</a></strong>（Hacker News）<br>为什么值得关注：Chips and Cheese 的微架构级分析，涵盖前端供给与缓存设计取舍，是评估下一代服务器与工作站 CPU 性能走向的硬核参考。</p>
+</li>
+</ul>
+<h3 id="行业动态与开发者社区"><a href="#行业动态与开发者社区" class="headerlink" title="行业动态与开发者社区"></a>行业动态与开发者社区</h3><ul>
+<li><p><strong><a target="_blank" rel="noopener" href="https://discuss.python.org/t/in-memoriam-tim-peters-1952-2026/110028">Python 之禅与 Timsort 作者 Tim Peters 去世</a></strong>（Hacker News，613 分）<br>为什么值得关注：Python 社区奠基级人物离世，Timsort 至今仍是多数主流语言的默认排序实现，Python 之禅塑造了整整一代开发者的设计品味。</p>
+</li>
+<li><p><strong><a target="_blank" rel="noopener" href="https://blog.val.town/winding-down">Val Town 宣布关停</a></strong>（Hacker News）<br>为什么值得关注：浏览器内 serverless 平台的退场，说明「轻量函数托管」独立产品的商业化路径依然艰难，现存用户需规划代码迁移。</p>
+</li>
+<li><p><strong><a target="_blank" rel="noopener" href="https://docodethatmatters.com/home-automation-overnight-success/">智能家居设备理应在断网后依然可用</a></strong>（Hacker News，1129 分全场最高）<br>为什么值得关注：一篇登顶 HN 的本地优先实践复盘，直击厂商云依赖导致的设备「变砖」问题，为 Home Assistant 等本地方案提供了有说服力的论据。</p>
+</li>
+<li><p><strong><a target="_blank" rel="noopener" href="https://michael.bacarella.com/2026/11/10/false-smoke-alarm-jane-street-datacenter/">一次误报烟雾报警，差点淹了 Jane Street 唯一的纽约数据中心</a></strong>（Hacker News）<br>为什么值得关注：一手事故复盘展示了消防联动、单点机房与应急流程如何叠加成险兆事件，是运维容灾设计中少见的真实教学案例。</p>
+</li>
+</ul>
+<hr>
+<blockquote>
+<p>本页由<a href="/about/#%E6%AF%8F%E6%97%A5%E8%B5%84%E8%AE%AF%E6%B5%81%E6%B0%B4%E7%BA%BF">每日资讯流水线</a>自动编译生成，内容为公开渠道资讯的中文摘要与链接，保留最近 7 天。</p>
+</blockquote>
+
+                </div>
+            </div>
+        </div>
+
+        
+
+        <div class="card" data-aos="fade-up">
+            <div class="card-content">
+                <a href="/news/">
+                    <i class="fas fa-satellite-dish fa-fw"></i>&nbsp;返回资讯索引
+                </a>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+    <footer class="page-footer bg-color">
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2021-2026</span>
+            
+            <a href="/about" target="_blank">shawn</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            
+            <br>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/haitau" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:shawn@191022.xyz" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+    
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

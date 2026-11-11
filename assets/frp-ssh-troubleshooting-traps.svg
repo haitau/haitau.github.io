@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 420" width="100%" height="100%">
+  <style>
+    
+    text {
+      font-family: 'JetBrains Mono', 'PingFang SC', 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
+    }
+  </style>
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#e2e8f0" stroke-width="0.6"/>
+    </pattern>
+    <marker id="arrow-alert" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#e11d48"/>
+    </marker>
+    <marker id="arrow-secondary" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#059669"/>
+    </marker>
+  </defs>
+
+  <rect width="100%" height="100%" fill="#f8fafc"/>
+  <rect width="100%" height="100%" fill="url(#grid)"/>
+
+  <!-- 3 Trap Columns -->
+  <!-- Col 1: Trap 1 TUN fake-ip -->
+  <rect x="30" y="70" width="275" height="315" rx="10" fill="none" stroke="#e11d48" stroke-width="1.2" stroke-dasharray="6,4"/>
+  <text x="45" y="92" fill="#e11d48" font-size="11" font-weight="700">坑 ①：本机 TUN 代理假阳性</text>
+
+  <!-- Col 2: Trap 2 Loopback sshd silence -->
+  <rect x="322" y="70" width="275" height="315" rx="10" fill="none" stroke="#d97706" stroke-width="1.2" stroke-dasharray="6,4"/>
+  <text x="337" y="92" fill="#d97706" font-size="11" font-weight="700">坑 ②：VPS 回环路径 sshd 静默</text>
+
+  <!-- Col 3: Trap 3 Cloud Security Group -->
+  <rect x="615" y="70" width="275" height="315" rx="10" fill="none" stroke="#7c3aed" stroke-width="1.2" stroke-dasharray="6,4"/>
+  <text x="630" y="92" fill="#7c3aed" font-size="11" font-weight="700">坑 ③：云安全组盲区拦截</text>
+
+  <!-- Arrows down inside each column -->
+  <line x1="167" y1="185" x2="167" y2="215" stroke="#e11d48" stroke-width="1.6" marker-end="url(#arrow-alert)"/>
+  <line x1="167" y1="285" x2="167" y2="305" stroke="#059669" stroke-width="1.6" marker-end="url(#arrow-secondary)"/>
+
+  <line x1="460" y1="185" x2="460" y2="215" stroke="#e11d48" stroke-width="1.6" marker-end="url(#arrow-alert)"/>
+  <line x1="460" y1="285" x2="460" y2="305" stroke="#059669" stroke-width="1.6" marker-end="url(#arrow-secondary)"/>
+
+  <line x1="752" y1="185" x2="752" y2="215" stroke="#e11d48" stroke-width="1.6" marker-end="url(#arrow-alert)"/>
+  <line x1="752" y1="285" x2="752" y2="305" stroke="#059669" stroke-width="1.6" marker-end="url(#arrow-secondary)"/>
+
+  <!-- Col 1 Boxes -->
+  <rect x="47" y="110" width="240" height="75" rx="6" fill="#f8fafc"/>
+  <rect x="47" y="110" width="240" height="75" rx="6" fill="rgba(225,29,72,0.12)" stroke="#e11d48" stroke-width="1.5"/>
+  <text x="167" y="133" fill="#0f172a" font-size="11" font-weight="700" text-anchor="middle">失真现象</text>
+  <text x="167" y="152" fill="#475569" font-size="9" text-anchor="middle">Mac 跑 nc -zv VPS_IP 6022</text>
+  <text x="167" y="168" fill="#e11d48" font-size="9" font-weight="600" text-anchor="middle">永远秒回 succeeded (假通)</text>
+
+  <rect x="47" y="215" width="240" height="70" rx="6" fill="#f8fafc"/>
+  <rect x="47" y="215" width="240" height="70" rx="6" fill="rgba(100,116,139,0.12)" stroke="#64748b" stroke-width="1.5"/>
+  <text x="167" y="238" fill="#0f172a" font-size="11" font-weight="700" text-anchor="middle">底层根因</text>
+  <text x="167" y="256" fill="#475569" font-size="9" text-anchor="middle">Clash/mihomo TUN 虚拟网卡</text>
+  <text x="167" y="272" fill="#475569" font-size="9" text-anchor="middle">本地拦截 SYN 并伪造 ACK</text>
+
+  <rect x="47" y="305" width="240" height="65" rx="6" fill="#f8fafc"/>
+  <rect x="47" y="305" width="240" height="65" rx="6" fill="rgba(5,150,105,0.12)" stroke="#059669" stroke-width="1.6"/>
+  <text x="167" y="328" fill="#0f172a" font-size="11" font-weight="700" text-anchor="middle">正确验证姿势</text>
+  <text x="167" y="346" fill="#059669" font-size="9" font-weight="600" text-anchor="middle">从另一台无 TUN 的外部云主机</text>
+  <text x="167" y="360" fill="#475569" font-size="9" text-anchor="middle">或切蜂窝网络的手机发起探测</text>
+
+  <!-- Col 2 Boxes -->
+  <rect x="340" y="110" width="240" height="75" rx="6" fill="#f8fafc"/>
+  <rect x="340" y="110" width="240" height="75" rx="6" fill="rgba(225,29,72,0.12)" stroke="#e11d48" stroke-width="1.5"/>
+  <text x="460" y="133" fill="#0f172a" font-size="11" font-weight="700" text-anchor="middle">失真现象</text>
+  <text x="460" y="152" fill="#475569" font-size="9" text-anchor="middle">VPS 本机测 127.0.0.1:6022</text>
+  <text x="460" y="168" fill="#e11d48" font-size="9" font-weight="600" text-anchor="middle">TCP 通但 SSH Banner 静默超时</text>
+
+  <rect x="340" y="215" width="240" height="70" rx="6" fill="#f8fafc"/>
+  <rect x="340" y="215" width="240" height="70" rx="6" fill="rgba(100,116,139,0.12)" stroke="#64748b" stroke-width="1.5"/>
+  <text x="460" y="238" fill="#0f172a" font-size="11" font-weight="700" text-anchor="middle">底层根因</text>
+  <text x="460" y="256" fill="#475569" font-size="9" text-anchor="middle">VPS 自身回环路径特有现象</text>
+  <text x="460" y="272" fill="#475569" font-size="9" text-anchor="middle">偏离真实公网入站路由路径</text>
+
+  <rect x="340" y="305" width="240" height="65" rx="6" fill="#f8fafc"/>
+  <rect x="340" y="305" width="240" height="65" rx="6" fill="rgba(5,150,105,0.12)" stroke="#059669" stroke-width="1.6"/>
+  <text x="460" y="328" fill="#0f172a" font-size="11" font-weight="700" text-anchor="middle">正确验证姿势</text>
+  <text x="460" y="346" fill="#059669" font-size="9" font-weight="600" text-anchor="middle">模拟真实用户路径：外部客户端</text>
+  <text x="460" y="360" fill="#475569" font-size="9" text-anchor="middle">→ VPS 公网 IP:6022 一次即通</text>
+
+  <!-- Col 3 Boxes -->
+  <rect x="632" y="110" width="240" height="75" rx="6" fill="#f8fafc"/>
+  <rect x="632" y="110" width="240" height="75" rx="6" fill="rgba(225,29,72,0.12)" stroke="#e11d48" stroke-width="1.5"/>
+  <text x="752" y="133" fill="#0f172a" font-size="11" font-weight="700" text-anchor="middle">失真现象</text>
+  <text x="752" y="152" fill="#475569" font-size="9" text-anchor="middle">ss -tlnp 监听正常、frp 注册成功</text>
+  <text x="752" y="168" fill="#e11d48" font-size="9" font-weight="600" text-anchor="middle">外部公网连接直接超时丢包</text>
+
+  <rect x="632" y="215" width="240" height="70" rx="6" fill="#f8fafc"/>
+  <rect x="632" y="215" width="240" height="70" rx="6" fill="rgba(100,116,139,0.12)" stroke="#64748b" stroke-width="1.5"/>
+  <text x="752" y="238" fill="#0f172a" font-size="11" font-weight="700" text-anchor="middle">底层根因</text>
+  <text x="752" y="256" fill="#475569" font-size="9" text-anchor="middle">云厂商安全组位于 OS 防火墙外</text>
+  <text x="752" y="272" fill="#475569" font-size="9" text-anchor="middle">ss / iptables 对其完全不可见</text>
+
+  <rect x="632" y="305" width="240" height="65" rx="6" fill="#f8fafc"/>
+  <rect x="632" y="305" width="240" height="65" rx="6" fill="rgba(5,150,105,0.12)" stroke="#059669" stroke-width="1.6"/>
+  <text x="752" y="328" fill="#0f172a" font-size="11" font-weight="700" text-anchor="middle">正确验证姿势</text>
+  <text x="752" y="346" fill="#059669" font-size="9" font-weight="600" text-anchor="middle">先查云控制台已放行端口段</text>
+  <text x="752" y="360" fill="#475569" font-size="9" text-anchor="middle">将 allowPorts 与 remotePort 对齐</text>
+
+  <!-- Title -->
+  <text x="30" y="42" fill="#0f172a" font-size="16" font-weight="700">排障方法论：先怀疑观测手段——三个实测大坑对照</text>
+</svg>

@@ -1,0 +1,1325 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="外网连进内网 Mac：frp + SSH + Termius 手机远程全链路实战, Agent-Native, Post-SaaS, 企业自愈中枢, AI 架构, 动态 MCP, FSM 确定性">
+    <meta name="description" content="
+💡 Read English Version (英文版)
+
+
+实战基线：macOS（Apple Silicon）+ frp 0.72.0 + 云端 Linux VPS（Debian 12）+ Termius（iOS &amp;#x2F; And">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <meta name="bytedance-verification-code" content="/hXr6iglxmydPTdbFFGG" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>外网连进内网 Mac：frp + SSH + Termius 手机远程全链路实战 | Do Than Imagine</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+
+
+    <!-- bg-cover style     -->
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css?v=1794432767232">
+<link rel="stylesheet" type="text/css" href="/css/my.css?v=1794432767232">
+<link rel="stylesheet" type="text/css" href="/css/dark.css?v=1794432767232" media="none" onload="if(media!='all')media='all'">
+
+<style>
+/* Code Block Font & Title Normalization */
+pre, code,
+.code-area pre,
+.code-area pre code,
+.highlight,
+.highlight td.code pre {
+    font-size: 0.91rem !important;
+    line-height: 1.6 !important;
+    font-family: Inconsolata, Monaco, Consolas, 'Courier New', Courier, monospace !important;
+}
+
+.code-area .title,
+.highlight .title,
+pre .title,
+code .title,
+.highlight span,
+.code-area pre code span {
+    font-size: inherit !important;
+    font-weight: inherit !important;
+    line-height: inherit !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.highlight td.gutter,
+.gutter {
+    display: none !important;
+}
+</style>
+
+
+
+
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/css/post.css?v=1794432767232">
+
+
+
+
+
+    
+
+
+
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="Do Than Imagine" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Do Than Imagine</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/news/" class="waves-effect waves-light">
+      
+      <i class="fas fa-satellite-dish" style="zoom: 0.6;"></i>
+      
+      <span>资讯</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Do Than Imagine</div>
+        <div class="logo-desc">
+            
+            探索 Post-SaaS 时代、Agent-Native 架构、企业自愈中枢与 AI 驱动的全栈技术演进。
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/news/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-satellite-dish"></i>
+			
+			资讯
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/haitau" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/haitau" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/assets/frp-ssh-cover.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">外网连进内网 Mac：frp + SSH + Termius 手机远程全链路实战</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/frp/">
+                                <span class="chip bg-color">frp</span>
+                            </a>
+                        
+                            <a href="/tags/SSH/">
+                                <span class="chip bg-color">SSH</span>
+                            </a>
+                        
+                            <a href="/tags/Termius/">
+                                <span class="chip bg-color">Termius</span>
+                            </a>
+                        
+                            <a href="/tags/herdr/">
+                                <span class="chip bg-color">herdr</span>
+                            </a>
+                        
+                            <a href="/tags/AI-Agent/">
+                                <span class="chip bg-color">AI-Agent</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/">
+                                <span class="chip bg-color">内网穿透</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E6%8A%80%E6%9C%AF%E5%AE%9E%E8%B7%B5/" class="post-category">
+                                技术实践
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2026-11-10
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    5.5k
+                </div>
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <blockquote>
+<p>💡 <em><a href="/2026/11/10/frp-ssh-termius-remote-mac-practice.en/">Read English Version (英文版)</a></em></p>
+</blockquote>
+<blockquote>
+<p><strong>实战基线</strong>：macOS（Apple Silicon）+ frp 0.72.0 + 云端 Linux VPS（Debian 12）+ Termius（iOS &#x2F; Android 双端）+ herdr 常驻会话层。</p>
+</blockquote>
+<hr>
+<h2 id="1-问题：人在外面，Mac-在家里"><a href="#1-问题：人在外面，Mac-在家里" class="headerlink" title="1. 问题：人在外面，Mac 在家里"></a>1. 问题：人在外面，Mac 在家里</h2><p>那台 Mac 上跑着你想随时回去的东西——编译到一半的任务、一组开发服务、十几个并发运行的 AI coding agent 会话，或者就是一个不想中断的终端环境。人在外面时选择只有两个：回去，或者远程。</p>
+<p>多数人的第一反应是远程桌面（ToDesk &#x2F; 向日葵 &#x2F; RustDesk），在手机上看 Mac 屏幕。能用，但体验是灾难级的：用 6 英寸手机屏幕操控 27 英寸桌面，鼠标指针漂移、字小到看不清，终端 TUI 的全屏重绘在视频流压缩下糊成一团。<strong>你要操控的根本不是“Mac 的屏幕”，而是“那几个终端会话”</strong>——那就该用终端的原生方式解决：SSH。</p>
+<p>拦路的是网络现实：家里或办公室的 Mac 蜷在 NAT 后面，没有公网 IP，手机从哪连？本文用一台最低配云 VPS + frp 解决这一跳，配合 Termius 与常驻会话层 herdr 打通“世界任何角落 → 你的 Mac shell”全链路——从选型、部署、加固、通知推送到三个实测排障大坑，全部可复现。</p>
+<hr>
+<h2 id="2-选型：为什么是-frp-SSH"><a href="#2-选型：为什么是-frp-SSH" class="headerlink" title="2. 选型：为什么是 frp + SSH"></a>2. 选型：为什么是 frp + SSH</h2><p>动手前我把市面上的远程接管路线完整过了一遍（2026-11 实测状态）：</p>
+<table>
+<thead>
+<tr>
+<th align="left">路线</th>
+<th align="left">接管已在跑的存量会话</th>
+<th align="left">手机主动推送</th>
+<th align="left">国内网络与端点现实</th>
+<th align="left">成本</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>frp + SSH</strong>（本文）</td>
+<td align="left">✅ 一切会话（配 herdr 保活层）</td>
+<td align="left">✅ 可自接（Bark&#x2F;ntfy）</td>
+<td align="left">✅ 国内云 VPS 直连低延迟，任意模型端点可用</td>
+<td align="left">复用已有 VPS</td>
+</tr>
+<tr>
+<td align="left">Claude 官方 Remote Control</td>
+<td align="left">✅ 会话内 <code>/remote-control</code> 补挂</td>
+<td align="left">✅ 官方 APNs 推送</td>
+<td align="left">❌ 硬性要求订阅登录 + 直连 <code>api.anthropic.com</code>，走中转&#x2F;兼容端点的用户全部不可用</td>
+<td align="left">月订阅</td>
+</tr>
+<tr>
+<td align="left">Happy（开源移动客户端）</td>
+<td align="left">❌ 只能管它自己新启动的会话</td>
+<td align="left">✅ APNs</td>
+<td align="left">⚠️ 第三方兼容端点透传未经官方验证</td>
+<td align="left">免费</td>
+</tr>
+<tr>
+<td align="left">Paseo（开源调度台）</td>
+<td align="left">❌ 只能管它托管的新会话</td>
+<td align="left">✅ E2E relay</td>
+<td align="left">✅</td>
+<td align="left">免费</td>
+</tr>
+<tr>
+<td align="left">网页终端（ttyd + 反代）</td>
+<td align="left">✅</td>
+<td align="left">❌</td>
+<td align="left">⚠️ 移动 Safari 软键盘与选区 bug 多，只够“看一眼”</td>
+<td align="left">免费</td>
+</tr>
+<tr>
+<td align="left">Tailscale + mosh 客户端</td>
+<td align="left">✅</td>
+<td align="left">❌</td>
+<td align="left">⚠️ 官方 DERP 中继全在境外，国内直连需自建 DERP</td>
+<td align="left">免费</td>
+</tr>
+<tr>
+<td align="left">tmate</td>
+<td align="left">✅</td>
+<td align="left">❌</td>
+<td align="left">❌ 官方公共服务已关停，须自建服务端</td>
+<td align="left">—</td>
+</tr>
+</tbody></table>
+<p>最终锁定 <strong>frp + SSH + 常驻会话层</strong> 的三个决定性理由：</p>
+<ol>
+<li><strong>无差别接管“一切已在跑的存量会话”</strong>。Mac 侧配一层常驻会话层（本文选用专为 AI Agent 设计的终端多路复用器 herdr），由后台守护进程持有全部 PTY：SSH 断连多少次，进程原地活着，重连即恢复现场。这条路不挑终端里跑的是什么——编译任务、长服务、Claude Code、OpenCode、任何 shell 全部适用。Happy 与 Paseo 都要求会话从头由它们启动，桌面上跑了一半的存量任务接管不了。</li>
+<li><strong>模型端点完全解耦</strong>。国内大量开发者走 Anthropic 兼容中转端点（企业网关、智谱 GLM、火山方舟 Ark 等），而 Claude 官方 Remote Control 硬性要求直连 <code>api.anthropic.com</code> 且不得残留自定义 <code>ANTHROPIC_*</code> 环境变量，中转用户直接出局。SSH 隧道工作在传输层，上层 Agent 走什么 API 端点与它完全正交。</li>
+<li><strong>已有 VPS 即零边际成本</strong>。frp 是久经验证的内网穿透方案（GitHub 8 万+ Star），一台最低配云主机即可承载，不引入重型守护进程。</li>
+</ol>
+<hr>
+<h2 id="3-架构：三个正交平面"><a href="#3-架构：三个正交平面" class="headerlink" title="3. 架构：三个正交平面"></a>3. 架构：三个正交平面</h2><p><img src="/assets/frp-ssh-three-plane-architecture.svg" alt="外网手机直连内网 Mac：frp + SSH + herdr 三平面全链路架构"></p>
+<p>整套体系拆成三个正交平面，每个平面只解决一件事：</p>
+<ul>
+<li><strong>① 隧道平面（frp）——够得着</strong>：Mac 在 NAT 后没有公网 IP，由 Mac 上的 <code>frpc</code> 主动向云 VPS 的 <code>frps :7000</code> 拨出建立长连接隧道；手机 SSH 连 VPS 的 <code>:6022</code> 入口端口，流量即被透明转发至 Mac 本机的 <code>127.0.0.1:22</code>。</li>
+<li><strong>② 会话平面（herdr）——接得上</strong>：后台 server 进程持有所有窗格（pane）的伪终端 PTY。手机进电梯断网、切蜂窝网络或主动退出 App，任务都在 Mac 后台继续跑；重连后敲一行 <code>herdr</code> 立刻回到断线前那一秒。</li>
+<li><strong>③ 通知平面（Bark &#x2F; ntfy）——想起来</strong>：当 Agent 卡在权限确认弹窗（<code>blocked</code>）或任务执行完毕（<code>Stop</code>）时，通过本地 Hook 一发 <code>curl</code> 把告警推上手机锁屏，无需隔几分钟掏手机盲查。</li>
+</ul>
+<hr>
+<h2 id="4-服务器端：frps-部署（约-15-分钟）"><a href="#4-服务器端：frps-部署（约-15-分钟）" class="headerlink" title="4. 服务器端：frps 部署（约 15 分钟）"></a>4. 服务器端：frps 部署（约 15 分钟）</h2><h3 id="4-1-出站预检与安装配置"><a href="#4-1-出站预检与安装配置" class="headerlink" title="4.1 出站预检与安装配置"></a>4.1 出站预检与安装配置</h3><p>动手前先在 Mac 终端跑一行预检，确认所在内网（尤其是公司办公网）没有封禁目标 VPS 的控制端口出站：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 将 203.0.113.10 替换为你的 VPS 公网 IP（注意：测试时先关闭本机 TUN 代理，原因见 §9.1）</span></span><br><span class="line">nc -zv 203.0.113.10 7000</span><br></pre></td></tr></table></figure>
+
+<p>若公司防火墙拦截非标端口出站，直接把下文 <code>frps.toml</code> 的 <code>bindPort</code> 与 <code>frpc.toml</code> 的 <code>serverPort</code> 同步改为 <code>443</code> 或 <code>8443</code>。</p>
+<p>登录云 VPS（本文以 Linux <code>amd64</code> 架构、<code>v0.72.0</code> 为例），下载解压二进制并创建配置目录：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /tmp</span><br><span class="line">curl -LO https://github.com/fatedier/frp/releases/download/v0.72.0/frp_0.72.0_linux_amd64.tar.gz</span><br><span class="line">tar -xzf frp_0.72.0_linux_amd64.tar.gz</span><br><span class="line"><span class="built_in">sudo</span> install -m 755 frp_0.72.0_linux_amd64/frps /usr/bin/frps</span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">mkdir</span> -p /etc/frp</span><br></pre></td></tr></table></figure>
+
+<p>在Mac或VPS上用 <code>openssl rand -hex 24</code> 生成一串 48 位强随机密钥，写入 <code>/etc/frp/frps.toml</code>：</p>
+<figure class="highlight toml"><table><tr><td class="code"><pre><span class="line"><span class="attr">bindAddr</span> = <span class="string">&quot;0.0.0.0&quot;</span></span><br><span class="line"><span class="attr">bindPort</span> = <span class="number">7000</span>                    <span class="comment"># frp 控制面端口</span></span><br><span class="line"></span><br><span class="line"><span class="attr">auth.method</span> = <span class="string">&quot;token&quot;</span></span><br><span class="line"><span class="attr">auth.token</span> = <span class="string">&quot;替换为_openssl_rand_hex_24_生成的强随机字符串&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 端口白名单：只放行你实际要用的 SSH 入口端口</span></span><br><span class="line"><span class="comment"># 不设这条 = 任何拿到 token 的客户端可以在你服务器上绑定任意端口</span></span><br><span class="line"><span class="attr">allowPorts</span> = [&#123; single = <span class="number">6022</span> &#125;]</span><br></pre></td></tr></table></figure>
+
+<p>两条必须卡死的安全基线：</p>
+<ul>
+<li><strong><code>auth.token</code> 必须强随机</strong>：frp 的 token 是服务端级共享凭据，弱口令等于把公网 VPS 变成公开跳板机。</li>
+<li><strong><code>allowPorts</code> 是最容易漏掉的防线</strong>：默认情况下 <code>frps</code> 允许客户端申请绑定任意 <code>remotePort</code>，显式白名单将其锁死在唯一入口端口。</li>
+</ul>
+<h3 id="4-2-systemd-常驻与权限收口"><a href="#4-2-systemd-常驻与权限收口" class="headerlink" title="4.2 systemd 常驻与权限收口"></a>4.2 systemd 常驻与权限收口</h3><p>写入 <code>/etc/systemd/system/frps.service</code>：</p>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[Unit]</span></span><br><span class="line"><span class="attr">Description</span>=frp server</span><br><span class="line"><span class="attr">After</span>=network.target</span><br><span class="line"></span><br><span class="line"><span class="section">[Service]</span></span><br><span class="line"><span class="attr">Type</span>=simple</span><br><span class="line"><span class="attr">ExecStart</span>=/usr/bin/frps -c /etc/frp/frps.toml</span><br><span class="line"><span class="attr">Restart</span>=always</span><br><span class="line"><span class="attr">RestartSec</span>=<span class="number">5</span></span><br><span class="line"></span><br><span class="line"><span class="section">[Install]</span></span><br><span class="line"><span class="attr">WantedBy</span>=multi-user.target</span><br></pre></td></tr></table></figure>
+
+<p>收紧配置文件权限并启动服务：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> <span class="built_in">chmod</span> 600 /etc/frp/frps.toml</span><br><span class="line"><span class="built_in">sudo</span> systemctl daemon-reload</span><br><span class="line"><span class="built_in">sudo</span> systemctl <span class="built_in">enable</span> --now frps</span><br><span class="line"><span class="built_in">sudo</span> systemctl status frps</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-3-云厂商安全组对齐"><a href="#4-3-云厂商安全组对齐" class="headerlink" title="4.3 云厂商安全组对齐"></a>4.3 云厂商安全组对齐</h3><p>在云厂商控制台安全组中放行 <strong>TCP <code>7000</code></strong>（frp 控制面）与你的 <strong>SSH 入口端口</strong>（本文示例 <code>6022</code>）。<strong>入口端口选在哪个号段，务必先看一眼云控制台安全组已放行的策略</strong>——如果安全组已有现成放行区间，直接把 <code>allowPorts</code> 和后文的 <code>remotePort</code> 选在该区间内，省去排查“服务监听正常但外网连不通”的折腾（详见 §9.3）。</p>
+<hr>
+<h2 id="5-Mac-端：frpc-LaunchAgent-自愈常驻（约-15-分钟）"><a href="#5-Mac-端：frpc-LaunchAgent-自愈常驻（约-15-分钟）" class="headerlink" title="5. Mac 端：frpc + LaunchAgent 自愈常驻（约 15 分钟）"></a>5. Mac 端：frpc + LaunchAgent 自愈常驻（约 15 分钟）</h2><h3 id="5-1-安装与配置校验"><a href="#5-1-安装与配置校验" class="headerlink" title="5.1 安装与配置校验"></a>5.1 安装与配置校验</h3><p>在 Mac 上通过 Homebrew 安装客户端并创建配置目录：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install frpc</span><br><span class="line"><span class="built_in">mkdir</span> -p ~/.config/frp</span><br></pre></td></tr></table></figure>
+
+<p>写入 <code>~/.config/frp/frpc.toml</code>：</p>
+<figure class="highlight toml"><table><tr><td class="code"><pre><span class="line"><span class="attr">serverAddr</span> = <span class="string">&quot;203.0.113.10&quot;</span>        <span class="comment"># 替换为你的 VPS 公网 IP</span></span><br><span class="line"><span class="attr">serverPort</span> = <span class="number">7000</span></span><br><span class="line"><span class="attr">auth.method</span> = <span class="string">&quot;token&quot;</span></span><br><span class="line"><span class="attr">auth.token</span> = <span class="string">&quot;与服务器端 frps.toml 完全一致的 token&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="section">[[proxies]]</span></span><br><span class="line"><span class="attr">name</span> = <span class="string">&quot;mac-ssh&quot;</span></span><br><span class="line"><span class="attr">type</span> = <span class="string">&quot;tcp&quot;</span></span><br><span class="line"><span class="attr">localIP</span> = <span class="string">&quot;127.0.0.1&quot;</span></span><br><span class="line"><span class="attr">localPort</span> = <span class="number">22</span>                     <span class="comment"># 转发至 Mac 本机 sshd</span></span><br><span class="line"><span class="attr">remotePort</span> = <span class="number">6022</span>                  <span class="comment"># VPS 公网入口端口，与 allowPorts 对齐</span></span><br></pre></td></tr></table></figure>
+
+<p>收紧权限并执行官方内置语法校验：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">chmod</span> 600 ~/.config/frp/frpc.toml</span><br><span class="line">frpc verify -c ~/.config/frp/frpc.toml   <span class="comment"># 输出 syntax is ok 再继续</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="5-2-LaunchAgent-开机自启与断线自愈"><a href="#5-2-LaunchAgent-开机自启与断线自愈" class="headerlink" title="5.2 LaunchAgent 开机自启与断线自愈"></a>5.2 LaunchAgent 开机自启与断线自愈</h3><p>将下方模板中的 <code>&lt;你的Mac用户名&gt;</code> 替换为实际用户名（可通过 <code>whoami</code> 查看；若使用 Intel 芯片 Mac，将 <code>/opt/homebrew/bin/frpc</code> 改为 <code>/usr/local/bin/frpc</code>），写入 <code>~/Library/LaunchAgents/com.user.frpc.plist</code>：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;UTF-8&quot;</span>?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">plist</span> <span class="keyword">PUBLIC</span> <span class="string">&quot;-//Apple//DTD PLIST 1.0//EN&quot;</span> <span class="string">&quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">plist</span> <span class="attr">version</span>=<span class="string">&quot;1.0&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dict</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">key</span>&gt;</span>Label<span class="tag">&lt;/<span class="name">key</span>&gt;</span><span class="tag">&lt;<span class="name">string</span>&gt;</span>com.user.frpc<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">key</span>&gt;</span>ProgramArguments<span class="tag">&lt;/<span class="name">key</span>&gt;</span><span class="tag">&lt;<span class="name">array</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">string</span>&gt;</span>/opt/homebrew/bin/frpc<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">string</span>&gt;</span>-c<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">string</span>&gt;</span>/Users/<span class="tag">&lt;<span class="name">你的Mac用户名</span>&gt;</span>/.config/frp/frpc.toml<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">array</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">key</span>&gt;</span>RunAtLoad<span class="tag">&lt;/<span class="name">key</span>&gt;</span><span class="tag">&lt;<span class="name">true</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">key</span>&gt;</span>KeepAlive<span class="tag">&lt;/<span class="name">key</span>&gt;</span><span class="tag">&lt;<span class="name">true</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">key</span>&gt;</span>StandardOutPath<span class="tag">&lt;/<span class="name">key</span>&gt;</span><span class="tag">&lt;<span class="name">string</span>&gt;</span>/Users/<span class="tag">&lt;<span class="name">你的Mac用户名</span>&gt;</span>/.config/frp/frpc.log<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">key</span>&gt;</span>StandardErrorPath<span class="tag">&lt;/<span class="name">key</span>&gt;</span><span class="tag">&lt;<span class="name">string</span>&gt;</span>/Users/<span class="tag">&lt;<span class="name">你的Mac用户名</span>&gt;</span>/.config/frp/frpc.log<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dict</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">plist</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>加载守护进程并验证隧道建立成功：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">launchctl bootstrap gui/$(<span class="built_in">id</span> -u) ~/Library/LaunchAgents/com.user.frpc.plist</span><br><span class="line">launchctl <span class="built_in">print</span> gui/$(<span class="built_in">id</span> -u)/com.user.frpc | grep <span class="string">&quot;state =&quot;</span>   <span class="comment"># 应输出 state = running</span></span><br><span class="line"><span class="built_in">tail</span> -n 20 ~/.config/frp/frpc.log                              <span class="comment"># 应出现 login to server success 与 [mac-ssh] start proxy success</span></span><br></pre></td></tr></table></figure>
+
+<p><code>RunAtLoad + KeepAlive</code> 保证了开机自动拉起、进程异常退出或网络闪断后自动重连。</p>
+<p>最后确认 Mac 的两个系统前提：</p>
+<ol>
+<li><strong>开启 SSH 服务端</strong>：<code>系统设置 → 通用 → 共享 → 远程登录</code> 打开（或终端验证 <code>sudo launchctl list | grep sshd</code>）。</li>
+<li><strong>禁止休眠断网</strong>：机器休眠会掐断所有网络连接。常驻开发机执行 <code>sudo pmset -a sleep 0 disablesleep 1</code> 保持常醒。</li>
+</ol>
+<hr>
+<h2 id="6-手机端：Termius-配置与日常操控教程（约-10-分钟）"><a href="#6-手机端：Termius-配置与日常操控教程（约-10-分钟）" class="headerlink" title="6. 手机端：Termius 配置与日常操控教程（约 10 分钟）"></a>6. 手机端：Termius 配置与日常操控教程（约 10 分钟）</h2><p>iOS 与 Android 端 Termius（免费版即够用）操作流程完全一致。</p>
+<h3 id="6-1-生成设备专属密钥（私钥永不出机）"><a href="#6-1-生成设备专属密钥（私钥永不出机）" class="headerlink" title="6.1 生成设备专属密钥（私钥永不出机）"></a>6.1 生成设备专属密钥（私钥永不出机）</h3><ol>
+<li>打开 Termius → <strong>Keychain</strong> → <strong>+</strong> → <strong>Generate Key</strong>。</li>
+<li>类型选择 <strong>Ed25519</strong>，Passphrase 留空（部分移动端 TUI 渲染口令提示存在兼容问题，依赖手机锁屏与面容 ID 保护即可）。</li>
+<li>生成后点进该密钥 → <strong>Copy Public Key</strong>。</li>
+</ol>
+<p>将复制出的一行公钥（<code>ssh-ed25519 AAAA...</code>）发到 Mac 上，追加进 <code>~/.ssh/authorized_keys</code>：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p ~/.ssh &amp;&amp; <span class="built_in">chmod</span> 700 ~/.ssh</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;ssh-ed25519 AAAA...你的公钥内容... termius-iphone&quot;</span> &gt;&gt; ~/.ssh/authorized_keys</span><br><span class="line"><span class="built_in">chmod</span> 600 ~/.ssh/authorized_keys</span><br><span class="line">ssh-keygen -lf ~/.ssh/authorized_keys   <span class="comment"># 正常解析出 SHA256 指纹即代表格式合法</span></span><br></pre></td></tr></table></figure>
+
+<p>建议在每把公钥末尾加设备标识注释（如 <code>termius-iphone</code>、<code>termius-android</code>）。多台移动设备各自独立生成密钥对，严禁跨设备拷贝私钥，日后丢设备只需在 <code>authorized_keys</code> 中删掉对应那一行即可精准吊销。</p>
+<h3 id="6-2-配置主机并首次连接"><a href="#6-2-配置主机并首次连接" class="headerlink" title="6.2 配置主机并首次连接"></a>6.2 配置主机并首次连接</h3><p>在 Termius 中进入 <strong>Hosts</strong> → <strong>+</strong> → <strong>New Host</strong>：</p>
+<table>
+<thead>
+<tr>
+<th align="left">配置项</th>
+<th align="left">填写值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>Address &#x2F; Hostname</strong></td>
+<td align="left"><code>203.0.113.10</code>（你的 VPS 公网 IP）</td>
+</tr>
+<tr>
+<td align="left"><strong>Port</strong></td>
+<td align="left"><code>6022</code>（与 <code>remotePort</code> 一致）</td>
+</tr>
+<tr>
+<td align="left"><strong>Username</strong></td>
+<td align="left">你的 Mac 登录用户名</td>
+</tr>
+<tr>
+<td align="left"><strong>Key</strong></td>
+<td align="left">选择刚生成的 Ed25519 密钥</td>
+</tr>
+</tbody></table>
+<p>保存后点击连接——<strong>直接落入 Mac 的 zsh 提示符且全程不弹密码框，即代表隧道与公钥认证全线贯通</strong>。</p>
+<h3 id="6-3-日常使用教程：接管会话、审批权限与无损脱离"><a href="#6-3-日常使用教程：接管会话、审批权限与无损脱离" class="headerlink" title="6.3 日常使用教程：接管会话、审批权限与无损脱离"></a>6.3 日常使用教程：接管会话、审批权限与无损脱离</h3><p>连进 Mac shell 只是第一步，真正的日常操作流围绕常驻会话层展开：</p>
+<ol>
+<li><strong>一键附身回到现场</strong>：<br>在终端直接输入 <code>herdr</code> 回车，屏幕上所有项目的并发 Agent 窗格与侧边栏状态灯原样呈现。</li>
+<li><strong>在手机上切换窗格与处理 Agent 权限弹窗</strong>：<ul>
+<li><strong>触屏直点</strong>：Termius 原生支持终端鼠标协议（Mouse Reporting），手指直接点击目标窗格即可聚焦，点击 herdr 侧边栏标红（<code>blocked</code>）的項目即可切过去看是谁在等确认。</li>
+<li><strong>审批弹窗</strong>：利用 Termius 键盘上方扩展键条的 <code>↑</code> <code>↓</code> 方向键与 <code>Enter</code> 键，一秒完成 Claude Code &#x2F; OpenCode 的工具执行授权，或直接语音输入追发下一条 Prompt。</li>
+<li><strong>视野调节</strong>：分屏较多时将手机横屏，双指捏合实时缩放字号。</li>
+</ul>
+</li>
+<li><strong>安全脱离（Detach）与断网恢复</strong>：<ul>
+<li>处理完毕准备收起手机时：点 Termius 扩展键条的 <code>CTRL</code>（高亮锁定）→ 点字母 <code>b</code>（发送前缀键 <code>Ctrl+b</code>）→ 再点 <code>q</code>（herdr 脱离键）。此时退回普通 shell，后台进程毫发无损。</li>
+<li><strong>暴力断连零损失</strong>：哪怕忘记脱离直接划掉 Termius App、锁屏或进地铁断网，也完全不用担心——PTY 由 Mac 本机的 <code>herdr</code> server 进程持有，下次重连敲 <code>herdr</code> 依然原地续接。</li>
+</ul>
+</li>
+</ol>
+<p>我的日常场景是在 Mac 上用 herdr 同时跑十几个 AI coding agent，手机敲一个 <code>herdr</code> 就能巡检全部窗格——这套多 Agent 并发环境搭建详见姊妹篇《<a href="/2026/11/10/herdr-multi-agent-concurrent-dev-environment/">herdr × Git Worktree：多 Agent 并发开发环境实践</a>》。</p>
+<hr>
+<h2 id="7-sshd-安全加固：先验钥匙，再关密码"><a href="#7-sshd-安全加固：先验钥匙，再关密码" class="headerlink" title="7. sshd 安全加固：先验钥匙，再关密码"></a>7. sshd 安全加固：先验钥匙，再关密码</h2><p><code>6022</code> 端口一旦暴露在公网，几分钟内就会收到全球扫描器的密码爆破请求。<strong>必须在第 6 节确认密钥免密登录成功后</strong>，彻底关闭 sshd 的密码认证面（顺序绝不能反，先关密码再配密钥会把自己在外面锁死）。</p>
+<p>在 Mac 上创建独立加固配置 <code>/etc/ssh/sshd_config.d/100-hardening.conf</code>：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">PasswordAuthentication no</span><br><span class="line">KbdInteractiveAuthentication no</span><br></pre></td></tr></table></figure>
+
+<p><strong>关键细节</strong>：macOS 的 OpenSSH 默认启用了 PAM 键盘交互认证（<code>KbdInteractiveAuthentication</code>），它是密码登录的“孪生通道”。如果只写 <code>PasswordAuthentication no</code>，外部攻击者依然能通过 <code>keyboard-interactive</code> 尝试系统密码。<strong>两行必须同时设为 <code>no</code> 才算彻底焊死密码面</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> sh -c <span class="string">&#x27;printf &quot;PasswordAuthentication no\nKbdInteractiveAuthentication no\n&quot; \</span></span><br><span class="line"><span class="string">  &gt; /etc/ssh/sshd_config.d/100-hardening.conf&#x27;</span></span><br><span class="line"><span class="built_in">sudo</span> /usr/sbin/sshd -t                                           <span class="comment"># 语法校验无报错再重启</span></span><br><span class="line"><span class="built_in">sudo</span> launchctl kickstart -k system/com.openssh.sshd</span><br><span class="line"><span class="built_in">sudo</span> /usr/sbin/sshd -T | grep -iE <span class="string">&quot;passwordauth|kbdinteractive&quot;</span>   <span class="comment"># 确认两项输出均为 no</span></span><br></pre></td></tr></table></figure>
+
+<p>这项改动只作用于 SSH 协议通道，对 macOS 本机锁屏密码、Touch ID、Apple Watch 解锁及屏幕共享毫无影响。</p>
+<p>最后从任意外部机器执行一次拒绝测试，验证攻击面已彻底收口：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh -o PubkeyAuthentication=no -p 6022 &lt;用户名&gt;@203.0.113.10 <span class="literal">true</span></span><br><span class="line"><span class="comment"># 期望输出：Permission denied (publickey).</span></span><br><span class="line"><span class="comment"># 括号内仅剩 publickey 一项，代表密码与键盘交互通道已全部关闭</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="8-补齐第三平面：Agent-卡权限时主动推送手机锁屏"><a href="#8-补齐第三平面：Agent-卡权限时主动推送手机锁屏" class="headerlink" title="8. 补齐第三平面：Agent 卡权限时主动推送手机锁屏"></a>8. 补齐第三平面：Agent 卡权限时主动推送手机锁屏</h2><p>前面打通了“随时连上去”（隧道平面）和“连上去现场还在”（会话平面）。如果跑着长任务，你肯定不想每隔十分钟打开 Termius 轮询一次——加上 <strong>Bark（iOS）</strong> 或 <strong>ntfy（Android &#x2F; 跨平台）</strong> 推送脚本，就能把工作流变成 <strong>“手机锁屏收到提醒 → 点开 Termius 30 秒处理完”</strong>。</p>
+<h3 id="8-1-编写轻量通知脚本"><a href="#8-1-编写轻量通知脚本" class="headerlink" title="8.1 编写轻量通知脚本"></a>8.1 编写轻量通知脚本</h3><p>在 Mac 上创建 <code>~/bin/agent-notify</code> 并赋予执行权限（<code>chmod +x ~/bin/agent-notify</code>）：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="meta">#!/usr/bin/env bash</span></span><br><span class="line"><span class="comment"># 仅当存在 ~/.agent-notify-phone 标记文件时才向手机发推送（出门 touch，回座位 rm，避免坐在电脑前时手机跟着双响）</span></span><br><span class="line">[ -f <span class="string">&quot;<span class="variable">$HOME</span>/.agent-notify-phone&quot;</span> ] || <span class="built_in">exit</span> 0</span><br><span class="line"></span><br><span class="line">TITLE=<span class="string">&quot;<span class="variable">$&#123;1:-Agent 状态提醒&#125;</span>&quot;</span></span><br><span class="line">MSG=<span class="string">&quot;<span class="variable">$&#123;2:-有终端会话正在等待你的确认&#125;</span>&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 方案 A：iOS Bark 推送（App Store 安装 Bark，填入你的专属 Key）</span></span><br><span class="line">BARK_KEY=<span class="string">&quot;你的_BARK_KEY&quot;</span></span><br><span class="line">ENCODED=$(python3 -c <span class="string">&quot;import urllib.parse,sys; print(urllib.parse.quote(sys.argv[1]))&quot;</span> <span class="string">&quot;<span class="variable">$TITLE</span>/<span class="variable">$MSG</span>&quot;</span>)</span><br><span class="line">curl -m 5 -fsSL <span class="string">&quot;https://api.day.app/<span class="variable">$&#123;BARK_KEY&#125;</span>/<span class="variable">$&#123;ENCODED&#125;</span>?sound=minuet&amp;group=agent&quot;</span> &gt;/dev/null 2&gt;&amp;1 &amp;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 方案 B：Android / 跨平台 ntfy 推送（使用一串高熵随机名作为私有 topic）</span></span><br><span class="line"><span class="comment"># curl -m 5 -fsSL -H &quot;Title: $TITLE&quot; -d &quot;$MSG&quot; &quot;https://ntfy.sh/你的40位随机私有topic&quot; &gt;/dev/null 2&gt;&amp;1 &amp;</span></span><br></pre></td></tr></table></figure>
+
+<p>离开座位前敲 <code>touch ~/.agent-notify-phone</code> 开启远程哨兵，回到电脑前 <code>rm -f ~/.agent-notify-phone</code> 切回安静模式。</p>
+<h3 id="8-2-挂载到-Claude-Code-生命周期-Hook"><a href="#8-2-挂载到-Claude-Code-生命周期-Hook" class="headerlink" title="8.2 挂载到 Claude Code 生命周期 Hook"></a>8.2 挂载到 Claude Code 生命周期 Hook</h3><p>在 <code>~/.claude/settings.json</code> 中挂载 <code>Notification</code>（卡在权限审批时触发）与 <code>Stop</code>（当前轮任务跑完时触发）钩子：</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;hooks&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;Notification&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">      <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;matcher&quot;</span><span class="punctuation">:</span> <span class="string">&quot;permission_prompt&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;hooks&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">          <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;command&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;$HOME/bin/agent-notify &#x27;Claude 等待授权&#x27; \&quot;$(basename \&quot;$PWD\&quot;) 窗格需确认权限\&quot;&quot;</span></span><br><span class="line">          <span class="punctuation">&#125;</span></span><br><span class="line">        <span class="punctuation">]</span></span><br><span class="line">      <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;Stop&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">      <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;hooks&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">          <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;command&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;$HOME/bin/agent-notify &#x27;Claude 任务完成&#x27; \&quot;$(basename \&quot;$PWD\&quot;) 已执行完毕\&quot;&quot;</span></span><br><span class="line">          <span class="punctuation">&#125;</span></span><br><span class="line">        <span class="punctuation">]</span></span><br><span class="line">      <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">]</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>配置完成后，只要你在外面且 Agent 弹出权限请求，手机锁屏会在 1 秒内收到通知。</p>
+<hr>
+<h2 id="9-踩坑实录：三个价值一下午的排障大坑"><a href="#9-踩坑实录：三个价值一下午的排障大坑" class="headerlink" title="9. 踩坑实录：三个价值一下午的排障大坑"></a>9. 踩坑实录：三个价值一下午的排障大坑</h2><p>整套配置本身半小时就能跑通，但我实测时多花了好几个小时，全折在下面三个极具迷惑性的假象里。它们共同指向一条底层排障铁律：<strong>当排障陷入死胡同时，先怀疑自己的观测手段</strong>。</p>
+<p><img src="/assets/frp-ssh-troubleshooting-traps.svg" alt="排障方法论：先怀疑观测手段——三个实测大坑对照"></p>
+<h3 id="9-1-坑一：本机测公网端口，全是假阳性"><a href="#9-1-坑一：本机测公网端口，全是假阳性" class="headerlink" title="9.1 坑一：本机测公网端口，全是假阳性"></a>9.1 坑一：本机测公网端口，全是假阳性</h3><ul>
+<li><strong>失真现象</strong>：在 Mac 本机执行 <code>nc -zv &lt;VPS_IP&gt; 6022</code> 探测远端端口，无论 VPS 上 <code>frps</code> 是否启动，永远秒回 <code>Connection to ... 6022 port [tcp/*] succeeded!</code>，但真正发起 SSH 连接却立刻卡死。</li>
+<li><strong>底层根因</strong>：Mac 上开着代理工具的 TUN 模式（Clash &#x2F; mihomo 系），虚拟网卡通过 <code>fake-ip</code> 与透明劫持接管了全部出站 TCP SYN 包——<strong>三次握手在本地内核就被 TUN 协议栈直接 ACK 了</strong>，<code>nc</code> 看到的“连接成功”只是本机代理栈回的假象，数据包甚至还没走出网卡。</li>
+<li><strong>正确验证姿势</strong>：<strong>开启了 TUN 代理的主机上，一切 <code>nc</code> &#x2F; <code>telnet</code> 端口连通性探测结果均不可信</strong>。外部可达性测试必须从一台干净的外部云主机发起，或直接用切到 4G&#x2F;5G 蜂窝网络的手机 Termius 实测。</li>
+</ul>
+<h3 id="9-2-坑二：VPS-回环路径上的-sshd-静默超时"><a href="#9-2-坑二：VPS-回环路径上的-sshd-静默超时" class="headerlink" title="9.2 坑二：VPS 回环路径上的 sshd 静默超时"></a>9.2 坑二：VPS 回环路径上的 sshd 静默超时</h3><ul>
+<li><strong>失真现象</strong>：为了快速验证隧道，我登录到 VPS 上执行 <code>ssh -p 6022 user@127.0.0.1</code>（本机连本机转发口）。结果 TCP 握手秒通、<code>frps</code>&#x2F;<code>frpc</code> 日志显示代理通道已建立，但 SSH 握手挂起 4 秒后超时断开，连一个字节的 <code>SSH-2.0-OpenSSH</code> Banner 都收不到。同时刻在 Mac 本机测 <code>nc 127.0.0.1 22</code> 却秒回 Banner。</li>
+<li><strong>排查弯路</strong>：先后怀疑并逐一排除了 frp 版本差异、TLS 加密开关、连接池耗尽、macOS sshd 源地址惩罚（<code>PerSourcePenalties</code>）与 <code>MaxStartups</code> 限制；甚至在 Mac 上临时起了个 Python 回声服务挂进同一条隧道对照——回声服务秒通，唯独 sshd 静默。</li>
+<li><strong>底层真相</strong>：这是 <strong>VPS 本机回环路径（Loopback）特有的边界现象</strong>。当我换用另一台外部云主机从公网连 <code>&lt;VPS公网IP&gt;:6022</code> 时，第一次尝试就毫秒级弹出 SSH Banner 并成功登录。我在“服务器上自己连自己”这条真实用户永远不会走的路径上白白消耗了几个小时。</li>
+<li><strong>正确验证姿势</strong>：测试路径必须 1:1 复刻真实客户端路径。真实流量从外部公网网卡进来，验证就必须从外部公网发起。</li>
+</ul>
+<h3 id="9-3-坑三：云安全组的“隐形墙”"><a href="#9-3-坑三：云安全组的“隐形墙”" class="headerlink" title="9.3 坑三：云安全组的“隐形墙”"></a>9.3 坑三：云安全组的“隐形墙”</h3><ul>
+<li><strong>失真现象</strong>：在 <code>frps.toml</code> 里随手挑了个端口，VPS 上跑 <code>ss -tlnp</code> 看到 <code>frps</code> 正常监听，<code>frpc.log</code> 也打印 <code>start proxy success</code>，便想当然认为公网已经通了——直到从外部云主机探测才发现 SYN 包被静默丢弃。</li>
+<li><strong>底层根因</strong>：云主机的安全组（Security Group）工作在宿主机虚拟化层，位于 Linux 内核 <code>iptables</code> &#x2F; <code>nftables</code> 与 <code>ss</code> 视野之外。部署前先去云控制台确认已放行的端口区间，让 <code>allowPorts</code> 与 <code>remotePort</code> 向安全组对齐，能直接省掉一整轮抓包排障。</li>
+</ul>
+<p><em>(附注：macOS 默认没有 GNU <code>timeout</code> 命令，写自动化探测脚本时若用 <code>timeout 5 ssh ...</code> 会因找不到命令静默失败；可用 <code>ssh -o ConnectTimeout=5</code> 原生参数替代，或 <code>brew install coreutils</code> 后用 <code>gtimeout</code>。)</em></p>
+<hr>
+<h2 id="10-生产验收与安全核对清单"><a href="#10-生产验收与安全核对清单" class="headerlink" title="10. 生产验收与安全核对清单"></a>10. 生产验收与安全核对清单</h2><p>上线前按序过一遍以下 6 项，全绿即可长期免维护运行：</p>
+<ol>
+<li><strong>VPS 监听检查</strong>：<code>ss -tlnp | grep -E &#39;7000|6022&#39;</code> 确认控制面与入口端口均处于 <code>LISTEN</code>。</li>
+<li><strong>Mac 隧道检查</strong>：<code>tail ~/.config/frp/frpc.log</code> 确认出现 <code>login to server success</code> 与 <code>[mac-ssh] start proxy success</code>。</li>
+<li><strong>重启自愈验证</strong>：重启一次 Mac，不人工干预，确认 <code>frpc</code> 由 LaunchAgent 自动拉起并重连 VPS。</li>
+<li><strong>手机接管闭环</strong>：手机切蜂窝网络 → Termius 免密连入 → 敲 <code>herdr</code> → 给正在运行的 Agent 发送一条指令并确认响应。</li>
+<li><strong>双端会话同步</strong>：手机 <code>Ctrl+b q</code> 脱离后，在 Mac 桌面终端敲 <code>herdr</code> 确认同一现场无缝衔接。</li>
+<li><strong>密码爆破免疫验证</strong>：从外部机器执行 <code>ssh -o PubkeyAuthentication=no -p 6022 &lt;用户&gt;@&lt;VPS_IP&gt; true</code>，确认返回 <code>Permission denied (publickey)</code>。</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th align="left">安全控制项</th>
+<th align="left">落地措施</th>
+<th align="left">核心防御目标</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>frp 鉴权凭据</strong></td>
+<td align="left"><code>openssl rand -hex 24</code> 生成 48 位随机串</td>
+<td align="left">防止弱口令导致 VPS 沦为公共跳板</td>
+</tr>
+<tr>
+<td align="left"><strong>端口绑定范围</strong></td>
+<td align="left"><code>allowPorts = [&#123; single = 6022 &#125;]</code></td>
+<td align="left">阻止客户端越权在 VPS 上暴露额外端口</td>
+</tr>
+<tr>
+<td align="left"><strong>配置文件权限</strong></td>
+<td align="left">服务端与客户端均执行 <code>chmod 600 *.toml</code></td>
+<td align="left">防止本机非授权进程读取明文 token</td>
+</tr>
+<tr>
+<td align="left"><strong>SSH 密钥策略</strong></td>
+<td align="left">Ed25519 算法，一机一钥，行尾标注设备名</td>
+<td align="left">私钥永不出手机，设备丢失可按行精准吊销</td>
+</tr>
+<tr>
+<td align="left"><strong>密码通道焊死</strong></td>
+<td align="left"><code>PasswordAuthentication no</code> + <code>KbdInteractiveAuthentication no</code></td>
+<td align="left">彻底消除公网端口被字典爆破的可能</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="11-演进方向"><a href="#11-演进方向" class="headerlink" title="11. 演进方向"></a>11. 演进方向</h2><ul>
+<li><strong>第二操控面（笔记本 &#x2F; iPad 远程接管）</strong>：在随身轻薄本上只需加 4 行 <code>~/.ssh/config</code> 别名即可同样穿透接入；如果 Mac 跑的是 herdr，还可以直接运行 <code>herdr --remote &lt;ssh别名&gt;</code>，把本地终端变成远端 Mac herdr server 的原生瘦客户端。</li>
+<li><strong>更强网络隔离（WireGuard &#x2F; STCP）</strong>：若希望连 <code>6022</code> 端口都不对公网扫描器暴露，桌面端之间可切换为 frp <code>stcp</code>（Secret TCP）模式；含手机端接入时可在 VPS 上额外部署 WireGuard 组网，将 SSH 入口完全收入虚拟私网内部。</li>
+</ul>
+<hr>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+<li><strong>frp 官方仓库与文档</strong>：<a target="_blank" rel="noopener" href="https://github.com/fatedier/frp">fatedier&#x2F;frp</a> · <a target="_blank" rel="noopener" href="https://gofrp.org/">gofrp.org</a></li>
+<li><strong>herdr（AI Agent 终端多路复用器）</strong>：<a target="_blank" rel="noopener" href="https://herdr.dev/">herdr.dev</a> · 姊妹篇《<a href="/2026/11/10/herdr-multi-agent-concurrent-dev-environment/">herdr × Git Worktree：多 Agent 并发开发环境实践</a>》</li>
+<li><strong>Termius 移动 SSH 客户端</strong>：<a target="_blank" rel="noopener" href="https://termius.com/">termius.com</a></li>
+<li><strong>移动端推送工具</strong>：<a target="_blank" rel="noopener" href="https://github.com/Finb/Bark">Bark (iOS)</a> · <a target="_blank" rel="noopener" href="https://ntfy.sh/">ntfy (跨平台)</a></li>
+</ul>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">shawn</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://blog.191022.xyz/2026/11/10/frp-ssh-termius-remote-mac-practice/">https://blog.191022.xyz/2026/11/10/frp-ssh-termius-remote-mac-practice/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">shawn</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/frp/">
+                                    <span class="chip bg-color">frp</span>
+                                </a>
+                            
+                                <a href="/tags/SSH/">
+                                    <span class="chip bg-color">SSH</span>
+                                </a>
+                            
+                                <a href="/tags/Termius/">
+                                    <span class="chip bg-color">Termius</span>
+                                </a>
+                            
+                                <a href="/tags/herdr/">
+                                    <span class="chip bg-color">herdr</span>
+                                </a>
+                            
+                                <a href="/tags/AI-Agent/">
+                                    <span class="chip bg-color">AI-Agent</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/">
+                                    <span class="chip bg-color">内网穿透</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2026/11/10/frp-ssh-termius-remote-mac-practice.en/">
+                    <div class="card-image">
+                        
+                        <img src="/assets/frp-ssh-cover.jpg" class="responsive-img" alt="Remote Access to a Private Mac: Full-Stack Guide with frp, SSH, and Termius">
+                        
+                        <span class="card-title">Remote Access to a Private Mac: Full-Stack Guide with frp, SSH, and Termius</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2026-11-10
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Engineering-Practice/" class="post-category">
+                                    Engineering Practice
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/frp/">
+                        <span class="chip bg-color">frp</span>
+                    </a>
+                    
+                    <a href="/tags/SSH/">
+                        <span class="chip bg-color">SSH</span>
+                    </a>
+                    
+                    <a href="/tags/Termius/">
+                        <span class="chip bg-color">Termius</span>
+                    </a>
+                    
+                    <a href="/tags/herdr/">
+                        <span class="chip bg-color">herdr</span>
+                    </a>
+                    
+                    <a href="/tags/NAT-Traversal/">
+                        <span class="chip bg-color">NAT-Traversal</span>
+                    </a>
+                    
+                    <a href="/tags/AI-Agent/">
+                        <span class="chip bg-color">AI-Agent</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2026/09/03/hello-world/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        
+                        <span class="card-title">Hello World</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2026-09-03
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            shawn
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2021-2026</span>
+            
+            <a href="/about" target="_blank">shawn</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            
+            <br>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/haitau" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:shawn@191022.xyz" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+    
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

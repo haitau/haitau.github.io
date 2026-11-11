@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 390" width="100%" height="100%">
+  <style>
+    
+    text {
+      font-family: 'JetBrains Mono', 'PingFang SC', 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
+    }
+  </style>
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#e2e8f0" stroke-width="0.6"/>
+    </pattern>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <rect width="100%" height="100%" fill="#f8fafc"/>
+  <rect width="100%" height="100%" fill="url(#grid)"/>
+
+  <!-- Vertical Connectors between tiers -->
+  <line x1="460" y1="150" x2="460" y2="178" stroke="#64748b" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <line x1="460" y1="258" x2="460" y2="286" stroke="#64748b" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <!-- Tier 1: Control Plane -->
+  <rect x="40" y="70" width="840" height="80" rx="8" fill="#f8fafc"/>
+  <rect x="40" y="70" width="840" height="80" rx="8" fill="rgba(6,182,212,0.12)" stroke="#0891b2" stroke-width="1.6"/>
+  <text x="65" y="102" fill="#0891b2" font-size="13" font-weight="700">第一层：控制面 (Control Plane) — 承担者：herdr</text>
+  <text x="65" y="124" fill="#0f172a" font-size="10.5" font-weight="600">管“活儿在哪儿跑”：四态看板灯 (working/blocked/done/idle) · Pane 生命周期 · agent start / wait / prompt</text>
+  <text x="65" y="141" fill="#475569" font-size="9.5">边界纪律：prompt / send-keys 仅用于下发短任务指令，不承载跨 Agent 的长上下文传递</text>
+
+  <!-- Tier 2: Session Layer -->
+  <rect x="40" y="178" width="840" height="80" rx="8" fill="#f8fafc"/>
+  <rect x="40" y="178" width="840" height="80" rx="8" fill="rgba(5,150,105,0.12)" stroke="#059669" stroke-width="1.6"/>
+  <text x="65" y="210" fill="#059669" font-size="13" font-weight="700">第二层：会话层 (Session Layer) — 承担者：各 Agent CLI 自持</text>
+  <text x="65" y="232" fill="#0f172a" font-size="10.5" font-weight="600">管“聊到哪儿了”：对话历史按项目目录落盘 · -c 续接最近会话 · -r 挑选历史 · --fork 分叉实验</text>
+  <text x="65" y="249" fill="#475569" font-size="9.5">边界纪律：即使 herdr Server 重启或切换终端宿主，Agent 自身会话树仍可原地恢复</text>
+
+  <!-- Tier 3: Memory Layer -->
+  <rect x="40" y="286" width="840" height="80" rx="8" fill="#f8fafc"/>
+  <rect x="40" y="286" width="840" height="80" rx="8" fill="rgba(124,58,237,0.12)" stroke="#7c3aed" stroke-width="1.6"/>
+  <text x="65" y="318" fill="#7c3aed" font-size="13" font-weight="700">第三层：记忆层 (Memory Layer) — 承担者：语义记忆库 (如 OpenViking MCP)</text>
+  <text x="65" y="340" fill="#0f172a" font-size="10.5" font-weight="600">管“哪些结论值得跨 Agent / 跨会话留存”：写明确 URI 地址 (viking://...) → 语义检索 / 精确读取取回</text>
+  <text x="65" y="357" fill="#475569" font-size="9.5">边界纪律：跨 Agent 共享架构决策、踩坑根因与上下文一律走记忆层读写，严禁靠终端缓冲区盲传</text>
+
+  <!-- Title -->
+  <text x="40" y="42" fill="#0f172a" font-size="16" font-weight="700">多 Agent 协作三层正交架构：控制面 × 会话层 × 记忆层</text>
+</svg>

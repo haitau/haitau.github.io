@@ -1,0 +1,149 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 460" width="100%" height="100%">
+  <style>
+    
+    text {
+      font-family: 'JetBrains Mono', 'PingFang SC', 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
+    }
+  </style>
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#e2e8f0" stroke-width="0.6"/>
+    </pattern>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#64748b"/>
+    </marker>
+    <marker id="arrow-primary" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#0891b2"/>
+    </marker>
+    <marker id="arrow-secondary" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#059669"/>
+    </marker>
+    <marker id="arrow-accent" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#d97706"/>
+    </marker>
+  </defs>
+
+  <!-- 1. Background + Grid -->
+  <rect width="100%" height="100%" fill="#f8fafc"/>
+  <rect width="100%" height="100%" fill="url(#grid)"/>
+
+  <!-- 2. Region boundaries -->
+  <!-- Mobile Region -->
+  <rect x="30" y="70" width="210" height="310" rx="12" fill="none" stroke="#0891b2" stroke-width="1.2" stroke-dasharray="8,4"/>
+  <text x="44" y="92" fill="#0891b2" font-size="11" font-weight="700">移动终端层 (公网漫游)</text>
+
+  <!-- Cloud VPS Region -->
+  <rect x="290" y="70" width="230" height="310" rx="12" fill="none" stroke="#d97706" stroke-width="1.2" stroke-dasharray="8,4"/>
+  <text x="304" y="92" fill="#d97706" font-size="11" font-weight="700">① 隧道平面 · 云 VPS (够得着)</text>
+
+  <!-- Internal Mac Region -->
+  <rect x="570" y="70" width="320" height="310" rx="12" fill="none" stroke="#059669" stroke-width="1.2" stroke-dasharray="8,4"/>
+  <text x="584" y="92" fill="#059669" font-size="11" font-weight="700">内网 Mac (NAT 后 · 无公网 IP)</text>
+
+  <!-- 3. Connection arrows and lines -->
+  <!-- Termius -> frps :6022 -->
+  <line x1="220" y1="150" x2="310" y2="150" stroke="#0891b2" stroke-width="1.8" marker-end="url(#arrow-primary)"/>
+  <text x="265" y="138" fill="#0891b2" font-size="9" font-weight="600" text-anchor="middle">SSH 直连</text>
+  <text x="265" y="166" fill="#475569" font-size="8" text-anchor="middle">Ed25519 免密</text>
+
+  <!-- frpc -> frps :7000 (Outbound control tunnel) -->
+  <line x1="590" y1="240" x2="500" y2="240" stroke="#d97706" stroke-width="1.8" marker-end="url(#arrow-accent)"/>
+  <text x="545" y="228" fill="#d97706" font-size="9" font-weight="600" text-anchor="middle">主动拨出建隧</text>
+  <text x="545" y="256" fill="#475569" font-size="8" text-anchor="middle">token + 端口白名单</text>
+
+  <!-- frps :6022 -> frps :7000 internal bridge -->
+  <line x1="405" y1="185" x2="405" y2="205" stroke="#d97706" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrow-accent)"/>
+
+  <!-- frps -> Mac sshd :22 (Traffic forwarding) -->
+  <line x1="500" y1="150" x2="590" y2="150" stroke="#059669" stroke-width="1.8" marker-end="url(#arrow-secondary)"/>
+  <text x="545" y="138" fill="#059669" font-size="9" font-weight="600" text-anchor="middle">隧道转发流量</text>
+  <text x="545" y="166" fill="#475569" font-size="8" text-anchor="middle">127.0.0.1:22</text>
+
+  <!-- Mac sshd :22 -> herdr -->
+  <line x1="730" y1="185" x2="730" y2="205" stroke="#059669" stroke-width="1.8" marker-end="url(#arrow-secondary)"/>
+
+  <!-- Mac frpc -> Mac sshd local loop -->
+  <path d="M 660 205 L 660 185" fill="none" stroke="#64748b" stroke-width="1.2" stroke-dasharray="3,3" marker-end="url(#arrow)"/>
+
+  <!-- Claude Hooks -> Bark/ntfy -> Mobile Lock Screen (Plane 3 Notification) -->
+  <line x1="590" y1="330" x2="500" y2="330" stroke="#ea580c" stroke-width="1.6" stroke-dasharray="5,3" marker-end="url(#arrow)"/>
+  <line x1="310" y1="330" x2="220" y2="330" stroke="#ea580c" stroke-width="1.6" stroke-dasharray="5,3" marker-end="url(#arrow)"/>
+  <text x="545" y="320" fill="#ea580c" font-size="8" font-weight="600" text-anchor="middle">curl 触发</text>
+  <text x="265" y="320" fill="#ea580c" font-size="8" font-weight="600" text-anchor="middle">APNs / 推送</text>
+
+  <!-- 4. Opaque masking rects & 5. Component boxes & 6. Text labels -->
+  <!-- Mobile: Termius -->
+  <rect x="50" y="115" width="170" height="70" rx="6" fill="#f8fafc"/>
+  <rect x="50" y="115" width="170" height="70" rx="6" fill="rgba(6,182,212,0.12)" stroke="#0891b2" stroke-width="1.5"/>
+  <text x="135" y="142" fill="#0f172a" font-size="12" font-weight="700" text-anchor="middle">手机 Termius</text>
+  <text x="135" y="160" fill="#475569" font-size="9" text-anchor="middle">Ed25519 私钥永不出机</text>
+  <text x="135" y="174" fill="#475569" font-size="9" text-anchor="middle">触屏点选 Pane / 批权限</text>
+
+  <!-- Mobile: Lock screen notification -->
+  <rect x="50" y="295" width="170" height="65" rx="6" fill="#f8fafc"/>
+  <rect x="50" y="295" width="170" height="65" rx="6" fill="rgba(234,88,12,0.12)" stroke="#ea580c" stroke-width="1.5"/>
+  <text x="135" y="322" fill="#0f172a" font-size="11" font-weight="700" text-anchor="middle">手机锁屏通知</text>
+  <text x="135" y="340" fill="#475569" font-size="9" text-anchor="middle">看到告警 → 点开 Termius</text>
+  <text x="135" y="353" fill="#475569" font-size="8" text-anchor="middle">30 秒闭环响应</text>
+
+  <!-- VPS: frps :6022 -->
+  <rect x="310" y="115" width="190" height="70" rx="6" fill="#f8fafc"/>
+  <rect x="310" y="115" width="190" height="70" rx="6" fill="rgba(217,119,6,0.12)" stroke="#d97706" stroke-width="1.5"/>
+  <text x="405" y="142" fill="#0f172a" font-size="12" font-weight="700" text-anchor="middle">VPS 入口 :6022</text>
+  <text x="405" y="160" fill="#475569" font-size="9" text-anchor="middle">allowPorts 白名单锁死</text>
+  <text x="405" y="174" fill="#475569" font-size="9" text-anchor="middle">云安全组精确放行</text>
+
+  <!-- VPS: frps :7000 -->
+  <rect x="310" y="205" width="190" height="70" rx="6" fill="#f8fafc"/>
+  <rect x="310" y="205" width="190" height="70" rx="6" fill="rgba(217,119,6,0.12)" stroke="#d97706" stroke-width="1.5"/>
+  <text x="405" y="232" fill="#0f172a" font-size="12" font-weight="700" text-anchor="middle">frps 控制面 :7000</text>
+  <text x="405" y="250" fill="#475569" font-size="9" text-anchor="middle">systemd 常驻自愈</text>
+  <text x="405" y="264" fill="#475569" font-size="9" text-anchor="middle">强随机 auth.token 鉴权</text>
+
+  <!-- Cloud Push Relay: Bark / ntfy -->
+  <rect x="310" y="295" width="190" height="65" rx="6" fill="#f8fafc"/>
+  <rect x="310" y="295" width="190" height="65" rx="6" fill="rgba(234,88,12,0.12)" stroke="#ea580c" stroke-width="1.5"/>
+  <text x="405" y="322" fill="#0f172a" font-size="11" font-weight="700" text-anchor="middle">③ 通知平面 · Bark / ntfy</text>
+  <text x="405" y="340" fill="#475569" font-size="9" text-anchor="middle">想起来：免轮询主动提醒</text>
+
+  <!-- Mac: sshd :22 -->
+  <rect x="590" y="115" width="280" height="70" rx="6" fill="#f8fafc"/>
+  <rect x="590" y="115" width="280" height="70" rx="6" fill="rgba(225,29,72,0.12)" stroke="#e11d48" stroke-width="1.5"/>
+  <text x="730" y="140" fill="#0f172a" font-size="12" font-weight="700" text-anchor="middle">Mac sshd :22 (加固防爆破)</text>
+  <text x="730" y="158" fill="#475569" font-size="9" text-anchor="middle">PasswordAuthentication no</text>
+  <text x="730" y="172" fill="#475569" font-size="9" text-anchor="middle">+ KbdInteractiveAuthentication no</text>
+
+  <!-- Mac: frpc + Session Plane -->
+  <rect x="590" y="205" width="130" height="70" rx="6" fill="#f8fafc"/>
+  <rect x="590" y="205" width="130" height="70" rx="6" fill="rgba(100,116,139,0.12)" stroke="#64748b" stroke-width="1.5"/>
+  <text x="655" y="232" fill="#0f172a" font-size="11" font-weight="700" text-anchor="middle">frpc 客户端</text>
+  <text x="655" y="250" fill="#475569" font-size="8" text-anchor="middle">LaunchAgent 常驻</text>
+  <text x="655" y="264" fill="#475569" font-size="8" text-anchor="middle">KeepAlive 重启自愈</text>
+
+  <rect x="735" y="205" width="135" height="70" rx="6" fill="#f8fafc"/>
+  <rect x="735" y="205" width="135" height="70" rx="6" fill="rgba(5,150,105,0.12)" stroke="#059669" stroke-width="1.8"/>
+  <text x="802" y="230" fill="#0f172a" font-size="11" font-weight="700" text-anchor="middle">② 会话平面</text>
+  <text x="802" y="247" fill="#0f172a" font-size="10" font-weight="600" text-anchor="middle">herdr 会话守护</text>
+  <text x="802" y="263" fill="#475569" font-size="8" text-anchor="middle">持有全部 PTY·断网无损</text>
+
+  <!-- Mac: Claude Code Hooks -->
+  <rect x="590" y="295" width="280" height="65" rx="6" fill="#f8fafc"/>
+  <rect x="590" y="295" width="280" height="65" rx="6" fill="rgba(124,58,237,0.12)" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="730" y="320" fill="#0f172a" font-size="11" font-weight="700" text-anchor="middle">并发 AI Agents (Claude Code / OpenCode)</text>
+  <text x="730" y="338" fill="#475569" font-size="9" text-anchor="middle">Notification / Stop Hook 触发告警</text>
+  <text x="730" y="352" fill="#475569" font-size="8" text-anchor="middle">任意 API 端点兼容 (中转 / Ark / GLM / 官方)</text>
+
+  <!-- 7. Legend -->
+  <rect x="30" y="398" width="860" height="36" rx="6" fill="#f8fafc"/>
+  <rect x="30" y="398" width="860" height="36" rx="6" fill="rgba(100,116,139,0.12)" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="50" y="420" fill="#0f172a" font-size="10" font-weight="600">三平面职责分工：</text>
+  <circle cx="155" cy="416" r="5" fill="#d97706"/>
+  <text x="166" y="420" fill="#475569" font-size="10">① 隧道平面 (frp)：穿透 NAT 够得着</text>
+  <circle cx="385" cy="416" r="5" fill="#059669"/>
+  <text x="396" y="420" fill="#475569" font-size="10">② 会话平面 (herdr)：常驻 PTY 接得上</text>
+  <circle cx="645" cy="416" r="5" fill="#ea580c"/>
+  <text x="656" y="420" fill="#475569" font-size="10">③ 通知平面 (Bark/ntfy)：卡权限时想起来</text>
+
+  <!-- 8. Title block -->
+  <text x="30" y="42" fill="#0f172a" font-size="16" font-weight="700">外网手机直连内网 Mac：frp + SSH + herdr 三平面全链路架构</text>
+</svg>

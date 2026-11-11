@@ -1,0 +1,1419 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="herdr × Git Worktree: A Practical Multi-Agent Concurrent Development Environment, Agent-Native, Post-SaaS, 企业自愈中枢, AI 架构, 动态 MCP, FSM 确定性">
+    <meta name="description" content="
+💡 阅读中文原版 (Chinese Version)
+
+
+When running multiple coding agents concurrently, the hard part is not spinning them up—i">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <meta name="bytedance-verification-code" content="/hXr6iglxmydPTdbFFGG" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>herdr × Git Worktree: A Practical Multi-Agent Concurrent Development Environment | Do Than Imagine</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+
+
+    <!-- bg-cover style     -->
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css?v=1794432767230">
+<link rel="stylesheet" type="text/css" href="/css/my.css?v=1794432767230">
+<link rel="stylesheet" type="text/css" href="/css/dark.css?v=1794432767230" media="none" onload="if(media!='all')media='all'">
+
+<style>
+/* Code Block Font & Title Normalization */
+pre, code,
+.code-area pre,
+.code-area pre code,
+.highlight,
+.highlight td.code pre {
+    font-size: 0.91rem !important;
+    line-height: 1.6 !important;
+    font-family: Inconsolata, Monaco, Consolas, 'Courier New', Courier, monospace !important;
+}
+
+.code-area .title,
+.highlight .title,
+pre .title,
+code .title,
+.highlight span,
+.code-area pre code span {
+    font-size: inherit !important;
+    font-weight: inherit !important;
+    line-height: inherit !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.highlight td.gutter,
+.gutter {
+    display: none !important;
+}
+</style>
+
+
+
+
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/css/post.css?v=1794432767230">
+
+
+
+
+
+    
+
+
+
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="Do Than Imagine" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Do Than Imagine</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/news/" class="waves-effect waves-light">
+      
+      <i class="fas fa-satellite-dish" style="zoom: 0.6;"></i>
+      
+      <span>资讯</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Do Than Imagine</div>
+        <div class="logo-desc">
+            
+            探索 Post-SaaS 时代、Agent-Native 架构、企业自愈中枢与 AI 驱动的全栈技术演进。
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/news/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-satellite-dish"></i>
+			
+			资讯
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/haitau" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/haitau" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/assets/herdr-worktree-cover.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">herdr × Git Worktree: A Practical Multi-Agent Concurrent Development Environment</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/herdr/">
+                                <span class="chip bg-color">herdr</span>
+                            </a>
+                        
+                            <a href="/tags/Git-Worktree/">
+                                <span class="chip bg-color">Git Worktree</span>
+                            </a>
+                        
+                            <a href="/tags/Multi-Agent/">
+                                <span class="chip bg-color">Multi-Agent</span>
+                            </a>
+                        
+                            <a href="/tags/Claude-Code/">
+                                <span class="chip bg-color">Claude Code</span>
+                            </a>
+                        
+                            <a href="/tags/AI-Coding/">
+                                <span class="chip bg-color">AI Coding</span>
+                            </a>
+                        
+                            <a href="/tags/Terminal-Multiplexer/">
+                                <span class="chip bg-color">Terminal Multiplexer</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Engineering-Practice/" class="post-category">
+                                Engineering Practice
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2026-11-10
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    5.3k
+                </div>
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <blockquote>
+<p>💡 <em><a href="/2026/11/10/herdr-multi-agent-concurrent-dev-environment/">阅读中文原版 (Chinese Version)</a></em></p>
+</blockquote>
+<blockquote>
+<p>When running multiple coding agents concurrently, the hard part is not spinning them up—it is surviving three structural bottlenecks: file collisions, state blindness, and fragile sessions. Starting from two foundational primitives—<code>git worktree</code> and <code>herdr</code>—this article presents the production project-level concurrent development environment I run daily: multiple isolated worktrees backed by a single repository, on-demand agent assignment per task, and centralized merge convergence in the main repository. While verified on herdr 0.9.5 &#x2F; macOS, the architecture and commands apply across platforms.</p>
+</blockquote>
+<hr>
+<h2 id="1-The-Three-Walls-of-Multi-Agent-Concurrency"><a href="#1-The-Three-Walls-of-Multi-Agent-Concurrency" class="headerlink" title="1. The Three Walls of Multi-Agent Concurrency"></a>1. The Three Walls of Multi-Agent Concurrency</h2><p>Spin up five terminal windows to run coding agents in parallel and you quickly descend into a game of whack-a-mole: the agent in Window A is refactoring a shared module while the agent in Window B silently overwrites the exact same file; the agent in Window C has been stalled on a dangerous-command permission prompt for thirty minutes, which you only discover when you manually alt-tab into it; worst of all, accidentally closing a terminal window kills a half-finished refactoring session along with its entire live execution state.</p>
+<p>Deconstructing these failure modes reveals three underlying infrastructure walls:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Bottleneck</th>
+<th align="left">Typical Symptom</th>
+<th align="left">Root Cause</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>File Collisions</strong></td>
+<td align="left">Two agents edit the same repo simultaneously; Agent A’s half-written changes are overwritten by Agent B or break the build</td>
+<td align="left">Multiple concurrent processes share a single physical working directory (Working Tree)</td>
+</tr>
+<tr>
+<td align="left"><strong>State Blindness</strong></td>
+<td align="left">You can only tell which agent is thinking, blocked on a prompt, or finished by manually cycling through windows</td>
+<td align="left">Traditional terminal multiplexers only forward raw PTY byte streams and have no concept of an “agent”</td>
+</tr>
+<tr>
+<td align="left"><strong>Fragile Sessions</strong></td>
+<td align="left">Closing a terminal window or dropping an SSH connection sends <code>SIGHUP</code>, killing the agent process and wiping the workspace</td>
+<td align="left">Agent processes are attached directly to the foreground window’s PTY session without a persistent daemon layer</td>
+</tr>
+</tbody></table>
+<p>You do not need to reinvent the wheel to solve this. Two off-the-shelf tools address the problem at orthogonal layers: <strong><code>git worktree</code> handles physical filesystem isolation, while <code>herdr</code> handles agent state awareness and background session persistence</strong>. Combined under a strict set of engineering disciplines, they form a complete multi-agent concurrent development environment.</p>
+<hr>
+<h2 id="2-Foundation-I-Git-Worktree-—-One-Repository-Multiple-Working-Trees"><a href="#2-Foundation-I-Git-Worktree-—-One-Repository-Multiple-Working-Trees" class="headerlink" title="2. Foundation I: Git Worktree — One Repository, Multiple Working Trees"></a>2. Foundation I: Git Worktree — One Repository, Multiple Working Trees</h2><h3 id="2-1-What-It-Solves"><a href="#2-1-What-It-Solves" class="headerlink" title="2.1 What It Solves"></a>2.1 What It Solves</h3><p>When two agents need to modify the same repository concurrently, the three common workarounds all carry steep penalties:</p>
+<ul>
+<li><strong>Cloning multiple independent copies</strong>: Doubles disk usage, hides local commits from other copies, and forces every synchronization through the remote <code>origin</code>;</li>
+<li><strong>Switching branches in the same directory (<code>git checkout</code>)</strong>: Inherently serial—true concurrency is impossible;</li>
+<li><strong>The <code>git stash</code> dance</strong>: <code>git stash → switch branch → edit → git stash pop</code>, where merge conflict probability scales exponentially with concurrency.</li>
+</ul>
+<p><code>git worktree</code> is Git’s native architectural answer: <strong>a single <code>.git</code> object database mounted across multiple independent working directories (checkouts)</strong>. Each worktree has its own physical directory and checked-out branch, while sharing the underlying <code>.git/objects</code> store and refs—any commit made in one worktree is instantaneously visible to every other worktree for merging or rebasing at zero network synchronization cost.</p>
+<h3 id="2-2-Essential-Commands-at-a-Glance"><a href="#2-2-Essential-Commands-at-a-Glance" class="headerlink" title="2.2 Essential Commands at a Glance"></a>2.2 Essential Commands at a Glance</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 1. Create a new worktree and simultaneously create + check out a new branch wt-1</span></span><br><span class="line">git worktree add ../myproject-wt1 -b wt-1</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. Create a new worktree checking out an existing branch wt-1</span></span><br><span class="line">git worktree add ../myproject-wt1 wt-1</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3. List all mounted worktrees and their current HEAD commits</span></span><br><span class="line">git worktree list</span><br><span class="line"></span><br><span class="line"><span class="comment"># 4. Safely remove a worktree (refuses deletion if uncommitted changes exist)</span></span><br><span class="line">git worktree remove ../myproject-wt1</span><br><span class="line"></span><br><span class="line"><span class="comment"># 5. Clean up stale worktree metadata after manually deleting a directory</span></span><br><span class="line">git worktree prune</span><br><span class="line"></span><br><span class="line"><span class="comment"># 6. Safely delete a merged branch (-d blocks deletion if unmerged, preventing data loss)</span></span><br><span class="line">git branch -d wt-1</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-3-Two-Iron-Rules"><a href="#2-3-Two-Iron-Rules" class="headerlink" title="2.3 Two Iron Rules"></a>2.3 Two Iron Rules</h3><ol>
+<li><strong>Commit locally inside worktrees; never push from them</strong>: Each worktree is responsible solely for advancing local commits on its dedicated task branch. Merging and remote pushing are performed exclusively from the main repository. Allowing multiple worktrees to push independently quickly corrupts remote branch history and triggers colliding CI runs.</li>
+<li><strong>Converge all merges in the main repository</strong>: Keep the main repository anchored on <code>master</code>&#x2F;<code>main</code> and run <code>git merge --no-edit &lt;branch&gt;</code> sequentially. Resolve any conflicts centrally in the main repo while preserving valid changes from both sides—never use <code>--ours</code> or <code>--theirs</code> inside a worktree to blindly wipe out parallel work.</li>
+</ol>
+<h3 id="2-4-Trap-1-gitignored-Files-Do-Not-Carry-Over-Automatically"><a href="#2-4-Trap-1-gitignored-Files-Do-Not-Carry-Over-Automatically" class="headerlink" title="2.4 Trap #1: gitignored Files Do Not Carry Over Automatically"></a>2.4 Trap #1: <code>gitignored</code> Files Do Not Carry Over Automatically</h3><p>Files ignored by <code>.gitignore</code>—such as <code>.env</code> environment variables, local private keys, and untracked local agent configurations (e.g., <code>.claude/settings.local.json</code>)—<strong>do not exist</strong> in newly created worktrees. Left unaddressed, builds and agents inside a fresh worktree will immediately fail due to missing environment variables or dropped MCP servers. Section 4.3 provides a one-command broadcast script from the main repository to eliminate this friction.</p>
+<hr>
+<h2 id="3-Foundation-II-herdr-—-An-Agent-Aware-Terminal-Multiplexer"><a href="#3-Foundation-II-herdr-—-An-Agent-Aware-Terminal-Multiplexer" class="headerlink" title="3. Foundation II: herdr — An Agent-Aware Terminal Multiplexer"></a>3. Foundation II: herdr — An Agent-Aware Terminal Multiplexer</h2><h3 id="3-1-Core-Positioning"><a href="#3-1-Core-Positioning" class="headerlink" title="3.1 Core Positioning"></a>3.1 Core Positioning</h3><p><a target="_blank" rel="noopener" href="https://github.com/herdrdev/herdr">herdr</a> is a single-binary terminal multiplexer written in Rust purpose-built for AI coding agents. Unlike traditional terminal tools that merely forward raw PTY byte streams, it gets one critical abstraction right—<strong>it natively understands whether a pane is running a coding agent and tracks that agent’s exact lifecycle state</strong>.</p>
+<p>Under the hood, it uses a client&#x2F;server architecture: <strong>a background <code>herdr server</code> daemon owns the PTY file descriptors for all panes, while the foreground TUI is merely an attached rendering view</strong>. This separation is the source of its persistence—you can close the terminal window at any time while your agent processes continue running undisturbed inside the background server.</p>
+<h3 id="3-2-Core-Domain-Model"><a href="#3-2-Core-Domain-Model" class="headerlink" title="3.2 Core Domain Model"></a>3.2 Core Domain Model</h3><table>
+<thead>
+<tr>
+<th align="left">Concept</th>
+<th align="left">Engineering Definition</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>server</strong></td>
+<td align="left">The background daemon owning all local PTY sessions; a single server hosts any number of repositories simultaneously</td>
+</tr>
+<tr>
+<td align="left"><strong>workspace</strong></td>
+<td align="left">A project-level container, typically mapped 1:1 to a Git repository; independent of the directory from which you invoke <code>herdr</code></td>
+</tr>
+<tr>
+<td align="left"><strong>pane</strong></td>
+<td align="left">A terminal split pane capable of running either a standard interactive shell or a managed coding agent</td>
+</tr>
+<tr>
+<td align="left"><strong>agent</strong></td>
+<td align="left">An agent process recognized and tracked by herdr, specified via <code>--kind</code> (<code>claude</code> &#x2F; <code>codex</code> &#x2F; <code>pi</code> &#x2F; <code>opencode</code> &#x2F; <code>antigravity-cli</code>, etc.—24 built-in kinds as of v0.9.5)</td>
+</tr>
+<tr>
+<td align="left"><strong>state</strong></td>
+<td align="left">The agent’s real-time lifecycle state: <code>working</code> &#x2F; <code>blocked</code> &#x2F; <code>idle</code> &#x2F; <code>done</code></td>
+</tr>
+</tbody></table>
+<h3 id="3-3-Three-Tiers-of-Value"><a href="#3-3-Three-Tiers-of-Value" class="headerlink" title="3.3 Three Tiers of Value"></a>3.3 Three Tiers of Value</h3><ol>
+<li><strong>Session Persistence (Foundational Value)</strong>: Close your MacBook lid, survive an SSH drop, or accidentally close the terminal app—your background agent tasks keep running. Run <code>herdr</code> to re-attach in one second with your exact split layout intact.</li>
+<li><strong>Global Status Board (Core Differentiator)</strong>: The left sidebar renders real-time status indicators for every project and agent pane (specifically amber <code>blocked</code> and green <code>done</code> lights), eliminating the cognitive overhead of polling windows.</li>
+<li><strong>Agent Self-Orchestration (Emergent Value)</strong>: Once equipped with the official <code>herdr</code> Skill, a primary agent running inside a pane can invoke the <code>herdr</code> CLI to split new panes, spawn helper agents, dispatch subtasks, block until completion, and harvest results—a closed loop that is notoriously brittle to script with traditional terminal multiplexers.</li>
+</ol>
+<blockquote>
+<p><strong>Common Misconception</strong>: Do not treat herdr merely as a “multi-worktree launcher with completion alerts.” Worktree isolation is an opt-in helper feature, whereas the three tiers above are the core engine. Furthermore, <strong>if you skip <code>herdr integration install</code>, state detection falls back to brittle screen-scraping heuristics</strong>, degrading accuracy significantly.</p>
+</blockquote>
+<h3 id="3-4-Installation-Authoritative-State-Integration"><a href="#3-4-Installation-Authoritative-State-Integration" class="headerlink" title="3.4 Installation &amp; Authoritative State Integration"></a>3.4 Installation &amp; Authoritative State Integration</h3><p>On macOS, install the binary via Homebrew and immediately register the official lifecycle integrations for your primary agent CLIs:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 1. Install the single-binary herdr multiplexer</span></span><br><span class="line">brew install herdr</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. Critical Step: Install authoritative lifecycle hooks for your coding agents</span></span><br><span class="line"><span class="comment">#    (upgrades state detection from screen-scraping to deterministic IPC push)</span></span><br><span class="line">herdr integration install claude</span><br><span class="line">herdr integration install opencode</span><br><span class="line">herdr integration install antigravity-cli</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3. Verify that all integrations report &quot;installed&quot;</span></span><br><span class="line">herdr integration status</span><br><span class="line"></span><br><span class="line"><span class="comment"># 4. Enter a project directory; first launch starts the background server and creates a workspace</span></span><br><span class="line"><span class="built_in">cd</span> ~/code/myproject</span><br><span class="line">herdr</span><br><span class="line"></span><br><span class="line"><span class="comment"># 5. Start an agent inside the herdr pane—the sidebar status light activates immediately</span></span><br><span class="line">claude</span><br></pre></td></tr></table></figure>
+
+<p>Running <code>herdr integration install</code> injects lightweight lifecycle callbacks into each agent’s global configuration (for example, the <code>hooks</code> block in <code>~/.claude/settings.json</code>). Whenever the agent starts executing, pauses on a permission prompt, or finishes a turn, it notifies <code>herdr server</code> over local IPC in milliseconds—making <code>blocked</code> and <code>done</code> transitions 100% deterministic.</p>
+<h3 id="3-5-Interaction-Model-Essential-Keybindings"><a href="#3-5-Interaction-Model-Essential-Keybindings" class="headerlink" title="3.5 Interaction Model &amp; Essential Keybindings"></a>3.5 Interaction Model &amp; Essential Keybindings</h3><p>herdr treats <strong>the mouse as a first-class citizen</strong>: click to focus panes, drag borders to resize splits, right-click to open the pane management menu, and click-drag to copy text without memorizing a single keybinding.</p>
+<p>For keyboard navigation, it uses a classic Prefix modal pattern (default prefix is <code>Ctrl+B</code>—<strong>press and release <code>Ctrl+B</code> first, then press the action key</strong>, rather than holding <code>Ctrl+B</code> down):</p>
+<table>
+<thead>
+<tr>
+<th align="left">Keybinding</th>
+<th align="left">Action</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>prefix + v</code></td>
+<td align="left">Split vertically to the right (create right pane)</td>
+</tr>
+<tr>
+<td align="left"><code>prefix + -</code></td>
+<td align="left">Split horizontally downward (create bottom pane)</td>
+</tr>
+<tr>
+<td align="left"><code>prefix + c</code></td>
+<td align="left">Create a new Tab inside the current Workspace</td>
+</tr>
+<tr>
+<td align="left"><code>prefix + Shift+G</code></td>
+<td align="left">Interactively create a new Git Worktree</td>
+</tr>
+<tr>
+<td align="left"><code>prefix + ?</code></td>
+<td align="left">Toggle the real-time keybinding cheat sheet overlay</td>
+</tr>
+<tr>
+<td align="left"><code>prefix + q</code></td>
+<td align="left">Detach from the current client view (background tasks continue; closing the window does the same)</td>
+</tr>
+</tbody></table>
+<p><strong>Persistence in Practice</strong>: Press <code>prefix + q</code> or <code>Cmd+W</code> to close the terminal window at any time → run <code>herdr</code> from any directory to re-attach right where you left off. Only an explicit <code>herdr server stop</code> terminates the background daemon and all running panes.</p>
+<h3 id="3-6-Status-Light-Semantics-Attention-Shift"><a href="#3-6-Status-Light-Semantics-Attention-Shift" class="headerlink" title="3.6 Status Light Semantics &amp; Attention Shift"></a>3.6 Status Light Semantics &amp; Attention Shift</h3><table>
+<thead>
+<tr>
+<th align="left">Status Light</th>
+<th align="left">Lifecycle Meaning</th>
+<th align="left">Your Action Policy</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong><code>working</code></strong></td>
+<td align="left">Thinking, reasoning, or executing tool calls</td>
+<td align="left"><strong>Ignore</strong>—let it run</td>
+</tr>
+<tr>
+<td align="left"><strong><code>blocked</code></strong></td>
+<td align="left"><strong>Stalled on a dangerous-command approval or interactive question, waiting for your keystroke</strong></td>
+<td align="left"><strong>Switch immediately and unblock</strong> (highest priority)</td>
+</tr>
+<tr>
+<td align="left"><strong><code>idle</code></strong></td>
+<td align="left">Turn completed and you have already inspected the pane; standing by</td>
+<td align="left">Ready for the next prompt</td>
+</tr>
+<tr>
+<td align="left"><strong><code>done</code></strong></td>
+<td align="left"><strong>Task just finished and you have not yet viewed the output</strong> (automatically transitions to <code>idle</code> once focused)</td>
+<td align="left"><strong>Switch over when convenient to review results</strong></td>
+</tr>
+</tbody></table>
+<p>This state machine transforms daily developer flow: you can keep agents running across three or four repositories while focusing deeply on architecture or documentation, keeping the sidebar in your peripheral vision—<strong>ignoring everything except <code>blocked</code> and <code>done</code></strong>.</p>
+<h3 id="3-7-Host-Terminal-Selection-Configuration-Why-Tabby-Wins"><a href="#3-7-Host-Terminal-Selection-Configuration-Why-Tabby-Wins" class="headerlink" title="3.7 Host Terminal Selection &amp; Configuration: Why Tabby Wins"></a>3.7 Host Terminal Selection &amp; Configuration: Why Tabby Wins</h3><p>Because herdr is a TUI application running inside a terminal emulator, the host terminal’s event-forwarding behavior directly dictates day-to-day ergonomics.</p>
+<p>My daily workflow has two non-negotiable requirements:</p>
+<ol>
+<li><strong>Full right-click mouse management for panes</strong>: splitting, closing, and zooming panes entirely via the right-click context menu;</li>
+<li><strong>Direct <code>Cmd+V</code> clipboard image pasting</strong>: pasting error screenshots and architecture sketches straight into multimodal agents like Claude Code.</li>
+</ol>
+<p>Testing the major macOS terminal emulators against these two hard criteria yielded a clear winner:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Host Terminal</th>
+<th align="left"><code>Cmd+V</code> Image Paste into Agent inside herdr</th>
+<th align="left">Right-Click &amp; Protocol Support</th>
+<th align="left">Verdict</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>Tabby (Electron)</strong></td>
+<td align="left"><strong>Works end-to-end</strong> (clipboard paste is handled at the app layer without being swallowed by the PTY)</td>
+<td align="left">100% passthrough to herdr once Tabby’s native right-click menu is disabled</td>
+<td align="left"><strong>Primary Choice (Zero Compromise)</strong></td>
+</tr>
+<tr>
+<td align="left"><strong>Ghostty</strong></td>
+<td align="left"><strong>Broken</strong> (<code>Cmd+V</code> only delivers a literal <code>&quot;v&quot;</code> character; image pasting fails both inside herdr and in bare CLI)</td>
+<td align="left">Native Kitty keyboard protocol and mouse passthrough</td>
+<td align="left"><strong>Disqualified</strong> for screenshot-heavy workflows</td>
+</tr>
+<tr>
+<td align="left"><strong>Warp</strong></td>
+<td align="left">Constrained by custom input box</td>
+<td align="left">Block input model hijacks mouse and key events, conflicting with TUI multiplexers</td>
+<td align="left">Incompatible</td>
+</tr>
+<tr>
+<td align="left"><strong>macOS Terminal.app</strong></td>
+<td align="left">No rich clipboard image passthrough</td>
+<td align="left">Lacks Kitty Keyboard Protocol; incomplete modifier key forwarding</td>
+<td align="left">Not Recommended</td>
+</tr>
+</tbody></table>
+<p><strong>Three-Step Zero-Friction Tabby Setup</strong>:</p>
+<ol>
+<li>Open Tabby <code>Settings → Application</code>, locate <strong>“Show menu on right click”</strong>, and turn it <strong>off</strong> (sets <code>rightClick: &#39;off&#39;</code> in config). Once disabled, right-clicking inside any pane opens herdr’s native split&#x2F;pane menu;</li>
+<li>Recommended typography &amp; theme: <code>Maple Mono NF CN</code> paired with the <code>Catppuccin Mocha</code> color scheme;</li>
+<li><strong>Note for Pure Keyboard Users</strong>: If you do not rely on <code>Cmd+V</code> image pasting and prefer keyboard-driven workflows, your host terminal must satisfy three requirements: native mouse event passthrough, Kitty Keyboard Protocol support (use <strong>Kitty ≥ 0.33</strong> or <strong>Alacritty ≥ 0.15.0</strong>, as older Alacritty releases suffer from duplicate key-release byte bugs), and mapping macOS <code>Option</code> as <code>Meta</code>.</li>
+</ol>
+<hr>
+<h2 id="4-Putting-It-Together-Project-Level-Concurrent-Environment-Design"><a href="#4-Putting-It-Together-Project-Level-Concurrent-Environment-Design" class="headerlink" title="4. Putting It Together: Project-Level Concurrent Environment Design"></a>4. Putting It Together: Project-Level Concurrent Environment Design</h2><h3 id="4-1-Directory-Session-Topology"><a href="#4-1-Directory-Session-Topology" class="headerlink" title="4.1 Directory &amp; Session Topology"></a>4.1 Directory &amp; Session Topology</h3><p>Combining <code>git worktree</code> with <code>herdr</code> produces a clean, standardized on-disk and in-memory topology for every project:</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">~/code/myproject/                       # Main Repo (anchored on master): merge convergence, git push, config SSOT (runs primary agent)</span><br><span class="line">~/.herdr/worktrees/myproject/wt-1/      # herdr-managed isolated worktree 1, spun up on demand for concurrent tasks</span><br><span class="line">~/.herdr/worktrees/myproject/wt-2/      # herdr-managed isolated worktree 2</span><br><span class="line">~/.herdr/worktrees/myproject/wt-3/      # herdr-managed isolated worktree 3</span><br></pre></td></tr></table></figure>
+
+<p><img src="/assets/herdr-worktree-concurrent-architecture.en.svg" alt="herdr × Git Worktree: Project-Level Multi-Agent Concurrent Development Architecture"></p>
+<p>A single global <code>herdr server</code> hosts all of your active repositories (one Workspace per repo) alongside the concurrent worktree panes underneath each project—giving you a single-pane-of-glass command center across every running agent.</p>
+<h3 id="4-2-Five-Engineering-Design-Principles"><a href="#4-2-Five-Engineering-Design-Principles" class="headerlink" title="4.2 Five Engineering Design Principles"></a>4.2 Five Engineering Design Principles</h3><ol>
+<li><strong>Bind Workspaces to projects, never to agents</strong>: One Git repository maps to one Workspace. Running multiple projects in parallel simply means multiple Workspaces coexisting side by side.</li>
+<li><strong>Create Worktrees strictly for concurrency isolation</strong>: When a single agent works on a project, run it directly in the main repository without any worktrees. Spin up worktrees <strong>only when two or more agents need to modify the same repository simultaneously</strong>.<blockquote>
+<p><em>Hard-earned lesson</em>: Early on, I named directories after agent types (<code>myproject-claude</code>, <code>myproject-opencode</code>). The moment I wanted to run Claude in the second directory, the directory name contradicted the process inside it. <strong>A directory should represent “Isolated Copy #N of the repository (<code>wt-1</code>, <code>wt-2</code>)”, completely decoupled from which agent works inside it.</strong></p>
+</blockquote>
+</li>
+<li><strong>Assign agents on the fly; keep slot numbers agnostic</strong>: <code>wt-1</code> is just a slot index. Whether that pane runs <code>claude</code> for feature work today, <code>codex</code> for bug fixes tomorrow, or <code>opencode</code> for unit tests next week is decided at launch via the command or <code>--kind</code> flag—the directory stays put.</li>
+<li><strong>Use the main repository exclusively for convergence</strong>: Inside worktrees, agents may only run <code>git commit</code>—never <code>git push</code>. Branch merging, conflict resolution, and remote pushing happen centrally in the main repository (enforcing Section 2.3 at the environment level).</li>
+<li><strong>Broadcast untracked configs one-way from the main repo</strong>: Treat the main repository as the Single Source of Truth (SSOT) for <code>gitignored</code> files (<code>.env</code>, local keys, MCP configs) and broadcast them into worktree slots via a sync script, solving Section 2.4 cleanly.</li>
+</ol>
+<h3 id="4-3-Hands-On-Tutorial-Spinning-Up-Multi-Project-Multi-Worktree-Concurrency"><a href="#4-3-Hands-On-Tutorial-Spinning-Up-Multi-Project-Multi-Worktree-Concurrency" class="headerlink" title="4.3 Hands-On Tutorial: Spinning Up Multi-Project &amp; Multi-Worktree Concurrency"></a>4.3 Hands-On Tutorial: Spinning Up Multi-Project &amp; Multi-Worktree Concurrency</h3><p>Here is the complete, copy-pasteable workflow from scratch:</p>
+<h4 id="Step-1-Mount-Multiple-Project-Workspaces-under-One-Server"><a href="#Step-1-Mount-Multiple-Project-Workspaces-under-One-Server" class="headerlink" title="Step 1: Mount Multiple Project Workspaces under One Server"></a>Step 1: Mount Multiple Project Workspaces under One Server</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Inside an active herdr session, mount a second repository in the background (--no-focus prevents stealing focus)</span></span><br><span class="line">herdr workspace create --cwd ~/code/another-repo --label another-repo --no-focus</span><br><span class="line"></span><br><span class="line"><span class="comment"># List all project workspaces currently hosted by the server</span></span><br><span class="line">herdr workspace list</span><br></pre></td></tr></table></figure>
+
+<h4 id="Step-2-Create-Concurrent-Worktree-Slots-for-a-Project"><a href="#Step-2-Create-Concurrent-Worktree-Slots-for-a-Project" class="headerlink" title="Step 2: Create Concurrent Worktree Slots for a Project"></a>Step 2: Create Concurrent Worktree Slots for a Project</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Create two isolated worktrees branched off master (automatically placed in ~/.herdr/worktrees/myproject/wt-1 and wt-2)</span></span><br><span class="line">herdr worktree create --cwd ~/code/myproject --branch wt-1 --base master</span><br><span class="line">herdr worktree create --cwd ~/code/myproject --branch wt-2 --base master</span><br></pre></td></tr></table></figure>
+
+<p>Once executed, the new worktree nodes appear immediately in the herdr sidebar; clicking one drops you into a terminal pane already <code>cd</code>‘d into that worktree directory.</p>
+<h4 id="Step-3-Broadcast-env-and-Local-Agent-Configs-from-the-Main-Repo"><a href="#Step-3-Broadcast-env-and-Local-Agent-Configs-from-the-Main-Repo" class="headerlink" title="Step 3: Broadcast .env and Local Agent Configs from the Main Repo"></a>Step 3: Broadcast <code>.env</code> and Local Agent Configs from the Main Repo</h4><p>Add the following <code>wt-sync</code> shell function to your <code>~/.zshrc</code> (or keep it as a repo script). Run it after creating new worktrees to propagate critical <code>.gitignore</code>d files from the main repository:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Broadcast .env and .claude/settings.local.json from the main repo to all herdr worktrees for that project</span></span><br><span class="line">wt-<span class="function"><span class="title">sync</span></span>() &#123;</span><br><span class="line">  <span class="built_in">local</span> main_repo=<span class="string">&quot;<span class="variable">$&#123;1:-<span class="variable">$PWD</span>&#125;</span>&quot;</span></span><br><span class="line">  <span class="built_in">local</span> repo_name=<span class="string">&quot;<span class="subst">$(basename <span class="string">&quot;<span class="variable">$main_repo</span>&quot;</span>)</span>&quot;</span></span><br><span class="line">  <span class="built_in">local</span> wt_root=<span class="string">&quot;<span class="variable">$HOME</span>/.herdr/worktrees/<span class="variable">$repo_name</span>&quot;</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> wt <span class="keyword">in</span> <span class="string">&quot;<span class="variable">$wt_root</span>&quot;</span>/wt-*; <span class="keyword">do</span></span><br><span class="line">    [ -d <span class="string">&quot;<span class="variable">$wt</span>&quot;</span> ] || <span class="built_in">continue</span></span><br><span class="line">    [ -f <span class="string">&quot;<span class="variable">$main_repo</span>/.env&quot;</span> ] &amp;&amp; <span class="built_in">cp</span> <span class="string">&quot;<span class="variable">$main_repo</span>/.env&quot;</span> <span class="string">&quot;<span class="variable">$wt</span>/.env&quot;</span></span><br><span class="line">    <span class="keyword">if</span> [ -f <span class="string">&quot;<span class="variable">$main_repo</span>/.claude/settings.local.json&quot;</span> ]; <span class="keyword">then</span></span><br><span class="line">      <span class="built_in">mkdir</span> -p <span class="string">&quot;<span class="variable">$wt</span>/.claude&quot;</span></span><br><span class="line">      <span class="built_in">cp</span> <span class="string">&quot;<span class="variable">$main_repo</span>/.claude/settings.local.json&quot;</span> <span class="string">&quot;<span class="variable">$wt</span>/.claude/settings.local.json&quot;</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;Synced local config -&gt; <span class="variable">$wt</span>&quot;</span></span><br><span class="line">  <span class="keyword">done</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Step-4-Launch-and-Dispatch-Agent-Tasks-inside-Worktree-Panes"><a href="#Step-4-Launch-and-Dispatch-Agent-Tasks-inside-Worktree-Panes" class="headerlink" title="Step 4: Launch and Dispatch Agent Tasks inside Worktree Panes"></a>Step 4: Launch and Dispatch Agent Tasks inside Worktree Panes</h4><p>You can either type <code>claude</code> interactively inside a pane or script agent launch and task execution from the CLI:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Launch a Claude Code instance named dev1 inside the target pane</span></span><br><span class="line">herdr agent start dev1 --kind claude --pane &lt;pane_id&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># Dispatch a refactoring task to dev1 and block until it reaches done or blocked (15-minute timeout)</span></span><br><span class="line">herdr agent prompt dev1 <span class="string">&quot;Refactor the auth middleware, add JWT expiration unit tests, and commit to the current branch&quot;</span> --<span class="built_in">wait</span> --<span class="built_in">timeout</span> 900000</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-4-Global-Status-Inspection-Main-Repo-Merge-Convergence"><a href="#4-4-Global-Status-Inspection-Main-Repo-Merge-Convergence" class="headerlink" title="4.4 Global Status Inspection &amp; Main-Repo Merge Convergence"></a>4.4 Global Status Inspection &amp; Main-Repo Merge Convergence</h3><p>When multiple worktrees are running in parallel, a traditional IDE sidebar only shows the Git status of a single folder. Drop this 12-line <code>wt-status</code> script into <code>~/bin/</code> to inspect uncommitted file counts (<code>dirty</code>) and commit divergence (<code>-behind/+ahead</code> relative to <code>master</code>) across every worktree in a single glance:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="meta">#!/usr/bin/env bash</span></span><br><span class="line"><span class="comment"># ~/bin/wt-status: Inspect dirty file counts and master baseline divergence across all worktrees</span></span><br><span class="line">base_branch=<span class="string">&quot;<span class="variable">$&#123;1:-master&#125;</span>&quot;</span></span><br><span class="line">git worktree list --porcelain | awk <span class="string">&#x27;/^worktree /&#123;print $2&#125;&#x27;</span> | <span class="keyword">while</span> <span class="built_in">read</span> -r wt; <span class="keyword">do</span></span><br><span class="line">  branch=$(git -C <span class="string">&quot;<span class="variable">$wt</span>&quot;</span> rev-parse --abbrev-ref HEAD 2&gt;/dev/null)</span><br><span class="line">  dirty=$(git -C <span class="string">&quot;<span class="variable">$wt</span>&quot;</span> status --porcelain 2&gt;/dev/null | <span class="built_in">wc</span> -l | <span class="built_in">tr</span> -d <span class="string">&#x27; &#x27;</span>)</span><br><span class="line">  ab=$(git -C <span class="string">&quot;<span class="variable">$wt</span>&quot;</span> rev-list --left-right --count <span class="string">&quot;<span class="variable">$&#123;base_branch&#125;</span>...HEAD&quot;</span> 2&gt;/dev/null | awk <span class="string">&#x27;&#123;printf &quot;-%s/+%s&quot;, $1, $2&#125;&#x27;</span>)</span><br><span class="line">  <span class="built_in">printf</span> <span class="string">&quot;%-48s %-14s dirty:%-3s %s\n&quot;</span> <span class="string">&quot;<span class="variable">$wt</span>&quot;</span> <span class="string">&quot;[<span class="variable">$branch</span>]&quot;</span> <span class="string">&quot;<span class="variable">$dirty</span>&quot;</span> <span class="string">&quot;<span class="variable">$ab</span>&quot;</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+
+<p>Once the agents in your worktrees finish their tasks and light up green (<code>done</code>), converge their work in the main repository and rebase active worktrees onto the updated baseline:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 1. Inside each worktree pane: only commit locally (or let the agent commit)</span></span><br><span class="line">git add -A &amp;&amp; git commit -m <span class="string">&quot;feat(auth): refresh token rotation&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. Return to the main repo (~/code/myproject, anchored on master): merge sequentially and push</span></span><br><span class="line"><span class="built_in">cd</span> ~/code/myproject</span><br><span class="line">git merge wt-1 --no-edit</span><br><span class="line">git merge wt-2 --no-edit</span><br><span class="line">git push origin master</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3. Rebase active worktrees onto the updated master baseline to prevent branch drift</span></span><br><span class="line"><span class="keyword">for</span> wt <span class="keyword">in</span> ~/.herdr/worktrees/myproject/wt-*; <span class="keyword">do</span></span><br><span class="line">  [ -d <span class="string">&quot;<span class="variable">$wt</span>&quot;</span> ] &amp;&amp; git -C <span class="string">&quot;<span class="variable">$wt</span>&quot;</span> rebase master</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="5-Daily-Workflow-Agent-Self-Orchestration-Fan-out-Tutorial"><a href="#5-Daily-Workflow-Agent-Self-Orchestration-Fan-out-Tutorial" class="headerlink" title="5. Daily Workflow &amp; Agent Self-Orchestration (Fan-out) Tutorial"></a>5. Daily Workflow &amp; Agent Self-Orchestration (Fan-out) Tutorial</h2><p>Distilled into daily muscle memory, the workflow follows six beats:</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">1. Attach    herdr                                    # Re-attach in one command; sidebar shows all workspace status lights</span><br><span class="line">2. Dispatch  Run claude in a pane; or use agent start + prompt --wait</span><br><span class="line">3. Cruise    Focus on your own work; only react to amber (blocked) and green (done) lights</span><br><span class="line">4. Fan-out   Primary agent invokes the herdr Skill to split panes and spawn helper agents in parallel</span><br><span class="line">5. Converge  Run wt-status -&gt; commit in worktrees -&gt; merge + push + rebase baseline in main repo</span><br><span class="line">6. Detach    Press prefix + q or close the window (agents keep running); use herdr server stop only for full shutdown</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-1-Install-the-herdr-Skill-to-Unlock-Self-Orchestration"><a href="#5-1-Install-the-herdr-Skill-to-Unlock-Self-Orchestration" class="headerlink" title="5.1 Install the herdr Skill to Unlock Self-Orchestration"></a>5.1 Install the herdr Skill to Unlock Self-Orchestration</h3><p>Export herdr’s built-in orchestration specification as a global Claude Code Skill. Any primary agent running inside a herdr pane will automatically detect its environment (via <code>HERDR_ENV=1</code> and <code>HERDR_PANE_ID</code>) and know how to invoke the <code>herdr</code> CLI to orchestrate sibling panes:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p ~/.claude/skills/herdr</span><br><span class="line">herdr --skill &gt; ~/.claude/skills/herdr/SKILL.md</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-2-Scenario-1-Primary-Agent-Splits-a-Right-Pane-to-Spawn-a-Code-Reviewer"><a href="#5-2-Scenario-1-Primary-Agent-Splits-a-Right-Pane-to-Spawn-a-Code-Reviewer" class="headerlink" title="5.2 Scenario 1: Primary Agent Splits a Right Pane to Spawn a Code Reviewer"></a>5.2 Scenario 1: Primary Agent Splits a Right Pane to Spawn a Code Reviewer</h3><p>When you tell your primary agent, <em>“Once you finish the changes, split a pane to the right and spin up a reviewer agent to audit the current diff,”</em> the primary agent executes these orchestration primitives automatically:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 1. Split a pane to the right (--no-focus keeps focus in the primary pane) and extract the new pane_id</span></span><br><span class="line"><span class="built_in">split</span>=$(herdr pane <span class="built_in">split</span> --current --direction right --no-focus)</span><br><span class="line">review_pane=$(<span class="built_in">printf</span> <span class="string">&#x27;%s\n&#x27;</span> <span class="string">&quot;<span class="variable">$split</span>&quot;</span> | jq -r <span class="string">&#x27;.result.pane.pane_id&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. Launch a sub-agent named reviewer inside the newly created right pane</span></span><br><span class="line">herdr agent start reviewer --kind claude --pane <span class="string">&quot;<span class="variable">$review_pane</span>&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 3. Dispatch the code review prompt and block until completion (120s timeout)</span></span><br><span class="line">herdr agent prompt reviewer <span class="string">&quot;Review the current git diff for concurrency safety and edge cases; output only high-severity findings&quot;</span> --<span class="built_in">wait</span> --<span class="built_in">timeout</span> 120000</span><br><span class="line"></span><br><span class="line"><span class="comment"># 4. Read the reviewer agent&#x27;s terminal output and synthesize the findings</span></span><br><span class="line">herdr agent <span class="built_in">read</span> reviewer --<span class="built_in">source</span> recent-unwrapped --lines 120</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-3-Scenario-2-Primary-Agent-Fans-Out-Three-Parallel-Workers"><a href="#5-3-Scenario-2-Primary-Agent-Fans-Out-Three-Parallel-Workers" class="headerlink" title="5.3 Scenario 2: Primary Agent Fans Out Three Parallel Workers"></a>5.3 Scenario 2: Primary Agent Fans Out Three Parallel Workers</h3><p>For larger tasks that decompose cleanly across modules (such as profiling latency across three microservices or migrating three independent modules across <code>wt-1..3</code>), the primary agent can execute a parallel fan-out script—dispatching all prompts non-blockingly first, then synchronizing on a <code>--wait</code> barrier:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 1. Create 3 split panes and launch 3 independent Worker agents</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> 1 2 3; <span class="keyword">do</span></span><br><span class="line">  <span class="built_in">split</span>=$(herdr pane <span class="built_in">split</span> --current --direction right --no-focus)</span><br><span class="line">  pane_id=$(<span class="built_in">printf</span> <span class="string">&#x27;%s\n&#x27;</span> <span class="string">&quot;<span class="variable">$split</span>&quot;</span> | jq -r <span class="string">&#x27;.result.pane.pane_id&#x27;</span>)</span><br><span class="line">  herdr agent start <span class="string">&quot;worker-<span class="variable">$i</span>&quot;</span> --kind claude --pane <span class="string">&quot;<span class="variable">$pane_id</span>&quot;</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. Dispatch independent subtasks in parallel (no --wait flag -&gt; returns immediately so all 3 work concurrently)</span></span><br><span class="line">herdr agent prompt worker-1 <span class="string">&quot;Complete the user module API migration and unit tests inside wt-1&quot;</span></span><br><span class="line">herdr agent prompt worker-2 <span class="string">&quot;Complete the order module API migration and unit tests inside wt-2&quot;</span></span><br><span class="line">herdr agent prompt worker-3 <span class="string">&quot;Complete the payment module API migration and unit tests inside wt-3&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 3. Block until all 3 Workers reach a terminal state (done or blocked)</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> 1 2 3; <span class="keyword">do</span></span><br><span class="line">  herdr agent <span class="built_in">wait</span> <span class="string">&quot;worker-<span class="variable">$i</span>&quot;</span> --<span class="keyword">until</span> <span class="keyword">done</span>,blocked --<span class="built_in">timeout</span> 600000</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 4. Harvest execution summaries from all 3 Workers</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> 1 2 3; <span class="keyword">do</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="string">&quot;=== worker-<span class="variable">$i</span> Summary ===&quot;</span></span><br><span class="line">  herdr agent <span class="built_in">read</span> <span class="string">&quot;worker-<span class="variable">$i</span>&quot;</span> --<span class="built_in">source</span> recent-unwrapped --lines 80</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="5-4-Multi-Machine-Scaling-Attaching-Headless-Compute-Nodes-over-LAN"><a href="#5-4-Multi-Machine-Scaling-Attaching-Headless-Compute-Nodes-over-LAN" class="headerlink" title="5.4 Multi-Machine Scaling: Attaching Headless Compute Nodes over LAN"></a>5.4 Multi-Machine Scaling: Attaching Headless Compute Nodes over LAN</h3><p>If you have an always-on Mac mini or Linux workstation on your LAN, configure passwordless SSH in <code>~/.ssh/config</code> and run a single command on your primary laptop to merge both machines into one unified sidebar:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Register a remote machine into your local herdr sidebar view</span></span><br><span class="line">herdr machine add mac-mini-dev</span><br><span class="line"></span><br><span class="line"><span class="comment"># Or use your local terminal as a pure thin client attached directly to the remote herdr server</span></span><br><span class="line">herdr --remote mac-mini-dev</span><br></pre></td></tr></table></figure>
+
+<p>Once attached, the remote machine’s Workspaces appear directly in your local sidebar—letting you monitor and control agents across both machines from a single window. Even when you close your laptop lid for the commute, heavy refactoring tasks on the headless workstation continue running at full speed.</p>
+<hr>
+<h2 id="6-Architectural-Deep-Dive-The-Three-Tier-Orthogonal-Agent-Stack"><a href="#6-Architectural-Deep-Dive-The-Three-Tier-Orthogonal-Agent-Stack" class="headerlink" title="6. Architectural Deep Dive: The Three-Tier Orthogonal Agent Stack"></a>6. Architectural Deep Dive: The Three-Tier Orthogonal Agent Stack</h2><p>As concurrency scales further, terminal split panes alone are insufficient. You must architecturally decouple the <strong>Control Plane, Session Layer, and Memory Layer</strong>:</p>
+<p><img src="/assets/herdr-three-tier-agent-stack.en.svg" alt="Three-Tier Orthogonal Multi-Agent Architecture: Control Plane × Session Layer × Memory Layer"></p>
+<table>
+<thead>
+<tr>
+<th align="left">Architectural Tier</th>
+<th align="left">Primary Provider</th>
+<th align="left">Responsibility Boundary &amp; Primitives</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>Control Plane</strong></td>
+<td align="left"><code>herdr</code></td>
+<td align="left">Owns PTY pane lifecycles, status light sensing (<code>working</code>&#x2F;<code>blocked</code>&#x2F;<code>done</code>), process spawning, and <code>prompt</code>&#x2F;<code>wait</code>&#x2F;<code>send-keys</code> scheduling. <strong>Note: <code>prompt</code> is a blind string pipe—the control plane is deliberately agnostic to domain semantics</strong></td>
+</tr>
+<tr>
+<td align="left"><strong>Session Layer</strong></td>
+<td align="left">Agent CLI Native Storage</td>
+<td align="left">Persists conversation transcripts on disk scoped by project directory (e.g., Claude Code’s <code>-c</code> to continue the latest session, <code>-r</code> to pick a historical session, <code>--fork</code> to branch a conversation). <strong>Switching terminal hosts never loses dialogue history</strong></td>
+</tr>
+<tr>
+<td align="left"><strong>Memory Layer</strong></td>
+<td align="left">Semantic Memory Store (e.g., OpenViking)</td>
+<td align="left">Persists cross-session, cross-agent architectural decisions and post-mortems. Any durable memory system supporting <strong>“write to an explicit URI → retrieve via semantic search across sessions”</strong> can fulfill this tier</td>
+</tr>
+</tbody></table>
+<p><strong>Core Layering Discipline</strong>: Never pipe massive blocks of context between agents using blind <code>herdr pane send-keys</code> keystrokes. The clean multi-agent contract is: <strong>the Control Plane governs <em>where</em> a task runs and <em>whether</em> it has finished; the Session Layer governs <em>where the current dialogue is</em>; and cross-agent knowledge handoff flows strictly through the Memory Layer (workers write structured conclusions to an explicit memory URI or handoff file, and the primary agent reads them by address)</strong>.</p>
+<hr>
+<h2 id="7-After-Hours-End-to-End-Mobile-Remote-Takeover"><a href="#7-After-Hours-End-to-End-Mobile-Remote-Takeover" class="headerlink" title="7. After Hours: End-to-End Mobile Remote Takeover"></a>7. After Hours: End-to-End Mobile Remote Takeover</h2><p>Once a concurrent multi-agent environment is humming along, the next natural question arises: <strong>when you step away from your desk for dinner or hop on the subway, who approves the permission prompt when an agent hits <code>blocked</code>?</strong></p>
+<p>Remote desktop apps (VNC, TeamViewer, AnyDesk) are most people’s first instinct—and the worst possible mobile experience. Pinch-zooming a 27-inch desktop on a 6-inch phone screen while full-screen TUI redraws blur into compression artifacts is pure friction. Because the target you want to control is a <strong>terminal session</strong>, the native protocol for the job is <strong>SSH</strong>.</p>
+<p>For a home or office Mac behind NAT without a public IP, I use a lightweight cloud VPS + <code>frp</code> reverse proxy + <code>Termius</code> on iOS&#x2F;Android + <code>Bark</code> lock-screen push notifications to form a zero-public-exposure remote takeover loop:</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">Mobile Termius (Ed25519 Hardware Key)</span><br><span class="line">   │ Encrypted Direct SSH</span><br><span class="line">   ▼</span><br><span class="line">Cloud VPS frps (:7000 / :6022)  ← Tunnel Plane: Solves &quot;Reachability&quot; (Private Mac frpc dials outbound)</span><br><span class="line">   ▼</span><br><span class="line">Private Mac sshd → herdr        ← Session Plane: Solves &quot;Continuity&quot; (server owns all PTYs; zero loss on subway drops)</span><br><span class="line">   ▼</span><br><span class="line">Bark / ntfy Mobile Push         ← Notification Plane: Solves &quot;Awareness&quot; (pushes to phone lock screen when blocked)</span><br></pre></td></tr></table></figure>
+
+<p>This remote pipeline interlocks seamlessly with the herdr environment described above:</p>
+<ul>
+<li><strong>Zero noise while things work</strong>: Your phone stays completely silent while agents are <code>working</code>. Only when a pane triggers <code>permission_prompt</code> (<code>blocked</code>) or finishes a long run (<code>Stop</code>) does the hook script push an instant alert with the project name to your phone’s lock screen;</li>
+<li><strong>10-second mobile resolution</strong>: Tap the notification, open Termius to connect to your Mac, type <code>herdr</code> to attach to the exact desktop split view, switch to the amber-lit pane to press <code>y</code>, and lock your phone—the agent immediately resumes execution.</li>
+</ul>
+<blockquote>
+<p>📖 <strong>Full Deployment Guide</strong>: For line-by-line cloud <code>frps</code> and Mac <code>frpc</code> (LaunchAgent auto-healing) configurations, macOS <code>sshd</code> PAM keyboard-interactive hardening, <code>~/.claude/settings.json</code> mobile push hook scripts, and three critical production pitfalls, read the companion article: <em><a href="/2026/11/10/frp-ssh-termius-remote-mac-practice.en/">Reaching a Private Mac from Anywhere: End-to-End Mobile Remote Control with frp, SSH, and Termius</a></em>.</p>
+</blockquote>
+<hr>
+<h2 id="8-Production-Pitfalls-Troubleshooting-Guide"><a href="#8-Production-Pitfalls-Troubleshooting-Guide" class="headerlink" title="8. Production Pitfalls &amp; Troubleshooting Guide"></a>8. Production Pitfalls &amp; Troubleshooting Guide</h2><p>Here is a consolidated troubleshooting checklist distilled from daily production use of herdr:</p>
+<ol>
+<li><p><strong><code>prefix</code> Keybindings Never Trigger Anything</strong>:<br>herdr’s prefix key (default <code>Ctrl+B</code>) uses a strict two-stroke sequence—<strong>press <code>Ctrl+B</code> and release your fingers completely, then press the action key (such as <code>v</code>, <code>c</code>, or <code>?</code>)</strong>. Holding <code>Ctrl+B</code> down while pressing the action key will fail 100% of the time in every terminal emulator.</p>
+</li>
+<li><p><strong>Lighting Up Status Indicators for Unsupported Agents (e.g., CodeBuddy)</strong>:<br>Take <code>codebuddy</code> as an example: it is absent from herdr 0.9.5’s built-in agent enum, screen-matching manifests, and <code>integration install</code> targets. Moreover, the official docs state that <code>Override manifest</code> rules can only tweak regexes for already-recognized agent kinds—they cannot register a brand-new agent type.<br><strong>The official first-class solution is to use the agent’s own lifecycle hooks to call <code>herdr pane report-agent</code> directly</strong>:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">herdr pane report-agent <span class="string">&quot;<span class="variable">$HERDR_PANE_ID</span>&quot;</span> \</span><br><span class="line">  --<span class="built_in">source</span> my-agent-hook \</span><br><span class="line">  --agent codebuddy \</span><br><span class="line">  --state &lt;idle|working|blocked&gt; \</span><br><span class="line">  --<span class="built_in">seq</span> &lt;monotonic_sequence_number&gt; \</span><br><span class="line">  -- codebuddy --resume &lt;session_id&gt;</span><br></pre></td></tr></table></figure>
+
+<p>Because every herdr pane automatically injects the <code>HERDR_PANE_ID</code> environment variable into child processes, mapping six standard lifecycle events in your agent’s hook config gives you full status light support:</p>
+<ul>
+<li><code>SessionStart</code> → <code>--state idle</code></li>
+<li><code>UserPromptSubmit</code> → <code>--state working</code></li>
+<li><code>Stop</code> → <code>--state idle</code></li>
+<li><code>Notification (permission_prompt)</code> → <code>--state blocked</code></li>
+<li><code>Notification (idle_prompt)</code> → <code>--state idle</code></li>
+<li><code>SessionEnd</code> → <code>herdr pane release-agent &quot;$HERDR_PANE_ID&quot;</code></li>
+</ul>
+</li>
+<li><p><strong>Two Hidden Traps with <code>herdr machine add</code></strong>:</p>
+<ul>
+<li><strong>The Default <code>No</code> Prompt Trap</strong>: If the remote machine already has a running <code>herdr server</code>, the CLI asks interactively whether to stop and replace it (<code>[y/N]</code>). Pressing Enter accepts the default <code>N</code>, which silently aborts saving the machine registration. You must explicitly type <code>y</code> and press Enter;</li>
+<li><strong>Daemon Contention</strong>: If you previously configured a custom LaunchAgent or <code>systemd</code> unit on the remote machine to keep <code>herdr server</code> alive, it will fight with herdr’s <code>machine</code> replacement logic. Remove custom service wrappers on remote nodes and let herdr’s machine mode manage the server lifecycle natively.</li>
+</ul>
+</li>
+<li><p><strong>Edge Cases in State Detection &amp; Full-Screen TUI Output Reading</strong>:</p>
+<ul>
+<li><strong><code>unknown</code> Does Not Mean Finished</strong>: An <code>unknown</code> status means the agent process is still running but its current screen state cannot be classified. Run <code>herdr agent explain --json</code> to inspect the exact state-machine evaluation;</li>
+<li><strong>CLI <code>agent read</code> Does Not Clear the <code>done</code> Light</strong>: Only focusing the pane interactively inside the TUI client transitions an agent from <code>done</code> back to <code>idle</code>;</li>
+<li><strong>Alternate Screen Buffer Truncation</strong>: Full-screen TUI agents like Claude Code render inside the terminal’s Alternate Screen buffer. Long responses do not scroll into the standard terminal scrollback buffer, meaning <code>herdr agent read</code> only captures the visible tail on screen. When scripting automated fan-out workflows, <strong>always instruct worker agents in their prompt to write full reports to a designated Markdown or JSON file</strong>, and have the primary agent read the file from disk rather than scraping the pane.</li>
+</ul>
+</li>
+<li><p><strong>Logs &amp; Hot-Reload Entry Points</strong>:</p>
+<ul>
+<li>Runtime log files: <code>~/.config/herdr/herdr*.log</code></li>
+<li>Check client&#x2F;server health and versions: <code>herdr status</code> (or <code>herdr status server</code> &#x2F; <code>herdr status client</code>)</li>
+<li>Dump the complete default configuration reference: <code>herdr --default-config</code></li>
+<li>After editing <code>~/.config/herdr/config.toml</code>, run <code>herdr server reload-config</code> to apply changes in milliseconds without restarting the server.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="9-Command-Cheat-Sheet"><a href="#9-Command-Cheat-Sheet" class="headerlink" title="9. Command Cheat Sheet"></a>9. Command Cheat Sheet</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># === Session &amp; Daemon Lifecycle ===</span></span><br><span class="line">herdr                                                            <span class="comment"># Attach to or start the default session</span></span><br><span class="line">herdr status                                                     <span class="comment"># Inspect server and client runtime status</span></span><br><span class="line">herdr server reload-config                                       <span class="comment"># Hot-reload ~/.config/herdr/config.toml</span></span><br><span class="line">herdr server stop                                                <span class="comment"># Shut down the background server and all panes</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># === State Reporting &amp; Project Containers ===</span></span><br><span class="line">herdr integration install claude                                 <span class="comment"># Install authoritative state-reporting hooks for Claude Code</span></span><br><span class="line">herdr integration status                                         <span class="comment"># Check integration status across all supported agents</span></span><br><span class="line">herdr workspace list                                             <span class="comment"># List all mounted project Workspaces</span></span><br><span class="line">herdr workspace create --cwd &lt;repo&gt; --label &lt;name&gt; --no-focus    <span class="comment"># Mount a new project repository in the background</span></span><br><span class="line">herdr worktree create --cwd &lt;repo&gt; --branch wt-1 --base master   <span class="comment"># Create an isolated Git Worktree concurrency slot</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># === Agent Orchestration &amp; Automation ===</span></span><br><span class="line">herdr agent list                                                 <span class="comment"># List all tracked agent instances and their states</span></span><br><span class="line">herdr agent start &lt;name&gt; --kind claude --pane &lt;pane_id&gt;          <span class="comment"># Launch an agent inside a specific pane</span></span><br><span class="line">herdr agent prompt &lt;name&gt; <span class="string">&quot;&lt;task&gt;&quot;</span> --<span class="built_in">wait</span> --<span class="built_in">timeout</span> 120000       <span class="comment"># Dispatch a prompt and block until completion</span></span><br><span class="line">herdr agent <span class="built_in">wait</span> &lt;name&gt; --<span class="keyword">until</span> blocked,<span class="keyword">done</span>                     <span class="comment"># Block until an agent enters the specified state(s)</span></span><br><span class="line">herdr agent <span class="built_in">read</span> &lt;name&gt; --<span class="built_in">source</span> recent-unwrapped --lines 120    <span class="comment"># Read recent output from an agent pane</span></span><br><span class="line">herdr agent explain --json                                       <span class="comment"># Diagnose why a pane was assigned its current state</span></span><br><span class="line">herdr --skill                                                    <span class="comment"># Output the SKILL.md specification for agent self-orchestration</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># === Multi-Machine Federation ===</span></span><br><span class="line">herdr machine add &lt;ssh-alias&gt;                                    <span class="comment"># Attach a remote machine into the local sidebar view</span></span><br><span class="line">herdr --remote &lt;ssh-alias&gt;                                       <span class="comment"># Connect as a pure thin client to a remote herdr server</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><strong>References</strong>: <a target="_blank" rel="noopener" href="https://herdr.dev/docs/">herdr Official Documentation</a> · <a target="_blank" rel="noopener" href="https://github.com/herdrdev/herdr">GitHub herdrdev&#x2F;herdr</a> · <a target="_blank" rel="noopener" href="https://herdr.dev/docs/agent-automation/">Agent Automation Primitives</a> · <a target="_blank" rel="noopener" href="https://herdr.dev/agent-guide.md">Official Agent Guide (agent-guide.md)</a> · <a target="_blank" rel="noopener" href="https://flaviocopes.com/herdr/">Flavio Copes: Getting Started with herdr</a> · <a target="_blank" rel="noopener" href="https://www.shareuhack.com/en/posts/herdr-terminal-agent-multiplexer-guide-2026">ShareUHack: Practical Guide to the herdr Terminal Agent Multiplexer</a></p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">shawn</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://blog.191022.xyz/2026/11/10/herdr-multi-agent-concurrent-dev-environment.en/">https://blog.191022.xyz/2026/11/10/herdr-multi-agent-concurrent-dev-environment.en/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">shawn</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/herdr/">
+                                    <span class="chip bg-color">herdr</span>
+                                </a>
+                            
+                                <a href="/tags/Git-Worktree/">
+                                    <span class="chip bg-color">Git Worktree</span>
+                                </a>
+                            
+                                <a href="/tags/Multi-Agent/">
+                                    <span class="chip bg-color">Multi-Agent</span>
+                                </a>
+                            
+                                <a href="/tags/Claude-Code/">
+                                    <span class="chip bg-color">Claude Code</span>
+                                </a>
+                            
+                                <a href="/tags/AI-Coding/">
+                                    <span class="chip bg-color">AI Coding</span>
+                                </a>
+                            
+                                <a href="/tags/Terminal-Multiplexer/">
+                                    <span class="chip bg-color">Terminal Multiplexer</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2026/11/10/herdr-multi-agent-concurrent-dev-environment.en/">
+                    <div class="card-image">
+                        
+                        <img src="/assets/herdr-worktree-cover.jpg" class="responsive-img" alt="herdr × Git Worktree: A Practical Multi-Agent Concurrent Development Environment">
+                        
+                        <span class="card-title">herdr × Git Worktree: A Practical Multi-Agent Concurrent Development Environment</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2026-11-10
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Engineering-Practice/" class="post-category">
+                                    Engineering Practice
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/herdr/">
+                        <span class="chip bg-color">herdr</span>
+                    </a>
+                    
+                    <a href="/tags/Git-Worktree/">
+                        <span class="chip bg-color">Git Worktree</span>
+                    </a>
+                    
+                    <a href="/tags/Multi-Agent/">
+                        <span class="chip bg-color">Multi-Agent</span>
+                    </a>
+                    
+                    <a href="/tags/Claude-Code/">
+                        <span class="chip bg-color">Claude Code</span>
+                    </a>
+                    
+                    <a href="/tags/AI-Coding/">
+                        <span class="chip bg-color">AI Coding</span>
+                    </a>
+                    
+                    <a href="/tags/Terminal-Multiplexer/">
+                        <span class="chip bg-color">Terminal Multiplexer</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2026/11/10/herdr-multi-agent-concurrent-dev-environment/">
+                    <div class="card-image">
+                        
+                        <img src="/assets/herdr-worktree-cover.jpg" class="responsive-img" alt="herdr × Git Worktree：多 Agent 并发开发环境实践">
+                        
+                        <span class="card-title">herdr × Git Worktree：多 Agent 并发开发环境实践</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2026-11-10
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%8A%80%E6%9C%AF%E5%AE%9E%E8%B7%B5/" class="post-category">
+                                    技术实践
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/herdr/">
+                        <span class="chip bg-color">herdr</span>
+                    </a>
+                    
+                    <a href="/tags/Git-Worktree/">
+                        <span class="chip bg-color">Git Worktree</span>
+                    </a>
+                    
+                    <a href="/tags/Multi-Agent/">
+                        <span class="chip bg-color">Multi-Agent</span>
+                    </a>
+                    
+                    <a href="/tags/Claude-Code/">
+                        <span class="chip bg-color">Claude Code</span>
+                    </a>
+                    
+                    <a href="/tags/AI-Coding/">
+                        <span class="chip bg-color">AI Coding</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%BB%88%E7%AB%AF%E5%A4%8D%E7%94%A8/">
+                        <span class="chip bg-color">终端复用</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2021-2026</span>
+            
+            <a href="/about" target="_blank">shawn</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            
+            <br>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/haitau" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:shawn@191022.xyz" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+    
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
